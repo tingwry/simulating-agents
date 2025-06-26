@@ -1,0 +1,24 @@
+{
+    "cluster_id": 3,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.99,
+        "occupation": 0.98,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "At age 47, it is unlikely this customer will pursue further formal education beyond their bachelor's degree. Their financial stability does not indicate a strong push toward career-driven higher education, such as a master's or doctorate.",
+        "marital_status": "The customer is currently single, and there are no indications (such as significant changes in transaction patterns or financial commitments) suggesting a shift in marital status within the next year. Cluster 3 historically remains stable in marital status.",
+        "occupation": "As an entrepreneur with consistent cash flow patterns and no significant shifts in financial behavior, the customer is likely to remain in the same occupation. This aligns with Cluster 3's entrepreneurial profile.",
+        "num_children": "Given the customer's single status and the lack of financial indicators (e.g., expenses related to childcare or family planning), it is highly unlikely they will have children within the next year.",
+        "region": "The customer currently resides in the Central region, and there are no transaction patterns or financial changes suggesting geographic mobility. Cluster 3 customers typically exhibit regional stability."
+    }
+}

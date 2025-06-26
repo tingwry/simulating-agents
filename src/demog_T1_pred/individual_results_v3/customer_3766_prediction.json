@@ -1,0 +1,24 @@
+{
+    "cluster_id": 6,
+    "predictions": {
+        "educational_level_t1": "vocational certificate",
+        "marital_status_t1": "married",
+        "occupation_t1": "Other",
+        "num_children_t1": 0,
+        "region_t1": "Southern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 0.9,
+        "num_children": 0.95,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "At age 52, it is highly unlikely for the customer to pursue further formal education, especially given their current vocational certificate level. Cluster 6 tends to exhibit stable educational profiles beyond mid-life, aligning with this prediction.",
+        "marital_status": "The customer is already married, and there are no financial indicators or behavioral shifts suggesting changes to their marital status. Cluster 6 demographics typically maintain stable marital profiles.",
+        "occupation": "The customer's occupation is marked as 'Other,' and there is no financial activity suggesting career progression or transition. Given their age, career stability is expected, so their occupation remains unchanged.",
+        "num_children": "The customer is 52 years old and married with no children. There are no financial indicators of family-related expenses suggesting a change. At this life stage, it is unlikely for them to start having children.",
+        "region": "The customer resides in the Southern region, and there are no financial patterns or transaction behaviors indicating relocation. Cluster 6 generally exhibits geographic stability in middle age."
+    }
+}

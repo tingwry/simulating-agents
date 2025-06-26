@@ -1,0 +1,24 @@
+{
+    "cluster_id": 8,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "married",
+        "occupation_t1": "Student",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 1.0,
+        "num_children": 1.0,
+        "region": 1.0
+    },
+    "reasoning": {
+        "educational_level": "The customer is 19 years old and likely in the process of completing or has recently completed high school. No financial indicators suggest advanced education at this time.",
+        "marital_status": "The customer is already married at T0. Based on the rules, marital status is unlikely to change within the one-year time frame.",
+        "occupation": "The customer is currently a student, and at 19 years old, it is highly probable they are continuing their education without transitioning to full-time employment.",
+        "num_children": "The customer is married but has no children at T0. There are no financial patterns indicating family planning, so the number of children is predicted to remain zero.",
+        "region": "The customer resides in the Central region, and there are no financial or transactional indicators suggesting relocation within the one-year time frame."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "cluster_id": 1,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "others",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.99,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.85
+    },
+    "reasoning": {
+        "educational_level": "The customer is already 34 years old, and no significant financial indicators suggest pursuing further education. Cluster 1 trends show stable educational levels after age 30.",
+        "marital_status": "The customer's marital status is 'others,' and there are no financial behaviors or life stage indicators that suggest transitioning to another marital status within one year.",
+        "occupation": "The customer remains a Corporate Employee, as their financial patterns indicate stable employment in a corporate role without signs of career shifts or entrepreneurial activity. Cluster 1 typically exhibits occupational stability.",
+        "num_children": "The customer is single and has no children. Cluster 1 patterns and strict rules for single marital status indicate no children at T1.",
+        "region": "Transaction patterns do not suggest relocation, and the customer is likely to remain in the Central region, consistent with Cluster 1's geographic stability."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "cluster_id": 6,
+    "predictions": {
+        "educational_level_t1": "others",
+        "marital_status_t1": "married",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Southern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 1.0,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is 61 years old and already in a stable career stage as an entrepreneur. Given the lack of financial behavior indicating career-driven education, it is unlikely that he will pursue formal education or certifications at this stage. 'Others' is a plausible placeholder given the absence of explicit educational details.",
+        "marital_status": "The customer is already married, and there are no indicators of any significant life events (e.g., divorce or widowhood) based on financial and transaction patterns. The marital status is unlikely to change in the next year.",
+        "occupation": "The customer is an entrepreneur, and there are no signs of career shifts or retirement preparation based on the current financial stability and active transaction patterns. He will likely maintain his entrepreneurial role.",
+        "num_children": "Given the customer's age, marital status, and lack of financial indicators related to family planning or child-related expenses, it is highly unlikely that he will have children within the next year.",
+        "region": "The customer resides in the Southern region. There are no financial behaviors indicating relocation, such as unusual transaction patterns or inflows/outflows that might suggest geographic mobility. He is likely to remain in the Southern region."
+    }
+}

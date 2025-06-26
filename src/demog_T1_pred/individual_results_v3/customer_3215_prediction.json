@@ -1,0 +1,24 @@
+{
+    "cluster_id": 6,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "married",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.98,
+        "occupation": 0.9,
+        "num_children": 0.9,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is 45 years old, which is past the typical age for pursuing formal education upgrades. While financially stable, there are no indicators of career-driven education or professional certifications.",
+        "marital_status": "The customer is already 'married - registered,' and there is no financial or behavioral evidence suggesting a change in marital status.",
+        "occupation": "The customer is currently an entrepreneur, and financial patterns (high inflow/outflow and consistent use of business-related products) suggest stability in their current occupation. No indicators suggest a transition to a different career path.",
+        "num_children": "The customer has no children and there are no financial patterns (e.g., family-oriented spending) suggesting family formation within the next year.",
+        "region": "The customer resides in the Central region, which aligns with the cluster profile and there are no transaction patterns or financial behaviors indicating geographic mobility."
+    }
+}

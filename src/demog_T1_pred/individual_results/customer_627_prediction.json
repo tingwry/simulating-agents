@@ -1,0 +1,24 @@
+{
+    "cluster_id": 4,
+    "predictions": {
+        "educational_level_t1": "others",
+        "marital_status_t1": "others",
+        "occupation_t1": "Freelancer",
+        "num_children_t1": 0,
+        "region_t1": "Northern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 0.9,
+        "occupation": 0.95,
+        "num_children": 0.95,
+        "region": 0.85
+    },
+    "reasoning": {
+        "educational_level": "The customer has no financial activity or signs of career advancement that would indicate pursuing further education. The cluster characteristics also suggest limited educational progression beyond the current level.",
+        "marital_status": "There is no financial behavior indicating life changes such as marriage or divorce. The age and gender of the customer align with the cluster's typical demographics, which have a higher likelihood of remaining in the 'others' category.",
+        "occupation": "The customer\u2019s financial inactivity and lack of cash flow suggest they remain in their current occupation as a Freelancer, which aligns with Cluster 4's tendencies.",
+        "num_children": "The customer shows no financial patterns indicative of family planning or child-related expenses. This aligns with the cluster's characteristic of typically having no children.",
+        "region": "The customer resides in the Northern region and shows no financial activity pointing to relocation. Cluster 4 customers tend to remain in their current regions unless prompted by significant life changes, which are not evident here."
+    }
+}

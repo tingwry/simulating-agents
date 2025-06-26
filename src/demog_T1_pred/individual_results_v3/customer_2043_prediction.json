@@ -1,0 +1,24 @@
+{
+    "cluster_id": 7,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.98,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.97
+    },
+    "reasoning": {
+        "educational_level": "At age 29, there is a low likelihood of educational advancement in this cluster, particularly given stable financial patterns and no indicators of pursuing further education. The cluster's typical educational progression supports this prediction.",
+        "marital_status": "There are no financial or behavioral indicators suggesting a transition from single status (e.g., no family-related expenses or significant life-stage changes). The customer's age and cluster trends support remaining single.",
+        "occupation": "The customer is already employed as a Corporate Employee, and there are no indications of career advancement or transition based on financial patterns. This aligns with the cluster's stable occupation trends.",
+        "num_children": "Since the customer is single, they are predicted to have 0 children, consistent with the model's constraint and cluster trends.",
+        "region": "The customer resides in the Central region, and there are no financial indicators (e.g., increased inflows or outflows related to relocation expenses) suggesting geographic mobility. Cluster trends also support stability in residence."
+    }
+}

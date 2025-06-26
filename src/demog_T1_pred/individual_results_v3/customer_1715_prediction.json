@@ -1,0 +1,24 @@
+{
+    "cluster_id": 8,
+    "predictions": {
+        "educational_level_t1": "master's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 0.95,
+        "num_children": 1.0,
+        "region": 0.85
+    },
+    "reasoning": {
+        "educational_level": "At age 47, the customer already holds a master's degree. Given their age and lack of financial activity suggesting further professional development, their educational level is unlikely to change.",
+        "marital_status": "The customer is single at T0, with no financial patterns indicating household formation or relationship changes. Historical stability in this cluster supports maintaining 'single' status.",
+        "occupation": "The customer is a corporate employee at T0. There are no financial signals indicative of a career transition or retirement. Cluster 8's typical professional stability supports the prediction of remaining in the same occupation.",
+        "num_children": "As the customer is single at T1, they are predicted to have no children, consistent with cluster trends and demographic logic.",
+        "region": "The customer is currently in the Central region. No financial or transactional patterns suggest relocation, so they are predicted to remain in the same region."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "cluster_id": 4,
+    "predictions": {
+        "educational_level_t1": "vocational certificate",
+        "marital_status_t1": "single",
+        "occupation_t1": "Freelancer",
+        "num_children_t1": 0,
+        "region_t1": "Western"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.98,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "Given the customer's age (24 years) and the absence of any higher education data, pursuing a vocational certificate aligns with potential career growth while maintaining financial independence. This is consistent with the Cluster 4 tendency toward modest educational advancements.",
+        "marital_status": "At 24 years of age and with no financial or lifestyle indicators suggesting family formation, remaining single is highly probable. Cluster 4 generally reflects delayed marital transitions.",
+        "occupation": "The customer is currently a freelancer, and their financial behavior (low balances, reliance on savings accounts, no lending activity) suggests stability in this occupation without significant career progression. This aligns with Cluster 4's traits.",
+        "num_children": "There are no indicators of family-related spending or financial behavior suggesting child-rearing. At 24 years of age and single, it is unlikely that the customer will have children within the next time frame.",
+        "region": "The customer resides in the Western region, and there are no financial patterns (e.g., increased inflows/outflows or transaction activity) suggesting relocation. Cluster 4 customers generally exhibit geographic stability."
+    }
+}

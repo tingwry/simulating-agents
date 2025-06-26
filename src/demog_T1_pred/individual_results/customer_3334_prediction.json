@@ -1,0 +1,24 @@
+{
+    "cluster_id": 0,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "married - registered",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 1,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.75,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is a corporate employee, and the cluster typically aligns with a preference for higher education. Financial stability and mid-career age suggest a strong likelihood of pursuing further education, such as completing a bachelor's degree.",
+        "marital_status": "The customer is already 'married - registered,' and financial patterns do not suggest any marital instability. It is highly likely this status remains unchanged.",
+        "occupation": "The customer's financial behavior reflects the stability and inflows consistent with a corporate employee. There are no indications of a career change or entrepreneurial shift.",
+        "num_children": "The customer is in her mid-30s, which is a typical age for family planning in this cluster. The financial patterns, including stable inflows and outflows, suggest preparation for family expansion.",
+        "region": "The customer resides in the central region, and there is no significant geographic mobility indicated in transaction patterns. The cluster also tends to show regional stability."
+    }
+}

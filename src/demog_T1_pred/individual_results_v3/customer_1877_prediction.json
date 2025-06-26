@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.99,
+        "occupation": 0.98,
+        "num_children": 0.99,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is 47 years old with a bachelor's degree, which is highly stable at this age. There are no financial indicators suggesting advanced education pursuit, such as significant cash outflows for tuition or professional certifications.",
+        "marital_status": "The customer is currently single, and there are no financial behaviors indicating household formation or relationship changes, such as joint accounts or family-related expenses.",
+        "occupation": "The customer is a corporate employee, and their financial patterns reflect stability in employment within this occupation group. There are no signs of entrepreneurial or freelance transitions.",
+        "num_children": "The customer is single, and the rule-based constraint indicates no children for singles. There are no financial signals suggesting expenses related to children.",
+        "region": "There are no transaction patterns or cash flow indicators suggesting geographic mobility. The customer remains in the central region, consistent with their cluster characteristics."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Eastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.99,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is currently 30 years old with a vocational certificate/diploma and employed in a corporate role. Given Cluster 5's focus on highly educated individuals and financial independence, it is likely the customer may pursue further education, such as a bachelor's degree, to advance their career and align with cluster norms.",
+        "marital_status": "The customer is currently single, and there are no transaction patterns indicating family formation or relationship-related expenses. Given the conservative financial behavior typical of Cluster 5, the likelihood of marital status change within the timeframe is low.",
+        "occupation": "As a corporate employee, the customer's occupation aligns well with Cluster 5's demographic profile. There is no indication of job instability or entrepreneurial tendencies, so it is likely they will remain in the corporate sector.",
+        "num_children": "No spending patterns or financial behaviors suggest family planning or expenses related to children. The conservative financial approach and single marital status indicate that they will likely remain childless during the timeframe.",
+        "region": "The customer resides in the Eastern region and shows no financial behaviors indicative of relocation, such as increased inflows/outflows or regional transaction patterns. Given Cluster 5's stability, they are likely to remain in the Eastern region."
+    }
+}

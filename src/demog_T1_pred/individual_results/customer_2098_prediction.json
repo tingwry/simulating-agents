@@ -1,0 +1,24 @@
+{
+    "cluster_id": 4,
+    "predictions": {
+        "educational_level_t1": "vocational certificate/ diploma",
+        "marital_status_t1": "single",
+        "occupation_t1": "Freelancer",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.8,
+        "marital_status": 0.9,
+        "occupation": 0.95,
+        "num_children": 0.99,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "Given the customer's current educational level of less than high school and the modest financial engagement, it is likely they might pursue vocational training or a diploma to enhance career opportunities as a freelancer. This aligns with the cluster's tendency for straightforward financial products and limited financial complexity.",
+        "marital_status": "At age 41 and with no significant financial transactions indicating household formation or relationship activities, it is probable that the customer remains single. This aligns with the cluster's profile of predominantly single individuals.",
+        "occupation": "The financial behavior, including the lack of substantial changes in cash flow patterns or product adoption for business lending, suggests the customer will continue working as a freelancer, which is consistent with the cluster's occupational characteristics.",
+        "num_children": "There are no financial indicators, such as increased expenses or product adoption, that suggest family planning or child-related spending. This aligns with the cluster's tendency for smaller household sizes.",
+        "region": "The lack of financial activity or cash flow patterns indicating relocation expenses suggests the customer is likely to remain in the Central region, which is characteristic of the cluster."
+    }
+}

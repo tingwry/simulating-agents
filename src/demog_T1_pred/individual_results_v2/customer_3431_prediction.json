@@ -1,0 +1,24 @@
+{
+    "cluster_id": 0,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "widow",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Southern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 1.0,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is already highly educated, holding a bachelor's degree, and at the age of 55 with stable financial patterns, there is no strong indicator suggesting further educational advancement.",
+        "marital_status": "As the customer is currently a widow and no financial or behavioral indicators suggest a change in marital status, it is highly likely that this status will remain unchanged.",
+        "occupation": "The customer is a corporate employee with a stable financial profile indicative of continued employment in this role. At her age, major career changes are unlikely.",
+        "num_children": "The customer has no children currently, and there are no financial patterns or demographic indicators suggesting family expansion at this stage of life.",
+        "region": "The customer's financial behavior does not indicate geographic mobility, and Southern remains consistent with her established living pattern."
+    }
+}

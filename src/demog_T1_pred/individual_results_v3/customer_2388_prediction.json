@@ -1,0 +1,24 @@
+{
+    "cluster_id": 0,
+    "predictions": {
+        "educational_level_t1": "vocational certificate/diploma",
+        "marital_status_t1": "married",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 2,
+        "region_t1": "Eastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 1.0,
+        "occupation": 0.9,
+        "num_children": 0.85,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is 61 years old with a vocational certificate/diploma. There is no indication in their financial behavior, such as expenses related to education or career progression, to suggest that they are pursuing further formal education. Educational level is therefore likely to remain unchanged.",
+        "marital_status": "The customer is currently married, and there are no financial or behavioral indicators suggesting a change in marital status. This is consistent with the stable marital patterns typical of Cluster 0.",
+        "occupation": "At 61, the customer is likely approaching retirement age but is currently employed as a Corporate Employee. Given their financial stability and absence of retirement-related financial patterns, it is reasonable to predict they will remain in their current occupation for at least another year.",
+        "num_children": "The customer already has two children, and at age 61, it is highly improbable they will have more. This is consistent with the cluster's historical data, which shows minor changes in family size primarily among younger customers.",
+        "region": "There is no evidence in the customer's transaction patterns or financial behavior to suggest relocation. They are likely to remain in the Eastern region, consistent with their current situation and the cluster's general stability in geographic location."
+    }
+}

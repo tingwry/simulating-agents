@@ -1,0 +1,24 @@
+{
+    "cluster_id": 1,
+    "predictions": {
+        "educational_level_t1": "master's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 1.0,
+        "occupation": 0.75,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is currently a student with a bachelor's degree at age 34, suggesting they may be pursuing further education. Given the cluster's corporate employment focus and typical behavior, obtaining a master's degree for career advancement is likely.",
+        "marital_status": "The customer is 34 years old and currently single. There is no financial behavior indicating household formation or relationship changes, so they are predicted to remain single.",
+        "occupation": "At 34 years old, and assuming completion of higher education (master's degree), transitioning from student to a corporate employee aligns with the cluster's typical occupational pattern and financial behavior.",
+        "num_children": "The customer is single and exhibits no financial behavior indicative of family formation or child-related expenses. Based on cluster characteristics, they are predicted to remain without children.",
+        "region": "The customer currently resides in the Central region, and there are no financial indicators of geographic mobility. The cluster's demographic mostly remains in the Central region, so this is predicted to remain unchanged."
+    }
+}

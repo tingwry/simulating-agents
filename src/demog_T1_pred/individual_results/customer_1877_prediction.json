@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "master's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.98,
+        "region": 0.92
+    },
+    "reasoning": {
+        "educational_level": "The customer demonstrates financial stability, moderate transaction behavior, and a focus on savings. These factors suggest they may pursue further education such as a master's degree to advance their career in the corporate sector, which aligns with Cluster 5's pattern of educational growth.",
+        "marital_status": "At age 47, with no indicators of family formation in their financial behavior (e.g., household-related expenses or increased cash flow volatility), it is highly likely the customer remains single, consistent with Cluster 5's demographic characteristics.",
+        "occupation": "The customer\u2019s corporate employment aligns with Cluster 5 traits, and there is no evidence in financial patterns (e.g., entrepreneurial spending or reduced cash flow stability) suggesting a career change. It is likely they continue in their corporate role.",
+        "num_children": "No evidence of family-related expenses or changes in cash flow patterns suggests the customer is unlikely to have children by T1. This aligns with the profile of financially independent individuals in Cluster 5.",
+        "region": "The customer\u2019s transaction patterns do not indicate geographic mobility, and their current region (Central) aligns with the cluster\u2019s demographic characteristics. It is highly likely they remain in the Central region."
+    }
+}

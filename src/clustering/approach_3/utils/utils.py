@@ -110,22 +110,33 @@ def dim_reduction(df_embedding, emb_dim):
     return data_pca
 
 def clustering(train_df, df_combined, MODEL_DIR, n_clusters):
+    # Preserve customer IDs before any processing
+    cust_ids = train_df['CUST_ID'].copy()
+    train_df = train_df.drop('CUST_ID', axis=1)
+
     # Outliers
     clf = ECOD()
     clf.fit(df_combined)
-
     out = clf.predict(df_combined) 
-    df_combined["outliers"] = out
+    
+    # df_combined["outliers"] = out
 
     df = train_df.copy()
-    df["outliers"] = out
+    # df["outliers"] = out
 
-    df_combined_no_out = df_combined[df_combined["outliers"] == 0]
-    df_combined_no_out = df_combined_no_out.drop(["outliers"], axis = 1)
-
+    # df_combined_no_out = df_combined[df_combined["outliers"] == 0]
+    # df_combined_no_out = df_combined_no_out.drop(["outliers"], axis = 1)
 
     df_combined_with_out = df_combined.copy()
-    df_combined_with_out = df_combined_with_out.drop(["outliers"], axis = 1)
+    # df_combined_with_out = df_combined_with_out.drop(["outliers"], axis = 1)
+
+    # Create outlier flags while preserving indices
+    outlier_mask = pd.Series(out, index=df_combined.index, name='outliers')
+    
+    # Apply outlier filtering to both feature and original data
+    df_combined_no_out = df_combined[outlier_mask == 0].copy()
+    df_no_outliers = train_df[outlier_mask == 0].copy()
+
 
     # Elbow
     if n_clusters == None:
@@ -143,6 +154,7 @@ def clustering(train_df, df_combined, MODEL_DIR, n_clusters):
     clusters = KMeans(n_clusters=n_clusters, init = "k-means++").fit(df_combined_no_out)
     print(f"Clusters inertia: {clusters.inertia_}")
     clusters_predict = clusters.predict(df_combined_no_out)
+    
 
     # Save Model
     os.makedirs(MODEL_DIR, exist_ok=True)
@@ -161,20 +173,23 @@ def clustering(train_df, df_combined, MODEL_DIR, n_clusters):
     joblib.dump(clusters, model_path)
     print(f"Model saved as {model_path}")
 
-    df_no_outliers = df[df["outliers"] == 0]
-    df_no_outliers = df_no_outliers.drop("outliers", axis = 1)
+    # df_no_outliers = df[df["outliers"] == 0]
+    # df_no_outliers = df_no_outliers.drop("outliers", axis = 1)
     df_no_outliers = df_no_outliers.replace('Unknown', np.nan)
+
+    # Add back customer IDs to the non-outlier results
+    df_no_outliers['CUST_ID'] = cust_ids[df_no_outliers.index]  # This preserves the correct IDs
 
     categorical_columns = ['Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
     for col in df_no_outliers.columns:
-        if col not in categorical_columns:
+        if col not in categorical_columns and col != 'CUST_ID':
             df_no_outliers[col] = df_no_outliers[col].astype(float)
         else:
             df_no_outliers[col] = df_no_outliers[col].astype('category')
 
     df_no_outliers["cluster"] = clusters_predict
 
-    return df_no_outliers, n_clusters, clusters
+    return df_no_outliers, n_clusters, clusters, next_version, df_combined_no_out
 
 def cluster_stats_info(df_no_outliers, col):
     df_group = df_no_outliers.groupby(col).agg(
@@ -591,7 +606,7 @@ def calculate_overall_distance(df_clus_level_eval):
     
     # Create single-row DataFrame
     overall_eval = pd.DataFrame({
-        'approach': [3],
+        'approach': [2],
         'overall_avg_distance_from_centroids': [overall_avg_distance],
         'total_clusters': [len(df_clus_level_eval)],
         'total_points': [total_points]
@@ -600,16 +615,16 @@ def calculate_overall_distance(df_clus_level_eval):
     return overall_eval
 
 
-def save_csv_file(DIR, df, file_name):
+def save_csv_file(DIR, df, file_name, next_version):
     os.makedirs(DIR, exist_ok=True)
-    existing_results = [f for f in os.listdir(DIR) 
-                      if f.startswith(f'{file_name}_v') and f.endswith('.csv')]
+    # existing_results = [f for f in os.listdir(DIR) 
+    #                   if f.startswith(f'{file_name}_v') and f.endswith('.csv')]
     
-    if existing_results:
-        versions = [int(f.split('_v')[1].split('.csv')[0]) for f in existing_results]
-        next_version = max(versions) + 1
-    else:
-        next_version = 1
+    # if existing_results:
+    #     versions = [int(f.split('_v')[1].split('.csv')[0]) for f in existing_results]
+    #     next_version = max(versions) + 1
+    # else:
+    #     next_version = 1
 
     result_filename = f"{file_name}_v{next_version}.csv"
     result_path = os.path.join(DIR, result_filename)
@@ -620,20 +635,20 @@ def save_csv_file(DIR, df, file_name):
 
 
 
-def save_json_file(DIR, cluster_map, file_name):
+def save_json_file(DIR, cluster_map, file_name, next_version):
     os.makedirs(DIR, exist_ok=True)
 
     serializable_map = {k: int(v) if isinstance(v, (np.integer, np.int32, np.int64)) else v 
                        for k, v in cluster_map.items()}
     
-    existing_files = [f for f in os.listdir(DIR) 
-                     if f.startswith(f'{file_name}_v') and f.endswith('.json')]
+    # existing_files = [f for f in os.listdir(DIR) 
+    #                  if f.startswith(f'{file_name}_v') and f.endswith('.json')]
     
-    if existing_files:
-        versions = [int(f.split('_v')[1].split('.json')[0]) for f in existing_files]
-        next_version = max(versions) + 1
-    else:
-        next_version = 1
+    # if existing_files:
+    #     versions = [int(f.split('_v')[1].split('.json')[0]) for f in existing_files]
+    #     next_version = max(versions) + 1
+    # else:
+    #     next_version = 1
 
     result_filename = f"{file_name}_v{next_version}.json"
     result_path = os.path.join(DIR, result_filename)

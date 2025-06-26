@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "master's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Northeastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.98,
+        "region": 0.88
+    },
+    "reasoning": {
+        "educational_level": "Given their financial stability, moderate transaction amounts, and cluster trend of pursuing higher education, it is likely they may seek a master's degree for career advancement.",
+        "marital_status": "The customer is currently single, and there is no indication of financial behavior suggesting significant life changes like marriage (e.g., joint accounts, significant spending increases).",
+        "occupation": "The customer\u2019s financial patterns (stable inflows and outflows, high payment services usage) suggest continued employment in a corporate role, aligning with cluster norms.",
+        "num_children": "There are no financial indicators, such as family-related expenses, suggesting a change in the number of children. Cluster tendencies also align with remaining child-free.",
+        "region": "Their financial behavior does not suggest relocation (e.g., no significant changes in transaction patterns), and cluster 5 customers tend to remain in urbanized regions like the Northeastern area."
+    }
+}

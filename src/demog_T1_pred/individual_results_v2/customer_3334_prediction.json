@@ -1,0 +1,24 @@
+{
+    "cluster_id": 0,
+    "predictions": {
+        "educational_level_t1": "others",
+        "marital_status_t1": "married",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.9,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer's current education level is 'others,' and at age 35, significant educational advancements are less likely unless driven by career needs. Her financial behavior does not suggest such a shift, so the level remains stable.",
+        "marital_status": "The customer is currently married and no financial or demographic indicators suggest a change in marital status within the next year. Stability in her financial behavior aligns with a stable marital status.",
+        "occupation": "The customer is a Corporate Employee, and her financial patterns indicate stability and consistent income. There is no evidence of a career change or disruption, so her occupation remains unchanged.",
+        "num_children": "At age 35 and with no current children, the financial data does not indicate family planning expenses or changes. Additionally, high transaction volumes suggest a focus on career and personal financial growth, so the number of children remains 0.",
+        "region": "There is no indication of relocation based on the financial patterns or cash flow. The customer remains in the Central region, consistent with her current profile."
+    }
+}

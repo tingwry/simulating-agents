@@ -1,0 +1,24 @@
+{
+    "cluster_id": 4,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "single",
+        "occupation_t1": "Freelancer",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 1.0,
+        "occupation": 0.95,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is 27 years old, and there is no strong financial indicator suggesting progression to higher education. Cluster 4 predominantly features individuals with high school education, so it is likely they will maintain this level.",
+        "marital_status": "The customer is currently single, and there are no financial patterns indicating household formation or relationship-related changes. Given the modest financial engagement and the cluster's characteristics, the marital status is predicted to remain single.",
+        "occupation": "The customer is a freelancer and shows consistent financial patterns typical of a freelancer lifestyle, such as high transaction frequency and modest balances. No indicators suggest a shift to another occupation group.",
+        "num_children": "The customer is single, and the rules dictate that single individuals in this model do not have children. Additionally, there are no family-related financial patterns observed.",
+        "region": "The customer resides in the central region, and there are no transaction patterns or financial indicators suggesting relocation. Cluster 4 customers typically remain in central regions, reinforcing this prediction."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.98,
+        "occupation": 0.99,
+        "num_children": 0.99,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is 39 years old, and their current educational level is a bachelor's degree. Given the age and lack of financial indicators suggesting career-driven education, it is unlikely they will pursue further formal education within one year.",
+        "marital_status": "Cluster 5 predominantly consists of single women, and there are no behavioral or financial indicators suggesting a change in marital status. The customer\u2019s financial behavior does not suggest household formation, supporting the prediction of remaining single.",
+        "occupation": "The customer is already employed as a corporate employee, which aligns with the cluster profile and their financial activity. There are no indicators of career instability or entrepreneurial pursuits, so they are likely to remain in this occupation.",
+        "num_children": "The customer is single, and according to the rules, single individuals are predicted to have no children. Additionally, there are no financial patterns indicative of family planning expenses.",
+        "region": "The customer resides in the Central region, which aligns with the cluster's geographic tendency. There are no transaction patterns or financial behaviors suggesting relocation."
+    }
+}

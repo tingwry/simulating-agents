@@ -1,0 +1,24 @@
+{
+    "cluster_id": 1,
+    "predictions": {
+        "educational_level_t1": "vocational certificate/diploma",
+        "marital_status_t1": "single",
+        "occupation_t1": "Student",
+        "num_children_t1": 0,
+        "region_t1": "Northern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.98,
+        "occupation": 0.95,
+        "num_children": 1.0,
+        "region": 0.92
+    },
+    "reasoning": {
+        "educational_level": "The customer is 23 years old and currently has less than a high school education. Given their status as a student, it is likely they will pursue further education such as a vocational certificate or diploma within the next year, aligning with cluster trends of educational advancement at younger ages.",
+        "marital_status": "The customer is young and single, and there are no indicators of financial behavior suggesting household formation or relationship changes. Cluster 1 demographics also show stability in marital status over time.",
+        "occupation": "The customer is currently a student, and given their age and lack of financial activity indicative of a career transition, it is likely they will remain in this occupation while pursuing further education.",
+        "num_children": "The customer is single and 23 years old, with no financial activity suggesting family planning. Cluster rules dictate that single individuals are unlikely to have children within the prediction timeframe.",
+        "region": "The customer is currently located in the Northern region, and there are no financial patterns indicating geographic mobility or relocation. Cluster 1 shows stability in regional alignment over time."
+    }
+}

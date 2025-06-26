@@ -1,0 +1,24 @@
+{
+    "cluster_id": 0,
+    "predictions": {
+        "educational_level_t1": "others",
+        "marital_status_t1": "married",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 0.95,
+        "num_children": 0.85,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "This customer is 35 years old and exhibits financial stability typical of someone focused on career rather than pursuing further formal education. The cluster's historical patterns also suggest minimal educational changes beyond age 35.",
+        "marital_status": "The customer is currently married, and there are no financial or behavioral indicators suggesting a change in marital status. Cluster 0 also exhibits high marital stability.",
+        "occupation": "The customer is employed as a Corporate Employee, and their financial behavior (steady cash flow, high savings utilization) aligns with stable career progression within this role. There are no indications of a career change.",
+        "num_children": "The customer currently has no children. While Cluster 0 shows a slight increase in the average number of children, this customer's specific financial patterns (e.g., no significant family-related expenses) do not suggest immediate family expansion.",
+        "region": "The customer resides in the Central region, and there is no evidence of geographic mobility in their transaction patterns or financial behavior. Cluster 0 is also characterized by stability in regional residency."
+    }
+}

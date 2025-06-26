@@ -1,0 +1,24 @@
+{
+    "cluster_id": 3,
+    "predictions": {
+        "educational_level_t1": "less than high school",
+        "marital_status_t1": "single",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Northeastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 1.0,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is 46 years old and has less than a high school education. Given their age and cluster characteristics, there is very low likelihood of pursuing further formal education. Additionally, their entrepreneurial role and financial patterns suggest a focus on maintaining their business rather than educational advancement.",
+        "marital_status": "The customer is currently single, and there are no indications in their financial behavior (e.g., significant lifestyle changes or family-related expenses) suggesting a transition to a different marital status. This aligns with the cluster's predominant demographic profile.",
+        "occupation": "The customer is currently an entrepreneur, and their financial patterns (high transaction frequency, substantial cash inflows/outflows) strongly support this occupation. There is no evidence of a career shift, making it highly likely they will remain an entrepreneur.",
+        "num_children": "As the customer is single and there are no signs of family-related expenses, it is consistent with their current status and cluster norms that they will remain without children.",
+        "region": "The customer resides in the Northeastern region, and there are no indications in their financial behavior (e.g., significant relocation expenses or sudden changes in financial patterns) suggesting a move. This aligns with the cluster's profile of stability in geographic location."
+    }
+}

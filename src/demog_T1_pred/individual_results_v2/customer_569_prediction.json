@@ -1,0 +1,24 @@
+{
+    "cluster_id": 3,
+    "predictions": {
+        "educational_level_t1": "less than high school",
+        "marital_status_t1": "single",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Northeastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.98,
+        "occupation": 0.95,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is 46 years old and has a low likelihood of pursuing formal education at this stage in life. The financial patterns do not indicate any investment in education or career-driven skill development.",
+        "marital_status": "The customer is currently single, and there are no financial indicators such as household formation expenses that suggest a change in marital status.",
+        "occupation": "The customer\u2019s entrepreneurial financial patterns, such as frequent inflows and outflows and high engagement with payment services, strongly align with her current occupation as an entrepreneur. No indicators suggest a shift to another occupation group.",
+        "num_children": "As the customer is single, the predicted number of children remains at 0, in line with rule-based constraints and the absence of family-related expenses.",
+        "region": "The customer lives in the Northeastern region and shows no financial behavior indicative of relocation, such as changes in spending patterns or inflow/outflow transactions suggestive of mobility."
+    }
+}

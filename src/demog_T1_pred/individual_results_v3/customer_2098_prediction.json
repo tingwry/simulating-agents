@@ -1,0 +1,24 @@
+{
+    "cluster_id": 4,
+    "predictions": {
+        "educational_level_t1": "less than high school",
+        "marital_status_t1": "divorce",
+        "occupation_t1": "Freelancer",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 0.8,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "Given the customer's age (41 years) and current education level ('less than high school'), it is unlikely they will pursue further formal education in the next year. No financial indicators suggest career-driven educational advancement.",
+        "marital_status": "The customer is currently divorced, and marital status does not revert to 'single.' No relationship-related financial behaviors indicate a change in marital status.",
+        "occupation": "The customer remains a freelancer, as there are no financial indicators suggesting a shift to corporate employment or other occupations. This aligns with the cluster's typical occupational trends despite the broader movement toward corporate roles.",
+        "num_children": "The customer is single (divorced), and financial indicators do not suggest family-related expenses or planning. Therefore, the number of children remains 0.",
+        "region": "The customer resides in the central region, and there are no transaction patterns or financial behaviors suggesting geographic mobility or relocation."
+    }
+}

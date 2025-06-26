@@ -1,0 +1,24 @@
+{
+    "cluster_id": 3,
+    "predictions": {
+        "educational_level_t1": "vocational certificate",
+        "marital_status_t1": "single",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Northeastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.95,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer's financial behavior, including high transaction activity and strong cash flow patterns, suggests a focus on professional development. A vocational certificate aligns with entrepreneurial pursuits and is likely the next step given her current educational level.",
+        "marital_status": "There is no indication of financial behavior that suggests significant life changes, such as household formation or relationship-related expenditures. Her cluster is predominantly single, and she is likely to remain single in the near future.",
+        "occupation": "The customer exhibits strong entrepreneurial characteristics, such as significant cash flow and high engagement with financial products like payment services. This suggests she will continue as an entrepreneur.",
+        "num_children": "No financial behavior or spending patterns indicate family planning or child-related expenses. Given her age and cluster characteristics, it is likely she will remain child-free.",
+        "region": "The customer's transaction patterns show no signs of relocation or geographic mobility. Her cluster is characterized by living in central or urban regions, and she is likely to remain in the Northeastern region."
+    }
+}

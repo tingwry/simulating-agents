@@ -1,0 +1,24 @@
+{
+    "cluster_id": 3,
+    "predictions": {
+        "educational_level_t1": "master's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Entrepreneur",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is in their late 30s and is highly educated with a bachelor's degree. Given her entrepreneurial background, financial independence, and high inflows/outflows, it is likely she may pursue a master's degree (such as an MBA) to enhance her business acumen and career prospects. This aligns with Cluster 3's tendency toward professional growth.",
+        "marital_status": "The customer is currently single, and there are no financial or transactional indicators, such as significant household-related expenses or lifestyle changes, suggesting a transition to marriage. Cluster 3's demographic profile also supports a continued single status.",
+        "occupation": "The customer is an entrepreneur, and her financial patterns, such as high transaction volumes and cash flow, strongly align with maintaining or expanding her entrepreneurial activities. There is no indication of a career change at this time.",
+        "num_children": "As the customer is single, the model assumes the number of children remains at zero, consistent with the rule-based constraints and Cluster 3's characteristics of minimal family commitments.",
+        "region": "The customer resides in the central region, and there are no financial indicators (e.g., relocation-related expenses) suggesting a move. Her entrepreneurial activities may be tied to her current location, so it is likely she remains in the central region."
+    }
+}

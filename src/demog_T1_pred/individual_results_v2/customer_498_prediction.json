@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Northeastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.99,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.85
+    },
+    "reasoning": {
+        "educational_level": "At age 37, individuals in this cluster are unlikely to pursue further formal education, especially given their stable financial behavior and corporate employment. Bachelor's degree remains the most probable educational level.",
+        "marital_status": "Financial patterns do not indicate major expenses or shifts related to household formation or dissolution. This aligns with the cluster's trend of prioritizing financial independence over family formation, so 'single' status is likely to remain unchanged.",
+        "occupation": "The customer's financial stability and consistent transaction behavior suggest continued employment in their current corporate role. No indicators suggest a career transition or entrepreneurial shift within the next year.",
+        "num_children": "As the customer is single and there are no financial patterns suggesting expenses related to children, the number of children will remain at 0, consistent with the constraints of the model.",
+        "region": "Transaction patterns and financial behavior do not indicate geographic mobility or relocation expenses. The customer is likely to remain in the Northeastern region, which aligns with the cluster's demographic tendencies."
+    }
+}

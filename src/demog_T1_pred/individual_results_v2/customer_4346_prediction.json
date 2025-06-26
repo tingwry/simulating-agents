@@ -1,0 +1,24 @@
+{
+    "cluster_id": 0,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "married",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 1,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 1.0,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "At age 51 and with no financial indicators suggesting pursuit of additional education, the customer's educational level is likely to remain stable at 'bachelor's degree,' which aligns with the typical profile of Cluster 0 customers.",
+        "marital_status": "The customer is already married, and there are no financial or behavioral indicators suggesting a change in marital status. Cluster 0 customers typically exhibit stability in this regard.",
+        "occupation": "As a 51-year-old corporate employee, the customer is likely in a stable phase of their career. There are no financial patterns indicating a transition to a different occupation or retirement.",
+        "num_children": "Given the customer's age, marital status, and lack of financial indicators suggesting family expansion, the number of children is predicted to remain unchanged at 1.",
+        "region": "The customer resides in the central region and exhibits no financial or behavioral patterns indicating relocation. Cluster 0 customers generally show geographic stability."
+    }
+}

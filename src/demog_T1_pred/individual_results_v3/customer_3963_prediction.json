@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 1.0,
+        "occupation": 0.95,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is young (28 years old) and currently holds a vocational certificate. Given her financial stability and career-driven behavior as a Corporate Employee, it is likely that she will pursue higher education (bachelor's degree) to advance her career. This aligns with the cluster's trend of higher education levels.",
+        "marital_status": "There is no indication of family formation or relationship-related spending patterns. Additionally, the cluster's historical profile suggests a tendency to remain single within this age range.",
+        "occupation": "The customer is financially stable and demonstrates consistent financial behavior as a Corporate Employee. Her occupation is likely to remain unchanged over the next year, given the absence of entrepreneurial or career transition signals.",
+        "num_children": "The customer is single and there is no evidence of family-related expenses in her financial behavior. Cluster 5 historically shows a slight increase in average children, but this is primarily among older individuals; thus, the prediction remains at 0 children.",
+        "region": "The customer resides in the Central region, and her financial behavior does not show any signs of relocation. The cluster typically demonstrates geographic stability, so she is likely to remain in the Central region."
+    }
+}

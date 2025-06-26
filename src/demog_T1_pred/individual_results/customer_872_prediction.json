@@ -1,0 +1,24 @@
+{
+    "cluster_id": 2,
+    "predictions": {
+        "educational_level_t1": "others",
+        "marital_status_t1": "widow",
+        "occupation_t1": "Homemaker",
+        "num_children_t1": 0,
+        "region_t1": "Western"
+    },
+    "confidence_scores": {
+        "educational_level": 0.8,
+        "marital_status": 0.85,
+        "occupation": 0.95,
+        "num_children": 0.95,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "Given the customer's age of 56 and the lack of recent financial behavior indicating career advancement or education-related expenses, it is unlikely that they will pursue further formal education. 'Others' reflects no significant change in educational attainment.",
+        "marital_status": "The customer is currently married, but considering their age, the possibility of transitioning to 'widow' due to natural life events is moderately high. There is no financial behavior indicating divorce or separation.",
+        "occupation": "The customer is already categorized as a homemaker, and their financial behavior does not indicate any engagement in employment or entrepreneurial activities. This status is likely to remain stable.",
+        "num_children": "At the age of 56 and with no current children, the likelihood of having children in the future is extremely low. Financial patterns do not suggest family planning expenses.",
+        "region": "The customer currently resides in the Western region, and there are no transaction patterns or financial behaviors that suggest relocation. Their existing financial stability supports staying in the same region."
+    }
+}

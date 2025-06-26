@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "vocational certificate/ diploma",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Eastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.8,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is already holding a vocational certificate/diploma and, based on their financial inactivity and age, it is unlikely they pursued further education within the 1-year time frame. Cluster 5 typically shows moderate educational advancement only when financial engagement increases.",
+        "marital_status": "The customer is 30 years old and single. There are no financial indicators (e.g., higher transaction amounts or product adoption) suggesting a potential change in marital status. Cluster 5 tends to remain single at this stage without significant life changes.",
+        "occupation": "The customer is a corporate employee, and there is no evidence of financial activity suggesting a career shift, entrepreneurial interest, or job loss. Cluster 5 is characterized by stability in corporate roles.",
+        "num_children": "The customer is single, and according to the rules, single individuals in this model are assumed not to have children. Additionally, there are no financial patterns indicating family planning or child-related expenses.",
+        "region": "The customer resides in the Eastern region, and there are no financial or lifestyle indicators suggesting relocation. Cluster 5 typically shows geographic stability, especially in central or nearby regions."
+    }
+}

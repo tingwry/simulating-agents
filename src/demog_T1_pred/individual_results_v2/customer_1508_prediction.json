@@ -1,0 +1,24 @@
+{
+    "cluster_id": 8,
+    "predictions": {
+        "educational_level_t1": "bachelor's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Student",
+        "num_children_t1": 0,
+        "region_t1": "Western"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 1.0,
+        "occupation": 0.95,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "At age 24, it is highly likely the customer is pursuing higher education. As a student, progressing from an 'others' educational level to a bachelor's degree aligns with age-related norms and cluster characteristics.",
+        "marital_status": "Given the customer's age, financial behavior, and cluster profile, there is no indication of marriage or relationship-related spending. The customer is likely to remain single.",
+        "occupation": "The customer is currently a student, and at age 24, it is highly likely they will remain a student for at least another year if they are pursuing a bachelor's degree. No financial patterns suggest a transition to employment yet.",
+        "num_children": "As the customer is single and part of a cluster with no family responsibilities, it is reasonable to predict they will continue to have no children.",
+        "region": "There is no evidence of financial transactions or patterns indicating relocation. The customer is likely to remain in the Western region."
+    }
+}

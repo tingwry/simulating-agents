@@ -1,0 +1,24 @@
+{
+    "cluster_id": 7,
+    "predictions": {
+        "educational_level_t1": "vocational certificate",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.75,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.85,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "Given the customer's current educational level (high school) and the age of 33, it is moderately likely that they may pursue a vocational certificate to enhance their skills for career growth in their corporate role. However, there is no strong evidence of financial activity indicating current investment in education.",
+        "marital_status": "The customer remains single at age 33, which is consistent with the cluster's demographic behavior. There is no evidence of financial patterns indicating marriage or significant relationship-related expenses.",
+        "occupation": "The customer is currently a corporate employee, and there are no financial behaviors that suggest a shift in occupation. This aligns with the cluster's typical employment patterns.",
+        "num_children": "The customer has no children, and there is no financial activity indicative of family formation, such as increased spending on child-related products or services. This aligns with the cluster\u2019s trend of lower family formation at this stage.",
+        "region": "The customer resides in the Central region, and there is no financial behavior or cash flow activity suggesting relocation. This is consistent with the cluster's typical geographic stability."
+    }
+}

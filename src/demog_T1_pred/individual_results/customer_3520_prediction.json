@@ -1,0 +1,24 @@
+{
+    "cluster_id": 7,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "married",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Eastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.9,
+        "occupation": 0.85,
+        "num_children": 0.9,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is 44 years old and shows no significant financial behavior indicating pursuit of further education. Given her cluster's typical educational attainment, it is highly likely she will remain at a high school level.",
+        "marital_status": "The customer is already married, and there are no financial patterns to suggest a change in marital status, such as divorce or separation. This aligns with the cluster's characteristics.",
+        "occupation": "Her financial patterns (consistent inflow/outflow and moderate engagement with financial products) align with stable employment in a corporate role. There is no indication of career shifts or entrepreneurial activity.",
+        "num_children": "The customer is 44 years old, married, and has no children. Given the absence of family-related financial patterns and her age, it is unlikely she will have children at this stage.",
+        "region": "Her financial behavior does not suggest geographic mobility, such as changes in transaction patterns or inflows/outflows indicative of relocation. Thus, she is likely to remain in the Eastern region."
+    }
+}

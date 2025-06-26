@@ -1,0 +1,24 @@
+{
+    "cluster_id": 2,
+    "predictions": {
+        "educational_level_t1": "others",
+        "marital_status_t1": "married",
+        "occupation_t1": "Homemaker",
+        "num_children_t1": 0,
+        "region_t1": "Western"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.98,
+        "num_children": 1.0,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "At age 56, it is very unlikely that the customer will pursue additional formal education. The absence of significant financial patterns indicating career advancement or skill development leads to the assumption that educational level will remain at 'others', consistent with her current status.",
+        "marital_status": "The customer is currently married, and there are no financial behaviors or indicators suggesting a transition to widowhood, separation, or divorce within the next year. Thus, marital status remains unchanged.",
+        "occupation": "The customer is a homemaker, and given her age and financial behavior, there is no indication of a transition to another occupational category. Her current financial patterns are consistent with managing household transactions, which aligns with the 'Homemaker' classification.",
+        "num_children": "The customer does not have children, and as she is 56 years old and married, there is no indication of family planning or adoption in her financial behavior. Therefore, the number of children will remain unchanged at 0.",
+        "region": "The customer resides in the Western region, and there are no financial indicators, such as unusual transaction patterns or inflows/outflows, that suggest geographic mobility. Hence, her region remains 'Western'."
+    }
+}

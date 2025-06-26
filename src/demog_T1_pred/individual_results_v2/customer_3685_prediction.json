@@ -1,0 +1,24 @@
+{
+    "cluster_id": 7,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "married",
+        "occupation_t1": "Unemployed",
+        "num_children_t1": 0,
+        "region_t1": "Central"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 1.0,
+        "occupation": 0.9,
+        "num_children": 1.0,
+        "region": 0.95
+    },
+    "reasoning": {
+        "educational_level": "The customer is already 39 years old and has a high school education. Given her cluster profile and lack of career-driven financial indicators, it is highly unlikely she will pursue further formal education within a year.",
+        "marital_status": "The customer is currently married, and there are no financial patterns suggesting relationship changes such as a divorce or separation. Thus, the marital status is predicted to remain 'married.'",
+        "occupation": "The customer is currently unemployed, and based on the cluster's characteristics and her financial behavior (low transaction amounts and balances), there is a high likelihood that this status will remain unchanged over the next year.",
+        "num_children": "The customer has no children, and there are no financial patterns indicating family-related expenses or planning for children. Additionally, her age and current marital status suggest a low likelihood of having a child within a year.",
+        "region": "The customer resides in the Central region, and there are no indicators of geographic mobility, such as financial preparation for relocation or career-related moves. She is predicted to remain in the Central region."
+    }
+}

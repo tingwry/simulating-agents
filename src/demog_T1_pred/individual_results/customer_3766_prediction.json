@@ -1,0 +1,24 @@
+{
+    "cluster_id": 6,
+    "predictions": {
+        "educational_level_t1": "vocational certificate",
+        "marital_status_t1": "married",
+        "occupation_t1": "Other",
+        "num_children_t1": 0,
+        "region_t1": "Southern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.95,
+        "marital_status": 0.99,
+        "occupation": 0.9,
+        "num_children": 0.98,
+        "region": 0.97
+    },
+    "reasoning": {
+        "educational_level": "The customer is middle-aged and already holds a vocational certificate. Given the lack of financial activity or indication of pursuing skill development, it is unlikely that they will pursue higher education within the given timeframe.",
+        "marital_status": "The customer is currently married and there are no financial behavior patterns or life stage factors suggesting a change in marital status.",
+        "occupation": "The current occupation is listed as 'Other,' and there is no evidence of financial activity indicating a career transition, entrepreneurial activity, or a move into corporate roles typical of Cluster 6.",
+        "num_children": "At age 52, it is unlikely that the customer will have children, especially since there is no indication of financial behavior suggesting family planning or related expenses.",
+        "region": "The customer resides in the Southern region, and there are no financial patterns suggesting relocation or geographic mobility, which aligns with Cluster 6's central or stable regional preferences."
+    }
+}

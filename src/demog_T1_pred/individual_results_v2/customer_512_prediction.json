@@ -1,0 +1,24 @@
+{
+    "cluster_id": 2,
+    "predictions": {
+        "educational_level_t1": "vocational certificate",
+        "marital_status_t1": "married",
+        "occupation_t1": "Homemaker",
+        "num_children_t1": 0,
+        "region_t1": "Eastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.7,
+        "marital_status": 0.9,
+        "occupation": 0.85,
+        "num_children": 0.95,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer is 30 years old and unemployed, which indicates potential interest in skill development for better career opportunities. Given the absence of financial indicators of pursuing higher education such as bachelor's or master's degrees, a vocational certificate aligns with the cluster's characteristics and the customer's current profile.",
+        "marital_status": "The customer is already married at T0, and there is no indication of financial distress or patterns suggestive of separation or divorce. Therefore, marital status is predicted to remain 'married'.",
+        "occupation": "Given the customer is unemployed and has high engagement with savings and payment services, transitioning to a homemaker role aligns with financial behavior focused on household management. This is consistent with the cluster's demographic profile.",
+        "num_children": "The customer is married but shows no financial patterns indicative of family planning or child-related expenses, such as educational savings or childcare services. Therefore, the number of children remains 0.",
+        "region": "There is no indication of geographic mobility in the customer's financial patterns, and residing in the Eastern region aligns with the cluster's demographic tendencies. Thus, the region remains unchanged."
+    }
+}

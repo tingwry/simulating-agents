@@ -1,0 +1,24 @@
+{
+    "cluster_id": 1,
+    "predictions": {
+        "educational_level_t1": "high school",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Eastern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.9,
+        "marital_status": 0.95,
+        "occupation": 0.85,
+        "num_children": 0.95,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer has shown no financial activity suggesting further education or career-related upskilling, and the cluster typically maintains a high school education level.",
+        "marital_status": "Given the customer's age and lack of financial or transaction patterns indicative of household formation or relationship-related expenses, they are likely to remain single.",
+        "occupation": "The customer\u2019s occupation as a Corporate Employee aligns with the cluster\u2019s behavior, and there are no indicators of unemployment or a shift to another sector.",
+        "num_children": "The customer has no children currently, and there are no financial behaviors suggesting family planning or child-related expenses.",
+        "region": "The customer is located in the Eastern region, and there is no evidence of financial activity suggesting geographic mobility or relocation."
+    }
+}

@@ -1,7 +1,7 @@
 from src.clustering.approach_3.utils.utils import *
 import pandas as pd
 
-train_df = pd.read_csv('src/clustering/data/train_df.csv')
+train_df = pd.read_csv('src/clustering/data_v2/train_df.csv')
 MODEL_DIR = "src/clustering/approach_3/model"
 RESULTS_DIR = "src/clustering/approach_3/result"
 
@@ -21,8 +21,7 @@ def train_approach_3(train_df, emb_dim=None, n_clusters=None):
     df_combined = pd.concat([df_num, data_pca], axis=1)
     df_combined.columns = df_combined.columns.astype(str)
 
-    df_no_outliers, n_clusters, clusters = clustering(train_df, df_combined, MODEL_DIR, n_clusters)
-
+    df_no_outliers, n_clusters, clusters, next_version, df_combined_no_out = clustering(train_df, df_combined, MODEL_DIR, n_clusters)
 
     col = 'cluster'
 
@@ -42,8 +41,8 @@ def train_approach_3(train_df, emb_dim=None, n_clusters=None):
 
     
     # Calculate cluster distances
-    df_combined_no_out = df_combined[df_combined["outliers"] == 0]
-    df_combined_no_out = df_combined_no_out.drop(["outliers"], axis=1)
+    # df_combined_no_out = df_combined[df_combined["outliers"] == 0]
+    # df_combined_no_out = df_combined_no_out.drop(["outliers"], axis=1)
     clus_level_eval = calculate_cluster_distances(
         df_no_outliers, 
         df_combined_no_out,
@@ -69,16 +68,16 @@ def train_approach_3(train_df, emb_dim=None, n_clusters=None):
     CLUSTER_MAPPING_DIR = RESULTS_DIR + '/cluster_mapping'
 
     # clus_explain
-    save_csv_file(CLUS_EXPLAIN_DIR, clus_explain, 'clus_explain')
+    save_csv_file(CLUS_EXPLAIN_DIR, clus_explain, 'clus_explain', next_version)
     # full_data_with_cluster
-    save_csv_file(FULL_DATA_WITH_CLUSTER_DIR, df_no_outliers, 'full_data_with_cluster')
+    save_csv_file(FULL_DATA_WITH_CLUSTER_DIR, df_no_outliers, 'full_data_with_cluster', next_version)
     # clus_level_eval
-    save_csv_file(CLUS_LEVEL_EVAL_DIR, clus_level_eval, 'clus_level_eval')
+    save_csv_file(CLUS_LEVEL_EVAL_DIR, clus_level_eval, 'clus_level_eval', next_version)
     # overall_eval
-    save_csv_file(OVERALL_EVAL_DIR, overall_eval, 'overall_eval')
+    save_csv_file(OVERALL_EVAL_DIR, overall_eval, 'overall_eval', next_version)
     # cluster_mapping
     if cluster_mapping:
-        save_json_file(CLUSTER_MAPPING_DIR, cluster_mapping, 'cluster_mapping')
+        save_json_file(CLUSTER_MAPPING_DIR, cluster_mapping, 'cluster_mapping', next_version)
 
     return clus_explain, df_no_outliers, clus_level_eval, overall_eval, cluster_mapping
 

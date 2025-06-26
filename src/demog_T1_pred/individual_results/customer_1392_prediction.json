@@ -1,0 +1,24 @@
+{
+    "cluster_id": 7,
+    "predictions": {
+        "educational_level_t1": "vocational certificate/diploma",
+        "marital_status_t1": "married - registered",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 1,
+        "region_t1": "Western"
+    },
+    "confidence_scores": {
+        "educational_level": 0.8,
+        "marital_status": 0.9,
+        "occupation": 0.95,
+        "num_children": 0.7,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "The customer may pursue vocational training to enhance her career prospects, aligning with the cluster's focus on straightforward financial solutions and moderate career progression.",
+        "marital_status": "The customer is already married, and given her age and financial stability, formalizing the marriage through registration is a likely next step.",
+        "occupation": "The customer's financial behavior indicates stability and moderate growth, consistent with remaining in a corporate role within this cluster.",
+        "num_children": "Given her age, marital status, and financial patterns, it is plausible that the customer may begin family planning, resulting in her having one child within the timeframe.",
+        "region": "The financial and transaction data do not suggest geographic mobility, so the customer is likely to remain in the Western region."
+    }
+}

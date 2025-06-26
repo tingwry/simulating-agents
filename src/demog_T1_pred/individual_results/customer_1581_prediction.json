@@ -1,0 +1,24 @@
+{
+    "cluster_id": 5,
+    "predictions": {
+        "educational_level_t1": "master's degree",
+        "marital_status_t1": "single",
+        "occupation_t1": "Corporate Employee",
+        "num_children_t1": 0,
+        "region_t1": "Southern"
+    },
+    "confidence_scores": {
+        "educational_level": 0.85,
+        "marital_status": 0.95,
+        "occupation": 0.9,
+        "num_children": 0.98,
+        "region": 0.9
+    },
+    "reasoning": {
+        "educational_level": "Given the customer's high educational attainment (bachelor's degree) and the cluster's propensity for career-driven individuals, it's likely she may pursue further education such as a master's degree to enhance her professional standing. Financial stability supports this possibility.",
+        "marital_status": "At age 49, coupled with the cluster's demographic profile emphasizing independence, it is highly likely the customer will remain single. There is no financial behavior suggesting a change in marital status.",
+        "occupation": "The customer\u2019s lack of inflows and outflows indicates financial stability without job-related disruptions. Given her cluster profile, she is likely to remain a Corporate Employee, reflecting consistent career progression.",
+        "num_children": "The customer is 49 years old, single, and shows no financial patterns indicative of family planning or child-related expenses. It is highly likely she will continue to have no children.",
+        "region": "The customer resides in the Southern region, and there is no financial behavior (e.g., relocation-related transactions) suggesting a move to another region. Stability aligns with her cluster characteristics."
+    }
+}
