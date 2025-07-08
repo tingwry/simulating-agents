@@ -1,0 +1,6 @@
+Field,Correct,Total,Accuracy,Error Rate,Excluded (Unknown)
+education,568,758,74.9%,25.1%,112
+marital_status,682,868,78.6%,21.4%,2
+occupation,467,870,53.7%,46.3%,0
+num_children,791,870,90.9%,9.1%,0
+region,650,870,74.7%,25.3%,0

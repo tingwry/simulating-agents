@@ -15,6 +15,8 @@ class Config:
         self.AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
         self.AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
         self.AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
+        self.QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+        self.QDRANT_URL = os.getenv("QDRANT_URL")
 
         # validate that all required environment variables are set
         self.validate()

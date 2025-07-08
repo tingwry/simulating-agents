@@ -1,0 +1,6 @@
+Field,F1 Macro,F1 Micro,Num Classes
+education,0.702,0.835,8
+marital_status,0.553,0.800,6
+occupation,0.240,0.585,10
+num_children,0.605,0.924,5
+region,0.762,0.798,6

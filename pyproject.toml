@@ -5,6 +5,11 @@ description = "Implement an agent that simulates customer's behaviors"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "numpy>=2.2.6",
     "openai>=1.84.0",
+    "pandas>=2.3.0",
     "python-dotenv>=1.1.0",
+    "qdrant-client>=1.14.3",
+    "scikit-learn>=1.7.0",
+    "torch>=2.7.1",
 ]

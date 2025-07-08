@@ -1,6 +1,0 @@
-Field,Correct,Total,Accuracy,Error Rate
-education,29,44,65.9%,34.1%
-marital_status,37,44,84.1%,15.9%
-occupation,19,44,43.2%,56.8%
-num_children,39,44,88.6%,11.4%
-region,38,44,86.4%,13.6%
