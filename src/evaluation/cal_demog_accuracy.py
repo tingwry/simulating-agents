@@ -12,14 +12,15 @@ from sklearn.metrics import f1_score
 # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_no_ca.csv')
 # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_single_ca.csv')
 # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca.csv')
-all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca_const.csv')
+# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca_const.csv')
+all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca_postpc.csv')
 
 # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_rag_single.csv')
 # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_rag_multi.csv')
 
 
 test_actual = pd.read_csv('src/data/T1/test_T1_actual_v3.csv')
-output_dir = "src/evaluation/error_analysis/error_analysis_cluster_multi_ca_const"
+output_dir = "src/evaluation/error_analysis/error_analysis_cluster_multi_ca_postpc"
 
 def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_cluster_method=False):    
     os.makedirs(output_dir, exist_ok=True)

@@ -11,5 +11,6 @@ dependencies = [
     "python-dotenv>=1.1.0",
     "qdrant-client>=1.14.3",
     "scikit-learn>=1.7.0",
+    "surprise>=0.1",
     "torch>=2.7.1",
 ]

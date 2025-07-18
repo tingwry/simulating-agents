@@ -1,4 +1,4 @@
-from src.clustering.approach_2.utils.utils import *
+from src.clustering.approach_2_embed.utils.utils import *
 import pandas as pd
 import joblib
 
