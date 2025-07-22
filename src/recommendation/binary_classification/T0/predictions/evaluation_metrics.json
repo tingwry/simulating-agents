@@ -1,0 +1,156 @@
+{
+  "charity": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9846938775510204,
+    "support": 392.0
+  },
+  "loan": {
+    "precision": 0.4444444444444444,
+    "recall": 0.38461538461538464,
+    "f1": 0.41237113402061853,
+    "accuracy": 0.5637755102040817,
+    "support": 392.0
+  },
+  "utility": {
+    "precision": 0.43103448275862066,
+    "recall": 0.3048780487804878,
+    "f1": 0.35714285714285715,
+    "accuracy": 0.5408163265306123,
+    "support": 392.0
+  },
+  "investment": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9489795918367347,
+    "support": 392.0
+  },
+  "finance": {
+    "precision": 0.5764705882352941,
+    "recall": 0.5025641025641026,
+    "f1": 0.536986301369863,
+    "accuracy": 0.5688775510204082,
+    "support": 392.0
+  },
+  "shopping": {
+    "precision": 0.3333333333333333,
+    "recall": 0.2323943661971831,
+    "f1": 0.27385892116182575,
+    "accuracy": 0.5535714285714286,
+    "support": 392.0
+  },
+  "personal_care": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9540816326530612,
+    "support": 392.0
+  },
+  "medical": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9285714285714286,
+    "support": 392.0
+  },
+  "home_and_living": {
+    "precision": 0.1111111111111111,
+    "recall": 0.0425531914893617,
+    "f1": 0.06153846153846154,
+    "accuracy": 0.8443877551020408,
+    "support": 392.0
+  },
+  "insurance": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.875,
+    "support": 392.0
+  },
+  "automotive": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9770408163265306,
+    "support": 392.0
+  },
+  "restaurant": {
+    "precision": 0.09523809523809523,
+    "recall": 0.07407407407407407,
+    "f1": 0.08333333333333333,
+    "accuracy": 0.8877551020408163,
+    "support": 392.0
+  },
+  "business": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9897959183673469,
+    "support": 392.0
+  },
+  "entertainment": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9846938775510204,
+    "support": 392.0
+  },
+  "bank": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9897959183673469,
+    "support": 392.0
+  },
+  "education": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9821428571428571,
+    "support": 392.0
+  },
+  "pet_care": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9948979591836735,
+    "support": 392.0
+  },
+  "government": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9413265306122449,
+    "support": 392.0
+  },
+  "travel": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9872448979591837,
+    "support": 392.0
+  },
+  "transportation": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9591836734693877,
+    "support": 392.0
+  },
+  "visit": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9923469387755102,
+    "support": 392.0
+  },
+  "system_dpst": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 1.0,
+    "support": 392.0
+  }
+}

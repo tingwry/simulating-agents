@@ -1,4 +1,4 @@
-from src.clustering.approach_1.utils.utils import *
+from src.clustering.approach_1_trad.utils.utils import *
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
