@@ -3,7 +3,7 @@ import joblib
 import os
 import numpy as np
 from train_model import (
-    load_and_preprocess_data,
+    load_and_preprocess_data_binary_class,
     preprocess_unknown_values,
     MODEL_DIR,
     TEST_SIZE,
@@ -105,7 +105,7 @@ def run_predictions():
     df = pd.read_csv(TEST_DATA_PATH)
     df = preprocess_unknown_values(df)
     
-    _, preprocessor, categories = load_and_preprocess_data(TEST_DATA_PATH)
+    _, preprocessor, categories = load_and_preprocess_data_binary_class(TEST_DATA_PATH)
     
     # Prepare features and labels
     feature_cols = [col for col in df.columns if col not in categories]
