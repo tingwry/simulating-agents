@@ -5,7 +5,6 @@ import numpy as np
 from train_model import (
     load_and_preprocess_data,
     preprocess_unknown_values,
-    DATA_PATH,
     MODEL_DIR,
     TEST_SIZE,
     RANDOM_STATE
@@ -13,6 +12,7 @@ from train_model import (
 from sklearn.model_selection import train_test_split
 from sklearn.base import BaseEstimator, TransformerMixin
 
+TEST_DATA_PATH = 'src/data/T0/test_with_lifestyle.csv'
 PREDICTION_OUTPUT = 'src/recommendation/binary_classification/T0/predictions/transaction_predictions.csv'
 
 class MultiColumnLabelEncoder(BaseEstimator, TransformerMixin):
@@ -102,10 +102,10 @@ class BinaryEncoder(BaseEstimator, TransformerMixin):
 
 def run_predictions():
     # Load and preprocess full dataset
-    df = pd.read_csv(DATA_PATH)
+    df = pd.read_csv(TEST_DATA_PATH)
     df = preprocess_unknown_values(df)
     
-    _, preprocessor, categories = load_and_preprocess_data()
+    _, preprocessor, categories = load_and_preprocess_data(TEST_DATA_PATH)
     
     # Prepare features and labels
     feature_cols = [col for col in df.columns if col not in categories]

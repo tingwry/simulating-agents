@@ -118,7 +118,7 @@ def preprocess_unknown_values(df):
     
     return df
 
-def load_and_preprocess_data():
+def load_and_preprocess_data(DATA_PATH):
     """Load and preprocess data with improved encoding"""
     df = pd.read_csv(DATA_PATH)
     df = preprocess_unknown_values(df)
@@ -163,7 +163,7 @@ def load_and_preprocess_data():
 
 def train_and_evaluate_models():
     """Train and evaluate models for each category"""
-    df, preprocessor, categories = load_and_preprocess_data()
+    df, preprocessor, categories = load_and_preprocess_data(DATA_PATH)
     
     # Get feature columns (exclude target categories)
     feature_cols = [col for col in df.columns if col not in categories]
