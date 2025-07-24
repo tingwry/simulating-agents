@@ -1,174 +1,393 @@
 cust_id,hit_rate,true_positives,classes_of_true_positives,false_positives,classes_of_false_positives,false_negatives,classes_of_false_negatives
-5.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,charity
-6.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,investment
-7.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",0,
-13.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
-15.0,0.6,3,"utility, finance, shopping",2,"loan, investment",0,
-23.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",2,"investment, personal_care"
-24.0,0.2,1,finance,4,"loan, utility, shopping, transportation",0,
-26.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",1,medical
-30.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",1,home_and_living
-33.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",0,
-34.0,0.2,1,shopping,4,"loan, utility, finance, education",0,
-37.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",1,insurance
-49.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
-51.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
-54.0,0.0,0,,5,"loan, utility, finance, shopping, transportation",1,automotive
-57.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",0,
-58.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
-59.0,0.2,1,finance,4,"charity, loan, utility, shopping",0,
-60.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",0,
-61.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
-71.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
-72.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
-73.0,0.6,3,"loan, utility, finance",2,"charity, shopping",1,medical
-74.0,0.4,2,"finance, shopping",3,"loan, utility, medical",0,
-77.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",0,
-82.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",0,
-83.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",0,
-85.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",2,"home_and_living, restaurant"
-86.0,0.2,1,finance,4,"loan, utility, shopping, medical",0,
-87.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",0,
-89.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
-91.0,0.2,1,utility,4,"loan, finance, shopping, insurance",1,medical
-94.0,0.2,1,utility,4,"loan, finance, shopping, personal_care",0,
-95.0,0.2,1,finance,4,"loan, utility, shopping, medical",0,
-97.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",2,"insurance, business"
-100.0,0.0,0,,5,"loan, utility, finance, shopping, medical",2,"personal_care, restaurant"
-105.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
-106.0,0.4,2,"finance, shopping",3,"charity, loan, utility",1,entertainment
-109.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",0,
-110.0,0.0,0,,5,"loan, utility, finance, shopping, visit",1,home_and_living
-111.0,0.6,3,"loan, utility, finance",2,"shopping, restaurant",0,
-116.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",2,"charity, investment"
-118.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",1,restaurant
-123.0,0.2,1,shopping,4,"loan, utility, finance, restaurant",0,
-127.0,0.6,3,"loan, finance, shopping",2,"utility, home_and_living",0,
-130.0,0.4,2,"utility, finance",3,"shopping, home_and_living, insurance",2,"loan, bank"
-131.0,0.2,1,loan,4,"utility, investment, finance, shopping",0,
-132.0,0.4,2,"charity, utility",3,"loan, finance, shopping",1,medical
-134.0,0.6,3,"loan, utility, finance",2,"shopping, home_and_living",1,education
+4050.0,0.4,2,"loan, shopping",3,"utility, finance, insurance",2,"home_and_living, restaurant"
+1392.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+1663.0,0.4,2,"loan, shopping",3,"utility, finance, restaurant",4,"home_and_living, insurance, automotive, government"
+1877.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",1,restaurant
+4157.0,0.2,1,utility,4,"loan, finance, shopping, medical",0,
+3431.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,medical
+1789.0,0.8,4,"utility, finance, shopping, insurance",1,loan,2,"home_and_living, travel"
+110.0,0.0,0,,5,"loan, utility, finance, shopping, restaurant",1,home_and_living
+872.0,0.4,2,"loan, utility",3,"finance, shopping, medical",0,
+3334.0,0.8,4,"loan, utility, finance, shopping",1,insurance,1,home_and_living
+3520.0,0.8,4,"loan, utility, finance, insurance",1,shopping,1,home_and_living
+150.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
+2168.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",2,"personal_care, medical"
+2474.0,0.4,2,"utility, shopping",3,"loan, finance, insurance",0,
+2388.0,0.4,2,"utility, insurance",3,"loan, finance, shopping",0,
+1105.0,0.2,1,loan,4,"utility, investment, finance, shopping",0,
+3685.0,0.2,1,utility,4,"charity, loan, finance, shopping",0,
+3215.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",0,
+2043.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+765.0,0.4,2,"loan, shopping",3,"utility, finance, insurance",0,
+512.0,0.4,2,"loan, finance",3,"charity, utility, shopping",1,home_and_living
+498.0,0.2,1,shopping,4,"loan, utility, finance, visit",2,"bank, pet_care"
+1414.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+813.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+462.0,0.4,2,"utility, finance",3,"loan, shopping, transportation",3,"medical, restaurant, entertainment"
+2631.0,0.4,2,"finance, shopping",3,"loan, utility, investment",0,
+1217.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",0,
+306.0,0.4,2,"utility, finance",3,"loan, shopping, home_and_living",0,
+2528.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+2154.0,0.8,4,"loan, finance, shopping, home_and_living",1,utility,0,
+1523.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+1695.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
+3986.0,0.8,4,"loan, utility, finance, home_and_living",1,shopping,1,bank
+898.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",1,medical
+1601.0,0.2,1,shopping,4,"loan, utility, finance, education",0,
+2045.0,0.2,1,loan,4,"utility, finance, shopping, government",0,
+2214.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+3614.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,2,"investment, government"
+3651.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",0,
+464.0,0.4,2,"utility, shopping",3,"loan, finance, restaurant",1,medical
+2555.0,0.4,2,"loan, finance",3,"utility, shopping, insurance",0,
+1131.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+1042.0,0.6,3,"utility, finance, insurance",2,"loan, shopping",0,
+890.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+1741.0,0.4,2,"finance, shopping",3,"loan, utility, travel",0,
+2324.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+3322.0,0.4,2,"loan, finance",3,"utility, shopping, insurance",0,
+291.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+4106.0,0.4,2,"utility, home_and_living",3,"loan, finance, shopping",0,
+1026.0,0.2,1,loan,4,"utility, finance, shopping, insurance",1,investment
+3107.0,0.6,3,"loan, utility, insurance",2,"finance, shopping",0,
+1190.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+1558.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+4049.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+4095.0,0.2,1,utility,4,"loan, finance, shopping, transportation",0,
+3581.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",0,
+3460.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+71.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+2964.0,0.4,2,"loan, home_and_living",3,"utility, finance, shopping",0,
+3205.0,0.0,0,,5,"charity, loan, utility, finance, shopping",1,automotive
+3554.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
+1766.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+3842.0,0.2,1,utility,4,"charity, loan, finance, shopping",1,home_and_living
+692.0,0.2,1,home_and_living,4,"utility, finance, shopping, insurance",1,bank
+3089.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",1,home_and_living
+1564.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",1,personal_care
+3072.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",1,home_and_living
+310.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,education
 135.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,1,home_and_living
-141.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
-143.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
-145.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",2,"medical, insurance"
-146.0,0.8,4,"utility, finance, shopping, home_and_living",1,loan,0,
-150.0,0.2,1,finance,4,"loan, utility, investment, shopping",0,
-151.0,0.2,1,finance,4,"charity, loan, utility, shopping",1,medical
-152.0,0.4,2,"utility, shopping",3,"loan, finance, medical",1,insurance
-154.0,0.6,3,"loan, finance, restaurant",2,"utility, shopping",1,home_and_living
-156.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
-159.0,0.4,2,"utility, finance",3,"loan, shopping, home_and_living",0,
-160.0,0.2,1,loan,4,"utility, investment, finance, shopping",1,insurance
-162.0,0.6,3,"loan, finance, shopping",2,"utility, restaurant",0,
-164.0,0.2,1,shopping,4,"loan, utility, finance, restaurant",1,home_and_living
-165.0,0.4,2,"utility, home_and_living",3,"loan, finance, shopping",1,pet_care
-168.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",1,pet_care
-170.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",1,medical
-173.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
-174.0,0.4,2,"loan, home_and_living",3,"utility, finance, shopping",0,
-180.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
-181.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
-183.0,0.4,2,"finance, shopping",3,"loan, utility, medical",0,
-184.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
-185.0,0.4,2,"loan, finance",3,"utility, shopping, insurance",0,
-187.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",0,
-189.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",1,restaurant
-190.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
-193.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
-194.0,0.6,3,"loan, utility, finance",2,"shopping, insurance",1,home_and_living
-195.0,0.6,3,"utility, finance, shopping",2,"charity, loan",3,"medical, insurance, restaurant"
-197.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
-201.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",1,government
-203.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
-204.0,0.2,1,home_and_living,4,"loan, utility, finance, shopping",1,restaurant
-205.0,0.4,2,"loan, home_and_living",3,"utility, finance, shopping",0,
-206.0,0.4,2,"loan, finance",3,"utility, shopping, government",2,"restaurant, travel"
-207.0,0.6,3,"loan, utility, insurance",2,"finance, shopping",0,
-211.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
-213.0,0.4,2,"loan, finance",3,"utility, investment, shopping",0,
-214.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
-215.0,0.4,2,"utility, shopping",3,"loan, finance, government",1,home_and_living
-216.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
-217.0,0.6,3,"utility, finance, shopping",2,"loan, insurance",0,
-219.0,0.0,0,,5,"loan, utility, finance, shopping, medical",1,government
-220.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
-221.0,0.2,1,finance,4,"loan, utility, shopping, insurance",2,"charity, automotive"
-223.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
-225.0,0.2,1,utility,4,"loan, finance, shopping, medical",0,
-226.0,0.4,2,"loan, finance",3,"utility, shopping, business",0,
-229.0,0.6,3,"loan, finance, shopping",2,"utility, home_and_living",2,"insurance, transportation"
-230.0,0.6,3,"utility, finance, shopping",2,"charity, loan",2,"home_and_living, insurance"
-233.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
-234.0,0.4,2,"loan, utility",3,"finance, shopping, restaurant",1,government
+152.0,0.6,3,"utility, shopping, insurance",2,"loan, finance",0,
+2495.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+3084.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+1028.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
+316.0,0.2,1,charity,4,"loan, utility, finance, shopping",0,
+4107.0,0.6,3,"utility, finance, shopping",2,"loan, medical",1,restaurant
+3037.0,0.4,2,"finance, shopping",3,"loan, utility, personal_care",0,
+180.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",0,
+1171.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+97.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",2,"insurance, business"
+145.0,0.4,2,"finance, shopping",3,"loan, utility, government",2,"medical, insurance"
+1177.0,0.4,2,"finance, shopping",3,"loan, utility, investment",4,"personal_care, insurance, restaurant, education"
+3207.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+1039.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",1,transportation
+1538.0,0.8,4,"loan, utility, finance, shopping",1,home_and_living,0,
+3002.0,0.6,3,"loan, finance, shopping",2,"utility, insurance",0,
+2727.0,0.4,2,"utility, shopping",3,"loan, finance, insurance",1,home_and_living
+2697.0,0.2,1,utility,4,"loan, finance, shopping, medical",0,
+3211.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",1,travel
+2187.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+151.0,0.2,1,finance,4,"loan, utility, shopping, insurance",1,medical
+2853.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",3,"investment, education, government"
+4271.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+684.0,0.6,3,"loan, finance, shopping",2,"utility, restaurant",0,
+1785.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
+1351.0,0.2,1,finance,4,"loan, utility, shopping, personal_care",0,
+1214.0,0.4,2,"finance, shopping",3,"loan, utility, medical",2,"insurance, transportation"
+1223.0,0.4,2,"finance, shopping",3,"charity, utility, education",0,
+3033.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",0,
+4215.0,0.8,4,"loan, utility, shopping, government",1,finance,3,"investment, medical, insurance"
+2453.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+3124.0,0.4,2,"finance, shopping",3,"loan, utility, medical",0,
+2544.0,0.6,3,"loan, finance, shopping",2,"utility, insurance",0,
+1666.0,0.2,1,utility,4,"loan, finance, shopping, government",0,
+1780.0,0.2,1,loan,4,"charity, utility, finance, shopping",0,
+3225.0,0.2,1,utility,4,"loan, investment, finance, shopping",0,
+545.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+1627.0,0.4,2,"loan, utility",3,"charity, finance, shopping",0,
+4303.0,0.6,3,"loan, finance, home_and_living",2,"utility, shopping",1,government
+4268.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+3359.0,0.4,2,"utility, insurance",3,"loan, finance, shopping",0,
+3139.0,0.2,1,loan,4,"utility, finance, shopping, visit",0,
+1834.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,0,
+1314.0,0.2,1,shopping,4,"loan, utility, finance, government",0,
+4109.0,0.6,3,"loan, finance, shopping",2,"utility, restaurant",0,
+844.0,0.4,2,"utility, finance",3,"loan, shopping, government",3,"home_and_living, insurance, transportation"
+1861.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",0,
+3510.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+1072.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
+2510.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+3065.0,0.6,3,"loan, utility, finance",2,"shopping, insurance",0,
+2222.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",0,
+1163.0,0.2,1,shopping,4,"charity, loan, utility, finance",1,home_and_living
+1559.0,0.4,2,"utility, finance",3,"loan, shopping, restaurant",0,
+2068.0,0.8,4,"loan, finance, shopping, restaurant",1,utility,0,
+2032.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,insurance
+3264.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,business
+2652.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+894.0,1.0,5,"loan, utility, finance, shopping, home_and_living",0,,0,
+2015.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
+2321.0,0.4,2,"utility, finance",3,"loan, shopping, home_and_living",1,transportation
+870.0,0.2,1,finance,4,"utility, shopping, home_and_living, insurance",1,loan
+2251.0,0.4,2,"finance, shopping",3,"loan, utility, investment",1,transportation
+3299.0,0.2,1,utility,4,"charity, loan, finance, shopping",0,
+3221.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",1,charity
+1449.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",1,transportation
+1872.0,0.0,0,,5,"loan, utility, finance, shopping, restaurant",2,"personal_care, medical"
+444.0,0.2,1,shopping,4,"loan, utility, finance, medical",0,
+2828.0,0.0,0,,5,"loan, utility, investment, finance, shopping",2,"insurance, automotive"
+185.0,0.4,2,"loan, finance",3,"utility, shopping, restaurant",0,
+388.0,0.2,1,loan,4,"utility, finance, shopping, government",0,
+2537.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",1,home_and_living
+2805.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+1863.0,0.2,1,utility,4,"loan, finance, shopping, business",1,insurance
 239.0,0.6,3,"loan, utility, finance",2,"shopping, home_and_living",0,
-240.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
-242.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",0,
-244.0,0.4,2,"utility, shopping",3,"loan, finance, restaurant",0,
-245.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
-248.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
-249.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",1,home_and_living
-252.0,0.6,3,"utility, finance, shopping",2,"home_and_living, insurance",0,
-257.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,insurance
-264.0,0.4,2,"loan, home_and_living",3,"utility, finance, shopping",0,
-265.0,0.6,3,"finance, shopping, home_and_living",2,"loan, utility",0,
-268.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
-269.0,0.4,2,"finance, shopping",3,"charity, loan, utility",1,transportation
-272.0,0.6,3,"loan, finance, shopping",2,"utility, home_and_living",1,restaurant
-274.0,1.0,5,"loan, utility, finance, shopping, home_and_living",0,,0,
-277.0,0.4,2,"utility, shopping",3,"loan, finance, restaurant",1,home_and_living
-278.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
-279.0,0.2,1,loan,4,"utility, finance, shopping, transportation",0,
-281.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
-283.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",1,transportation
-286.0,0.2,1,finance,4,"loan, utility, shopping, government",1,insurance
-290.0,0.6,3,"utility, finance, shopping",2,"loan, insurance",2,"personal_care, home_and_living"
-291.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
-292.0,0.4,2,"utility, insurance",3,"loan, finance, shopping",0,
-293.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",1,insurance
-294.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
-296.0,0.4,2,"finance, shopping",3,"charity, loan, utility",0,
-301.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
-302.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
-306.0,0.4,2,"utility, finance",3,"charity, loan, shopping",0,
-307.0,0.6,3,"loan, utility, finance",2,"charity, shopping",0,
-308.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
-310.0,0.0,0,,5,"loan, utility, finance, shopping, medical",1,education
-311.0,0.0,0,,5,"loan, utility, finance, shopping, restaurant",2,"medical, home_and_living"
-312.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",0,
-316.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,charity
-317.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",0,
-320.0,0.6,3,"loan, utility, finance",2,"shopping, medical",1,restaurant
-322.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",1,restaurant
-325.0,0.6,3,"utility, shopping, home_and_living",2,"loan, finance",0,
+1612.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,2,"medical, insurance"
+1162.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+878.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+85.0,0.6,3,"finance, shopping, restaurant",2,"loan, utility",1,home_and_living
+4099.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+2659.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+372.0,0.2,1,finance,4,"loan, utility, investment, shopping",1,restaurant
+2949.0,0.4,2,"utility, finance",3,"charity, loan, shopping",0,
+3932.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
+3599.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+857.0,0.8,4,"utility, finance, shopping, restaurant",1,loan,3,"investment, entertainment, visit"
+24.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
+4148.0,0.4,2,"loan, utility",3,"finance, shopping, restaurant",1,government
+189.0,0.2,1,utility,4,"loan, finance, shopping, business",1,restaurant
+2882.0,0.2,1,loan,4,"charity, utility, finance, shopping",1,insurance
+3874.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
+1953.0,0.4,2,"loan, finance",3,"utility, investment, shopping",1,insurance
+439.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+1505.0,0.4,2,"loan, utility",3,"finance, shopping, restaurant",0,
+2562.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",1,home_and_living
+4243.0,0.4,2,"utility, finance",3,"loan, shopping, restaurant",0,
+3900.0,0.6,3,"loan, finance, shopping",2,"utility, home_and_living",0,
+3890.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
+1243.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",0,
+603.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+1052.0,0.6,3,"utility, finance, shopping",2,"loan, bank",0,
+3987.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",0,
+197.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+221.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",2,"charity, automotive"
+2092.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
+193.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
+2402.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",0,
+3263.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+4199.0,0.4,2,"utility, finance",3,"loan, shopping, medical",0,
+3803.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
+1393.0,0.4,2,"loan, finance",3,"utility, shopping, restaurant",1,investment
+1407.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+181.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+3096.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+3320.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
+1502.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
+206.0,0.4,2,"loan, finance",3,"utility, shopping, insurance",2,"restaurant, travel"
+3838.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",0,
+1644.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",2,"investment, government"
+3786.0,0.0,0,,5,"loan, utility, finance, shopping, bank",1,entertainment
+756.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
+34.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
+3620.0,0.2,1,finance,4,"loan, utility, shopping, medical",0,
+1587.0,0.2,1,shopping,4,"loan, utility, finance, insurance",1,visit
+2930.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+2005.0,0.4,2,"utility, insurance",3,"loan, finance, shopping",0,
+1910.0,0.2,1,finance,4,"charity, loan, utility, shopping",0,
+377.0,0.6,3,"utility, finance, shopping",2,"loan, investment",1,home_and_living
+1124.0,0.8,4,"loan, utility, finance, shopping",1,home_and_living,1,investment
+4057.0,0.8,4,"loan, utility, finance, shopping",1,insurance,2,"home_and_living, restaurant"
+3594.0,0.4,2,"shopping, government",3,"loan, utility, finance",1,home_and_living
+671.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",1,government
+1075.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",1,insurance
+595.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",0,
+1486.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",0,
+908.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
+94.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+1728.0,0.2,1,shopping,4,"loan, utility, finance, government",0,
+2894.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+3083.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+1018.0,0.4,2,"finance, home_and_living",3,"loan, utility, shopping",0,
+2580.0,0.4,2,"loan, finance",3,"utility, shopping, bank",0,
+1222.0,0.8,4,"loan, utility, finance, shopping",1,home_and_living,1,restaurant
+4086.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
+2565.0,0.4,2,"utility, shopping",3,"loan, investment, finance",1,home_and_living
+3916.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",1,insurance
+2502.0,0.6,3,"utility, finance, shopping",2,"loan, government",0,
+2890.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",1,government
+1074.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,home_and_living
+3271.0,0.2,1,finance,4,"loan, utility, investment, shopping",0,
+2567.0,0.8,4,"loan, utility, finance, shopping",1,medical,1,personal_care
+3434.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+1771.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
+3902.0,0.8,4,"loan, utility, finance, restaurant",1,shopping,4,"investment, medical, home_and_living, education"
+333.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
+240.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+2054.0,0.4,2,"finance, shopping",3,"loan, utility, medical",0,
+1898.0,0.0,0,,5,"loan, utility, finance, shopping, business",1,medical
+4130.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",0,
+1557.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
+1201.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,personal_care
+3598.0,0.2,1,utility,4,"charity, loan, finance, shopping",0,
+1653.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+3928.0,0.4,2,"finance, shopping",3,"loan, utility, transportation",0,
+15.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",0,
+3463.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",0,
+1273.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",1,government
+1979.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",0,
+4003.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",0,
+3708.0,0.4,2,"finance, shopping",3,"loan, utility, transportation",2,"restaurant, entertainment"
+3953.0,0.8,4,"loan, utility, finance, home_and_living",1,shopping,0,
+2806.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+491.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
+1035.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+2841.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+2342.0,0.8,4,"loan, finance, shopping, restaurant",1,utility,0,
+507.0,0.8,4,"loan, utility, finance, shopping",1,insurance,1,home_and_living
+3779.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,insurance
+2464.0,0.4,2,"utility, shopping",3,"loan, finance, insurance",2,"restaurant, education"
+1651.0,0.6,3,"loan, utility, finance",2,"shopping, insurance",0,
+3940.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",2,"government, transportation"
+2452.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
+3242.0,0.2,1,loan,4,"utility, investment, finance, shopping",1,restaurant
+434.0,0.2,1,utility,4,"finance, shopping, home_and_living, insurance",1,loan
+1262.0,0.2,1,loan,4,"charity, utility, finance, shopping",0,
+3444.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+3047.0,0.6,3,"utility, finance, shopping",2,"loan, system_dpst",0,
+1399.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+4265.0,0.6,3,"loan, utility, finance",2,"shopping, home_and_living",2,"medical, visit"
+2016.0,0.4,2,"finance, shopping",3,"loan, utility, business",0,
+3560.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,0,
+1056.0,0.2,1,finance,4,"loan, utility, shopping, medical",1,home_and_living
+1514.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+4171.0,0.4,2,"loan, shopping",3,"utility, finance, home_and_living",0,
+1375.0,0.4,2,"finance, shopping",3,"loan, utility, home_and_living",0,
+331.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+3196.0,0.8,4,"loan, finance, shopping, home_and_living",1,utility,0,
+4225.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",1,government
+1293.0,0.2,1,finance,4,"loan, utility, shopping, transportation",0,
+3590.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",1,restaurant
+3382.0,0.4,2,"loan, utility",3,"charity, finance, shopping",0,
+722.0,0.4,2,"loan, finance",3,"utility, shopping, home_and_living",0,
+33.0,0.4,2,"loan, finance",3,"charity, utility, shopping",0,
+2298.0,0.6,3,"loan, utility, finance",2,"shopping, home_and_living",1,medical
+889.0,0.2,1,utility,4,"loan, finance, shopping, medical",0,
+230.0,0.8,4,"utility, finance, shopping, home_and_living",1,loan,1,insurance
+3313.0,0.2,1,finance,4,"charity, utility, shopping, pet_care",1,medical
+409.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",1,insurance
+1698.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",1,investment
+2990.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+1860.0,0.2,1,loan,4,"utility, finance, shopping, transportation",0,
+882.0,0.6,3,"loan, finance, shopping",2,"utility, personal_care",0,
+4203.0,0.6,3,"loan, utility, shopping",2,"finance, home_and_living",1,bank
+4237.0,0.6,3,"utility, finance, shopping",2,"loan, investment",1,transportation
+732.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+760.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+4035.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",1,charity
+4052.0,0.2,1,shopping,4,"loan, utility, finance, government",0,
+678.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
+252.0,0.6,3,"utility, finance, shopping",2,"loan, insurance",0,
+3155.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
 326.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,medical
-328.0,0.4,2,"finance, shopping",3,"loan, utility, personal_care",1,medical
-330.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",1,investment
-331.0,0.2,1,utility,4,"loan, finance, shopping, government",0,
-333.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
-336.0,0.6,3,"loan, utility, home_and_living",2,"finance, shopping",0,
-338.0,0.4,2,"finance, shopping",3,"loan, utility, investment",1,transportation
-346.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
-347.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",0,
-348.0,1.0,5,"loan, utility, finance, shopping, home_and_living",0,,1,transportation
-349.0,0.2,1,shopping,4,"loan, utility, finance, government",0,
-353.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,5,"insurance, entertainment, education, government, transportation"
-354.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
-355.0,0.4,2,"loan, finance",3,"utility, shopping, insurance",2,"home_and_living, education"
-359.0,0.8,4,"loan, utility, finance, shopping",1,insurance,1,government
-360.0,0.4,2,"finance, shopping",3,"loan, utility, personal_care",1,home_and_living
-365.0,0.8,4,"loan, utility, finance, shopping",1,restaurant,1,automotive
-368.0,1.0,5,"loan, utility, finance, shopping, restaurant",0,,0,
-369.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",2,"charity, restaurant"
-370.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
-372.0,0.2,1,finance,4,"charity, loan, utility, shopping",1,restaurant
-374.0,0.4,2,"loan, shopping",3,"utility, finance, restaurant",0,
-376.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",0,
-377.0,0.8,4,"utility, finance, shopping, home_and_living",1,loan,0,
-378.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
-379.0,0.4,2,"finance, shopping",3,"loan, utility, government",1,investment
-381.0,0.4,2,"loan, finance",3,"utility, shopping, restaurant",0,
-383.0,0.4,2,"utility, shopping",3,"loan, finance, personal_care",0,
-384.0,0.6,3,"loan, finance, shopping",2,"utility, restaurant",1,medical
-388.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
-390.0,0.2,1,finance,4,"loan, utility, shopping, insurance",0,
+1832.0,0.0,0,,5,"loan, utility, finance, shopping, restaurant",1,business
+3593.0,0.6,3,"utility, finance, shopping",2,"loan, insurance",1,restaurant
+621.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",1,insurance
+669.0,0.6,3,"loan, finance, shopping",2,"utility, home_and_living",1,restaurant
+100.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",2,"personal_care, restaurant"
+1967.0,0.4,2,"charity, finance",3,"loan, utility, shopping",1,medical
+677.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+2972.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+3245.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+3960.0,0.2,1,utility,4,"charity, loan, finance, shopping",0,
+1412.0,0.2,1,shopping,4,"loan, utility, finance, insurance",0,
+811.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",1,insurance
+2379.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,transportation
+2520.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",1,travel
+1593.0,0.2,1,loan,4,"utility, finance, shopping, visit",0,
+3515.0,0.2,1,finance,4,"charity, loan, utility, shopping",2,"medical, insurance"
+1279.0,0.2,1,finance,4,"charity, loan, utility, shopping",0,
+2513.0,0.6,3,"loan, utility, shopping",2,"finance, insurance",0,
+1118.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",0,
+2993.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
+2458.0,0.6,3,"utility, finance, shopping",2,"loan, restaurant",0,
+1095.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,investment
+3639.0,0.2,1,utility,4,"loan, finance, shopping, home_and_living",1,automotive
+2248.0,0.4,2,"finance, shopping",3,"loan, utility, investment",0,
+1506.0,0.2,1,finance,4,"charity, loan, utility, shopping",0,
+3214.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",1,transportation
+294.0,0.4,2,"loan, utility",3,"finance, shopping, restaurant",0,
+1232.0,0.6,3,"loan, finance, shopping",2,"utility, education",0,
+1413.0,0.4,2,"utility, finance",3,"loan, shopping, home_and_living",0,
+3768.0,0.4,2,"loan, shopping",3,"utility, finance, medical",0,
+2370.0,0.4,2,"finance, home_and_living",3,"loan, utility, shopping",0,
+2965.0,0.2,1,shopping,4,"loan, utility, finance, home_and_living",0,
+1004.0,0.8,4,"loan, utility, shopping, insurance",1,finance,2,"home_and_living, government"
+804.0,0.2,1,loan,4,"utility, finance, shopping, government",2,"medical, automotive"
+808.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,automotive
+30.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",1,home_and_living
+3251.0,0.4,2,"shopping, home_and_living",3,"loan, utility, finance",1,investment
+1881.0,0.4,2,"utility, finance",3,"loan, shopping, personal_care",2,"insurance, restaurant"
+3043.0,0.8,4,"loan, utility, finance, shopping",1,insurance,0,
+4283.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",0,
+3316.0,0.4,2,"utility, shopping",3,"loan, finance, government",0,
+1552.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",2,"personal_care, medical"
+4080.0,0.2,1,utility,4,"loan, finance, shopping, insurance",0,
+74.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+446.0,0.6,3,"utility, finance, shopping",2,"loan, insurance",0,
+2479.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",0,
+1057.0,0.6,3,"loan, utility, finance",2,"shopping, home_and_living",4,"insurance, business, entertainment, education"
+1117.0,0.2,1,finance,4,"loan, utility, investment, shopping",0,
+2006.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",0,
+1236.0,0.4,2,"loan, utility",3,"investment, finance, shopping",0,
+403.0,0.4,2,"utility, finance",3,"charity, loan, shopping",0,
+2801.0,0.4,2,"utility, shopping",3,"loan, finance, personal_care",1,pet_care
+565.0,0.2,1,finance,4,"loan, utility, shopping, business",0,
+4189.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,transportation
+2859.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,transportation
+1492.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+215.0,0.6,3,"utility, shopping, home_and_living",2,"loan, finance",0,
+3132.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,insurance
+2466.0,0.6,3,"utility, finance, shopping",2,"loan, government",0,
+863.0,0.4,2,"loan, utility",3,"finance, shopping, insurance",2,"medical, government"
+3703.0,0.4,2,"finance, shopping",3,"loan, utility, restaurant",0,
+322.0,0.4,2,"finance, shopping",3,"loan, utility, insurance",1,restaurant
+795.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+4277.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+3835.0,0.6,3,"loan, utility, finance",2,"shopping, insurance",1,government
+2660.0,0.6,3,"loan, finance, shopping",2,"utility, insurance",0,
+123.0,0.2,1,shopping,4,"charity, loan, utility, finance",0,
+1229.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
+290.0,0.6,3,"utility, finance, shopping",2,"loan, insurance",2,"personal_care, home_and_living"
+4115.0,0.6,3,"utility, finance, shopping",2,"loan, personal_care",0,
+2956.0,0.2,1,loan,4,"utility, finance, shopping, insurance",1,government
+1109.0,0.2,1,loan,4,"utility, finance, shopping, government",0,
+355.0,0.6,3,"loan, finance, home_and_living",2,"utility, shopping",1,education
+1030.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+3642.0,0.2,1,loan,4,"utility, finance, shopping, restaurant",0,
+1425.0,0.4,2,"utility, finance",3,"loan, shopping, medical",0,
+257.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",1,insurance
+2484.0,0.4,2,"loan, utility",3,"finance, shopping, restaurant",0,
+4259.0,0.0,0,,5,"loan, utility, finance, shopping, home_and_living",1,insurance
+1633.0,0.4,2,"loan, shopping",3,"utility, finance, home_and_living",0,
+3350.0,0.2,1,loan,4,"utility, finance, shopping, medical",0,
+2866.0,0.4,2,"finance, shopping",3,"charity, loan, utility",2,"insurance, restaurant"
+292.0,0.4,2,"utility, insurance",3,"loan, finance, shopping",0,
+3016.0,0.4,2,"loan, finance",3,"utility, shopping, restaurant",0,
+2368.0,0.8,4,"loan, utility, finance, shopping",1,insurance,2,"home_and_living, transportation"
+3230.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+1742.0,0.2,1,finance,4,"loan, utility, shopping, home_and_living",1,medical
+2371.0,0.4,2,"utility, finance",3,"loan, shopping, home_and_living",0,
+264.0,0.2,1,loan,4,"utility, finance, shopping, government",1,home_and_living
+1420.0,0.2,1,utility,4,"loan, finance, shopping, medical",0,
+2270.0,0.2,1,finance,4,"loan, utility, shopping, restaurant",0,
+57.0,0.6,3,"utility, finance, shopping",2,"loan, home_and_living",0,
+4333.0,0.4,2,"finance, shopping",3,"loan, utility, personal_care",0,
+681.0,0.2,1,utility,4,"loan, finance, shopping, restaurant",0,
+3102.0,0.2,1,loan,4,"utility, finance, shopping, home_and_living",1,investment
+204.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",2,"home_and_living, restaurant"
+810.0,0.0,0,,5,"loan, utility, finance, shopping, insurance",1,restaurant
+1179.0,0.4,2,"loan, utility",3,"finance, shopping, home_and_living",0,
+1324.0,0.4,2,"utility, finance",3,"loan, shopping, insurance",1,home_and_living
+13.0,0.2,1,loan,4,"utility, finance, shopping, insurance",0,
+1033.0,0.6,3,"loan, utility, shopping",2,"finance, government",0,

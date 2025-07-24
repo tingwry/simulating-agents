@@ -162,7 +162,8 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, output_fo
 
 
 # Load your data
-transaction_predictions = pd.read_csv('src/recommendation/offline_rl/T0/predictions/transaction_predictions.csv')
+# transaction_predictions = pd.read_csv('src/recommendation/offline_rl/T0/predictions/transaction_predictions.csv')
+transaction_predictions = pd.read_csv('src/recommendation/offline_rl/T0/predictions/transaction_predictions_best_action.csv')
 ans_key = pd.read_csv('src/recommendation/cluster_based/eval/ans_key.csv')
 
 # Prep transaction_predictions
@@ -172,7 +173,7 @@ transaction_predictions = transaction_predictions.loc[:, ~transaction_prediction
 detailed_results, metrics = evaluate_transaction_predictions(
     transaction_predictions, 
     ans_key, 
-    output_folder="src/recommendation/offline_rl/T0/eval_results"
+    output_folder="src/recommendation/offline_rl/T0/eval_results_best_action"
 )
 
 # View first few rows of detailed results

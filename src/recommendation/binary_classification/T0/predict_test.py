@@ -114,10 +114,15 @@ def run_predictions():
 
     # Prepare results DataFrame with customer IDs
     predictions_df = pd.DataFrame()
-    if 'cust_id' in df.columns:
+    
+    # Always use the cust_id from the input data
+    if 'CUST_ID' in df.columns:  # Changed to match your data's column name
+        predictions_df['cust_id'] = df['CUST_ID']
+    elif 'cust_id' in df.columns:
         predictions_df['cust_id'] = df['cust_id']
     else:
-        predictions_df['cust_id'] = np.arange(len(df))
+        # This should only happen if the data is malformed
+        raise ValueError("No customer ID column found in input data (looked for 'CUST_ID' or 'cust_id')")
     
     for category in categories:
         model_path = f"{MODEL_DIR}/{category}_model.pkl"
