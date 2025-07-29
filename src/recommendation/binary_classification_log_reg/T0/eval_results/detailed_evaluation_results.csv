@@ -1,0 +1,393 @@
+cust_id,hit_rate,true_positives,classes_of_true_positives,false_positives,classes_of_false_positives,false_negatives,classes_of_false_negatives
+4050.0,0.375,3,"loan, shopping, home_and_living",5,"utility, automotive, entertainment, bank, transportation",1,restaurant
+1392.0,0.16666666666666666,1,finance,5,"home_and_living, insurance, business, bank, education",0,
+1663.0,0.3,3,"loan, shopping, automotive",7,"investment, personal_care, medical, restaurant, pet_care, transportation, visit",3,"home_and_living, insurance, government"
+1877.0,0.2,2,"loan, restaurant",8,"investment, shopping, medical, home_and_living, automotive, bank, travel, transportation",1,finance
+4157.0,0.125,1,utility,7,"charity, loan, investment, medical, home_and_living, bank, government",0,
+3431.0,0.18181818181818182,2,"loan, medical",9,"charity, home_and_living, insurance, automotive, restaurant, bank, education, government, travel",1,utility
+1789.0,0.2222222222222222,2,"utility, finance",7,"charity, loan, investment, personal_care, restaurant, business, government",4,"shopping, home_and_living, insurance, travel"
+110.0,0.0,0,,12,"investment, finance, shopping, personal_care, medical, automotive, restaurant, entertainment, education, travel, transportation, visit",1,home_and_living
+872.0,0.25,2,"loan, utility",6,"charity, medical, home_and_living, insurance, bank, government",0,
+3334.0,0.5,4,"loan, utility, shopping, home_and_living",4,"insurance, automotive, business, transportation",1,finance
+3520.0,0.5,3,"loan, utility, insurance",3,"charity, business, bank",2,"finance, home_and_living"
+150.0,0.14285714285714285,1,finance,6,"shopping, home_and_living, automotive, entertainment, education, visit",0,
+2168.0,0.2857142857142857,2,"finance, shopping",5,"utility, home_and_living, insurance, entertainment, bank",2,"personal_care, medical"
+2474.0,0.125,1,utility,7,"loan, medical, home_and_living, insurance, entertainment, bank, government",1,shopping
+2388.0,0.3333333333333333,2,"utility, insurance",4,"medical, bank, education, government",0,
+1105.0,0.0,0,,6,"investment, shopping, personal_care, medical, restaurant, visit",1,loan
+3685.0,0.125,1,utility,7,"charity, personal_care, medical, insurance, restaurant, travel, visit",0,
+3215.0,0.125,1,loan,7,"utility, investment, home_and_living, insurance, bank, government, transportation",1,finance
+2043.0,0.2857142857142857,2,"finance, shopping",5,"loan, investment, personal_care, home_and_living, restaurant",0,
+765.0,0.14285714285714285,1,loan,6,"charity, utility, investment, personal_care, restaurant, government",1,shopping
+512.0,0.2,1,finance,4,"charity, insurance, education, visit",2,"loan, home_and_living"
+498.0,0.09090909090909091,1,shopping,10,"loan, investment, finance, medical, home_and_living, automotive, restaurant, education, travel, visit",2,"bank, pet_care"
+1414.0,0.0,0,,4,"finance, shopping, home_and_living, education",1,utility
+813.0,0.2857142857142857,2,"finance, shopping",5,"charity, home_and_living, restaurant, education, government",0,
+462.0,0.3,3,"finance, restaurant, entertainment",7,"charity, shopping, personal_care, home_and_living, insurance, pet_care, transportation",2,"utility, medical"
+2631.0,0.25,2,"finance, shopping",6,"loan, investment, personal_care, home_and_living, restaurant, business",0,
+1217.0,0.125,1,finance,7,"investment, medical, home_and_living, automotive, restaurant, education, travel",1,shopping
+306.0,0.1,1,finance,9,"investment, shopping, personal_care, medical, automotive, restaurant, pet_care, transportation, visit",1,utility
+2528.0,0.14285714285714285,1,loan,6,"investment, finance, shopping, personal_care, automotive, restaurant",0,
+2154.0,0.25,2,"finance, shopping",6,"charity, automotive, business, education, pet_care, visit",2,"loan, home_and_living"
+1523.0,0.16666666666666666,1,utility,5,"loan, medical, bank, travel, transportation",0,
+1695.0,0.375,3,"loan, utility, shopping",5,"personal_care, home_and_living, insurance, restaurant, government",1,finance
+3986.0,0.42857142857142855,3,"finance, home_and_living, bank",4,"insurance, business, education, government",2,"loan, utility"
+898.0,0.25,2,"shopping, medical",6,"investment, finance, home_and_living, automotive, restaurant, education",0,
+1601.0,0.14285714285714285,1,shopping,6,"utility, finance, personal_care, home_and_living, insurance, business",0,
+2045.0,0.2,1,loan,4,"charity, utility, personal_care, government",0,
+2214.0,0.1111111111111111,1,finance,8,"loan, utility, shopping, home_and_living, insurance, automotive, restaurant, transportation",0,
+3614.0,0.36363636363636365,4,"loan, investment, finance, shopping",7,"medical, home_and_living, automotive, restaurant, travel, transportation, visit",2,"utility, government"
+3651.0,0.0,0,,6,"investment, finance, shopping, medical, home_and_living, entertainment",1,utility
+464.0,0.2222222222222222,2,"shopping, medical",7,"charity, finance, home_and_living, automotive, restaurant, business, education",1,utility
+2555.0,0.125,1,finance,7,"utility, investment, personal_care, home_and_living, pet_care, government, transportation",1,loan
+1131.0,0.14285714285714285,1,utility,6,"charity, loan, insurance, restaurant, government, transportation",0,
+1042.0,0.375,3,"utility, finance, insurance",5,"charity, home_and_living, business, bank, government",0,
+890.0,0.16666666666666666,1,utility,5,"loan, insurance, bank, government, transportation",0,
+1741.0,0.16666666666666666,1,finance,5,"medical, entertainment, education, travel, visit",1,shopping
+2324.0,0.0,0,,9,"loan, investment, shopping, medical, home_and_living, automotive, restaurant, travel, transportation",1,finance
+3322.0,0.25,2,"loan, finance",6,"utility, medical, home_and_living, insurance, entertainment, bank",0,
+291.0,0.1111111111111111,1,loan,8,"utility, finance, shopping, home_and_living, insurance, automotive, business, transportation",0,
+4106.0,0.1,1,home_and_living,9,"loan, investment, shopping, medical, insurance, restaurant, entertainment, travel, transportation",1,utility
+1026.0,0.0,0,,7,"finance, shopping, home_and_living, insurance, entertainment, transportation, visit",2,"loan, investment"
+3107.0,0.4,2,"utility, insurance",3,"charity, bank, government",1,loan
+1190.0,0.14285714285714285,1,finance,6,"investment, shopping, home_and_living, restaurant, business, education",0,
+1558.0,0.14285714285714285,1,loan,6,"investment, finance, shopping, personal_care, automotive, restaurant",0,
+4049.0,0.16666666666666666,1,finance,5,"charity, home_and_living, insurance, education, government",0,
+4095.0,0.0,0,,6,"finance, shopping, personal_care, home_and_living, restaurant, business",1,utility
+3581.0,0.2,1,finance,4,"utility, medical, home_and_living, entertainment",1,loan
+3460.0,0.1,1,finance,9,"loan, investment, shopping, medical, home_and_living, automotive, restaurant, travel, transportation",0,
+71.0,0.1111111111111111,1,finance,8,"investment, shopping, personal_care, home_and_living, automotive, restaurant, education, travel",0,
+2964.0,0.2857142857142857,2,"loan, home_and_living",5,"medical, restaurant, education, government, travel",0,
+3205.0,0.0,0,,9,"charity, utility, finance, personal_care, home_and_living, insurance, restaurant, government, transportation",1,automotive
+3554.0,0.0,0,,6,"charity, loan, utility, insurance, bank, government",1,shopping
+1766.0,0.1111111111111111,1,utility,8,"charity, loan, finance, home_and_living, insurance, business, bank, government",0,
+3842.0,0.1111111111111111,1,utility,8,"charity, loan, investment, personal_care, medical, insurance, restaurant, bank",1,home_and_living
+692.0,0.2857142857142857,2,"home_and_living, bank",5,"utility, finance, shopping, insurance, business",0,
+3089.0,0.1111111111111111,1,loan,8,"utility, investment, shopping, medical, automotive, restaurant, bank, transportation",1,home_and_living
+1564.0,0.3,3,"finance, shopping, personal_care",7,"investment, automotive, restaurant, entertainment, education, transportation, visit",0,
+3072.0,0.18181818181818182,2,"loan, home_and_living",9,"investment, finance, shopping, medical, automotive, restaurant, travel, transportation, visit",0,
+310.0,0.0,0,,7,"investment, shopping, personal_care, medical, pet_care, transportation, visit",1,education
+135.0,0.3333333333333333,3,"loan, finance, home_and_living",6,"investment, medical, automotive, restaurant, education, travel",2,"utility, shopping"
+152.0,0.2,1,utility,4,"charity, loan, restaurant, business",2,"shopping, insurance"
+2495.0,0.0,0,,5,"utility, medical, home_and_living, bank, government",1,loan
+3084.0,0.14285714285714285,1,loan,6,"medical, home_and_living, restaurant, education, government, travel",0,
+1028.0,0.0,0,,7,"charity, utility, investment, personal_care, restaurant, business, government",1,shopping
+316.0,0.16666666666666666,1,charity,5,"utility, finance, insurance, education, visit",0,
+4107.0,0.2727272727272727,3,"finance, shopping, restaurant",8,"charity, personal_care, insurance, entertainment, education, pet_care, transportation, visit",1,utility
+3037.0,0.1111111111111111,1,finance,8,"charity, personal_care, medical, insurance, restaurant, education, travel, visit",1,shopping
+180.0,0.14285714285714285,1,finance,6,"investment, medical, home_and_living, restaurant, education, government",1,shopping
+1171.0,0.1111111111111111,1,loan,8,"charity, shopping, personal_care, insurance, restaurant, pet_care, government, transportation",0,
+97.0,0.25,2,"finance, shopping",6,"personal_care, medical, home_and_living, restaurant, education, travel",2,"insurance, business"
+145.0,0.2,2,"finance, insurance",8,"charity, loan, utility, investment, personal_care, restaurant, government, transportation",2,"shopping, medical"
+1177.0,0.6,6,"finance, shopping, personal_care, insurance, restaurant, education",4,"charity, entertainment, transportation, visit",0,
+3207.0,0.1111111111111111,1,loan,8,"utility, personal_care, medical, insurance, restaurant, government, travel, transportation",0,
+1039.0,0.16666666666666666,1,transportation,5,"loan, utility, insurance, bank, government",1,finance
+1538.0,0.2857142857142857,2,"utility, shopping",5,"medical, home_and_living, bank, travel, transportation",2,"loan, finance"
+3002.0,0.2,1,loan,4,"utility, home_and_living, insurance, government",2,"finance, shopping"
+2727.0,0.2222222222222222,2,"utility, home_and_living",7,"charity, loan, medical, restaurant, business, government, travel",1,shopping
+2697.0,0.0,0,,11,"loan, finance, shopping, medical, home_and_living, automotive, restaurant, entertainment, education, travel, visit",1,utility
+3211.0,0.16666666666666666,1,utility,5,"finance, home_and_living, insurance, bank, government",1,travel
+2187.0,0.0,0,,13,"investment, finance, shopping, personal_care, medical, home_and_living, automotive, restaurant, entertainment, education, travel, transportation, visit",1,utility
+151.0,0.16666666666666666,1,medical,5,"home_and_living, insurance, bank, education, government",1,finance
+2853.0,0.25,2,"utility, government",6,"loan, home_and_living, insurance, automotive, restaurant, transportation",4,"investment, finance, shopping, education"
+4271.0,0.2,1,loan,4,"utility, finance, bank, visit",0,
+684.0,0.42857142857142855,3,"loan, finance, shopping",4,"investment, personal_care, automotive, restaurant",0,
+1785.0,0.2727272727272727,3,"loan, finance, shopping",8,"investment, medical, home_and_living, automotive, restaurant, entertainment, travel, visit",1,utility
+1351.0,0.14285714285714285,1,finance,6,"loan, shopping, automotive, restaurant, education, visit",0,
+1214.0,0.16666666666666666,1,insurance,5,"utility, personal_care, medical, education, visit",3,"finance, shopping, transportation"
+1223.0,0.125,1,finance,7,"charity, personal_care, medical, insurance, business, travel, visit",1,shopping
+3033.0,0.0,0,,10,"loan, investment, finance, shopping, medical, home_and_living, automotive, restaurant, travel, visit",1,utility
+4215.0,0.4444444444444444,4,"loan, utility, investment, government",5,"charity, personal_care, restaurant, bank, transportation",3,"shopping, medical, insurance"
+2453.0,0.16666666666666666,1,loan,5,"utility, home_and_living, insurance, bank, government",0,
+3124.0,0.2857142857142857,2,"finance, shopping",5,"personal_care, home_and_living, insurance, restaurant, business",0,
+2544.0,0.25,2,"loan, finance",6,"utility, home_and_living, insurance, automotive, bank, government",1,shopping
+1666.0,0.1111111111111111,1,utility,8,"investment, personal_care, medical, home_and_living, bank, pet_care, government, transportation",0,
+1780.0,0.0,0,,7,"charity, utility, medical, home_and_living, insurance, business, bank",1,loan
+3225.0,0.14285714285714285,1,utility,6,"investment, shopping, medical, home_and_living, travel, transportation",0,
+545.0,0.0,0,,11,"investment, finance, shopping, medical, home_and_living, automotive, restaurant, entertainment, education, travel, transportation",1,utility
+1627.0,0.25,1,utility,3,"charity, shopping, business",1,loan
+4303.0,0.2857142857142857,2,"home_and_living, government",5,"charity, utility, medical, insurance, business",2,"loan, finance"
+4268.0,0.0,0,,9,"charity, investment, finance, shopping, personal_care, restaurant, business, pet_care, government",1,loan
+3359.0,0.2857142857142857,2,"utility, insurance",5,"charity, loan, business, bank, government",0,
+3139.0,0.09090909090909091,1,loan,10,"investment, finance, shopping, medical, home_and_living, automotive, restaurant, education, travel, visit",0,
+1834.0,0.125,1,utility,7,"charity, personal_care, medical, insurance, restaurant, travel, visit",3,"loan, finance, shopping"
+1314.0,0.0,0,,5,"loan, utility, investment, personal_care, government",1,shopping
+4109.0,0.25,2,"loan, finance",6,"investment, personal_care, medical, restaurant, travel, transportation",1,shopping
+844.0,0.16666666666666666,1,home_and_living,5,"investment, medical, restaurant, education, travel",4,"utility, finance, insurance, transportation"
+1861.0,0.125,1,shopping,7,"loan, finance, home_and_living, insurance, entertainment, bank, visit",0,
+3510.0,0.1111111111111111,1,utility,8,"loan, personal_care, medical, insurance, restaurant, government, travel, transportation",0,
+1072.0,0.3,3,"loan, utility, shopping",7,"home_and_living, insurance, automotive, entertainment, bank, travel, transportation",1,finance
+2510.0,0.0,0,,6,"loan, finance, home_and_living, insurance, entertainment, bank",1,utility
+3065.0,0.2857142857142857,2,"loan, utility",5,"home_and_living, insurance, bank, government, transportation",1,finance
+2222.0,0.25,2,"utility, finance",6,"charity, loan, investment, personal_care, restaurant, business",1,shopping
+1163.0,0.0,0,,7,"utility, personal_care, medical, bank, education, government, visit",2,"shopping, home_and_living"
+1559.0,0.1111111111111111,1,finance,8,"loan, investment, medical, home_and_living, restaurant, education, government, travel",1,utility
+2068.0,0.375,3,"loan, finance, restaurant",5,"investment, medical, home_and_living, education, travel",1,shopping
+2032.0,0.4,2,"utility, insurance",3,"bank, government, transportation",1,loan
+3264.0,0.0,0,,5,"utility, investment, finance, government, visit",1,business
+2652.0,0.125,1,loan,7,"utility, investment, insurance, entertainment, bank, transportation, visit",0,
+894.0,0.3333333333333333,3,"loan, utility, home_and_living",6,"insurance, automotive, entertainment, bank, travel, transportation",2,"finance, shopping"
+2015.0,0.0,0,,8,"loan, utility, home_and_living, insurance, automotive, restaurant, government, travel",1,finance
+2321.0,0.2222222222222222,2,"utility, transportation",7,"loan, personal_care, medical, insurance, restaurant, government, travel",1,finance
+870.0,0.09090909090909091,1,finance,10,"investment, shopping, medical, home_and_living, automotive, restaurant, entertainment, education, travel, transportation",1,loan
+2251.0,0.14285714285714285,1,transportation,6,"utility, investment, personal_care, medical, government, visit",2,"finance, shopping"
+3299.0,0.0,0,,6,"charity, personal_care, medical, restaurant, education, visit",1,utility
+3221.0,0.14285714285714285,1,finance,6,"utility, investment, home_and_living, insurance, bank, government",1,charity
+1449.0,0.14285714285714285,1,transportation,6,"loan, utility, home_and_living, insurance, bank, government",2,"finance, shopping"
+1872.0,0.16666666666666666,1,personal_care,5,"loan, utility, automotive, restaurant, education",1,medical
+444.0,0.1111111111111111,1,shopping,8,"utility, finance, medical, home_and_living, automotive, education, travel, visit",0,
+2828.0,0.16666666666666666,1,automotive,5,"investment, shopping, restaurant, transportation, visit",1,insurance
+185.0,0.2,2,"loan, finance",8,"investment, shopping, medical, home_and_living, automotive, restaurant, travel, visit",0,
+388.0,0.14285714285714285,1,loan,6,"utility, personal_care, insurance, education, government, transportation",0,
+2537.0,0.42857142857142855,3,"finance, shopping, home_and_living",4,"loan, investment, personal_care, restaurant",1,utility
+2805.0,0.16666666666666666,2,"finance, shopping",10,"charity, investment, personal_care, insurance, automotive, restaurant, entertainment, education, transportation, visit",0,
+1863.0,0.16666666666666666,1,insurance,5,"loan, finance, home_and_living, education, visit",1,utility
+239.0,0.5,2,"loan, utility",2,"medical, bank",1,finance
+1612.0,0.0,0,,6,"charity, investment, home_and_living, restaurant, business, government",6,"loan, utility, finance, shopping, medical, insurance"
+1162.0,0.2,2,"finance, shopping",8,"investment, personal_care, automotive, restaurant, entertainment, education, transportation, visit",0,
+878.0,0.0,0,,7,"utility, finance, home_and_living, entertainment, bank, education, visit",1,loan
+85.0,0.4444444444444444,4,"finance, shopping, home_and_living, restaurant",5,"loan, utility, insurance, automotive, transportation",0,
+4099.0,0.14285714285714285,1,utility,6,"charity, finance, personal_care, home_and_living, business, government",0,
+2659.0,0.1111111111111111,1,finance,8,"investment, shopping, personal_care, automotive, restaurant, pet_care, transportation, visit",0,
+372.0,0.18181818181818182,2,"finance, restaurant",9,"investment, shopping, personal_care, medical, entertainment, education, pet_care, transportation, visit",0,
+2949.0,0.1111111111111111,1,utility,8,"loan, personal_care, medical, home_and_living, insurance, restaurant, government, travel",1,finance
+3932.0,0.0,0,,7,"utility, medical, home_and_living, insurance, entertainment, bank, government",1,loan
+3599.0,0.07692307692307693,1,finance,12,"investment, shopping, personal_care, medical, home_and_living, automotive, restaurant, entertainment, education, travel, transportation, visit",0,
+857.0,0.45454545454545453,5,"investment, finance, shopping, restaurant, visit",6,"charity, loan, personal_care, automotive, pet_care, transportation",2,"utility, entertainment"
+24.0,0.1111111111111111,1,finance,8,"investment, shopping, medical, home_and_living, automotive, restaurant, education, travel",0,
+4148.0,0.25,2,"loan, utility",6,"shopping, home_and_living, insurance, automotive, restaurant, transportation",1,government
+189.0,0.125,1,utility,7,"charity, finance, home_and_living, insurance, business, bank, government",1,restaurant
+2882.0,0.14285714285714285,1,loan,6,"charity, utility, finance, automotive, business, government",1,insurance
+3874.0,0.1111111111111111,1,shopping,8,"loan, investment, medical, home_and_living, automotive, restaurant, travel, transportation",2,"utility, finance"
+1953.0,0.08333333333333333,1,finance,11,"charity, investment, shopping, personal_care, medical, restaurant, entertainment, education, pet_care, transportation, visit",2,"loan, insurance"
+439.0,0.25,1,loan,3,"utility, bank, visit",0,
+1505.0,0.3333333333333333,2,"loan, utility",4,"charity, investment, automotive, restaurant",0,
+2562.0,0.42857142857142855,3,"finance, shopping, home_and_living",4,"medical, insurance, entertainment, education",0,
+4243.0,0.0,0,,7,"charity, loan, shopping, personal_care, automotive, restaurant, transportation",2,"utility, finance"
+3900.0,0.375,3,"loan, finance, shopping",5,"investment, personal_care, restaurant, government, travel",0,
+3890.0,0.16666666666666666,2,"loan, utility",10,"charity, shopping, medical, home_and_living, insurance, automotive, restaurant, business, bank, government",0,
+1243.0,0.14285714285714285,1,shopping,6,"utility, investment, medical, automotive, bank, transportation",1,finance
+603.0,0.2,1,shopping,4,"utility, personal_care, transportation, visit",1,finance
+1052.0,0.25,2,"utility, finance",6,"loan, investment, automotive, education, transportation, visit",1,shopping
+3987.0,0.2857142857142857,2,"loan, utility",5,"home_and_living, insurance, automotive, bank, government",0,
+197.0,0.0,0,,6,"utility, home_and_living, insurance, bank, government, transportation",1,loan
+221.0,0.2857142857142857,2,"finance, automotive",5,"loan, investment, shopping, personal_care, restaurant",1,charity
+2092.0,0.0,0,,5,"utility, medical, automotive, bank, visit",1,shopping
+193.0,0.1111111111111111,1,finance,8,"loan, investment, medical, home_and_living, restaurant, education, government, travel",2,"utility, shopping"
+2402.0,0.3333333333333333,2,"utility, finance",4,"home_and_living, insurance, business, bank",0,
+3263.0,0.14285714285714285,1,loan,6,"investment, finance, shopping, personal_care, restaurant, travel",0,
+4199.0,0.125,1,finance,7,"loan, shopping, home_and_living, automotive, restaurant, education, visit",1,utility
+3803.0,0.16666666666666666,1,finance,5,"loan, home_and_living, insurance, bank, education",2,"utility, shopping"
+1393.0,0.2222222222222222,2,"loan, investment",7,"shopping, medical, home_and_living, automotive, restaurant, travel, transportation",1,finance
+1407.0,0.0,0,,8,"charity, personal_care, medical, insurance, restaurant, education, travel, visit",1,loan
+181.0,0.125,1,loan,7,"utility, finance, home_and_living, insurance, bank, education, government",0,
+3096.0,0.09090909090909091,1,utility,10,"loan, medical, home_and_living, insurance, automotive, restaurant, bank, government, travel, transportation",0,
+3320.0,0.125,1,loan,7,"utility, personal_care, medical, automotive, education, government, visit",0,
+1502.0,0.16666666666666666,1,finance,5,"loan, shopping, personal_care, home_and_living, restaurant",0,
+206.0,0.2727272727272727,3,"loan, restaurant, travel",8,"utility, shopping, personal_care, medical, home_and_living, insurance, government, transportation",1,finance
+3838.0,0.14285714285714285,1,shopping,6,"investment, personal_care, medical, pet_care, transportation, visit",0,
+1644.0,0.3333333333333333,2,"investment, government",4,"finance, medical, home_and_living, business",0,
+3786.0,0.1,1,entertainment,9,"charity, finance, shopping, personal_care, automotive, restaurant, education, transportation, visit",0,
+756.0,0.0,0,,8,"loan, investment, medical, home_and_living, automotive, restaurant, education, travel",1,finance
+34.0,0.125,1,shopping,7,"charity, loan, utility, investment, automotive, restaurant, business",0,
+3620.0,0.14285714285714285,1,finance,6,"shopping, medical, home_and_living, insurance, entertainment, bank",0,
+1587.0,0.0,0,,9,"loan, utility, home_and_living, insurance, automotive, entertainment, bank, travel, transportation",2,"shopping, visit"
+2930.0,0.0,0,,9,"loan, investment, shopping, medical, home_and_living, automotive, restaurant, travel, transportation",1,utility
+2005.0,0.3333333333333333,2,"utility, insurance",4,"loan, home_and_living, government, transportation",0,
+1910.0,0.14285714285714285,1,finance,6,"loan, shopping, home_and_living, automotive, education, visit",0,
+377.0,0.2222222222222222,2,"finance, shopping",7,"charity, personal_care, insurance, restaurant, entertainment, pet_care, transportation",2,"utility, home_and_living"
+1124.0,0.3333333333333333,2,"finance, shopping",4,"home_and_living, insurance, entertainment, transportation",3,"loan, utility, investment"
+4057.0,0.5,3,"loan, utility, restaurant",3,"charity, medical, business",3,"finance, shopping, home_and_living"
+3594.0,0.16666666666666666,1,government,5,"utility, investment, medical, travel, transportation",2,"shopping, home_and_living"
+671.0,0.4,2,"finance, government",3,"loan, utility, insurance",1,shopping
+1075.0,0.1111111111111111,1,shopping,8,"loan, investment, medical, home_and_living, automotive, restaurant, travel, transportation",3,"utility, finance, insurance"
+595.0,0.125,1,finance,7,"charity, shopping, personal_care, restaurant, business, education, visit",1,loan
+1486.0,0.14285714285714285,1,finance,6,"loan, utility, home_and_living, insurance, business, bank",1,shopping
+908.0,0.0,0,,8,"charity, finance, shopping, home_and_living, insurance, entertainment, education, visit",2,"loan, utility"
+94.0,0.1111111111111111,1,utility,8,"loan, shopping, medical, home_and_living, automotive, education, travel, visit",0,
+1728.0,0.0,0,,5,"loan, utility, education, government, visit",1,shopping
+2894.0,0.0,0,,6,"investment, medical, home_and_living, restaurant, education, travel",1,utility
+3083.0,0.0,0,,9,"loan, investment, finance, shopping, home_and_living, entertainment, bank, education, visit",1,utility
+1018.0,0.14285714285714285,1,home_and_living,6,"charity, utility, medical, insurance, business, government",1,finance
+2580.0,0.0,0,,6,"utility, shopping, medical, automotive, bank, visit",2,"loan, finance"
+1222.0,0.5,4,"loan, utility, finance, restaurant",4,"automotive, education, government, travel",1,shopping
+4086.0,0.1111111111111111,1,loan,8,"charity, utility, home_and_living, insurance, restaurant, government, travel, transportation",0,
+2565.0,0.2,1,utility,4,"personal_care, medical, education, government",2,"shopping, home_and_living"
+3916.0,0.125,1,finance,7,"shopping, medical, home_and_living, automotive, pet_care, transportation, visit",1,insurance
+2502.0,0.1111111111111111,1,utility,8,"charity, loan, investment, medical, restaurant, bank, government, transportation",2,"finance, shopping"
+2890.0,0.25,2,"finance, government",6,"charity, utility, home_and_living, insurance, business, bank",1,shopping
+1074.0,0.125,1,home_and_living,7,"charity, utility, finance, insurance, business, bank, government",0,
+3271.0,0.125,1,finance,7,"loan, investment, shopping, personal_care, home_and_living, restaurant, business",0,
+2567.0,0.2727272727272727,3,"finance, shopping, personal_care",8,"charity, insurance, restaurant, entertainment, education, pet_care, transportation, visit",2,"loan, utility"
+3434.0,0.125,1,loan,7,"investment, finance, shopping, personal_care, automotive, restaurant, travel",0,
+1771.0,0.0,0,,11,"loan, utility, medical, home_and_living, insurance, automotive, entertainment, bank, government, travel, transportation",1,shopping
+3902.0,0.5,3,"loan, utility, medical",3,"automotive, government, transportation",5,"investment, finance, home_and_living, restaurant, education"
+333.0,0.14285714285714285,1,loan,6,"charity, utility, insurance, restaurant, government, transportation",0,
+240.0,0.16666666666666666,1,finance,5,"shopping, home_and_living, insurance, entertainment, bank",0,
+2054.0,0.0,0,,7,"loan, utility, medical, automotive, education, government, transportation",2,"finance, shopping"
+1898.0,0.0,0,,6,"loan, finance, shopping, home_and_living, insurance, education",1,medical
+4130.0,0.2222222222222222,2,"loan, utility",7,"charity, investment, personal_care, insurance, pet_care, government, transportation",0,
+1557.0,0.0,0,,11,"charity, finance, shopping, medical, home_and_living, insurance, restaurant, business, entertainment, education, travel",2,"loan, utility"
+1201.0,0.125,1,personal_care,7,"investment, finance, shopping, medical, pet_care, transportation, visit",0,
+3598.0,0.0,0,,5,"finance, insurance, entertainment, education, visit",1,utility
+1653.0,0.1111111111111111,1,loan,8,"investment, shopping, medical, home_and_living, automotive, restaurant, travel, transportation",0,
+3928.0,0.2,2,"finance, shopping",8,"charity, personal_care, home_and_living, insurance, restaurant, entertainment, pet_care, transportation",0,
+15.0,0.14285714285714285,1,utility,6,"personal_care, medical, education, government, transportation, visit",2,"finance, shopping"
+3463.0,0.125,1,finance,7,"investment, medical, home_and_living, restaurant, business, education, travel",2,"utility, shopping"
+1273.0,0.3333333333333333,2,"loan, government",4,"utility, home_and_living, insurance, automotive",1,finance
+1979.0,0.3333333333333333,2,"finance, shopping",4,"loan, personal_care, home_and_living, restaurant",0,
+4003.0,0.16666666666666666,1,utility,5,"loan, investment, personal_care, education, visit",1,finance
+3708.0,0.2857142857142857,2,"shopping, entertainment",5,"investment, medical, home_and_living, travel, transportation",2,"finance, restaurant"
+3953.0,0.2857142857142857,2,"finance, home_and_living",5,"shopping, automotive, entertainment, education, visit",2,"loan, utility"
+2806.0,0.09090909090909091,1,loan,10,"investment, finance, shopping, medical, home_and_living, automotive, restaurant, travel, transportation, visit",0,
+491.0,0.2857142857142857,2,"finance, shopping",5,"loan, investment, personal_care, home_and_living, restaurant",1,utility
+1035.0,0.16666666666666666,1,utility,5,"home_and_living, insurance, automotive, entertainment, transportation",0,
+2841.0,0.0,0,,8,"charity, shopping, personal_care, insurance, restaurant, pet_care, government, transportation",1,utility
+2342.0,0.36363636363636365,4,"loan, finance, shopping, restaurant",7,"investment, medical, home_and_living, automotive, travel, transportation, visit",0,
+507.0,0.3333333333333333,3,"loan, utility, shopping",6,"investment, medical, automotive, restaurant, bank, transportation",2,"finance, home_and_living"
+3779.0,0.0,0,,7,"utility, shopping, medical, home_and_living, automotive, travel, visit",1,insurance
+2464.0,0.14285714285714285,1,utility,6,"charity, loan, home_and_living, insurance, government, transportation",3,"shopping, restaurant, education"
+1651.0,0.2857142857142857,2,"loan, utility",5,"home_and_living, insurance, automotive, government, transportation",1,finance
+3940.0,0.25,2,"utility, transportation",6,"charity, loan, shopping, insurance, automotive, restaurant",2,"finance, government"
+2452.0,0.2,2,"loan, utility",8,"medical, home_and_living, insurance, automotive, bank, government, travel, transportation",0,
+3242.0,0.16666666666666666,1,restaurant,5,"investment, shopping, personal_care, medical, visit",1,loan
+434.0,0.0,0,,6,"finance, home_and_living, insurance, business, bank, education",2,"loan, utility"
+1262.0,0.0,0,,8,"investment, shopping, personal_care, medical, restaurant, bank, travel, visit",1,loan
+3444.0,0.14285714285714285,1,utility,6,"charity, loan, home_and_living, insurance, business, government",0,
+3047.0,0.2,2,"finance, shopping",8,"investment, automotive, restaurant, entertainment, education, travel, transportation, visit",1,utility
+1399.0,0.1,1,finance,9,"charity, investment, shopping, personal_care, restaurant, business, pet_care, transportation, visit",0,
+4265.0,0.2,2,"utility, finance",8,"charity, investment, personal_care, home_and_living, insurance, business, pet_care, government",3,"loan, medical, visit"
+2016.0,0.2857142857142857,2,"finance, shopping",5,"loan, home_and_living, insurance, bank, education",0,
+3560.0,0.2,2,"loan, shopping",8,"charity, investment, personal_care, automotive, restaurant, business, transportation, visit",2,"utility, finance"
+1056.0,0.25,2,"finance, home_and_living",6,"shopping, medical, automotive, entertainment, education, visit",0,
+1514.0,0.0,0,,4,"home_and_living, insurance, business, government",1,loan
+4171.0,0.2222222222222222,2,"loan, shopping",7,"investment, medical, home_and_living, automotive, restaurant, travel, transportation",0,
+1375.0,0.125,1,shopping,7,"loan, utility, investment, personal_care, restaurant, government, travel",1,finance
+331.0,0.0,0,,5,"finance, medical, home_and_living, bank, education",1,utility
+3196.0,0.375,3,"loan, finance, shopping",5,"investment, personal_care, restaurant, government, travel",1,home_and_living
+4225.0,0.0,0,,12,"charity, investment, finance, shopping, personal_care, insurance, automotive, restaurant, entertainment, education, transportation, visit",2,"loan, government"
+1293.0,0.16666666666666666,1,finance,5,"shopping, personal_care, home_and_living, restaurant, business",0,
+3590.0,0.1111111111111111,1,utility,8,"investment, personal_care, medical, home_and_living, bank, pet_care, government, transportation",3,"finance, shopping, restaurant"
+3382.0,0.16666666666666666,1,utility,5,"investment, medical, home_and_living, bank, government",1,loan
+722.0,0.1111111111111111,1,loan,8,"charity, utility, personal_care, medical, automotive, restaurant, bank, transportation",1,finance
+33.0,0.2,1,finance,4,"shopping, automotive, education, visit",1,loan
+2298.0,0.2727272727272727,3,"loan, utility, medical",8,"home_and_living, insurance, automotive, restaurant, bank, government, travel, transportation",1,finance
+889.0,0.125,1,utility,7,"charity, loan, finance, home_and_living, restaurant, government, travel",0,
+230.0,0.3,3,"utility, home_and_living, insurance",7,"loan, automotive, restaurant, entertainment, bank, travel, transportation",2,"finance, shopping"
+3313.0,0.2857142857142857,2,"finance, medical",5,"personal_care, insurance, entertainment, travel, visit",0,
+409.0,0.3333333333333333,2,"utility, insurance",4,"home_and_living, bank, government, transportation",0,
+1698.0,0.2857142857142857,2,"loan, investment",5,"finance, shopping, personal_care, automotive, restaurant",0,
+2990.0,0.14285714285714285,1,finance,6,"loan, investment, shopping, personal_care, home_and_living, restaurant",0,
+1860.0,0.0,0,,7,"investment, finance, shopping, medical, home_and_living, entertainment, transportation",1,loan
+882.0,0.18181818181818182,2,"finance, shopping",9,"charity, investment, personal_care, medical, restaurant, business, education, pet_care, visit",1,loan
+4203.0,0.18181818181818182,2,"loan, shopping",9,"investment, personal_care, medical, automotive, restaurant, pet_care, travel, transportation, visit",2,"utility, bank"
+4237.0,0.18181818181818182,2,"finance, shopping",9,"loan, investment, medical, home_and_living, automotive, restaurant, entertainment, travel, visit",2,"utility, transportation"
+732.0,0.14285714285714285,1,finance,6,"loan, utility, home_and_living, insurance, automotive, bank",0,
+760.0,0.14285714285714285,1,loan,6,"investment, finance, shopping, personal_care, automotive, restaurant",0,
+4035.0,0.1111111111111111,1,charity,8,"finance, personal_care, medical, insurance, restaurant, education, travel, visit",2,"loan, utility"
+4052.0,0.0,0,,7,"utility, investment, personal_care, medical, bank, government, transportation",1,shopping
+678.0,0.375,3,"loan, utility, finance",5,"home_and_living, insurance, bank, education, government",1,shopping
+252.0,0.15384615384615385,2,"finance, shopping",11,"investment, personal_care, medical, home_and_living, automotive, restaurant, entertainment, education, travel, transportation, visit",1,utility
+3155.0,0.0,0,,8,"charity, utility, personal_care, insurance, business, bank, government, transportation",1,shopping
+326.0,0.0,0,,6,"charity, utility, home_and_living, insurance, government, transportation",1,medical
+1832.0,0.0,0,,9,"investment, finance, shopping, personal_care, automotive, restaurant, pet_care, transportation, visit",1,business
+3593.0,0.16666666666666666,1,utility,5,"loan, home_and_living, insurance, government, transportation",3,"finance, shopping, restaurant"
+621.0,0.125,1,finance,7,"investment, shopping, personal_care, automotive, pet_care, transportation, visit",1,insurance
+669.0,0.3333333333333333,3,"finance, shopping, restaurant",6,"investment, medical, home_and_living, automotive, education, travel",1,loan
+100.0,0.14285714285714285,1,personal_care,6,"charity, shopping, insurance, business, pet_care, transportation",1,restaurant
+1967.0,0.14285714285714285,1,charity,6,"loan, utility, home_and_living, insurance, government, transportation",2,"finance, medical"
+677.0,0.125,1,loan,7,"utility, investment, home_and_living, insurance, bank, government, transportation",0,
+2972.0,0.125,1,loan,7,"charity, utility, medical, insurance, bank, government, transportation",0,
+3245.0,0.1111111111111111,1,loan,8,"utility, home_and_living, insurance, automotive, restaurant, entertainment, travel, transportation",0,
+3960.0,0.3333333333333333,1,utility,2,"insurance, bank",0,
+1412.0,0.0,0,,5,"utility, home_and_living, insurance, bank, government",1,shopping
+811.0,0.09090909090909091,1,insurance,10,"loan, utility, medical, home_and_living, automotive, restaurant, bank, government, travel, transportation",1,finance
+2379.0,0.3333333333333333,2,"utility, transportation",4,"home_and_living, insurance, bank, government",1,loan
+2520.0,0.25,2,"finance, shopping",6,"home_and_living, insurance, entertainment, education, transportation, visit",1,travel
+1593.0,0.09090909090909091,1,loan,10,"investment, finance, shopping, medical, home_and_living, automotive, restaurant, education, travel, visit",0,
+3515.0,0.0,0,,6,"charity, loan, utility, business, bank, government",3,"finance, medical, insurance"
+1279.0,0.2,1,finance,4,"loan, utility, bank, government",0,
+2513.0,0.42857142857142855,3,"loan, utility, shopping",4,"personal_care, home_and_living, insurance, restaurant",0,
+1118.0,0.0,0,,8,"loan, finance, shopping, home_and_living, insurance, entertainment, bank, visit",1,utility
+2993.0,0.0,0,,8,"utility, shopping, medical, home_and_living, insurance, bank, travel, transportation",1,loan
+2458.0,0.3333333333333333,2,"finance, shopping",4,"loan, home_and_living, insurance, education",1,utility
+1095.0,0.0,0,,6,"utility, home_and_living, insurance, automotive, education, government",1,investment
+3639.0,0.16666666666666666,1,utility,5,"home_and_living, insurance, bank, government, transportation",1,automotive
+2248.0,0.2,2,"finance, shopping",8,"charity, personal_care, insurance, restaurant, entertainment, education, transportation, visit",0,
+1506.0,0.125,1,finance,7,"loan, home_and_living, insurance, bank, education, government, visit",0,
+3214.0,0.4,2,"loan, utility",3,"charity, insurance, bank",1,transportation
+294.0,0.14285714285714285,1,loan,6,"investment, finance, shopping, personal_care, automotive, restaurant",1,utility
+1232.0,0.2857142857142857,2,"finance, shopping",5,"investment, medical, home_and_living, entertainment, transportation",1,loan
+1413.0,0.1111111111111111,1,finance,8,"charity, shopping, personal_care, insurance, restaurant, entertainment, education, transportation",1,utility
+3768.0,0.1111111111111111,1,loan,8,"utility, medical, home_and_living, insurance, bank, government, travel, transportation",1,shopping
+2370.0,0.3333333333333333,2,"finance, home_and_living",4,"charity, utility, business, government",0,
+2965.0,0.14285714285714285,1,shopping,6,"loan, investment, personal_care, restaurant, government, travel",0,
+1004.0,0.6666666666666666,4,"loan, utility, insurance, government",2,"charity, transportation",2,"shopping, home_and_living"
+804.0,0.1111111111111111,1,loan,8,"charity, utility, investment, personal_care, insurance, restaurant, government, transportation",2,"medical, automotive"
+808.0,0.0,0,,9,"investment, shopping, personal_care, medical, pet_care, government, travel, transportation, visit",1,automotive
+30.0,0.16666666666666666,1,utility,5,"charity, loan, shopping, restaurant, business",2,"finance, home_and_living"
+3251.0,0.1111111111111111,1,investment,8,"loan, utility, medical, automotive, restaurant, bank, travel, transportation",2,"shopping, home_and_living"
+1881.0,0.25,2,"finance, restaurant",6,"charity, shopping, personal_care, automotive, education, visit",2,"utility, insurance"
+3043.0,0.375,3,"loan, utility, finance",5,"charity, investment, personal_care, restaurant, government",1,shopping
+4283.0,0.0,0,,9,"investment, finance, shopping, personal_care, home_and_living, automotive, restaurant, education, travel",1,utility
+3316.0,0.2857142857142857,2,"utility, shopping",5,"charity, medical, bank, pet_care, transportation",0,
+1552.0,0.16666666666666666,1,personal_care,5,"loan, finance, shopping, home_and_living, restaurant",1,medical
+4080.0,0.1111111111111111,1,utility,8,"loan, investment, shopping, medical, automotive, restaurant, bank, transportation",0,
+74.0,0.2,2,"finance, shopping",8,"charity, loan, investment, personal_care, restaurant, pet_care, transportation, visit",0,
+446.0,0.1111111111111111,1,finance,8,"charity, personal_care, medical, insurance, restaurant, education, travel, visit",2,"utility, shopping"
+2479.0,0.25,1,finance,3,"medical, home_and_living, education",0,
+1057.0,0.5,4,"loan, finance, entertainment, education",4,"medical, home_and_living, restaurant, travel",3,"utility, insurance, business"
+1117.0,0.0,0,,8,"utility, investment, personal_care, medical, home_and_living, insurance, travel, transportation",1,finance
+2006.0,0.125,1,loan,7,"utility, investment, home_and_living, insurance, bank, government, transportation",0,
+1236.0,0.14285714285714285,1,utility,6,"investment, personal_care, medical, education, government, visit",1,loan
+403.0,0.125,1,utility,7,"charity, medical, insurance, entertainment, bank, education, visit",1,finance
+2801.0,0.1111111111111111,1,shopping,8,"charity, finance, personal_care, automotive, restaurant, entertainment, education, visit",2,"utility, pet_care"
+565.0,0.14285714285714285,1,finance,6,"charity, shopping, personal_care, automotive, education, visit",0,
+4189.0,0.5,1,utility,1,government,2,"loan, transportation"
+2859.0,0.125,1,transportation,7,"charity, loan, utility, insurance, restaurant, business, government",0,
+1492.0,0.1111111111111111,1,finance,8,"investment, shopping, personal_care, home_and_living, automotive, restaurant, education, travel",0,
+215.0,0.3333333333333333,3,"utility, shopping, home_and_living",6,"loan, investment, medical, bank, travel, transportation",0,
+3132.0,0.09090909090909091,1,insurance,10,"charity, finance, shopping, medical, home_and_living, restaurant, business, entertainment, education, travel",0,
+2466.0,0.14285714285714285,1,utility,6,"charity, loan, investment, medical, bank, government",2,"finance, shopping"
+863.0,0.3333333333333333,3,"loan, utility, government",6,"charity, investment, finance, personal_care, restaurant, business",1,medical
+3703.0,0.2222222222222222,2,"finance, shopping",7,"investment, personal_care, medical, automotive, restaurant, education, visit",0,
+322.0,0.2,1,shopping,4,"utility, personal_care, home_and_living, insurance",2,"finance, restaurant"
+795.0,0.0,0,,5,"investment, finance, personal_care, restaurant, government",1,loan
+4277.0,0.0,0,,7,"charity, utility, medical, insurance, bank, education, visit",1,loan
+3835.0,0.42857142857142855,3,"utility, finance, government",4,"home_and_living, insurance, bank, education",1,loan
+2660.0,0.2,1,loan,4,"charity, utility, restaurant, business",2,"finance, shopping"
+123.0,0.0,0,,6,"charity, loan, utility, investment, personal_care, visit",1,shopping
+1229.0,0.18181818181818182,2,"finance, shopping",9,"charity, investment, personal_care, medical, automotive, restaurant, entertainment, education, visit",1,utility
+290.0,0.25,1,utility,3,"automotive, education, visit",4,"finance, shopping, personal_care, home_and_living"
+4115.0,0.25,2,"finance, shopping",6,"charity, personal_care, restaurant, business, education, visit",1,utility
+2956.0,0.14285714285714285,1,loan,6,"utility, shopping, home_and_living, insurance, automotive, transportation",1,government
+1109.0,0.16666666666666666,1,loan,5,"utility, home_and_living, automotive, government, transportation",0,
+355.0,0.42857142857142855,3,"loan, finance, home_and_living",4,"utility, insurance, bank, government",1,education
+1030.0,0.09090909090909091,1,finance,10,"loan, investment, shopping, medical, home_and_living, automotive, restaurant, travel, transportation, visit",0,
+3642.0,0.14285714285714285,1,loan,6,"investment, finance, shopping, personal_care, automotive, restaurant",0,
+1425.0,0.1111111111111111,1,utility,8,"loan, medical, insurance, automotive, restaurant, bank, government, transportation",1,finance
+257.0,0.2,1,utility,4,"investment, government, transportation, visit",2,"loan, insurance"
+2484.0,0.125,1,loan,7,"investment, finance, personal_care, medical, restaurant, travel, transportation",1,utility
+4259.0,0.0,0,,7,"loan, medical, home_and_living, restaurant, education, government, travel",1,insurance
+1633.0,0.1111111111111111,1,loan,8,"utility, personal_care, medical, insurance, restaurant, government, travel, transportation",1,shopping
+3350.0,0.1111111111111111,1,loan,8,"utility, personal_care, medical, insurance, restaurant, government, travel, transportation",0,
+2866.0,0.14285714285714285,1,insurance,6,"utility, personal_care, medical, pet_care, government, transportation",3,"finance, shopping, restaurant"
+292.0,0.14285714285714285,1,utility,6,"charity, loan, shopping, automotive, restaurant, business",1,insurance
+3016.0,0.1111111111111111,1,loan,8,"utility, investment, shopping, medical, automotive, restaurant, bank, transportation",1,finance
+2368.0,0.6666666666666666,2,"utility, shopping",1,personal_care,4,"loan, finance, home_and_living, transportation"
+3230.0,0.14285714285714285,1,loan,6,"utility, home_and_living, insurance, bank, government, transportation",0,
+1742.0,0.1111111111111111,1,finance,8,"loan, utility, home_and_living, automotive, entertainment, bank, education, visit",1,medical
+2371.0,0.14285714285714285,1,finance,6,"loan, shopping, home_and_living, insurance, business, bank",1,utility
+264.0,0.14285714285714285,1,loan,6,"utility, investment, personal_care, medical, government, transportation",1,home_and_living
+1420.0,0.0,0,,4,"investment, medical, automotive, education",1,utility
+2270.0,0.0,0,,9,"loan, utility, investment, shopping, medical, automotive, restaurant, bank, transportation",1,finance
+57.0,0.1111111111111111,1,shopping,8,"loan, investment, medical, home_and_living, automotive, restaurant, travel, transportation",2,"utility, finance"
+4333.0,0.0,0,,7,"investment, personal_care, medical, automotive, education, government, visit",2,"finance, shopping"
+681.0,0.1111111111111111,1,utility,8,"loan, finance, shopping, home_and_living, insurance, automotive, restaurant, transportation",0,
+3102.0,0.0,0,,4,"utility, medical, home_and_living, government",2,"loan, investment"
+204.0,0.14285714285714285,1,home_and_living,6,"utility, investment, shopping, medical, travel, transportation",1,restaurant
+810.0,0.1,1,restaurant,9,"loan, investment, finance, shopping, medical, home_and_living, automotive, travel, transportation",0,
+1179.0,0.16666666666666666,1,utility,5,"home_and_living, insurance, bank, government, transportation",1,loan
+1324.0,0.2857142857142857,2,"utility, finance",5,"charity, loan, insurance, business, bank",1,home_and_living
+13.0,0.09090909090909091,1,loan,10,"investment, finance, shopping, medical, home_and_living, automotive, restaurant, entertainment, travel, visit",0,
+1033.0,0.3333333333333333,2,"loan, utility",4,"investment, finance, government, visit",1,shopping

@@ -208,6 +208,53 @@ def load_and_preprocess_data(DATA_PATH):
     
     return df, preprocessor, categories
 
+def load_and_preprocess_data_llm(DATA_PATH):
+    """Load and preprocess data with improved encoding"""
+    df = pd.read_csv(DATA_PATH)
+    df = preprocess_unknown_values(df)
+    
+    # Define features and categories
+    numerical_features = ['Number of Children', 'Age']
+    label_encode_features = ['Gender', 'Education level']
+    binary_encode_features = ['Marital status', 'Region', 'Occupation Group']
+    categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
+                 'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
+                 'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
+                 'government', 'travel', 'transportation', 'visit', 'system_dpst']
+    
+    # Filter features that actually exist in the dataframe
+    numerical_features = [col for col in numerical_features if col in df.columns]
+    label_encode_features = [col for col in label_encode_features if col in df.columns]
+    binary_encode_features = [col for col in binary_encode_features if col in df.columns]
+    
+    # Create transformers list
+    transformers = []
+    
+    if numerical_features:
+        transformers.append(('num', Pipeline([
+            ('imputer', SimpleImputer(strategy='median'))
+        ]), numerical_features))
+    
+    if label_encode_features:
+        transformers.append(('label', Pipeline([
+            ('imputer', SimpleImputer(strategy='most_frequent')),
+            ('encoder', MultiColumnLabelEncoder())
+        ]), label_encode_features))
+    
+    if binary_encode_features:
+        transformers.append(('binary', Pipeline([
+            ('imputer', SimpleImputer(strategy='most_frequent')),
+            ('encoder', BinaryEncoder())
+        ]), binary_encode_features))
+    
+    preprocessor = ColumnTransformer(transformers=transformers)
+
+    # Fit the preprocessor to the data
+    feature_cols = [col for col in df.columns if col not in categories and col != 'embedding']
+    preprocessor.fit(df[feature_cols])
+    
+    return df, preprocessor, categories
+
 def train_and_evaluate_models():
     """Train and evaluate models for each category"""
     df, preprocessor, categories = load_and_preprocess_data(DATA_PATH)

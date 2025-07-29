@@ -9,8 +9,10 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 from src.client.llm import *
 
-train_T0 = pd.read_csv("src/data/T0/train_with_lifestyle.csv")
-DIR = "src/data/cf_demog_summary/train_T0_demog_summ.csv"
+# train_T0 = pd.read_csv("src/data/T0/train_with_lifestyle.csv")
+test_T0 = pd.read_csv("src/data/T0/test_with_lifestyle.csv")
+# DIR = "src/data/cf_demog_summary/train_T0_demog_summ.csv"
+DIR = "src/data/cf_demog_summary/test_T0_demog_summ.csv"
 checkpoint_dir = 'src/recommendation/cf/summary_checkpoints'
 
 # Context at T0
@@ -112,20 +114,25 @@ def save_checkpoint(df, dir_path, checkpoint_name):
 def demog_summary_prep(train_T0, DIR):
     # testtest = train_T0.head()
     # second_q = train_T0.iloc[(len(train_T0)//4)*3:].copy()
-    second_q = train_T0.iloc[len(train_T0)//4:].copy()
+    # second_q = train_T0.iloc[len(train_T0)//4:].copy()
+    second_q = train_T0.copy()
 
     train_T0_with_summ = merge_summaries(second_q)
-    save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_summaries")
+    # save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_summaries")
 
     # train_T0_with_summ = pd.read_csv('src/similar_indiv/rag/checkpoints/01_with_summaries_20250627_224753.csv')
 
-    save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_demog_summ")
+    # save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_demog_summ")
 
-    save_csv_file(DIR, train_T0_with_summ, 'train_T0_demog_summ', next_version=None)
+    # save_csv_file(DIR, train_T0_with_summ, 'train_T0_demog_summ', next_version=None)
+    save_csv_file(DIR, train_T0_with_summ, 'test_T0_demog_summ', next_version=None)
 
 # demog_summary_prep(train_T0, DIR)
 
-part1 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v1.csv')
-part2 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v2.csv')
-train_T0_demog_summ = pd.concat([part1, part2], axis=0, ignore_index=True)
-train_T0_demog_summ.to_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ.csv', index=False)
+# concat
+# part1 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v1.csv')
+# part2 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v2.csv')
+# train_T0_demog_summ = pd.concat([part1, part2], axis=0, ignore_index=True)
+# test_T0_demog_summ.to_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ.csv', index=False)
+
+demog_summary_prep(test_T0, DIR)
