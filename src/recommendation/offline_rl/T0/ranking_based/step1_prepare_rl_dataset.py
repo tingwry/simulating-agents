@@ -12,7 +12,7 @@ DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_rankin
 DATA_DIR = 'src/recommendation/offline_rl/T0/ranking_based/data'
 
 def create_offline_rl_dataset_alternative():
-    """Create offline RL dataset with alternative saving method."""
+    """Create offline RL dataset using transaction counts as rewards"""
     
     os.makedirs(DATA_DIR, exist_ok=True)
     
@@ -23,9 +23,10 @@ def create_offline_rl_dataset_alternative():
     joblib.dump(preprocessor, f'{DATA_DIR}/preprocessor.pkl')
     joblib.dump(categories, f'{DATA_DIR}/categories.pkl')
     
-    # Get features
+    # Get features and transaction counts
     feature_cols = [col for col in df.columns if col not in categories]
     X = preprocessor.fit_transform(df[feature_cols])
+    transaction_counts = df[categories].values  # Actual transaction counts
     
     print(f"Dataset shape: {df.shape}")
     print(f"Features shape: {X.shape}")
@@ -37,34 +38,17 @@ def create_offline_rl_dataset_alternative():
     rewards = []
     terminals = []
     
-    # Create balanced dataset
+    # Create dataset with transaction counts as rewards
     for i in range(len(df)):
         customer_features = X[i]
-        customer_labels = df.iloc[i][categories].values
+        customer_transactions = transaction_counts[i]
         
-        positive_categories = np.where(customer_labels == 1)[0]
-        negative_categories = np.where(customer_labels == 0)[0]
-        
-        # Add positive examples
-        for action_idx in positive_categories:
+        # Add all possible actions with their rewards
+        for action_idx in range(len(categories)):
             observations.append(customer_features.copy())
             actions.append(action_idx)
-            rewards.append(1.0)
+            rewards.append(float(customer_transactions[action_idx]))  # Use actual count as reward
             terminals.append(True)
-        
-        # Add balanced negative examples
-        n_negative_samples = len(positive_categories)
-        if n_negative_samples > 0 and len(negative_categories) > 0:
-            sampled_negative = np.random.choice(
-                negative_categories, 
-                min(n_negative_samples, len(negative_categories)), 
-                replace=False
-            )
-            for action_idx in sampled_negative:
-                observations.append(customer_features.copy())
-                actions.append(action_idx)
-                rewards.append(0.0)
-                terminals.append(True)
     
     # Convert to numpy arrays
     observations = np.array(observations, dtype=np.float32)
@@ -74,26 +58,17 @@ def create_offline_rl_dataset_alternative():
     
     print(f"\nDataset Statistics:")
     print(f"Total transitions: {len(observations)}")
-    print(f"Positive samples: {np.sum(rewards == 1.0)}")
-    print(f"Negative samples: {np.sum(rewards == 0.0)}")
+    print(f"Average reward: {np.mean(rewards):.2f}")
+    print(f"Max reward: {np.max(rewards):.2f}")
+    print(f"Min reward: {np.min(rewards):.2f}")
     
-    # Method 1: Save as separate numpy arrays
+    # Save dataset components
     np.save(f'{DATA_DIR}/observations.npy', observations)
     np.save(f'{DATA_DIR}/actions.npy', actions)
     np.save(f'{DATA_DIR}/rewards.npy', rewards)
     np.save(f'{DATA_DIR}/terminals.npy', terminals)
     
-    # Method 2: Save as pickle
-    dataset_dict = {
-        'observations': observations,
-        'actions': actions,
-        'rewards': rewards,
-        'terminals': terminals
-    }
-    with open(f'{DATA_DIR}/dataset_components.pkl', 'wb') as f:
-        pickle.dump(dataset_dict, f)
-    
-    # Method 3: Create and save MDPDataset (if this works)
+    # Also save as MDPDataset
     try:
         dataset = MDPDataset(
             observations=observations,
@@ -101,17 +76,11 @@ def create_offline_rl_dataset_alternative():
             rewards=rewards,
             terminals=terminals,
         )
-        
-        # Try different saving methods
-        with open(f'{DATA_DIR}/mdp_dataset.pkl', 'wb') as f:
-            pickle.dump(dataset, f)
-        
-        print("✅ All dataset formats saved successfully")
+        dataset.dump(f'{DATA_DIR}/mdp_dataset.h5')
+        print("✅ Dataset saved in multiple formats")
         return dataset
-        
     except Exception as e:
         print(f"Warning: Could not create MDPDataset: {e}")
-        print("✅ Dataset components saved as numpy arrays and pickle")
         return None
     
 if __name__ == "__main__":

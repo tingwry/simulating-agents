@@ -12,9 +12,14 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.base import BaseEstimator, TransformerMixin
 
-DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking.csv'
-MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models'
-METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics'
+# DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking.csv'
+# MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models'
+# METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics'
+
+DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking_grouped.csv'
+MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models_grouped'
+METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics_grouped'
+
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
 
@@ -130,7 +135,8 @@ def load_and_preprocess_data_binary_class(DATA_PATH):
     categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
                  'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
                  'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst']
+                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other']
+    
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
@@ -173,7 +179,7 @@ def load_and_preprocess_data(DATA_PATH):
     categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
                  'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
                  'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst']
+                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other']
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
@@ -220,7 +226,7 @@ def load_and_preprocess_data_llm(DATA_PATH):
     categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
                  'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
                  'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst']
+                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other']
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]

@@ -5,6 +5,7 @@ import pickle
 from d3rlpy.dataset import MDPDataset
 from d3rlpy.algos import DQNConfig, DiscreteCQLConfig
 from d3rlpy.metrics import TDErrorEvaluator
+from d3rlpy.preprocessing import MinMaxRewardScaler
 
 def load_dataset_components(data_dir):
     """Load dataset using different methods."""
@@ -58,43 +59,41 @@ def load_dataset_components(data_dir):
     raise Exception("Could not load dataset using any method")
 
 def train_offline_rl_alternative():
-    """Train offline RL model with alternative dataset loading."""
+    """Train offline RL model with transaction count rewards"""
     
-    data_dir = 'src/recommendation/offline_rl/T0/data'
-    model_dir = 'src/recommendation/offline_rl/T0/models'
+    data_dir = 'src/recommendation/offline_rl/T0/ranking_based/data'
+    model_dir = 'src/recommendation/offline_rl/T0/ranking_based/models'
     os.makedirs(model_dir, exist_ok=True)
     
     # Load dataset
-    dataset = load_dataset_components(data_dir)
-    # print(f"Loaded dataset with {len(dataset)} transitions")
+    try:
+        dataset = MDPDataset.load(f'{data_dir}/mdp_dataset.h5')
+    except:
+        dataset = load_dataset_components(data_dir)
     
-    # Split dataset
-    # train_episodes, test_episodes = dataset.split(test_size=0.2)
-    
-    # Initialize CQL
+    reward_scaler = MinMaxRewardScaler(minimum=0.0, maximum=1.0)
+
+    # Initialize CQL with continuous reward support
     cql = DiscreteCQLConfig(
         learning_rate=6.25e-05,
         batch_size=32,
-        n_critics=2,
-        alpha=1.5
+        # n_critics=2,
+        # alpha=1.5,
+        reward_scaler=reward_scaler  # Important for continuous rewards
     ).create(device=None)
     
     cql.build_with_dataset(dataset)
     
-    # Setup evaluator
-    td_error_evaluator = TDErrorEvaluator(episodes=dataset.episodes)
-    
     # Training
-    print("Starting CQL training...")
+    print("Starting CQL training with transaction count rewards...")
     cql.fit(
         dataset,
         n_steps=200000,
-        evaluators={'td_error': td_error_evaluator},
         save_interval=10000,
     )
     
     # Save model
-    model_path = f'{model_dir}/cql_model_best_action.d3'
+    model_path = f'{model_dir}/cql_model_txn_counts.d3'
     cql.save_model(model_path)
     print(f"✅ Model saved to {model_path}")
     
