@@ -1,0 +1,20 @@
+{
+  "Evaluation Metrics": {
+    "binary_metrics": {
+      "total_customers": 392.0,
+      "total_predictions": 1833.0,
+      "total_actual": 392.0,
+      "true_positives": 508.0,
+      "false_positives": 1325.0,
+      "false_negatives": 364.0,
+      "precision": 0.2771,
+      "recall": 0.5826,
+      "f1_score": 0.3756,
+      "accuracy": 0.4633,
+      "hit_rate": 0.2771
+    },
+    "ranking_metrics": {
+      "average_ndcg_with_probs": 0.6065582126049478
+    }
+  }
+}

@@ -207,9 +207,13 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
 # # ans_key = pd.read_csv('src/recommendation/cluster_based/eval/ans_key.csv')
 # ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix.csv')
 
-binary_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped.csv')
-probability_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_scores.csv')
-ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix_grouped.csv')
+# binary_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped.csv')
+# probability_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_scores.csv')
+# ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix_grouped.csv')
+
+binary_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_catbased.csv')
+probability_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_catbased_scores.csv')
+ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix_grouped_catbased.csv')
 
 # Run evaluation
 detailed_results, metrics = evaluate_transaction_predictions(
@@ -217,7 +221,7 @@ detailed_results, metrics = evaluate_transaction_predictions(
     ans_key, 
     probabilities_df=probability_predictions,
     # output_folder="src/recommendation/binary_classification_rand_reg/T0/eval_results"
-    output_folder="src/recommendation/binary_classification_rand_reg/T0/eval_results_grouped"
+    output_folder="src/recommendation/binary_classification_rand_reg/T0/eval_results_grouped_catbased"
 )
 
 # View first few rows of detailed results

@@ -14,8 +14,8 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 TEST_DATA_PATH = 'src/data/T0/test_with_lifestyle.csv'
 # PREDICTION_OUTPUT = 'src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions.csv'
-PREDICTION_OUTPUT = 'src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped.csv'
-
+# PREDICTION_OUTPUT = 'src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped.csv'
+PREDICTION_OUTPUT = 'src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_catbased.csv'
 
 class MultiColumnLabelEncoder(BaseEstimator, TransformerMixin):
     """Label encoder that handles multiple columns properly"""
@@ -108,7 +108,9 @@ def run_predictions():
     df = preprocess_unknown_values(df)
     _, preprocessor, categories = load_and_preprocess_data_binary_class(TEST_DATA_PATH)
 
-    categories = ['loan','utility','finance','shopping','other']
+    # categories = ['loan','utility','finance','shopping','other']
+    categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
+                 'leisure', 'public_services']
     
     # Prepare features
     feature_cols = [col for col in df.columns if col not in categories]

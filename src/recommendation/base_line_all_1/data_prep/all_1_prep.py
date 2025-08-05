@@ -1,8 +1,7 @@
 import pandas as pd
 
-predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped.csv')
-
-import pandas as pd
+# predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped.csv')
+predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_catbased.csv')
 
 def zeros_to_ones(df):
     df = df.copy()
@@ -12,4 +11,4 @@ def zeros_to_ones(df):
     return df
 
 all_ones = zeros_to_ones(predictions)
-all_ones.to_csv('src/recommendation/base_line_all_1/data/all_1.csv', index=False)
+all_ones.to_csv('src/recommendation/base_line_all_1/data/all_1_grouped_catbased.csv', index=False)

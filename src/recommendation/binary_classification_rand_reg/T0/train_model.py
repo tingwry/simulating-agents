@@ -16,12 +16,23 @@ from sklearn.base import BaseEstimator, TransformerMixin
 # MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models'
 # METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics'
 
-DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking_grouped.csv'
-MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models_grouped'
-METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics_grouped'
+# DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking_grouped.csv'
+# MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models_grouped'
+# METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics_grouped'
+
+DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking_grouped_catbased.csv'
+MODEL_DIR = 'src/recommendation/binary_classification_rand_reg/T0/models_grouped_catbased'
+METRICS_DIR = 'src/recommendation/binary_classification_rand_reg/T0/metrics_grouped_catbased'
 
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
+
+categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
+                 'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
+                 'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
+                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other', 
+                 'financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
+                 'leisure', 'public_services']
 
 os.makedirs(MODEL_DIR, exist_ok=True)
 os.makedirs(METRICS_DIR, exist_ok=True)
@@ -132,11 +143,7 @@ def load_and_preprocess_data_binary_class(DATA_PATH):
     numerical_features = ['Number of Children', 'Age']
     label_encode_features = ['Gender', 'Education level']
     binary_encode_features = ['Marital status', 'Region', 'Occupation Group']
-    categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
-                 'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
-                 'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other']
-    
+
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
@@ -176,10 +183,7 @@ def load_and_preprocess_data(DATA_PATH):
     numerical_features = ['Number of Children', 'Age']
     label_encode_features = ['Gender', 'Education level']
     binary_encode_features = ['Marital status', 'Region', 'Occupation Group']
-    categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
-                 'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
-                 'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other']
+    
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
@@ -223,11 +227,7 @@ def load_and_preprocess_data_llm(DATA_PATH):
     numerical_features = ['Number of Children', 'Age']
     label_encode_features = ['Gender', 'Education level']
     binary_encode_features = ['Marital status', 'Region', 'Occupation Group']
-    categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
-                 'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
-                 'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst', 'other']
-    
+
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
     label_encode_features = [col for col in label_encode_features if col in df.columns]
