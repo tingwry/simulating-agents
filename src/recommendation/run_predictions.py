@@ -1,0 +1,242 @@
+import pandas as pd
+import joblib
+import os
+import numpy as np
+from src.recommendation.utils.utils import *
+import torch
+from torch.utils.data import DataLoader, TensorDataset
+
+
+def run_predictions(method, method_model, is_regressor, threshold=None, percentile=75):
+    # Load and preprocess full dataset
+    df = pd.read_csv(TEST_DATA_PATH)
+    df = preprocess_unknown_values(df)
+
+    # if threshold == None:
+    #     with open(f"{MODEL_DIR}/optimal_thresholds.json", 'r') as f:
+    #         optimal_thresholds = json.load(f)
+    
+    # Prepare features and labels
+    feature_cols = [col for col in df.columns if col not in categories]
+    
+
+    if method == "rl":
+        # Load preprocessor and categories
+        preprocessor = joblib.load(f'{DATA_DIR}/preprocessor.pkl')
+        categories = joblib.load(f'{DATA_DIR}/categories.pkl')
+
+        X = preprocessor.transform(df[feature_cols])
+    
+        # Load model
+        model_path = f'{MODEL_DIR}/cql_model_txn_counts.d3'
+        model = DiscreteCQLConfig().create(device=None)
+        model.build_with_dataset(load_dataset_components(DATA_DIR))
+        model.load_model(model_path)
+        
+        # Get optimal thresholds for each category
+        optimal_thresholds = find_percentile_thresholds(DATA_DIR, MODEL_DIR, percentile)
+        
+        # Get Q-values for all actions (representing expected transaction counts)
+        q_values = np.zeros((len(X), len(categories)))
+        for action_idx in range(len(categories)):
+            actions = np.full(len(X), action_idx)
+            q_values[:, action_idx] = model.predict_value(X, actions)
+        
+        # Create output DataFrames
+        predictions_df = pd.DataFrame()
+        scores_df = pd.DataFrame()
+        
+        # Handle customer ID
+        id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
+        predictions_df['cust_id'] = df[id_col]
+        scores_df['cust_id'] = df[id_col]
+        
+        # Store predictions and scores with percentile-based thresholds
+        for i, category in enumerate(categories):
+            threshold = optimal_thresholds[category]
+            predictions_df[category] = (q_values[:, i] > threshold).astype(int)
+            scores_df[category] = q_values[:, i]
+        
+        # Save outputs
+        predictions_df.to_csv(f'{PREDICTION_OUTPUT}/transaction_predictions_percentile_{percentile}.csv', index=False)
+        scores_df.to_csv(f'{PREDICTION_OUTPUT}/transaction_scores_percentile_{percentile}.csv', index=False)
+        
+        print(f"✅ Predictions saved with percentile-based thresholds (percentile={percentile})")
+        print("Category thresholds:", optimal_thresholds)
+        return predictions_df, scores_df
+    
+    else:
+        _, preprocessor = load_and_preprocess_data(TEST_DATA_PATH)
+
+        X_df = df[feature_cols]
+        # Initialize output DataFrames
+        binary_predictions = pd.DataFrame()
+        prediction_scores = pd.DataFrame()
+        
+        # Handle customer ID
+        id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
+        if id_col not in df.columns:
+            raise ValueError("No customer ID column found")
+        binary_predictions['cust_id'] = df[id_col]
+        prediction_scores['cust_id'] = df[id_col]
+
+        if method == "binary":
+            X_all = preprocessor.fit_transform(X_df)
+
+            for category in categories:
+                model_path = f"{MODEL_DIR}/{category}_model.pkl"
+                
+                if not os.path.exists(model_path):
+                    print(f"Warning: Model for '{category}' not found. Using defaults...")
+                    binary_predictions[category] = 0
+                    prediction_scores[category] = 0.0
+                    continue
+
+                model_data = joblib.load(model_path)
+                model = model_data['model']
+
+                binary_threshold = model_data.get('optimal_threshold', threshold)
+
+                if is_regressor:
+                    # Regression model - predict transaction counts
+                    pred_counts = model.predict(X_all)
+
+                    # For binary evaluation: 1 if count > 0, else 0
+                    binary_predictions[category] = (pred_counts >= binary_threshold).astype(int)
+                    
+                    # For scores: use actual predicted counts (will be normalized in evaluation)
+                    prediction_scores[category] = pred_counts
+
+                    print(f"Processed: {category} (Regression, Threshold={binary_threshold:.4f})")
+                else:
+                    # Get probabilities and predictions using optimal threshold
+                    y_proba = model.predict_proba(X_all)[:, 1]
+                    y_pred = (y_proba >= binary_threshold).astype(int)
+                    
+                    binary_predictions[category] = y_pred
+                    prediction_scores[category] = y_proba
+                    
+                    print(f"Processed: {category} (Classification, Threshold={binary_threshold:.4f})")
+
+            
+        elif method == "multilabel":
+            X_all = preprocessor.transform(X_df)  # Use transform instead of fit_transform
+            # Standardize features
+            X_all = scaler.transform(X_all)
+
+            if method_model == "multioutputclassifier":
+                model_data = joblib.load(f"{MODEL_DIR}/multioutput_model.pkl")
+                pipeline = model_data['model']
+                preprocessor = model_data['preprocessor']
+                scaler = model_data['scaler']
+
+                # Get predictions
+                y_pred = pipeline.predict(X_all)
+                y_proba = pipeline.predict_proba(X_all)  # List of arrays (one per class)
+                
+                # Fill DataFrames
+                for i, category in enumerate(categories):
+                    binary_predictions[category] = y_pred[:, i]
+                    # Get probabilities for positive class
+                    prediction_scores[category] = y_proba[i][:, 1]
+
+            elif method_model == "nn":
+                # Load model weights and metadata
+                weights_path = f"{MODEL_DIR}/best_model_weights.pth"
+                metadata = joblib.load(f"{MODEL_DIR}/model_metadata.pkl")
+                
+                # Initialize model
+                model = MultiLabelClassifier(metadata['input_size'], metadata['output_size'])
+                model.load_state_dict(torch.load(weights_path, map_location=torch.device('cpu')))
+                model.eval()
+                
+                # Load preprocessor and scaler
+                preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor.pkl")
+                scaler = joblib.load(f"{MODEL_DIR}/scaler.pkl")
+                
+                # Convert to PyTorch tensors
+                X_tensor = torch.tensor(X_all, dtype=torch.float32)
+                
+                # Create DataLoader
+                dataset = TensorDataset(X_tensor)
+                dataloader = DataLoader(dataset, batch_size=256, shuffle=False)
+                
+                # Get predictions in batches
+                all_preds = []
+                with torch.no_grad():
+                    for batch in dataloader:
+                        inputs = batch[0]
+                        outputs = model(inputs)
+                        all_preds.append(outputs.numpy())
+                
+                # Concatenate all predictions
+                preds = np.concatenate(all_preds, axis=0)
+                
+                # Fill DataFrames
+                for i, category in enumerate(categories):
+                    if threshold != None:
+                        binary_predictions[category] = (preds[:, i] > threshold).astype(int)
+                    else:
+                        # Binary predictions (threshold at 0.5)
+                        binary_predictions[category] = (preds[:, i] > 0.5).astype(int)
+                    # Prediction scores (probabilities)
+                    prediction_scores[category] = preds[:, i]
+            
+        # Save outputs
+        os.makedirs(os.path.dirname(PREDICTION_OUTPUT), exist_ok=True)
+        binary_predictions.to_csv(PREDICTION_OUTPUT, index=False)
+        
+        scores_output = PREDICTION_OUTPUT.replace('.csv', '_scores.csv')
+        prediction_scores.to_csv(scores_output, index=False)
+        
+        print(f"\nBinary predictions saved to: {PREDICTION_OUTPUT}")
+        print(f"Prediction scores saved to: {scores_output}")
+
+        return binary_predictions, prediction_scores
+
+
+
+if __name__ == "__main__":
+    TEST_DATA_PATH = 'src/data/T0/test_with_lifestyle.csv'
+    categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
+                 'leisure', 'public_services']
+
+    # rl
+    DATA_DIR = 'src/recommendation/data/rl'
+    MODEL_DIR = 'src/recommendation/models/rl'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/rl'
+
+
+    
+    # binary
+
+    # random_forests_regressor
+    MODEL_DIR = 'src/recommendation/models/binary_classification/random_forests_regressor'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/random_forests_regressor'
+
+    # random_forests_classifier
+    MODEL_DIR = 'src/recommendation/models/binary_classification/random_forests_classifier'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/random_forests_classifier'
+            
+    # catboost_regressor
+    MODEL_DIR = 'src/recommendation/models/binary_classification/catboost_regressor'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/catboost_regressor'
+
+    # catboost_classifier
+    MODEL_DIR = 'src/recommendation/models/binary_classification/catboost_classifier'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/catboost_classifier'
+
+
+    # multilabel
+
+    # multioutputclassifier
+    MODEL_DIR = 'src/recommendation/models/multilabel/multioutputclassifier'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/multilabel/multioutputclassifier'
+
+    # multilabel nn
+    MODEL_DIR = 'src/recommendation/models/multilabel/nn'
+    PREDICTION_OUTPUT = 'src/recommendation/predictions/multilabel/nn'
+
+    os.makedirs(PREDICTION_OUTPUT, exist_ok=True)
+
+    run_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=None, percentile=75)
