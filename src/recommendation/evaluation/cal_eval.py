@@ -201,8 +201,8 @@ if __name__ == "__main__":
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
-    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="nn", threshold=None)
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="nn", threshold=0.5)
+    evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
-    # evaluate_transaction_predictions(method="rl", is_regressor=False, method_model=None, threshold=None)
+    # evaluate_transaction_predictions(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)

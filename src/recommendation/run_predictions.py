@@ -21,7 +21,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
     feature_cols = [col for col in df.columns if col not in categories]
     
 
-    if method == "rl":
+    if method == "reinforcement_learning":
         # Load preprocessor and categories
         preprocessor = joblib.load(f'{DATA_DIR}/preprocessor.pkl')
         categories = joblib.load(f'{DATA_DIR}/categories.pkl')
@@ -145,7 +145,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                     
                     print(f"Processed: {category} (Threshold={current_threshold:.4f})")
 
-            elif method_model == "nn":
+            elif method_model == "neural_network":
                 # Load model weights and metadata
                 weights_path = f"{MODEL_DIR}/best_model_weights{OPTIMAL_THRS}.pth"
                 metadata = joblib.load(f"{MODEL_DIR}/model_metadata{OPTIMAL_THRS}.pkl")
@@ -227,8 +227,8 @@ if __name__ == "__main__":
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=0.5)
 
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=None)
+    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None)
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=0.5)
-    run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=0.5)
+    run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=0.5)
 
-    # run_predictions(method="rl", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
+    # run_predictions(method="reinforcement_learning", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)

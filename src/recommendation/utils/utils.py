@@ -104,10 +104,10 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
     """Determine the appropriate paths based on modeling approach and method.
     
     Args:
-        method: Either "binary" or "multilabel" or "rl"
+        method: Either "binary" or "multilabel" or "reinforcement_learning"
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
-                     ("random_forests", "catboost", "multioutputclassifier", "nn")
+                     ("random_forests", "catboost", "multioutputclassifier", "neural_network")
     
     Returns:
         tuple: (DATA_PATH, MODEL_DIR, METRICS_DIR)
@@ -119,7 +119,7 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
 
     OPTIMAL_THRS = ""
     
-    if method == "rl":
+    if method == "reinforcement_learning":
         DATA_PATH = f'{base_data_path}/rl'
         MODEL_DIR = f'{base_model_path}/rl'
         METRICS_DIR = ""
@@ -138,7 +138,7 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
             METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}'
             
         else:
-            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'rl'")
+            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
         
     if threshold == None:
         OPTIMAL_THRS = "_optimal_thrs"
@@ -150,10 +150,10 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     """Determine the appropriate paths for prediction outputs.
     
     Args:
-        method: Either "binary", "multilabel", or "rl"
+        method: Either "binary", "multilabel", or "reinforcement_learning"
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
-                     ("random_forests", "catboost", "multioutputclassifier", "nn")
+                     ("random_forests", "catboost", "multioutputclassifier", "neural_network")
     
     Returns:
         tuple: (DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT)
@@ -165,7 +165,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
 
     OPTIMAL_THRS = ""
     
-    if method == "rl":
+    if method == "reinforcement_learning":
         DATA_DIR = f'{base_data_path}/rl'
         MODEL_DIR = f'{base_model_path}/rl'
         PREDICTION_OUTPUT = f'{base_prediction_path}/rl'
@@ -182,7 +182,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
             PREDICTION_OUTPUT = f'{base_prediction_path}/multilabel/{method_model}'
             
         else:
-            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'rl'")
+            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
         
     if threshold == None:
         OPTIMAL_THRS = "_optimal_thrs"
@@ -198,7 +198,7 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     
     OPTIMAL_THRS = ""
     
-    if method == "rl":
+    if method == "reinforcement_learning":
         PREDICTIONS_DIR = f'{base_prediction_path}/rl'
         SCORES_DIR = f'{base_prediction_path}/rl'
         EVAL_RESULTS_DIR = f'{base_eval_path}/rl'
@@ -216,7 +216,7 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
             EVAL_RESULTS_DIR = f'{base_eval_path}/multilabel/{method_model}'
             
         else:
-            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'rl'")
+            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
         
     if threshold == None:
         OPTIMAL_THRS = "_optimal_thrs"

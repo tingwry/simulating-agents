@@ -21,7 +21,7 @@ from d3rlpy.preprocessing import MinMaxRewardScaler
 def train_model(method, is_regressor, method_model=None, threshold=None):
     DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS = train_model_path_indicator(method, is_regressor, method_model, threshold)
 
-    if method == "rl":
+    if method == "reinforcement_learning":
         """Train offline RL model with transaction count rewards"""
         
         # Load dataset
@@ -562,7 +562,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                     'is_regression': False
                 }, f"{MODEL_DIR}/multioutput_model{OPTIMAL_THRS}.pkl")
 
-            elif method_model == "nn":
+            elif method_model == "neural_network":
                 # Create datasets and dataloaders
                 train_dataset = TransactionDataset(X_train, y_train)
                 test_dataset = TransactionDataset(X_test, y_test)
@@ -730,8 +730,8 @@ if __name__ == "__main__":
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
-    # train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=None)
+    # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=0.5)
+    train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
-    # train_model(method="rl", is_regressor=False, method_model=None, threshold=None)
+    # train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
