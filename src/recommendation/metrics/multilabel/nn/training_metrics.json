@@ -1,52 +1,62 @@
 {
   "loan": {
-    "precision": 0.5903614457831325,
-    "recall": 0.3769230769230769,
-    "f1_score": 0.460093896713615
+    "precision": 0.6,
+    "recall": 0.34615384615384615,
+    "f1_score": 0.43902439024390244,
+    "optimal_threshold": 0.5
   },
   "utility": {
-    "precision": 0.3333333333333333,
-    "recall": 0.13513513513513514,
-    "f1_score": 0.1923076923076923
+    "precision": 0.38235294117647056,
+    "recall": 0.11711711711711711,
+    "f1_score": 0.1793103448275862,
+    "optimal_threshold": 0.5
   },
   "finance": {
-    "precision": 0.5328947368421053,
-    "recall": 0.6090225563909775,
-    "f1_score": 0.5684210526315789
+    "precision": 0.5571428571428572,
+    "recall": 0.5864661654135338,
+    "f1_score": 0.5714285714285714,
+    "optimal_threshold": 0.5
   },
   "shopping": {
-    "precision": 0.3584905660377358,
-    "recall": 0.18811881188118812,
-    "f1_score": 0.24675324675324672
+    "precision": 0.4838709677419355,
+    "recall": 0.1485148514851485,
+    "f1_score": 0.22727272727272724,
+    "optimal_threshold": 0.5
   },
   "financial_services": {
     "precision": 0,
     "recall": 0.0,
-    "f1_score": 0
+    "f1_score": 0,
+    "optimal_threshold": 0.5
   },
   "health_and_care": {
     "precision": 0,
     "recall": 0.0,
-    "f1_score": 0
+    "f1_score": 0,
+    "optimal_threshold": 0.5
   },
   "home_lifestyle": {
     "precision": 0,
     "recall": 0.0,
-    "f1_score": 0
+    "f1_score": 0,
+    "optimal_threshold": 0.5
   },
   "transport_travel": {
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
-    "f1_score": 0
+    "f1_score": 0,
+    "optimal_threshold": 0.5
   },
   "leisure": {
     "precision": 0,
     "recall": 0.0,
-    "f1_score": 0
+    "f1_score": 0,
+    "optimal_threshold": 0.5
   },
   "public_services": {
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
-    "f1_score": 0
+    "f1_score": 0,
+    "optimal_threshold": 0.5
   }
 }

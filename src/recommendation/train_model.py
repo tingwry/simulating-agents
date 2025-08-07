@@ -536,15 +536,30 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                 pipeline.fit(X_train, y_train)
                 
                 # Make predictions
-                y_pred_binary = pipeline.predict(X_test)
+                # y_pred_binary = pipeline.predict(X_test)
                 # y_pred_proba = pipeline.predict_proba(X_test)
+                y_pred_proba = np.array([est.predict_proba(X_test)[:, 1] for est in pipeline.steps[-1][1].estimators_]).T
+
+                # Handle thresholding
+                if threshold is not None:
+                    y_pred_binary = (y_pred_proba >= threshold).astype(int)
+                    optimal_thresholds = {cat: threshold for cat in categories}
+                else:
+                    optimal_thresholds = {}
+                    y_pred_binary = np.zeros_like(y_pred_proba)
+                    for i, cat in enumerate(categories):
+                        optimal_threshold = find_optimal_classification_threshold(y_test[:, i], y_pred_proba[:, i])
+                        optimal_thresholds[cat] = float(optimal_threshold)
+                        y_pred_binary[:, i] = (y_pred_proba[:, i] >= optimal_threshold).astype(int)
                 
                 # Save model and preprocessing components
                 joblib.dump({
                     'model': pipeline,
                     'preprocessor': preprocessor,
                     'scaler': scaler,
-                    'categories': categories
+                    'categories': categories,
+                    'optimal_thresholds': optimal_thresholds,
+                    'is_regression': False
                 }, f"{MODEL_DIR}/multioutput_model{OPTIMAL_THRS}.pkl")
 
             elif method_model == "nn":
@@ -627,15 +642,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                         joblib.dump(preprocessor, f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
                         joblib.dump(scaler, f"{MODEL_DIR}/scaler{OPTIMAL_THRS}.pkl")
                 
-                
-                # Load best model - modified version
-                # checkpoint = torch.load(f"{MODEL_DIR}/best_model{OPTIMAL_THRS}.pth", weights_only=False)
-                # model.load_state_dict(checkpoint['model_state_dict'])
-                # model.eval()
-                
-                # Load preprocessor and scaler
-                preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
-                scaler = joblib.load(f"{MODEL_DIR}/scaler{OPTIMAL_THRS}.pkl")
+                # Load best model
+                model.load_state_dict(torch.load(f"{MODEL_DIR}/best_model_weights{OPTIMAL_THRS}.pth"))
+                model.eval()
 
                 # Calculate metrics
                 y_pred = []
@@ -651,11 +660,22 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                 y_pred = np.array(y_pred)
                 y_true = np.array(y_true)
                 
-                # Threshold predictions (you can adjust this threshold)
-                if threshold != None:
+                # Handle thresholding
+                if threshold is not None:
                     y_pred_binary = (y_pred > threshold).astype(int)
+                    optimal_thresholds = {cat: threshold for cat in categories}
                 else:
-                    y_pred_binary = (y_pred > 0.5).astype(int)
+                    # Find optimal thresholds per category
+                    optimal_thresholds = {}
+                    y_pred_binary = np.zeros_like(y_pred)
+                    for i, cat in enumerate(categories):
+                        optimal_threshold = find_optimal_classification_threshold(y_true[:, i], y_pred[:, i])
+                        optimal_thresholds[cat] = float(optimal_threshold)
+                        y_pred_binary[:, i] = (y_pred[:, i] > optimal_threshold).astype(int)
+                
+                # Save optimal thresholds
+                with open(f"{MODEL_DIR}/optimal_thresholds.json", 'w') as f:
+                    json.dump(optimal_thresholds, f, indent=2)
                 
 
             # Calculate metrics for each category
@@ -674,7 +694,8 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                 results[category] = {
                     'precision': precision,
                     'recall': recall,
-                    'f1_score': f1
+                    'f1_score': f1,
+                    'optimal_threshold': optimal_thresholds.get(category, threshold)
                 }
 
         with open(f"{METRICS_DIR}/training_metrics{OPTIMAL_THRS}.json", 'w') as f:
@@ -711,6 +732,6 @@ if __name__ == "__main__":
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    # train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=0.5)
+    train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=0.5)
 
-    train_model(method="rl", is_regressor=False, method_model=None, threshold=None)
+    # train_model(method="rl", is_regressor=False, method_model=None, threshold=None)

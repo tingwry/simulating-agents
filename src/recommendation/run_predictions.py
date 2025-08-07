@@ -5,6 +5,7 @@ import numpy as np
 from src.recommendation.utils.utils import *
 import torch
 from torch.utils.data import DataLoader, TensorDataset
+import json
 
 # PREDICTION_OUTPUT = 'src/recommendation/catboost/predictions/transaction_predictions_grouped_catbased.csv'
 # PREDICTION_OUTPUT_T1 = 'src/recommendation/catboost/T1/predictions/transaction_predictions_grouped_catbased.csv'
@@ -15,10 +16,6 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
     # Load and preprocess full dataset
     df = pd.read_csv(TEST_DATA_PATH)
     df = preprocess_unknown_values(df)
-
-    # if threshold == None:
-    #     with open(f"{MODEL_DIR}/optimal_thresholds.json", 'r') as f:
-    #         optimal_thresholds = json.load(f)
     
     # Prepare features and labels
     feature_cols = [col for col in df.columns if col not in categories]
@@ -131,20 +128,22 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                 pipeline = model_data['model']
                 preprocessor = model_data['preprocessor']
                 scaler = model_data['scaler']
+                optimal_thresholds = model_data.get('optimal_thresholds', {})
 
-                X_all = preprocessor.transform(X_df)  # Use transform instead of fit_transform
-                # Standardize features
+                X_all = preprocessor.transform(X_df)
                 X_all = scaler.transform(X_all)
 
-                # Get predictions
-                y_pred = pipeline.predict(X_all)
-                y_proba = pipeline.predict_proba(X_all)  # List of arrays (one per class)
+                # Get probabilities for each class
+                y_proba = np.array([est.predict_proba(X_all)[:, 1] for est in pipeline.steps[-1][1].estimators_]).T
                 
-                # Fill DataFrames
+                # Apply thresholds
                 for i, category in enumerate(categories):
-                    binary_predictions[category] = y_pred[:, i]
-                    # Get probabilities for positive class
-                    prediction_scores[category] = y_proba[i][:, 1]
+                    # Use provided threshold if available, otherwise use optimal threshold from training
+                    current_threshold = threshold if threshold is not None else optimal_thresholds.get(category, 0.5)
+                    binary_predictions[category] = (y_proba[:, i] >= current_threshold).astype(int)
+                    prediction_scores[category] = y_proba[:, i]
+                    
+                    print(f"Processed: {category} (Threshold={current_threshold:.4f})")
 
             elif method_model == "nn":
                 # Load model weights and metadata
@@ -159,9 +158,16 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                 # Load preprocessor and scaler
                 preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
                 scaler = joblib.load(f"{MODEL_DIR}/scaler{OPTIMAL_THRS}.pkl")
+                
+                # Load optimal thresholds if available
+                thresholds_path = f"{MODEL_DIR}/optimal_thresholds.json"
+                if os.path.exists(thresholds_path):
+                    with open(thresholds_path, 'r') as f:
+                        optimal_thresholds = json.load(f)
+                else:
+                    optimal_thresholds = {}
 
-                X_all = preprocessor.transform(X_df)  # Use transform instead of fit_transform
-                # Standardize features
+                X_all = preprocessor.transform(X_df)
                 X_all = scaler.transform(X_all)
                 
                 # Convert to PyTorch tensors
@@ -184,13 +190,12 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                 
                 # Fill DataFrames
                 for i, category in enumerate(categories):
-                    if threshold != None:
-                        binary_predictions[category] = (preds[:, i] > threshold).astype(int)
-                    else:
-                        # Binary predictions (threshold at 0.5)
-                        binary_predictions[category] = (preds[:, i] > 0.5).astype(int)
-                    # Prediction scores (probabilities)
+                    # Use provided threshold if available, otherwise use optimal threshold from training
+                    current_threshold = threshold if threshold is not None else optimal_thresholds.get(category, 0.5)
+                    binary_predictions[category] = (preds[:, i] > current_threshold).astype(int)
                     prediction_scores[category] = preds[:, i]
+                    
+                    print(f"Processed: {category} (Threshold={current_threshold:.4f})")
             
         # Save outputs
         os.makedirs(os.path.dirname(PREDICTION_OUTPUT), exist_ok=True)
@@ -224,6 +229,6 @@ if __name__ == "__main__":
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=None)
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=0.5)
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=0.5)
+    run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=0.5)
 
-    run_predictions(method="rl", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
+    # run_predictions(method="rl", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
