@@ -12,3 +12,4 @@ Binary Classification,Random Forests Classifier,Default Threshold,654.0,271.0,38
 Binary Classification,Random Forests Classifier,Optimal Threshold,2879.0,745.0,2134.0,127.0,0.2588,0.8544,0.3972,0.2668,0.6801230086539377,0.5015113515024185
 Binary Classification,Catboost Classifier,Default Threshold,369.0,210.0,159.0,662.0,0.5691,0.2408,0.3384,0.751,0.6938895961298318,0.4549348171495135
 Binary Classification,Catboost Classifier,Optimal Threshold,2175.0,618.0,1557.0,254.0,0.2841,0.7087,0.4056,0.4089,0.6938895961298318,0.5119495831173397
+Baseline All 1,-,-,3920.0,872.0,3048.0,0.0,0.2224,1.0,0.3639,0.038,-,-
