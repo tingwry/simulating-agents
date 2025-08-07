@@ -3,23 +3,14 @@ import numpy as np
 import json
 import os
 from sklearn.metrics import ndcg_score
+from src.recommendation.utils.utils import *
 
-def evaluate_transaction_predictions(transaction_predictions, ans_key, probabilities_df=None, output_folder="results"):
-    """
-    Evaluate transaction predictions against answer key and save results.
-    
-    Parameters:
-    - transaction_predictions: DataFrame with predictions (0/1 values)
-    - ans_key: DataFrame with ground truth (0.0/1.0 values)
-    - output_folder: Folder to save results
-    
-    Returns:
-    - detailed_results: DataFrame with per-customer results
-    - metrics: Dictionary with overall metrics
-    """
-    
-    # Create output folder if it doesn't exist
-    os.makedirs(output_folder, exist_ok=True)
+def evaluate_transaction_predictions(method, is_regressor, method_model, threshold=None):    
+    PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, OPTIMAL_THRS = evaluation_path_indicator(method, is_regressor, method_model, threshold)
+
+    ans_key = pd.read_csv(ANS_KEY_DIR)
+    transaction_predictions = pd.read_csv(PREDICTIONS_DIR)
+    probabilities_df = pd.read_csv(SCORES_DIR)
     
     # Get category columns (exclude cust_id)
     category_cols = [col for col in transaction_predictions.columns if col != 'cust_id']
@@ -173,7 +164,7 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
     
     # Calculate ranking metrics
     metrics['ranking_metrics'] = {
-        'average_ndcg': avg_ndcg,
+        # 'average_ndcg': avg_ndcg,
         'average_ndcg_with_probs': avg_ndcg_with_probs
     }
     
@@ -185,11 +176,11 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
         detailed_results['ndcg_with_probs'] = avg_ndcg_with_probs
 
     # Save results and metrics
-    csv_path = os.path.join(output_folder, "detailed_evaluation_results.csv")
+    csv_path = os.path.join(EVAL_RESULTS_DIR, f"detailed_evaluation_results{OPTIMAL_THRS}.csv")
     detailed_results.to_csv(csv_path, index=False)
     print(f"Detailed results saved to: {csv_path}")
     
-    json_path = os.path.join(output_folder, "evaluation_metrics.json")
+    json_path = os.path.join(EVAL_RESULTS_DIR, f"evaluation_metrics{OPTIMAL_THRS}.json")
     with open(json_path, 'w') as f:
         json.dump({"Evaluation Metrics": metrics}, f, indent=2)
     print(f"Metrics saved to: {json_path}")
@@ -198,18 +189,20 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
 
 
 if __name__ == "__main__":
-    binary_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_catbased.csv')
-    probability_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_catbased_scores.csv')
-    ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix_grouped_catbased.csv')
-    eval_result_path = "src/recommendation/binary_classification_rand_reg/T0/eval_results_grouped_catbased"
+    ANS_KEY_DIR = 'src/recommendation/data/ans_key/grouped_catbased.csv'
 
-    # Run evaluation
-    detailed_results, metrics = evaluate_transaction_predictions(
-        transaction_predictions=binary_predictions, 
-        ans_key=ans_key, 
-        probabilities_df=probability_predictions,
-        output_folder=eval_result_path
-    )
+    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
+    # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
+    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=0.2)
+    # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
+    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=None)
+    # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=None)
+    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
+    # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
-    # View first few rows of detailed results
-    print(detailed_results.head())
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="nn", threshold=None)
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="nn", threshold=0.5)
+
+    evaluate_transaction_predictions(method="rl", is_regressor=False, method_model=None, threshold=None)

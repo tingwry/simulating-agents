@@ -1,0 +1,52 @@
+{
+  "loan": {
+    "precision": 0.6022727272727273,
+    "recall": 0.4076923076923077,
+    "f1_score": 0.4862385321100917
+  },
+  "utility": {
+    "precision": 0.4444444444444444,
+    "recall": 0.18018018018018017,
+    "f1_score": 0.2564102564102564
+  },
+  "finance": {
+    "precision": 0.5373134328358209,
+    "recall": 0.5413533834586466,
+    "f1_score": 0.5393258426966292
+  },
+  "shopping": {
+    "precision": 0.3617021276595745,
+    "recall": 0.16831683168316833,
+    "f1_score": 0.22972972972972977
+  },
+  "financial_services": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0
+  },
+  "health_and_care": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0
+  },
+  "home_lifestyle": {
+    "precision": 0,
+    "recall": 0.0,
+    "f1_score": 0
+  },
+  "transport_travel": {
+    "precision": 0,
+    "recall": 0.0,
+    "f1_score": 0
+  },
+  "leisure": {
+    "precision": 0,
+    "recall": 0.0,
+    "f1_score": 0
+  },
+  "public_services": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0
+  }
+}

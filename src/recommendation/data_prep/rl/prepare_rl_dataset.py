@@ -12,7 +12,7 @@ def create_offline_rl_dataset_alternative():
     os.makedirs(DATA_DIR, exist_ok=True)
     
     # Load and preprocess data
-    df, preprocessor, categories = load_and_preprocess_data(DATA_PATH)
+    df, preprocessor = load_and_preprocess_data(DATA_PATH)
     
     # Save preprocessor and categories
     joblib.dump(preprocessor, f'{DATA_DIR}/preprocessor.pkl')
@@ -79,7 +79,10 @@ def create_offline_rl_dataset_alternative():
         return None
     
 if __name__ == "__main__":
-    DATA_PATH = 'src/recommendation/binary_classification_rand_reg/data/demog_ranking_grouped_catbased.csv'
-    DATA_DIR = 'src/recommendation/offline_rl_group_catbased/data'
+    DATA_PATH = 'src/recommendation/data/demog_ranking_grouped_catbased.csv'
+    DATA_DIR = 'src/recommendation/data/rl'
+
+    categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
+                 'leisure', 'public_services']
 
     create_offline_rl_dataset_alternative()

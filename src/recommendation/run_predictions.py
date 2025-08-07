@@ -6,8 +6,12 @@ from src.recommendation.utils.utils import *
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 
+# PREDICTION_OUTPUT = 'src/recommendation/catboost/predictions/transaction_predictions_grouped_catbased.csv'
+# PREDICTION_OUTPUT_T1 = 'src/recommendation/catboost/T1/predictions/transaction_predictions_grouped_catbased.csv'
 
-def run_predictions(method, method_model, is_regressor, threshold=None, percentile=75):
+
+def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75):
+    DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, OPTIMAL_THRS = prediction_path_indicator(method, is_regressor, method_model, threshold)
     # Load and preprocess full dataset
     df = pd.read_csv(TEST_DATA_PATH)
     df = preprocess_unknown_values(df)
@@ -28,13 +32,13 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
         X = preprocessor.transform(df[feature_cols])
     
         # Load model
-        model_path = f'{MODEL_DIR}/cql_model_txn_counts.d3'
+        model_path = f'{MODEL_DIR}/cql_model_txn_counts{OPTIMAL_THRS}.d3'
         model = DiscreteCQLConfig().create(device=None)
         model.build_with_dataset(load_dataset_components(DATA_DIR))
         model.load_model(model_path)
         
         # Get optimal thresholds for each category
-        optimal_thresholds = find_percentile_thresholds(DATA_DIR, MODEL_DIR, percentile)
+        optimal_thresholds = find_percentile_thresholds(DATA_DIR, MODEL_DIR, OPTIMAL_THRS, percentile)
         
         # Get Q-values for all actions (representing expected transaction counts)
         q_values = np.zeros((len(X), len(categories)))
@@ -58,8 +62,10 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
             scores_df[category] = q_values[:, i]
         
         # Save outputs
-        predictions_df.to_csv(f'{PREDICTION_OUTPUT}/transaction_predictions_percentile_{percentile}.csv', index=False)
-        scores_df.to_csv(f'{PREDICTION_OUTPUT}/transaction_scores_percentile_{percentile}.csv', index=False)
+        predictions_df.to_csv(PREDICTION_OUTPUT, index=False)
+
+        scores_output = PREDICTION_OUTPUT.replace('.csv', '_scores.csv')
+        scores_df.to_csv(scores_output, index=False)
         
         print(f"✅ Predictions saved with percentile-based thresholds (percentile={percentile})")
         print("Category thresholds:", optimal_thresholds)
@@ -84,7 +90,7 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
             X_all = preprocessor.fit_transform(X_df)
 
             for category in categories:
-                model_path = f"{MODEL_DIR}/{category}_model.pkl"
+                model_path = f"{MODEL_DIR}/{category}_model{OPTIMAL_THRS}.pkl"
                 
                 if not os.path.exists(model_path):
                     print(f"Warning: Model for '{category}' not found. Using defaults...")
@@ -120,15 +126,15 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
 
             
         elif method == "multilabel":
-            X_all = preprocessor.transform(X_df)  # Use transform instead of fit_transform
-            # Standardize features
-            X_all = scaler.transform(X_all)
-
             if method_model == "multioutputclassifier":
-                model_data = joblib.load(f"{MODEL_DIR}/multioutput_model.pkl")
+                model_data = joblib.load(f"{MODEL_DIR}/multioutput_model{OPTIMAL_THRS}.pkl")
                 pipeline = model_data['model']
                 preprocessor = model_data['preprocessor']
                 scaler = model_data['scaler']
+
+                X_all = preprocessor.transform(X_df)  # Use transform instead of fit_transform
+                # Standardize features
+                X_all = scaler.transform(X_all)
 
                 # Get predictions
                 y_pred = pipeline.predict(X_all)
@@ -142,8 +148,8 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
 
             elif method_model == "nn":
                 # Load model weights and metadata
-                weights_path = f"{MODEL_DIR}/best_model_weights.pth"
-                metadata = joblib.load(f"{MODEL_DIR}/model_metadata.pkl")
+                weights_path = f"{MODEL_DIR}/best_model_weights{OPTIMAL_THRS}.pth"
+                metadata = joblib.load(f"{MODEL_DIR}/model_metadata{OPTIMAL_THRS}.pkl")
                 
                 # Initialize model
                 model = MultiLabelClassifier(metadata['input_size'], metadata['output_size'])
@@ -151,8 +157,12 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
                 model.eval()
                 
                 # Load preprocessor and scaler
-                preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor.pkl")
-                scaler = joblib.load(f"{MODEL_DIR}/scaler.pkl")
+                preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
+                scaler = joblib.load(f"{MODEL_DIR}/scaler{OPTIMAL_THRS}.pkl")
+
+                X_all = preprocessor.transform(X_df)  # Use transform instead of fit_transform
+                # Standardize features
+                X_all = scaler.transform(X_all)
                 
                 # Convert to PyTorch tensors
                 X_tensor = torch.tensor(X_all, dtype=torch.float32)
@@ -197,46 +207,23 @@ def run_predictions(method, method_model, is_regressor, threshold=None, percenti
 
 
 if __name__ == "__main__":
-    TEST_DATA_PATH = 'src/data/T0/test_with_lifestyle.csv'
+    TEST_DATA_PATH = 'src/data_refresher/data/T0/test_with_lifestyle.csv'
+
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
 
-    # rl
-    DATA_DIR = 'src/recommendation/data/rl'
-    MODEL_DIR = 'src/recommendation/models/rl'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/rl'
+    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
+    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0.2)
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=0.5)
+    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
+    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=0.2)
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=0.5)
 
+    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
+    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=None)
+    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=0.5)
+    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="nn", threshold=0.5)
 
-    
-    # binary
-
-    # random_forests_regressor
-    MODEL_DIR = 'src/recommendation/models/binary_classification/random_forests_regressor'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/random_forests_regressor'
-
-    # random_forests_classifier
-    MODEL_DIR = 'src/recommendation/models/binary_classification/random_forests_classifier'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/random_forests_classifier'
-            
-    # catboost_regressor
-    MODEL_DIR = 'src/recommendation/models/binary_classification/catboost_regressor'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/catboost_regressor'
-
-    # catboost_classifier
-    MODEL_DIR = 'src/recommendation/models/binary_classification/catboost_classifier'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/binary_classification/catboost_classifier'
-
-
-    # multilabel
-
-    # multioutputclassifier
-    MODEL_DIR = 'src/recommendation/models/multilabel/multioutputclassifier'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/multilabel/multioutputclassifier'
-
-    # multilabel nn
-    MODEL_DIR = 'src/recommendation/models/multilabel/nn'
-    PREDICTION_OUTPUT = 'src/recommendation/predictions/multilabel/nn'
-
-    os.makedirs(PREDICTION_OUTPUT, exist_ok=True)
-
-    run_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=None, percentile=75)
+    run_predictions(method="rl", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)

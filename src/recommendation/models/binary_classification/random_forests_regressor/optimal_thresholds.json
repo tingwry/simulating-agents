@@ -1,1 +1,12 @@
-{}
+{
+  "loan": 0.034181205999387815,
+  "utility": 0.029347492014158684,
+  "finance": 0.09372589531680439,
+  "shopping": 0.03278707672256059,
+  "financial_services": 0.0,
+  "health_and_care": 0.0,
+  "home_lifestyle": 0.02881694134325714,
+  "transport_travel": 0.0,
+  "leisure": 0.05267424242424244,
+  "public_services": 0.0691919191919192
+}

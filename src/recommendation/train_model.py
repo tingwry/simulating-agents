@@ -128,31 +128,81 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                         
                         # Evaluate
                         y_pred = reg.predict(X_test)
-                        
-                        # Regression metrics
-                        mse = mean_squared_error(y_test, y_pred)
-                        rmse = np.sqrt(mse)
-                        mae = mean_absolute_error(y_test, y_pred)
-                        r2 = r2_score(y_test, y_pred)
-                        
-                        # Print metrics
-                        print(f"  RMSE: {rmse:.4f}")
-                        print(f"  MAE: {mae:.4f}")
-                        print(f"  R²: {r2:.4f}")
-                        
-                        results[category] = {
-                            'rmse': rmse,
-                            'mae': mae,
-                            'r2': r2
-                        }
-                        
-                        # Save model with metadata
-                        model_data = {
-                            'model': reg,
-                            'category': category,
-                            'preprocessor': preprocessor,
-                            'is_regression': True  # Mark as regression model
-                        }
+
+                        if threshold != None:
+                            # Regression metrics
+                            mse = mean_squared_error(y_test, y_pred)
+                            rmse = np.sqrt(mse)
+                            mae = mean_absolute_error(y_test, y_pred)
+                            r2 = r2_score(y_test, y_pred)
+                            
+                            # Print metrics
+                            print(f"  RMSE: {rmse:.4f}")
+                            print(f"  MAE: {mae:.4f}")
+                            print(f"  R²: {r2:.4f}")
+                            
+                            results[category] = {
+                                'rmse': rmse,
+                                'mae': mae,
+                                'r2': r2
+                            }
+                            
+                            # Save model with metadata
+                            model_data = {
+                                'model': reg,
+                                'category': category,
+                                'preprocessor': preprocessor,
+                                'is_regression': True
+                            }
+                        else:
+                            # Find optimal threshold for this category
+                            optimal_threshold = find_optimal_regression_threshold(y_test, y_pred)
+                            optimal_thresholds[category] = optimal_threshold
+                            
+                            # Evaluate with optimal threshold
+                            y_pred_binary = (y_pred >= optimal_threshold).astype(int)
+                            y_true_binary = (y_test > 0).astype(int)
+                            
+                            # Calculate metrics
+                            accuracy = accuracy_score(y_true_binary, y_pred_binary)
+                            precision = precision_score(y_true_binary, y_pred_binary)
+                            recall = recall_score(y_true_binary, y_pred_binary)
+                            f1 = f1_score(y_true_binary, y_pred_binary)
+                            
+                            # Regression metrics
+                            mse = mean_squared_error(y_test, y_pred)
+                            rmse = np.sqrt(mse)
+                            mae = mean_absolute_error(y_test, y_pred)
+                            r2 = r2_score(y_test, y_pred)
+                            
+                            print(f"  Optimal threshold: {optimal_threshold:.4f}")
+                            print(f"  Accuracy: {accuracy:.4f}")
+                            print(f"  Precision: {precision:.4f}")
+                            print(f"  Recall: {recall:.4f}")
+                            print(f"  F1: {f1:.4f}")
+                            print(f"  RMSE: {rmse:.4f}")
+                            print(f"  MAE: {mae:.4f}")
+                            print(f"  R²: {r2:.4f}")
+                            
+                            results[category] = {
+                                'optimal_threshold': optimal_threshold,
+                                'accuracy': accuracy,
+                                'precision': precision,
+                                'recall': recall,
+                                'f1': f1,
+                                'rmse': rmse,
+                                'mae': mae,
+                                'r2': r2
+                            }
+                            
+                            # Save model with metadata including optimal threshold
+                            model_data = {
+                                'model': reg,
+                                'category': category,
+                                'preprocessor': preprocessor,
+                                'is_regression': True,
+                                'optimal_threshold': optimal_threshold
+                            }
                         
                         joblib.dump(model_data, f"{MODEL_DIR}/{category}_model{OPTIMAL_THRS}.pkl")
 
@@ -163,30 +213,84 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                             class_weight='balanced'
                         )
                         clf.fit(X_train, y_train)
-                        
-                        # Evaluate with better handling of warnings
-                        y_pred = clf.predict(X_test)
-                        report = classification_report(y_test, y_pred, output_dict=True, zero_division=0)
 
-                        # Print class distribution for debugging
-                        print(f"  Class distribution - Training: {y_train.value_counts().to_dict()}")
-                        print(f"  Class distribution - Test: {y_test.value_counts().to_dict()}")
-                        print(f"  Accuracy: {report['accuracy']:.4f}")
+                        if threshold != None:
+                            # Evaluate with better handling of warnings
+                            y_pred_proba = clf.predict_proba(X_test)[:, 1]  # Get probabilities for class 1
+                            y_pred = (y_pred_proba >= threshold).astype(int)
+
+                            # Classification metrics
+                            accuracy = accuracy_score(y_test, y_pred)
+                            precision = precision_score(y_test, y_pred)
+                            recall = recall_score(y_test, y_pred)
+                            f1 = f1_score(y_test, y_pred)
+                            roc_auc = roc_auc_score(y_test, y_pred_proba)
+                            
+                            # Print metrics
+                            print(f"  Accuracy: {accuracy:.4f}")
+                            print(f"  Precision: {precision:.4f}")
+                            print(f"  Recall: {recall:.4f}")
+                            print(f"  F1: {f1:.4f}")
+                            print(f"  ROC AUC: {roc_auc:.4f}")
+                            
+                            results[category] = {
+                                'accuracy': accuracy,
+                                'precision': precision,
+                                'recall': recall,
+                                'f1': f1,
+                                'roc_auc': roc_auc
+                            }
+                            
+                            # Save model with metadata
+                            model_data = {
+                                'model': clf,
+                                'category': category,
+                                'preprocessor': preprocessor,
+                                'is_regression': False
+                            }
+
+                        else:
+                            # Get probabilities on validation set
+                            y_val_proba = clf.predict_proba(X_test)[:, 1]
+                            # Find optimal threshold for this category
+                            optimal_threshold = find_optimal_classification_threshold(y_test, y_val_proba)
+                            optimal_thresholds[category] = optimal_threshold
+                            
+                            # Evaluate with optimal threshold
+                            y_pred = (y_val_proba >= optimal_threshold).astype(int)
+                            
+                            # Classification metrics
+                            accuracy = accuracy_score(y_test, y_pred)
+                            precision = precision_score(y_test, y_pred)
+                            recall = recall_score(y_test, y_pred)
+                            f1 = f1_score(y_test, y_pred)
+                            roc_auc = roc_auc_score(y_test, y_val_proba)
+                            
+                            print(f"  Optimal threshold: {optimal_threshold:.4f}")
+                            print(f"  Accuracy: {accuracy:.4f}")
+                            print(f"  Precision: {precision:.4f}")
+                            print(f"  Recall: {recall:.4f}")
+                            print(f"  F1: {f1:.4f}")
+                            print(f"  ROC AUC: {roc_auc:.4f}")
+                            
+                            results[category] = {
+                                'optimal_threshold': optimal_threshold,
+                                'accuracy': accuracy,
+                                'precision': precision,
+                                'recall': recall,
+                                'f1': f1,
+                                'roc_auc': roc_auc
+                            }
+                            
+                            # Save model with metadata including optimal threshold
+                            model_data = {
+                                'model': clf,
+                                'category': category,
+                                'preprocessor': preprocessor,
+                                'is_regression': False,
+                                'optimal_threshold': optimal_threshold
+                            }
                         
-                        results[category] = {
-                            'precision': report['weighted avg']['precision'],
-                            'recall': report['weighted avg']['recall'],
-                            'f1': report['weighted avg']['f1-score'],
-                            'accuracy': report['accuracy'],
-                            'support': report['weighted avg']['support']
-                        }
-                        
-                        # Save model with metadata
-                        model_data = {
-                            'model': clf,
-                            'category': category,
-                            'preprocessor': preprocessor  # Include preprocessor with each model
-                        }
                         
                         joblib.dump(model_data, f"{MODEL_DIR}/{category}_model{OPTIMAL_THRS}.pkl")
 
@@ -310,7 +414,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                         if threshold != None:
                             # Evaluate
                             y_pred_proba = model.predict_proba(X_test)[:, 1]  # Get probabilities for class 1
-                            y_pred = (y_pred_proba >= 0.5).astype(int)  # Convert to binary predictions
+                            y_pred = (y_pred_proba >= threshold).astype(int)  # Convert to binary predictions
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
@@ -525,9 +629,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None):
                 
                 
                 # Load best model - modified version
-                checkpoint = torch.load(f"{MODEL_DIR}/best_model{OPTIMAL_THRS}.pth", weights_only=False)
-                model.load_state_dict(checkpoint['model_state_dict'])
-                model.eval()
+                # checkpoint = torch.load(f"{MODEL_DIR}/best_model{OPTIMAL_THRS}.pth", weights_only=False)
+                # model.load_state_dict(checkpoint['model_state_dict'])
+                # model.eval()
                 
                 # Load preprocessor and scaler
                 preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
@@ -595,18 +699,18 @@ if __name__ == "__main__":
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
     
-    train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
+    # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0.2)
-    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=0.2)
+    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.2)
+    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
     # train_model(method="multilabel", is_regressor=False, method_model="nn", threshold=0.5)
 
-    # train_model(method="rl", is_regressor=False, method_model=None, threshold=None)
+    train_model(method="rl", is_regressor=False, method_model=None, threshold=None)
