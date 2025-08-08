@@ -212,7 +212,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 
 
 if __name__ == "__main__":
-    TEST_DATA_PATH = 'src/data_refresher/data/T0/test_with_lifestyle.csv'
+    TEST_DATA_PATH = 'src/recommendation/data/T0/test_with_lifestyle.csv'
 
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
