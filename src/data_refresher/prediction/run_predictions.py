@@ -94,11 +94,11 @@ def run_predictions(df, method="indiv", stage="single", change_analysis=False, b
                     response = get_llm_prediction(prompt)
                 elif stage == "multi":
                     # actions
-                    action_prompt = cluster_create_prediction_prompt_action(customer_row, cluster_id, change_analysis, with_constraints=True)
+                    action_prompt = cluster_create_prediction_prompt_action(customer_row, cluster_id, change_analysis, with_constraints=False)
                     print('action prompt: ' + action_prompt)
                     pred_actions = get_llm_prediction(action_prompt)
                     # status
-                    status_prompt = create_prediction_prompt_status(customer_row, with_constraints=True)
+                    status_prompt = create_prediction_prompt_status(customer_row, with_constraints=False)
                     print('status prompt: ' + status_prompt)
                     response = get_llm_prediction(status_prompt, pred_actions)
 
@@ -167,16 +167,19 @@ if __name__ == "__main__":
     test_summ = pd.read_csv("src/data_refresher/data/summary_reasoning/test_summ_v1.csv")
 
     # Load data cluster
-    df = pd.read_csv('src/clustering/approach_2_embed/pred_result/full_data_with_cluster/full_data_with_cluster_v2.csv')
-    # testtest = df[df['CUST_ID'].isin([145, 4271, 2476, 2537, 1162, 2128, 2197, 4280, 2342, 1262, 331])]
+    # df = pd.read_csv('src/clustering/approach_2_embed/pred_result/full_data_with_cluster/full_data_with_cluster_v2.csv')
+    train_with_lifestyle_with_clus = pd.read_csv('src/data_refresher/clustering/approach_2_embed/pred_result/full_data_with_cluster/train_with_lifestyle_with_clus.csv')
+    # testtest = train_with_lifestyle_with_clus[train_with_lifestyle_with_clus['CUST_ID'].isin([2223, 353, 2013, 1183, 3358])] 
+    test_wth_lifestyle_with_clus = pd.read_csv('src/data_refresher/clustering/approach_2_embed/pred_result/full_data_with_cluster/test_wth_lifestyle_with_clus.csv')
 
+    # setup
     COLLECTION_NAME = "customer_transitions"
-
     similar_output_file = "src/data_refresher/prediction/similar_cust_results/v1/sim_cust_results.json"
     VERSIONED_DIR = None  # Will be set when saving results
     output_dir = "src/data_refresher/prediction/pred_results"
-    file_name = "predictions_cluster_multi_ca_const"
+
+    file_name = "test_with_lifestyle_pred_T1"
     
     # Process customers and save results
-    results_df = run_predictions(df, method="cluster", stage="multi", change_analysis=True, batch_size=None)
+    results_df = run_predictions(test_wth_lifestyle_with_clus, method="cluster", stage="multi", change_analysis=True, batch_size=None)
     save_final_results(results_df, output_dir, file_name)

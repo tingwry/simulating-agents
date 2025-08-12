@@ -726,12 +726,12 @@ if __name__ == "__main__":
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
+    train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
+    # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
     # train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)

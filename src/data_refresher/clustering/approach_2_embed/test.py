@@ -36,13 +36,16 @@ def test_approach_2(test_df, model):
 
 
 if __name__ == "__main__":
-    test_df = pd.read_csv('src/data_refresher/data/T0/test_df.csv')
+    # test_df = pd.read_csv('src/data_refresher/data/T0/test_df.csv')
+    train_wth_lifestyle = pd.read_csv('src/recommendation/data/T0/train_with_lifestyle.csv')
+    test_wth_lifestyle = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
+
     MODEL_DIR = "src/data_refresher/clustering/approach_2_embed/model/model_app2_v4.pkl"
     RESULTS_DIR = "src/data_refresher/clustering/approach_2_embed/pred_result"
 
 
     model = joblib.load(MODEL_DIR)
-    predicted_df, clus_level_eval, overall_eval = test_approach_2(test_df, model)
+    predicted_df, clus_level_eval, overall_eval = test_approach_2(test_wth_lifestyle, model)
 
     print(predicted_df)
     print(clus_level_eval)
