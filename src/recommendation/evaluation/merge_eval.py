@@ -109,11 +109,90 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
     print(f"Saved evaluation summary to: {output_csv_path}")
 
 
+def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
+    """
+    Merge DEFAULT THRESHOLD evaluation metrics for CatBoost regressor across T0, T1, and T1_predicted cases.
+    
+    Args:
+        root_dir (str): Root folder containing the eval_results
+        output_csv_path (str): Path to save the final CSV summary
+    """
+    records = []
+    
+    # Define the paths we need to check
+    cases = [
+        ('T0', 'binary_classification/catboost_regressor'),
+        ('T1', 'binary_classification/T1/catboost_regressor'),
+        ('T1_predicted', 'binary_classification/T1_predicted/catboost_regressor')
+    ]
+    
+    for case_name, rel_path in cases:
+        case_dir = os.path.join(root_dir, rel_path)
+        file_path = os.path.join(case_dir, 'evaluation_metrics.json')
+        
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+            
+            binary_metrics = data.get("Evaluation Metrics", {}).get("binary_metrics", {})
+            ranking_metrics = data.get("Evaluation Metrics", {}).get("ranking_metrics", {})
+            
+            f1_score = binary_metrics.get("f1_score")
+            ndcg = ranking_metrics.get("average_ndcg_with_probs")
+            
+            # Calculate harmonic mean of F1 and NDCG
+            if f1_score and ndcg and (f1_score + ndcg) > 0:
+                harmonic_mean = (2 * f1_score * ndcg) / (f1_score + ndcg)
+            else:
+                harmonic_mean = None
+            
+            record = {
+                "Method": "Binary",
+                "Model": "CatBoost Regressor",
+                "Threshold": "Default Threshold",
+                "Case": case_name,
+                "Total Predictions": binary_metrics.get("total_predictions"),
+                "True Positives": binary_metrics.get("true_positives"),
+                "False Positives": binary_metrics.get("false_positives"),
+                "False Negatives": binary_metrics.get("false_negatives"),
+                "Precision": binary_metrics.get("precision"),
+                "Recall": binary_metrics.get("recall"),
+                "F1 Score": f1_score,
+                "Accuracy": binary_metrics.get("accuracy"),
+                "NDCG": ndcg,
+                "Harmonic Mean (F1, NDCG)": harmonic_mean,
+            }
+            records.append(record)
+        else:
+            print(f"Warning: Evaluation file not found at {file_path}")
+    
+    # Create DataFrame and save
+    if records:
+        df = pd.DataFrame(records)
+        
+        # Reorder columns to have Case after Model
+        cols = df.columns.tolist()
+        case_idx = cols.index("Case")
+        cols.insert(3, cols.pop(case_idx))  # Move Case to position 3
+        df = df[cols]
+        
+        df.to_csv(output_csv_path, index=False)
+        print(f"Saved CatBoost regressor evaluation summary to: {output_csv_path}")
+        return df
+    else:
+        print("No evaluation files found. No CSV generated.")
+        return None
+
 if __name__ == "__main__":
-    extract_all_evaluation_metrics(
+    # extract_all_evaluation_metrics(
+    #     root_dir='src/recommendation/evaluation/eval_results',
+    #     output_csv_path='src/recommendation/evaluation/eval_results/all_evaluation_summary.csv',
+    #     baseline_paths=[
+    #         'src/recommendation/baseline/baseline_all_1/eval_results_grouped_catbased/evaluation_metrics.json'
+    #     ]
+    # )
+
+    merge_catboost_regressor_evaluations(
         root_dir='src/recommendation/evaluation/eval_results',
-        output_csv_path='src/recommendation/evaluation/eval_results/all_evaluation_summary.csv',
-        baseline_paths=[
-            'src/recommendation/baseline/baseline_all_1/eval_results_grouped_catbased/evaluation_metrics.json'
-        ]
+        output_csv_path='src/recommendation/evaluation/eval_results/catboost_regressor_default_threshold_summary.csv'
     )

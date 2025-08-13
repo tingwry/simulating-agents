@@ -11,8 +11,10 @@ import json
 # PREDICTION_OUTPUT_T1 = 'src/recommendation/catboost/T1/predictions/transaction_predictions_grouped_catbased.csv'
 
 
-def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75):
-    DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, OPTIMAL_THRS = prediction_path_indicator(method, is_regressor, method_model, threshold)
+def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0'):
+    DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, OPTIMAL_THRS = prediction_path_indicator(
+        method, is_regressor, method_model, threshold, data
+    )
     # Load and preprocess full dataset
     df = pd.read_csv(TEST_DATA_PATH)
     df = preprocess_unknown_values(df)
@@ -212,10 +214,11 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 
 
 if __name__ == "__main__":
-    TEST_DATA_PATH = 'src/recommendation/data/T0/test_with_lifestyle.csv'
-
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
+    
+    # T0 predictions (default)
+    # TEST_DATA_PATH = 'src/recommendation/data/T0/test_with_lifestyle.csv'
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
@@ -229,6 +232,18 @@ if __name__ == "__main__":
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None)
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=0.5)
-    run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=0.5)
+    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=0.5)
 
     # run_predictions(method="reinforcement_learning", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
+
+
+    # T1 predictions
+    # TEST_DATA_PATH = 'src/recommendation/data/T1/test_with_lifestyle.csv'
+    # run_predictions(method="binary", is_regressor=True, categories=categories, 
+    #                method_model="catboost", threshold=0.2, data='T1')
+    
+    # T1_predicted predictions
+    TEST_DATA_PATH = 'src/recommendation/data/T1_predicted/test_with_lifestyle.csv'
+    run_predictions(method="binary", is_regressor=True, categories=categories, 
+                   method_model="catboost", threshold=0.2, data='T1_predicted')
+    

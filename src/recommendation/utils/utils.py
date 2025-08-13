@@ -100,7 +100,7 @@ class BinaryEncoder(BaseEstimator, TransformerMixin):
         
         return result
     
-def train_model_path_indicator(method, is_regressor, method_model, threshold=None):
+def train_model_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
     """Determine the appropriate paths based on modeling approach and method.
     
     Args:
@@ -108,6 +108,7 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
                      ("random_forests", "catboost", "multioutputclassifier", "neural_network")
+        data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
         tuple: (DATA_PATH, MODEL_DIR, METRICS_DIR)
@@ -125,17 +126,26 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
         METRICS_DIR = ""
     else:
         if method == "binary":
-            DATA_PATH = f'{base_data_path}/demog_ranking_grouped_catbased.csv'
+            DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased.csv'
 
             model_type = "regressor" if is_regressor else "classifier"
-            MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
-            METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}'
+            
+            if data in ['T1', 'T1_predicted']:
+                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}'
+            else:  # T0 case
+                MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}'
             
         elif method == "multilabel":
-            DATA_PATH = f'{base_data_path}/demog_grouped_catbased.csv'
+            DATA_PATH = f'{base_data_path}/{data}/demog_grouped_catbased.csv'
 
-            MODEL_DIR = f'{base_model_path}/multilabel/{method_model}'
-            METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}'
+            if data in ['T1', 'T1_predicted']:
+                MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}'
+                METRICS_DIR = f'{base_metrics_path}/multilabel/{data}/{method_model}'
+            else:  # T0 case
+                MODEL_DIR = f'{base_model_path}/multilabel/{method_model}'
+                METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}'
             
         else:
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
@@ -146,7 +156,7 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
     return DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS
 
 
-def prediction_path_indicator(method, is_regressor, method_model, threshold=None):
+def prediction_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
     """Determine the appropriate paths for prediction outputs.
     
     Args:
@@ -154,6 +164,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
                      ("random_forests", "catboost", "multioutputclassifier", "neural_network")
+        data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
         tuple: (DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT)
@@ -170,16 +181,25 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
         MODEL_DIR = f'{base_model_path}/rl'
         PREDICTION_OUTPUT = f'{base_prediction_path}/rl'
     else:
-        DATA_DIR = ''
+        DATA_DIR = f'{base_data_path}/{data}'
         
         if method == "binary":
             model_type = "regressor" if is_regressor else "classifier"
-            MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
-            PREDICTION_OUTPUT = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
+            
+            if data in ['T1', 'T1_predicted']:
+                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}'
+                PREDICTION_OUTPUT = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}'
+            else:  # T0 case
+                MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
+                PREDICTION_OUTPUT = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
             
         elif method == "multilabel":
-            MODEL_DIR = f'{base_model_path}/multilabel/{method_model}'
-            PREDICTION_OUTPUT = f'{base_prediction_path}/multilabel/{method_model}'
+            if data in ['T1', 'T1_predicted']:
+                MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}'
+                PREDICTION_OUTPUT = f'{base_prediction_path}/multilabel/{data}/{method_model}'
+            else:  # T0 case
+                MODEL_DIR = f'{base_model_path}/multilabel/{method_model}'
+                PREDICTION_OUTPUT = f'{base_prediction_path}/multilabel/{method_model}'
             
         else:
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
@@ -191,11 +211,23 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
 
     return DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, OPTIMAL_THRS
 
-def evaluation_path_indicator(method, is_regressor, method_model, threshold=None):
+def evaluation_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
+    """Determine the appropriate paths for evaluation outputs.
+    
+    Args:
+        method: Either "binary", "multilabel", or "reinforcement_learning"
+        is_regressor: Boolean indicating if using regression (True) or classification (False)
+        method_model: String specifying the modeling approach 
+                     ("random_forests", "catboost", "multioutputclassifier", "neural_network")
+        data: Data version ('T0', 'T1', or 'T1_predicted')
+    
+    Returns:
+        tuple: (PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR)
+    """
+
     base_prediction_path = 'src/recommendation/predictions'
     base_eval_path = 'src/recommendation/evaluation/eval_results'
 
-    
     OPTIMAL_THRS = ""
     
     if method == "reinforcement_learning":
@@ -205,15 +237,25 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     else:
         if method == "binary":
             model_type = "regressor" if is_regressor else "classifier"
-            PREDICTIONS_DIR = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
-            SCORES_DIR = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
-            EVAL_RESULTS_DIR = f'{base_eval_path}/binary_classification/{method_model}_{model_type}'
+            
+            if data in ['T1', 'T1_predicted']:
+                PREDICTIONS_DIR = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}'
+                SCORES_DIR = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}'
+                EVAL_RESULTS_DIR = f'{base_eval_path}/binary_classification/{data}/{method_model}_{model_type}'
+            else:  # T0 case
+                PREDICTIONS_DIR = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
+                SCORES_DIR = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
+                EVAL_RESULTS_DIR = f'{base_eval_path}/binary_classification/{method_model}_{model_type}'
             
         elif method == "multilabel":
-            # Multilabel classification paths
-            PREDICTIONS_DIR = f'{base_prediction_path}/multilabel/{method_model}'
-            SCORES_DIR = f'{base_prediction_path}/multilabel/{method_model}'
-            EVAL_RESULTS_DIR = f'{base_eval_path}/multilabel/{method_model}'
+            if data in ['T1', 'T1_predicted']:
+                PREDICTIONS_DIR = f'{base_prediction_path}/multilabel/{data}/{method_model}'
+                SCORES_DIR = f'{base_prediction_path}/multilabel/{data}/{method_model}'
+                EVAL_RESULTS_DIR = f'{base_eval_path}/multilabel/{data}/{method_model}'
+            else:  # T0 case
+                PREDICTIONS_DIR = f'{base_prediction_path}/multilabel/{method_model}'
+                SCORES_DIR = f'{base_prediction_path}/multilabel/{method_model}'
+                EVAL_RESULTS_DIR = f'{base_eval_path}/multilabel/{method_model}'
             
         else:
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
@@ -224,7 +266,6 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
     SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
     
-
     return PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, OPTIMAL_THRS
 
 

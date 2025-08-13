@@ -5,9 +5,14 @@ import os
 from sklearn.metrics import ndcg_score
 from src.recommendation.utils.utils import *
 
-def evaluate_transaction_predictions(method, is_regressor, method_model, threshold=None):    
-    PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, OPTIMAL_THRS = evaluation_path_indicator(method, is_regressor, method_model, threshold)
-
+def evaluate_transaction_predictions(method, is_regressor, method_model, threshold=None, data='T0'):    
+    PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, OPTIMAL_THRS = evaluation_path_indicator(
+        method, is_regressor, method_model, threshold, data
+    )
+    
+    # Create evaluation directory if it doesn't exist
+    os.makedirs(EVAL_RESULTS_DIR, exist_ok=True)
+    
     ans_key = pd.read_csv(ANS_KEY_DIR)
     transaction_predictions = pd.read_csv(PREDICTIONS_DIR)
     probabilities_df = pd.read_csv(SCORES_DIR)
@@ -203,6 +208,24 @@ if __name__ == "__main__":
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
     # evaluate_transaction_predictions(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
+
+    # T1 evaluation
+    # evaluate_transaction_predictions(
+    #     method="binary", 
+    #     is_regressor=True, 
+    #     method_model="catboost", 
+    #     threshold=0.2,
+    #     data='T1'
+    # )
+    
+    # T1_predicted evaluation
+    evaluate_transaction_predictions(
+        method="binary", 
+        is_regressor=True, 
+        method_model="catboost", 
+        threshold=0.2,
+        data='T1_predicted'
+    )

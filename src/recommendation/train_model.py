@@ -18,8 +18,8 @@ from d3rlpy.algos import DiscreteCQLConfig
 from d3rlpy.preprocessing import MinMaxRewardScaler
 
 
-def train_model(method, is_regressor, method_model=None, threshold=None):
-    DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS = train_model_path_indicator(method, is_regressor, method_model, threshold)
+def train_model(method, is_regressor, method_model=None, threshold=None, data='T0'):
+    DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS = train_model_path_indicator(method, is_regressor, method_model, threshold, data)
 
     if method == "reinforcement_learning":
         """Train offline RL model with transaction count rewards"""
@@ -726,7 +726,7 @@ if __name__ == "__main__":
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
+    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
@@ -735,3 +735,9 @@ if __name__ == "__main__":
     # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
     # train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
+
+
+    # T0/T1/predT1
+    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2, data='T0')
+    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2, data='T1')
+    train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2, data='T1_predicted')
