@@ -1,4 +1,0 @@
-Method,Model,Threshold,Case,Total Predictions,True Positives,False Positives,False Negatives,Precision,Recall,F1 Score,F-Beta Score,Accuracy,NDCG,"Harmonic Mean (F1, NDCG)","Harmonic Mean (F-Beta, NDCG)"
-Binary,CatBoost Classifier,Optimal Threshold,T0,1134.0,376.0,758.0,425.0,0.3316,0.4694,0.3886,0.3523,0.5765,0.6758265222637094,0.4934604334983159,0.46316027966922724
-Binary,CatBoost Classifier,Optimal Threshold,T1,816.0,281.0,535.0,520.0,0.3444,0.3508,0.3476,0.3456,0.6357,0.6988779612318575,0.464281118807757,0.4624936712247462
-Binary,CatBoost Classifier,Optimal Threshold,T1_predicted,931.0,299.0,632.0,502.0,0.3212,0.3733,0.3453,0.3304,0.6099,0.6603435394496838,0.45347404965531396,0.44043185092150877

@@ -1,0 +1,4 @@
+Method,Model,Threshold,Case,Total Predictions,True Positives,False Positives,False Negatives,Precision,Recall,F1 Score,F-Beta Score,Accuracy,NDCG,"Harmonic Mean (F1, NDCG)","Harmonic Mean (F-Beta, NDCG)"
+Binary,random_forests Classifier,Optimal Threshold,T0,1466.0,504.0,962.0,297.0,0.3438,0.6292,0.4446,0.3781,0.5283,0.6606354670696862,0.5315039869973034,0.4809429888895684
+Binary,random_forests Classifier,Optimal Threshold,T1,1199.0,409.0,790.0,392.0,0.3411,0.5106,0.409,0.3654,0.568,0.6513708689339742,0.5024858626337536,0.4681702097897728
+Binary,random_forests Classifier,Optimal Threshold,T1_predicted,1557.0,522.0,1035.0,279.0,0.3353,0.6517,0.4427,0.3713,0.5059,0.6613968643800155,0.5303889564534708,0.47560259784798103

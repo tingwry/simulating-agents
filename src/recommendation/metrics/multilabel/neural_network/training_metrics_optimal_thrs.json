@@ -1,62 +1,62 @@
 {
   "loan": {
-    "precision": 0.5596330275229358,
-    "recall": 0.4765625,
-    "f1_score": 0.5147679324894515,
-    "optimal_threshold": 0.46385037899017334
+    "precision": 0.6818181818181818,
+    "recall": 0.4580152671755725,
+    "f1_score": 0.547945205479452,
+    "optimal_threshold": 0.5118282437324524
   },
   "utility": {
-    "precision": 0.38235294117647056,
-    "recall": 0.8272727272727273,
-    "f1_score": 0.5229885057471264,
-    "optimal_threshold": 0.3036988079547882
+    "precision": 0.40350877192982454,
+    "recall": 0.8598130841121495,
+    "f1_score": 0.5492537313432836,
+    "optimal_threshold": 0.3166505694389343
   },
   "finance": {
-    "precision": 0.6134969325153374,
-    "recall": 0.6896551724137931,
-    "f1_score": 0.6493506493506493,
-    "optimal_threshold": 0.4888988137245178
+    "precision": 0.5824175824175825,
+    "recall": 0.8091603053435115,
+    "f1_score": 0.6773162939297125,
+    "optimal_threshold": 0.3715621829032898
   },
   "shopping": {
-    "precision": 0.4,
-    "recall": 0.8135593220338984,
-    "f1_score": 0.5363128491620113,
-    "optimal_threshold": 0.3035925030708313
+    "precision": 0.39361702127659576,
+    "recall": 0.7628865979381443,
+    "f1_score": 0.519298245614035,
+    "optimal_threshold": 0.31737035512924194
   },
   "financial_services": {
-    "precision": 0.11764705882352941,
-    "recall": 0.45714285714285713,
-    "f1_score": 0.1871345029239766,
-    "optimal_threshold": 0.11237229406833649
+    "precision": 0.10727969348659004,
+    "recall": 0.9333333333333333,
+    "f1_score": 0.19243986254295534,
+    "optimal_threshold": 0.06147734448313713
   },
   "health_and_care": {
-    "precision": 0.07868852459016394,
-    "recall": 0.96,
-    "f1_score": 0.14545454545454548,
-    "optimal_threshold": 0.0380103774368763
+    "precision": 0.09649122807017543,
+    "recall": 0.5,
+    "f1_score": 0.16176470588235295,
+    "optimal_threshold": 0.08544694632291794
   },
   "home_lifestyle": {
-    "precision": 0.10526315789473684,
-    "recall": 0.3125,
-    "f1_score": 0.15748031496062992,
-    "optimal_threshold": 0.13082583248615265
+    "precision": 0.13157894736842105,
+    "recall": 0.3448275862068966,
+    "f1_score": 0.1904761904761905,
+    "optimal_threshold": 0.14401735365390778
   },
   "transport_travel": {
-    "precision": 0.05,
-    "recall": 0.18181818181818182,
-    "f1_score": 0.07843137254901962,
-    "optimal_threshold": 0.10993689298629761
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0,
+    "optimal_threshold": 0.13530723750591278
   },
   "leisure": {
-    "precision": 0.25,
-    "recall": 0.1,
-    "f1_score": 0.14285714285714288,
-    "optimal_threshold": 0.18439379334449768
+    "precision": 0.21739130434782608,
+    "recall": 0.3333333333333333,
+    "f1_score": 0.26315789473684204,
+    "optimal_threshold": 0.14928758144378662
   },
   "public_services": {
-    "precision": 0.09090909090909091,
-    "recall": 0.058823529411764705,
-    "f1_score": 0.07142857142857142,
-    "optimal_threshold": 0.13075488805770874
+    "precision": 0.05263157894736842,
+    "recall": 0.3,
+    "f1_score": 0.08955223880597013,
+    "optimal_threshold": 0.07660362124443054
   }
 }

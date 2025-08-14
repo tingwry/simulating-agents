@@ -1,4 +1,0 @@
-Method,Model,Threshold,Case,Total Predictions,True Positives,False Positives,False Negatives,Precision,Recall,F1 Score,F-Beta Score,Accuracy,NDCG,"Harmonic Mean (F1, NDCG)","Harmonic Mean (F-Beta, NDCG)"
-Multilabel,Neural Network,Optimal Threshold,T0,1649.0,513.0,1136.0,359.0,0.3111,0.5883,0.407,0.3435,0.512,0.7001275632130343,0.5147589630967833,0.4608805409915867
-Multilabel,Neural Network,Optimal Threshold,T1,1211.0,438.0,773.0,363.0,0.3617,0.5468,0.4354,0.388,0.5754,0.689899011374997,0.5338706006426478,0.4966714202141034
-Multilabel,Neural Network,Optimal Threshold,T1_predicted,1466.0,425.0,1041.0,376.0,0.2899,0.5306,0.3749,0.3188,0.4989,0.6975796826567237,0.48769711400064475,0.4376089105788901

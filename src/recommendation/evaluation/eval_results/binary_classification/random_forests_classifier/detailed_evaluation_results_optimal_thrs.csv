@@ -1,393 +1,354 @@
 cust_id,hit_rate,true_positives,classes_of_true_positives,false_positives,classes_of_false_positives,false_negatives,classes_of_false_negatives,ndcg,ndcg_with_probs
-13.0,0.0,0,,3,"finance, shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-15.0,0.5,2,"utility, shopping",2,"transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-24.0,0.25,1,finance,3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-30.0,0.4,2,"finance, home_lifestyle",3,"shopping, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-33.0,0.2,1,finance,4,"utility, shopping, home_lifestyle, public_services",1,loan,0.5462546843456765,0.6472975534012897
-34.0,1.0,1,shopping,0,,0,,0.5462546843456765,0.6472975534012897
-57.0,0.5,2,"utility, shopping",2,"transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-71.0,0.0,0,,3,"loan, shopping, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-74.0,0.5,2,"finance, shopping",2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-85.0,0.3333333333333333,2,"finance, shopping",4,"loan, utility, transport_travel, public_services",2,"home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-94.0,0.25,1,utility,3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-97.0,0.5,2,"finance, shopping",2,"transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-100.0,0.0,0,,4,"utility, finance, shopping, public_services",2,"health_and_care, leisure",0.5462546843456765,0.6472975534012897
-110.0,0.0,0,,4,"utility, finance, shopping, transport_travel",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-123.0,0.16666666666666666,1,shopping,5,"utility, finance, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-135.0,1.0,4,"utility, finance, shopping, home_lifestyle",0,,1,loan,0.5462546843456765,0.6472975534012897
-145.0,0.3333333333333333,2,"finance, shopping",4,"loan, utility, transport_travel, public_services",2,"financial_services, health_and_care",0.5462546843456765,0.6472975534012897
-150.0,0.2,1,finance,4,"utility, shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-151.0,0.25,1,finance,3,"shopping, transport_travel, public_services",1,health_and_care,0.5462546843456765,0.6472975534012897
-152.0,0.5,2,"utility, shopping",2,"transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-180.0,0.5,2,"finance, shopping",2,"utility, public_services",0,,0.5462546843456765,0.6472975534012897
-181.0,0.0,0,,4,"utility, finance, shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-185.0,0.0,0,,4,"utility, shopping, home_lifestyle, transport_travel",2,"loan, finance",0.5462546843456765,0.6472975534012897
-189.0,0.0,0,,2,"shopping, public_services",2,"utility, leisure",0.5462546843456765,0.6472975534012897
-193.0,0.4,2,"finance, shopping",3,"loan, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-197.0,0.0,0,,3,"utility, shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-204.0,0.0,0,,7,"loan, utility, finance, shopping, financial_services, transport_travel, public_services",2,"home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-206.0,0.6666666666666666,2,"loan, transport_travel",1,shopping,2,"finance, leisure",0.5462546843456765,0.6472975534012897
-215.0,0.6666666666666666,2,"utility, shopping",1,transport_travel,1,home_lifestyle,0.5462546843456765,0.6472975534012897
-221.0,0.16666666666666666,1,finance,5,"loan, utility, shopping, financial_services, home_lifestyle",2,"transport_travel, public_services",0.5462546843456765,0.6472975534012897
-230.0,0.6666666666666666,4,"utility, finance, shopping, home_lifestyle",2,"loan, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-239.0,0.4,2,"utility, finance",3,"shopping, home_lifestyle, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-240.0,0.3333333333333333,1,finance,2,"shopping, home_lifestyle",0,,0.5462546843456765,0.6472975534012897
-252.0,0.75,3,"utility, finance, shopping",1,home_lifestyle,0,,0.5462546843456765,0.6472975534012897
-257.0,0.16666666666666666,1,utility,5,"finance, shopping, home_lifestyle, transport_travel, public_services",2,"loan, financial_services",0.5462546843456765,0.6472975534012897
-264.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",2,"loan, home_lifestyle",0.5462546843456765,0.6472975534012897
-290.0,0.5,2,"utility, shopping",2,"transport_travel, public_services",3,"finance, health_and_care, home_lifestyle",0.5462546843456765,0.6472975534012897
-291.0,0.14285714285714285,1,loan,6,"utility, finance, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-292.0,0.0,0,,1,finance,2,"utility, financial_services",0.5462546843456765,0.6472975534012897
-294.0,0.0,0,,3,"finance, shopping, home_lifestyle",2,"loan, utility",0.5462546843456765,0.6472975534012897
-306.0,0.3333333333333333,1,utility,2,"shopping, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-310.0,0.0,0,,3,"shopping, transport_travel, public_services",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-316.0,0.2,1,public_services,4,"utility, finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-322.0,1.0,1,shopping,0,,2,"finance, leisure",0.5462546843456765,0.6472975534012897
-326.0,0.0,0,,6,"loan, utility, finance, shopping, transport_travel, public_services",1,health_and_care,0.5462546843456765,0.6472975534012897
-331.0,0.0,0,,2,"finance, shopping",1,utility,0.5462546843456765,0.6472975534012897
-333.0,0.2,1,loan,4,"utility, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-355.0,0.42857142857142855,3,"loan, finance, home_lifestyle",4,"utility, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-372.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",1,leisure,0.5462546843456765,0.6472975534012897
-377.0,1.0,3,"finance, shopping, home_lifestyle",0,,1,utility,0.5462546843456765,0.6472975534012897
-388.0,0.0,0,,4,"utility, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-403.0,0.4,2,"utility, finance",3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-409.0,0.3333333333333333,1,financial_services,2,"transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-434.0,0.25,1,utility,3,"shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-439.0,0.0,0,,5,"utility, shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-444.0,0.3333333333333333,1,shopping,2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-446.0,1.0,3,"utility, finance, shopping",0,,0,,0.5462546843456765,0.6472975534012897
-462.0,0.375,3,"utility, finance, health_and_care",5,"shopping, financial_services, home_lifestyle, transport_travel, public_services",1,leisure,0.5462546843456765,0.6472975534012897
-464.0,0.3333333333333333,1,shopping,2,"finance, public_services",2,"utility, health_and_care",0.5462546843456765,0.6472975534012897
-491.0,0.6,3,"utility, finance, shopping",2,"loan, home_lifestyle",0,,0.5462546843456765,0.6472975534012897
-498.0,0.16666666666666666,1,shopping,5,"loan, utility, finance, transport_travel, public_services",2,"financial_services, health_and_care",0.5462546843456765,0.6472975534012897
-507.0,0.75,3,"utility, shopping, home_lifestyle",1,transport_travel,2,"loan, finance",0.5462546843456765,0.6472975534012897
-512.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",2,"loan, home_lifestyle",0.5462546843456765,0.6472975534012897
-545.0,0.0,0,,4,"finance, shopping, home_lifestyle, public_services",1,utility,0.5462546843456765,0.6472975534012897
-565.0,0.25,1,finance,3,"utility, shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-595.0,0.5,1,finance,1,shopping,1,loan,0.5462546843456765,0.6472975534012897
-603.0,0.25,1,shopping,3,"utility, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-621.0,0.3333333333333333,1,finance,2,"shopping, transport_travel",1,financial_services,0.5462546843456765,0.6472975534012897
-669.0,0.6666666666666666,2,"finance, shopping",1,utility,2,"loan, leisure",0.5462546843456765,0.6472975534012897
-671.0,0.5,3,"finance, shopping, public_services",3,"utility, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-677.0,0.14285714285714285,1,loan,6,"utility, finance, shopping, financial_services, home_lifestyle, leisure",0,,0.5462546843456765,0.6472975534012897
-678.0,0.6666666666666666,4,"loan, utility, finance, shopping",2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-681.0,0.0,0,,1,leisure,1,utility,0.5462546843456765,0.6472975534012897
-684.0,1.0,3,"loan, finance, shopping",0,,0,,0.5462546843456765,0.6472975534012897
-692.0,0.0,0,,2,"finance, shopping",2,"financial_services, home_lifestyle",0.5462546843456765,0.6472975534012897
-722.0,0.2,1,loan,4,"utility, shopping, health_and_care, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-732.0,0.3333333333333333,1,finance,2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-756.0,0.25,1,finance,3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-760.0,0.3333333333333333,1,loan,2,"finance, shopping",0,,0.5462546843456765,0.6472975534012897
-765.0,0.4,2,"loan, shopping",3,"utility, finance, public_services",0,,0.5462546843456765,0.6472975534012897
-795.0,0.16666666666666666,1,loan,5,"utility, finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-804.0,0.5,2,"loan, transport_travel",2,"utility, shopping",1,health_and_care,0.5462546843456765,0.6472975534012897
-808.0,0.3333333333333333,1,transport_travel,2,"shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-810.0,0.0,0,,4,"utility, finance, shopping, transport_travel",1,leisure,0.5462546843456765,0.6472975534012897
-811.0,0.2,1,finance,4,"loan, utility, shopping, transport_travel",1,financial_services,0.5462546843456765,0.6472975534012897
-813.0,0.4,2,"finance, shopping",3,"loan, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-844.0,0.5,2,"finance, transport_travel",2,"loan, shopping",3,"utility, financial_services, home_lifestyle",0.5462546843456765,0.6472975534012897
-857.0,0.5,2,"finance, shopping",2,"transport_travel, public_services",4,"utility, financial_services, home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-863.0,0.5,3,"loan, utility, public_services",3,"finance, shopping, transport_travel",1,health_and_care,0.5462546843456765,0.6472975534012897
-870.0,0.25,1,finance,3,"shopping, home_lifestyle, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-872.0,0.2,1,utility,4,"shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-878.0,0.5,1,loan,1,shopping,0,,0.5462546843456765,0.6472975534012897
-882.0,0.4,2,"finance, shopping",3,"home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-889.0,0.2,1,utility,4,"finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-890.0,0.25,1,utility,3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-894.0,1.0,1,loan,0,,4,"utility, finance, shopping, home_lifestyle",0.5462546843456765,0.6472975534012897
-898.0,0.5,1,shopping,1,finance,1,health_and_care,0.5462546843456765,0.6472975534012897
-908.0,0.0,0,,3,"finance, shopping, home_lifestyle",2,"loan, utility",0.5462546843456765,0.6472975534012897
-1004.0,1.0,1,public_services,0,,5,"loan, utility, shopping, financial_services, home_lifestyle",0.5462546843456765,0.6472975534012897
-1018.0,0.2,1,home_lifestyle,4,"utility, shopping, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-1026.0,0.0,0,,4,"utility, finance, shopping, transport_travel",2,"loan, financial_services",0.5462546843456765,0.6472975534012897
-1028.0,0.0,0,,2,"utility, finance",1,shopping,0.5462546843456765,0.6472975534012897
-1030.0,0.0,0,,2,"utility, shopping",1,finance,0.5462546843456765,0.6472975534012897
-1033.0,0.5,2,"loan, utility",2,"home_lifestyle, public_services",1,shopping,0.5462546843456765,0.6472975534012897
-1035.0,0.16666666666666666,1,utility,5,"loan, finance, shopping, home_lifestyle, public_services",0,,0.5462546843456765,0.6472975534012897
-1039.0,0.2857142857142857,2,"finance, transport_travel",5,"loan, utility, shopping, home_lifestyle, public_services",0,,0.5462546843456765,0.6472975534012897
-1042.0,0.3333333333333333,1,finance,2,"shopping, public_services",2,"utility, financial_services",0.5462546843456765,0.6472975534012897
-1052.0,0.5,3,"utility, finance, shopping",3,"loan, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1056.0,0.3333333333333333,1,home_lifestyle,2,"shopping, public_services",1,finance,0.5462546843456765,0.6472975534012897
-1057.0,0.5,3,"utility, finance, home_lifestyle",3,"shopping, transport_travel, public_services",3,"loan, financial_services, leisure",0.5462546843456765,0.6472975534012897
-1072.0,0.6666666666666666,2,"loan, shopping",1,home_lifestyle,2,"utility, finance",0.5462546843456765,0.6472975534012897
-1074.0,0.16666666666666666,1,home_lifestyle,5,"utility, finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1075.0,0.75,3,"utility, finance, shopping",1,transport_travel,1,financial_services,0.5462546843456765,0.6472975534012897
-1095.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-1105.0,0.0,0,,2,"shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1109.0,0.14285714285714285,1,loan,6,"utility, finance, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1117.0,0.0,0,,4,"utility, shopping, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-1118.0,0.0,0,,2,"finance, shopping",1,utility,0.5462546843456765,0.6472975534012897
-1124.0,0.75,3,"loan, finance, shopping",1,home_lifestyle,2,"utility, financial_services",0.5462546843456765,0.6472975534012897
-1131.0,0.0,0,,0,,1,utility,0.5462546843456765,0.6472975534012897
-1162.0,0.5,2,"finance, shopping",2,"utility, home_lifestyle",0,,0.5462546843456765,0.6472975534012897
-1163.0,0.25,1,shopping,3,"utility, transport_travel, public_services",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-1171.0,0.25,1,loan,3,"finance, shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-1177.0,1.0,1,finance,0,,5,"shopping, financial_services, health_and_care, home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-1179.0,0.25,1,utility,3,"shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1190.0,0.3333333333333333,1,finance,2,"shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1201.0,0.0,0,,4,"utility, finance, shopping, transport_travel",1,health_and_care,0.5462546843456765,0.6472975534012897
-1214.0,0.5,2,"shopping, transport_travel",2,"utility, home_lifestyle",2,"finance, financial_services",0.5462546843456765,0.6472975534012897
-1217.0,0.5,1,finance,1,utility,1,shopping,0.5462546843456765,0.6472975534012897
-1222.0,0.8,4,"loan, utility, finance, shopping",1,home_lifestyle,1,leisure,0.5462546843456765,0.6472975534012897
-1223.0,0.6666666666666666,2,"finance, shopping",1,utility,0,,0.5462546843456765,0.6472975534012897
-1229.0,0.6,3,"utility, finance, shopping",2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1232.0,0.6,3,"loan, finance, shopping",2,"utility, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1236.0,0.25,1,utility,3,"shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1243.0,0.2,1,shopping,4,"loan, utility, home_lifestyle, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-1262.0,0.0,0,,2,"shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1273.0,0.0,0,,2,"utility, transport_travel",3,"loan, finance, public_services",0.5462546843456765,0.6472975534012897
-1279.0,0.14285714285714285,1,finance,6,"loan, utility, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1293.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1314.0,0.2,1,shopping,4,"loan, utility, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1324.0,0.3333333333333333,1,utility,2,"shopping, public_services",2,"finance, home_lifestyle",0.5462546843456765,0.6472975534012897
-1351.0,0.3333333333333333,1,finance,2,"loan, shopping",0,,0.5462546843456765,0.6472975534012897
-1375.0,0.4,2,"finance, shopping",3,"loan, utility, public_services",0,,0.5462546843456765,0.6472975534012897
-1392.0,0.25,1,finance,3,"utility, shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-1393.0,0.3333333333333333,2,"loan, finance",4,"utility, shopping, home_lifestyle, transport_travel",1,financial_services,0.5462546843456765,0.6472975534012897
-1399.0,0.3333333333333333,1,finance,2,"shopping, financial_services",0,,0.5462546843456765,0.6472975534012897
-1407.0,0.0,0,,6,"utility, finance, shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1412.0,0.25,1,shopping,3,"finance, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1413.0,0.3333333333333333,1,finance,2,"shopping, leisure",1,utility,0.5462546843456765,0.6472975534012897
-1414.0,0.0,0,,4,"finance, shopping, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-1420.0,0.3333333333333333,1,utility,2,"shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1425.0,0.16666666666666666,1,utility,5,"loan, shopping, home_lifestyle, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-1449.0,0.42857142857142855,3,"finance, shopping, transport_travel",4,"loan, utility, home_lifestyle, public_services",0,,0.5462546843456765,0.6472975534012897
-1486.0,0.25,1,shopping,3,"utility, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-1492.0,0.3333333333333333,1,finance,2,"shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1502.0,0.16666666666666666,1,finance,5,"utility, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1505.0,0.6666666666666666,2,"loan, utility",1,shopping,0,,0.5462546843456765,0.6472975534012897
-1506.0,0.2,1,finance,4,"loan, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1514.0,0.25,1,loan,3,"finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1523.0,0.14285714285714285,1,utility,6,"loan, finance, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1538.0,1.0,2,"finance, shopping",0,,2,"loan, utility",0.5462546843456765,0.6472975534012897
-1552.0,0.0,0,,5,"utility, finance, shopping, home_lifestyle, public_services",1,health_and_care,0.5462546843456765,0.6472975534012897
-1557.0,0.2,1,utility,4,"finance, shopping, home_lifestyle, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1558.0,0.25,1,loan,3,"utility, finance, shopping",0,,0.5462546843456765,0.6472975534012897
-1559.0,0.2,1,finance,4,"shopping, home_lifestyle, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-1564.0,0.6666666666666666,2,"finance, shopping",1,utility,1,health_and_care,0.5462546843456765,0.6472975534012897
-1587.0,0.2,1,shopping,4,"utility, finance, transport_travel, public_services",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-1593.0,0.25,1,loan,3,"finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1601.0,0.2,1,shopping,4,"utility, finance, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1612.0,0.75,3,"utility, finance, shopping",1,public_services,3,"loan, financial_services, health_and_care",0.5462546843456765,0.6472975534012897
-1627.0,0.2857142857142857,2,"loan, utility",5,"finance, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1633.0,0.2,1,loan,4,"utility, home_lifestyle, transport_travel, public_services",1,shopping,0.5462546843456765,0.6472975534012897
-1644.0,0.2,1,public_services,4,"utility, finance, shopping, transport_travel",1,financial_services,0.5462546843456765,0.6472975534012897
-1651.0,0.5,3,"loan, utility, finance",3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1653.0,0.3333333333333333,1,loan,2,"utility, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1663.0,0.75,3,"shopping, transport_travel, public_services",1,finance,3,"loan, financial_services, home_lifestyle",0.5462546843456765,0.6472975534012897
-1666.0,0.25,1,utility,3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1695.0,1.0,2,"finance, shopping",0,,2,"loan, utility",0.5462546843456765,0.6472975534012897
-1698.0,0.2,1,loan,4,"utility, finance, shopping, leisure",1,financial_services,0.5462546843456765,0.6472975534012897
-1728.0,0.2,1,shopping,4,"utility, finance, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1741.0,0.4,2,"finance, shopping",3,"utility, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1742.0,0.2,1,finance,4,"loan, utility, shopping, transport_travel",1,health_and_care,0.5462546843456765,0.6472975534012897
-1766.0,0.2,1,utility,4,"shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-1771.0,0.0,0,,3,"loan, transport_travel, public_services",1,shopping,0.5462546843456765,0.6472975534012897
-1780.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1785.0,0.6666666666666666,2,"finance, shopping",1,transport_travel,2,"loan, utility",0.5462546843456765,0.6472975534012897
-1789.0,0.7142857142857143,5,"utility, finance, shopping, home_lifestyle, transport_travel",2,"loan, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-1832.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-1834.0,0.6,3,"utility, finance, shopping",2,"transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-1860.0,0.25,1,loan,3,"utility, finance, shopping",0,,0.5462546843456765,0.6472975534012897
-1861.0,0.25,1,shopping,3,"loan, finance, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1863.0,0.3333333333333333,1,utility,2,"shopping, transport_travel",1,financial_services,0.5462546843456765,0.6472975534012897
-1872.0,0.0,0,,6,"loan, utility, finance, shopping, transport_travel, public_services",1,health_and_care,0.5462546843456765,0.6472975534012897
-1877.0,0.5,3,"loan, finance, leisure",3,"shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-1881.0,0.25,1,finance,3,"shopping, transport_travel, public_services",3,"utility, financial_services, leisure",0.5462546843456765,0.6472975534012897
-1898.0,0.0,0,,3,"loan, finance, shopping",1,health_and_care,0.5462546843456765,0.6472975534012897
-1910.0,0.25,1,finance,3,"loan, utility, shopping",0,,0.5462546843456765,0.6472975534012897
-1953.0,0.0,0,,2,"shopping, transport_travel",3,"loan, finance, financial_services",0.5462546843456765,0.6472975534012897
-1967.0,0.2,1,public_services,4,"loan, utility, shopping, transport_travel",2,"finance, health_and_care",0.5462546843456765,0.6472975534012897
-1979.0,0.4,2,"finance, shopping",3,"utility, home_lifestyle, public_services",0,,0.5462546843456765,0.6472975534012897
-2005.0,0.2,1,utility,4,"finance, shopping, transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-2006.0,0.16666666666666666,1,loan,5,"utility, finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2015.0,0.0,0,,4,"loan, utility, shopping, public_services",1,finance,0.5462546843456765,0.6472975534012897
-2016.0,0.5,2,"finance, shopping",2,"home_lifestyle, leisure",0,,0.5462546843456765,0.6472975534012897
-2032.0,0.25,1,utility,3,"shopping, transport_travel, public_services",2,"loan, financial_services",0.5462546843456765,0.6472975534012897
-2043.0,1.0,1,finance,0,,1,shopping,0.5462546843456765,0.6472975534012897
-2045.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-2054.0,0.2,1,shopping,4,"loan, utility, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-2068.0,0.4,2,"finance, shopping",3,"health_and_care, home_lifestyle, public_services",2,"loan, leisure",0.5462546843456765,0.6472975534012897
-2092.0,0.25,1,shopping,3,"utility, finance, public_services",0,,0.5462546843456765,0.6472975534012897
-2154.0,1.0,3,"finance, shopping, home_lifestyle",0,,1,loan,0.5462546843456765,0.6472975534012897
-2168.0,0.6666666666666666,2,"finance, shopping",1,utility,1,health_and_care,0.5462546843456765,0.6472975534012897
-2187.0,0.2,1,utility,4,"finance, shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-2214.0,0.0,0,,3,"shopping, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-2222.0,0.6,3,"utility, finance, shopping",2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2248.0,0.5,1,shopping,1,loan,1,finance,0.5462546843456765,0.6472975534012897
-2251.0,0.5,3,"finance, shopping, transport_travel",3,"loan, utility, public_services",0,,0.5462546843456765,0.6472975534012897
-2270.0,0.2,1,finance,4,"loan, utility, shopping, home_lifestyle",0,,0.5462546843456765,0.6472975534012897
-2298.0,0.25,1,utility,3,"shopping, home_lifestyle, transport_travel",3,"loan, finance, health_and_care",0.5462546843456765,0.6472975534012897
-2321.0,0.5,3,"utility, finance, transport_travel",3,"shopping, home_lifestyle, public_services",0,,0.5462546843456765,0.6472975534012897
-2324.0,0.0,0,,4,"utility, shopping, home_lifestyle, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-2342.0,0.5,1,shopping,1,utility,3,"loan, finance, leisure",0.5462546843456765,0.6472975534012897
-2368.0,0.8,4,"utility, finance, shopping, transport_travel",1,public_services,2,"loan, home_lifestyle",0.5462546843456765,0.6472975534012897
-2370.0,0.25,1,finance,3,"utility, shopping, transport_travel",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-2371.0,0.3333333333333333,1,finance,2,"shopping, leisure",1,utility,0.5462546843456765,0.6472975534012897
-2379.0,0.3333333333333333,1,utility,2,"shopping, public_services",2,"loan, transport_travel",0.5462546843456765,0.6472975534012897
-2388.0,0.2,1,utility,4,"finance, shopping, transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-2402.0,0.3333333333333333,2,"utility, finance",4,"shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2452.0,0.2,1,utility,4,"shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-2453.0,0.0,0,,4,"utility, finance, shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-2458.0,0.6666666666666666,2,"finance, shopping",1,loan,1,utility,0.5462546843456765,0.6472975534012897
-2464.0,0.5,2,"utility, shopping",2,"loan, public_services",2,"home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-2466.0,0.5,3,"utility, finance, shopping",3,"home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2474.0,0.6666666666666666,2,"utility, shopping",1,public_services,0,,0.5462546843456765,0.6472975534012897
-2479.0,0.3333333333333333,1,finance,2,"shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-2484.0,0.25,1,loan,3,"finance, shopping, transport_travel",1,utility,0.5462546843456765,0.6472975534012897
-2495.0,0.0,0,,4,"utility, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-2502.0,0.3333333333333333,1,shopping,2,"transport_travel, public_services",2,"utility, finance",0.5462546843456765,0.6472975534012897
-2510.0,0.25,1,utility,3,"finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-2513.0,0.6666666666666666,2,"utility, shopping",1,finance,1,loan,0.5462546843456765,0.6472975534012897
-2520.0,1.0,3,"finance, shopping, transport_travel",0,,0,,0.5462546843456765,0.6472975534012897
-2528.0,0.2,1,loan,4,"utility, finance, shopping, leisure",0,,0.5462546843456765,0.6472975534012897
-2537.0,0.5,3,"finance, shopping, home_lifestyle",3,"loan, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-2544.0,0.5,3,"loan, finance, shopping",3,"utility, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2555.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-2562.0,0.6666666666666666,2,"finance, shopping",1,utility,1,home_lifestyle,0.5462546843456765,0.6472975534012897
-2565.0,0.6666666666666666,2,"utility, shopping",1,public_services,1,home_lifestyle,0.5462546843456765,0.6472975534012897
-2567.0,0.75,3,"loan, finance, shopping",1,transport_travel,2,"utility, health_and_care",0.5462546843456765,0.6472975534012897
-2580.0,0.25,1,finance,3,"utility, shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-2631.0,1.0,2,"finance, shopping",0,,0,,0.5462546843456765,0.6472975534012897
-2652.0,0.0,0,,3,"utility, shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-2659.0,0.2,1,finance,4,"shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2660.0,0.3333333333333333,1,shopping,2,"transport_travel, public_services",2,"loan, finance",0.5462546843456765,0.6472975534012897
-2697.0,0.16666666666666666,1,utility,5,"loan, finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-2727.0,0.6666666666666666,2,"utility, shopping",1,public_services,1,home_lifestyle,0.5462546843456765,0.6472975534012897
-2801.0,0.3333333333333333,1,shopping,2,"finance, transport_travel",2,"utility, health_and_care",0.5462546843456765,0.6472975534012897
-2805.0,0.6666666666666666,2,"finance, shopping",1,utility,0,,0.5462546843456765,0.6472975534012897
-2806.0,0.0,0,,3,"utility, shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-2828.0,0.2,1,transport_travel,4,"utility, finance, shopping, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-2841.0,0.0,0,,2,"shopping, public_services",1,utility,0.5462546843456765,0.6472975534012897
-2853.0,0.5,2,"utility, shopping",2,"loan, transport_travel",4,"finance, financial_services, home_lifestyle, public_services",0.5462546843456765,0.6472975534012897
-2859.0,0.0,0,,1,shopping,1,transport_travel,0.5462546843456765,0.6472975534012897
-2866.0,0.5,2,"finance, shopping",2,"utility, public_services",2,"financial_services, leisure",0.5462546843456765,0.6472975534012897
-2882.0,0.2,1,loan,4,"finance, shopping, transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-2890.0,0.5,3,"finance, shopping, public_services",3,"utility, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-2894.0,0.0,0,,1,finance,1,utility,0.5462546843456765,0.6472975534012897
-2930.0,0.0,0,,7,"finance, shopping, financial_services, home_lifestyle, transport_travel, leisure, public_services",1,utility,0.5462546843456765,0.6472975534012897
-2949.0,0.5,2,"utility, finance",2,"shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-2956.0,0.3333333333333333,2,"loan, public_services",4,"finance, shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-2964.0,0.4,2,"loan, home_lifestyle",3,"finance, shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-2965.0,0.2,1,shopping,4,"loan, utility, finance, home_lifestyle",0,,0.5462546843456765,0.6472975534012897
-2972.0,0.0,0,,5,"utility, shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-2990.0,0.2,1,finance,4,"loan, utility, shopping, leisure",0,,0.5462546843456765,0.6472975534012897
-2993.0,0.0,0,,2,"shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-3002.0,0.4,2,"finance, shopping",3,"home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3016.0,0.2857142857142857,2,"loan, finance",5,"utility, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3033.0,0.2,1,utility,4,"loan, finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-3037.0,0.6666666666666666,2,"finance, shopping",1,utility,0,,0.5462546843456765,0.6472975534012897
-3043.0,0.6,3,"utility, finance, shopping",2,"home_lifestyle, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3047.0,0.6,3,"utility, finance, shopping",2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3065.0,0.4,2,"loan, utility",3,"shopping, home_lifestyle, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-3072.0,0.0,0,,2,"utility, shopping",2,"loan, home_lifestyle",0.5462546843456765,0.6472975534012897
-3083.0,0.0,0,,4,"finance, shopping, home_lifestyle, transport_travel",1,utility,0.5462546843456765,0.6472975534012897
-3084.0,0.25,1,loan,3,"utility, finance, shopping",0,,0.5462546843456765,0.6472975534012897
-3089.0,0.25,1,loan,3,"utility, finance, shopping",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-3096.0,0.25,1,utility,3,"shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-3102.0,0.0,0,,3,"utility, shopping, public_services",2,"loan, financial_services",0.5462546843456765,0.6472975534012897
-3107.0,0.25,1,utility,3,"shopping, transport_travel, public_services",2,"loan, financial_services",0.5462546843456765,0.6472975534012897
-3124.0,0.25,1,shopping,3,"utility, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-3132.0,0.0,0,,4,"finance, shopping, home_lifestyle, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-3139.0,0.2,1,loan,4,"utility, finance, shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-3155.0,0.25,1,shopping,3,"utility, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3196.0,0.6666666666666666,2,"loan, home_lifestyle",1,utility,2,"finance, shopping",0.5462546843456765,0.6472975534012897
-3205.0,0.25,1,transport_travel,3,"utility, shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-3207.0,0.0,0,,6,"utility, finance, shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3211.0,0.2,1,transport_travel,4,"loan, finance, shopping, public_services",1,utility,0.5462546843456765,0.6472975534012897
-3214.0,0.5,2,"loan, utility",2,"finance, shopping",1,transport_travel,0.5462546843456765,0.6472975534012897
-3215.0,0.3333333333333333,1,loan,2,"utility, transport_travel",1,finance,0.5462546843456765,0.6472975534012897
-3221.0,0.4,2,"finance, public_services",3,"utility, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-3225.0,0.0,0,,2,"shopping, public_services",1,utility,0.5462546843456765,0.6472975534012897
-3230.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3242.0,0.25,1,loan,3,"shopping, transport_travel, public_services",1,leisure,0.5462546843456765,0.6472975534012897
-3245.0,0.0,0,,5,"utility, shopping, home_lifestyle, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3251.0,0.3333333333333333,1,shopping,2,"utility, transport_travel",2,"financial_services, home_lifestyle",0.5462546843456765,0.6472975534012897
-3263.0,0.125,1,loan,7,"utility, finance, shopping, financial_services, home_lifestyle, transport_travel, leisure",0,,0.5462546843456765,0.6472975534012897
-3264.0,0.0,0,,4,"utility, finance, home_lifestyle, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-3271.0,0.5,1,finance,1,shopping,0,,0.5462546843456765,0.6472975534012897
-3299.0,0.0,0,,2,"shopping, public_services",1,utility,0.5462546843456765,0.6472975534012897
-3313.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",1,health_and_care,0.5462546843456765,0.6472975534012897
-3316.0,0.5,2,"utility, shopping",2,"transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3320.0,0.0,0,,4,"utility, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3322.0,0.25,1,finance,3,"utility, shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3334.0,0.75,3,"loan, finance, shopping",1,public_services,2,"utility, home_lifestyle",0.5462546843456765,0.6472975534012897
-3350.0,0.2,1,loan,4,"utility, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3359.0,0.2,1,utility,4,"finance, shopping, transport_travel, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-3382.0,0.3333333333333333,1,utility,2,"shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3431.0,0.2,1,loan,4,"finance, shopping, home_lifestyle, public_services",2,"utility, health_and_care",0.5462546843456765,0.6472975534012897
-3434.0,0.25,1,loan,3,"finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-3444.0,0.3333333333333333,1,utility,2,"shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-3460.0,0.25,1,finance,3,"utility, transport_travel, leisure",0,,0.5462546843456765,0.6472975534012897
-3463.0,0.6666666666666666,2,"utility, finance",1,public_services,1,shopping,0.5462546843456765,0.6472975534012897
-3510.0,0.0,0,,5,"loan, shopping, financial_services, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-3515.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",2,"financial_services, health_and_care",0.5462546843456765,0.6472975534012897
-3520.0,0.3333333333333333,1,utility,2,"shopping, transport_travel",4,"loan, finance, financial_services, home_lifestyle",0.5462546843456765,0.6472975534012897
-3554.0,0.2,1,shopping,4,"utility, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3560.0,1.0,2,"finance, shopping",0,,2,"loan, utility",0.5462546843456765,0.6472975534012897
-3581.0,0.2,1,loan,4,"utility, shopping, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-3590.0,0.6666666666666666,2,"utility, shopping",1,transport_travel,2,"finance, leisure",0.5462546843456765,0.6472975534012897
-3593.0,0.5,2,"utility, shopping",2,"transport_travel, public_services",2,"finance, leisure",0.5462546843456765,0.6472975534012897
-3594.0,0.25,1,public_services,3,"loan, utility, transport_travel",2,"shopping, home_lifestyle",0.5462546843456765,0.6472975534012897
-3598.0,0.5,1,utility,1,finance,0,,0.5462546843456765,0.6472975534012897
-3599.0,0.2,1,finance,4,"shopping, financial_services, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3614.0,0.75,3,"loan, utility, finance",1,transport_travel,3,"shopping, financial_services, public_services",0.5462546843456765,0.6472975534012897
-3620.0,0.25,1,finance,3,"shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-3639.0,0.5,2,"utility, transport_travel",2,"shopping, public_services",0,,0.5462546843456765,0.6472975534012897
-3642.0,0.0,0,,3,"utility, finance, health_and_care",1,loan,0.5462546843456765,0.6472975534012897
-3651.0,0.25,1,utility,3,"finance, shopping, home_lifestyle",0,,0.5462546843456765,0.6472975534012897
-3685.0,0.25,1,utility,3,"finance, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3703.0,0.25,1,shopping,3,"loan, transport_travel, public_services",1,finance,0.5462546843456765,0.6472975534012897
-3708.0,0.2857142857142857,2,"finance, shopping",5,"loan, utility, home_lifestyle, transport_travel, public_services",1,leisure,0.5462546843456765,0.6472975534012897
-3768.0,0.25,1,shopping,3,"utility, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3779.0,0.0,0,,3,"utility, shopping, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-3786.0,0.0,0,,3,"utility, finance, shopping",1,leisure,0.5462546843456765,0.6472975534012897
-3803.0,0.75,3,"utility, finance, shopping",1,loan,0,,0.5462546843456765,0.6472975534012897
-3835.0,0.6666666666666666,2,"utility, finance",1,shopping,2,"loan, public_services",0.5462546843456765,0.6472975534012897
-3838.0,0.3333333333333333,1,shopping,2,"utility, transport_travel",0,,0.5462546843456765,0.6472975534012897
-3842.0,0.25,1,utility,3,"shopping, transport_travel, public_services",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-3874.0,0.25,1,shopping,3,"loan, transport_travel, public_services",2,"utility, finance",0.5462546843456765,0.6472975534012897
-3890.0,0.25,1,loan,3,"shopping, transport_travel, public_services",1,utility,0.5462546843456765,0.6472975534012897
-3900.0,0.3333333333333333,1,loan,2,"utility, home_lifestyle",2,"finance, shopping",0.5462546843456765,0.6472975534012897
-3902.0,0.6,3,"loan, utility, finance",2,"shopping, transport_travel",4,"financial_services, health_and_care, home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-3916.0,0.0,0,,2,"shopping, public_services",2,"finance, financial_services",0.5462546843456765,0.6472975534012897
-3928.0,0.25,2,"finance, shopping",6,"utility, financial_services, health_and_care, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3932.0,0.0,0,,3,"shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-3940.0,0.3333333333333333,1,utility,2,"shopping, financial_services",3,"finance, transport_travel, public_services",0.5462546843456765,0.6472975534012897
-3953.0,0.6,3,"utility, finance, home_lifestyle",2,"shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-3960.0,0.16666666666666666,1,utility,5,"finance, shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-3986.0,0.4,2,"finance, home_lifestyle",3,"shopping, transport_travel, public_services",3,"loan, utility, financial_services",0.5462546843456765,0.6472975534012897
-3987.0,0.3333333333333333,2,"loan, utility",4,"finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4003.0,0.4,2,"utility, finance",3,"shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4035.0,0.3333333333333333,1,utility,2,"home_lifestyle, transport_travel",2,"loan, public_services",0.5462546843456765,0.6472975534012897
-4049.0,0.2,1,finance,4,"utility, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4050.0,0.25,1,shopping,3,"utility, finance, public_services",3,"loan, home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-4052.0,0.25,1,shopping,3,"utility, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4057.0,0.6,3,"utility, finance, shopping",2,"transport_travel, public_services",3,"loan, home_lifestyle, leisure",0.5462546843456765,0.6472975534012897
-4080.0,0.2,1,utility,4,"loan, shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-4086.0,0.2,1,loan,4,"utility, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4095.0,0.16666666666666666,1,utility,5,"loan, finance, shopping, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4099.0,0.25,1,utility,3,"finance, shopping, transport_travel",0,,0.5462546843456765,0.6472975534012897
-4106.0,0.25,1,utility,3,"finance, shopping, transport_travel",1,home_lifestyle,0.5462546843456765,0.6472975534012897
-4107.0,0.6666666666666666,2,"finance, shopping",1,transport_travel,2,"utility, leisure",0.5462546843456765,0.6472975534012897
-4109.0,0.75,3,"loan, finance, shopping",1,transport_travel,0,,0.5462546843456765,0.6472975534012897
-4115.0,0.6666666666666666,2,"finance, shopping",1,public_services,1,utility,0.5462546843456765,0.6472975534012897
-4130.0,0.2,1,utility,4,"finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-4148.0,0.25,1,utility,3,"finance, shopping, transport_travel",2,"loan, public_services",0.5462546843456765,0.6472975534012897
-4157.0,0.2,1,utility,4,"shopping, home_lifestyle, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
-4171.0,0.3333333333333333,1,shopping,2,"financial_services, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-4189.0,0.4,2,"utility, transport_travel",3,"finance, shopping, public_services",1,loan,0.5462546843456765,0.6472975534012897
-4199.0,0.3333333333333333,1,utility,2,"loan, shopping",1,finance,0.5462546843456765,0.6472975534012897
-4203.0,0.3333333333333333,1,shopping,2,"transport_travel, public_services",3,"loan, utility, financial_services",0.5462546843456765,0.6472975534012897
-4215.0,0.75,3,"loan, utility, shopping",1,transport_travel,3,"financial_services, health_and_care, public_services",0.5462546843456765,0.6472975534012897
-4225.0,0.0,0,,3,"utility, finance, shopping",2,"loan, public_services",0.5462546843456765,0.6472975534012897
-4237.0,1.0,2,"utility, shopping",0,,2,"finance, transport_travel",0.5462546843456765,0.6472975534012897
-4243.0,0.0,0,,4,"loan, shopping, transport_travel, public_services",2,"utility, finance",0.5462546843456765,0.6472975534012897
-4259.0,0.0,0,,5,"loan, finance, shopping, home_lifestyle, public_services",1,financial_services,0.5462546843456765,0.6472975534012897
-4265.0,0.5,3,"utility, finance, home_lifestyle",3,"shopping, transport_travel, public_services",2,"loan, health_and_care",0.5462546843456765,0.6472975534012897
-4268.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-4271.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-4277.0,0.0,0,,5,"utility, finance, shopping, transport_travel, public_services",1,loan,0.5462546843456765,0.6472975534012897
-4283.0,0.2,1,utility,4,"finance, shopping, home_lifestyle, transport_travel",0,,0.5462546843456765,0.6472975534012897
-4303.0,0.5,3,"finance, home_lifestyle, public_services",3,"utility, shopping, transport_travel",1,loan,0.5462546843456765,0.6472975534012897
-4333.0,0.4,2,"finance, shopping",3,"utility, transport_travel, public_services",0,,0.5462546843456765,0.6472975534012897
+13.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+15.0,0.5,2,"utility, shopping",2,"home_lifestyle, public_services",1,finance,0.5761613047115731,0.6606354670696862
+30.0,0.6,3,"utility, finance, home_lifestyle",2,"loan, shopping",0,,0.5761613047115731,0.6606354670696862
+33.0,0.4,2,"loan, finance",3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+34.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+57.0,0.25,1,utility,3,"loan, home_lifestyle, public_services",2,"finance, shopping",0.5761613047115731,0.6606354670696862
+74.0,0.5,2,"finance, shopping",2,"loan, utility",0,,0.5761613047115731,0.6606354670696862
+85.0,0.42857142857142855,3,"finance, shopping, home_lifestyle",4,"loan, utility, financial_services, transport_travel",1,leisure,0.5761613047115731,0.6606354670696862
+94.0,0.3333333333333333,1,utility,2,"loan, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+100.0,0.0,0,,2,"utility, home_lifestyle",2,"health_and_care, leisure",0.5761613047115731,0.6606354670696862
+110.0,0.25,1,home_lifestyle,3,"utility, finance, shopping",0,,0.5761613047115731,0.6606354670696862
+123.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+135.0,0.8,4,"utility, finance, shopping, home_lifestyle",1,health_and_care,1,loan,0.5761613047115731,0.6606354670696862
+145.0,0.6,3,"finance, shopping, financial_services",2,"loan, utility",1,health_and_care,0.5761613047115731,0.6606354670696862
+150.0,0.25,1,finance,3,"utility, home_lifestyle, leisure",0,,0.5761613047115731,0.6606354670696862
+151.0,0.2,1,finance,4,"loan, utility, shopping, home_lifestyle",1,health_and_care,0.5761613047115731,0.6606354670696862
+152.0,1.0,2,"utility, shopping",0,,1,financial_services,0.5761613047115731,0.6606354670696862
+180.0,0.0,0,,3,"loan, utility, home_lifestyle",2,"finance, shopping",0.5761613047115731,0.6606354670696862
+181.0,0.25,1,loan,3,"utility, shopping, financial_services",0,,0.5761613047115731,0.6606354670696862
+185.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+189.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",1,leisure,0.5761613047115731,0.6606354670696862
+193.0,0.4,2,"utility, shopping",3,"loan, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+197.0,0.0,0,,4,"utility, shopping, financial_services, public_services",1,loan,0.5761613047115731,0.6606354670696862
+204.0,0.2857142857142857,2,"home_lifestyle, leisure",5,"loan, utility, shopping, financial_services, health_and_care",0,,0.5761613047115731,0.6606354670696862
+206.0,0.3333333333333333,1,loan,2,"utility, shopping",3,"finance, transport_travel, leisure",0.5761613047115731,0.6606354670696862
+215.0,0.75,3,"utility, shopping, home_lifestyle",1,financial_services,0,,0.5761613047115731,0.6606354670696862
+230.0,0.8,4,"utility, finance, shopping, home_lifestyle",1,loan,1,financial_services,0.5761613047115731,0.6606354670696862
+239.0,0.6,3,"loan, utility, finance",2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+240.0,0.0,0,,4,"utility, shopping, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+252.0,0.6,3,"utility, finance, shopping",2,"financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+257.0,0.3333333333333333,1,utility,2,"finance, home_lifestyle",2,"loan, financial_services",0.5761613047115731,0.6606354670696862
+264.0,0.5,2,"loan, home_lifestyle",2,"utility, shopping",0,,0.5761613047115731,0.6606354670696862
+290.0,1.0,3,"utility, shopping, home_lifestyle",0,,2,"finance, health_and_care",0.5761613047115731,0.6606354670696862
+291.0,0.16666666666666666,1,loan,5,"utility, shopping, financial_services, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+292.0,0.3333333333333333,1,utility,2,"finance, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+294.0,0.4,2,"loan, utility",3,"finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+306.0,0.5,1,utility,1,home_lifestyle,1,finance,0.5761613047115731,0.6606354670696862
+310.0,0.3333333333333333,1,home_lifestyle,2,"utility, shopping",0,,0.5761613047115731,0.6606354670696862
+316.0,0.0,0,,5,"loan, utility, finance, shopping, home_lifestyle",1,public_services,0.5761613047115731,0.6606354670696862
+322.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",2,"finance, leisure",0.5761613047115731,0.6606354670696862
+326.0,0.0,0,,5,"loan, utility, finance, shopping, home_lifestyle",1,health_and_care,0.5761613047115731,0.6606354670696862
+331.0,0.3333333333333333,1,utility,2,"finance, shopping",0,,0.5761613047115731,0.6606354670696862
+333.0,0.2,1,loan,4,"utility, shopping, financial_services, public_services",0,,0.5761613047115731,0.6606354670696862
+355.0,0.6,3,"loan, finance, home_lifestyle",2,"utility, shopping",0,,0.5761613047115731,0.6606354670696862
+372.0,0.25,1,finance,3,"utility, financial_services, home_lifestyle",1,leisure,0.5761613047115731,0.6606354670696862
+377.0,0.6666666666666666,4,"utility, finance, shopping, home_lifestyle",2,"loan, health_and_care",0,,0.5761613047115731,0.6606354670696862
+388.0,0.2,1,loan,4,"utility, shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+403.0,0.25,1,utility,3,"loan, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+409.0,0.6666666666666666,2,"utility, financial_services",1,home_lifestyle,0,,0.5761613047115731,0.6606354670696862
+434.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+439.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+444.0,0.25,1,shopping,3,"utility, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+446.0,0.75,3,"utility, finance, shopping",1,home_lifestyle,0,,0.5761613047115731,0.6606354670696862
+462.0,0.5,3,"utility, finance, health_and_care",3,"shopping, financial_services, home_lifestyle",1,leisure,0.5761613047115731,0.6606354670696862
+464.0,0.4,2,"utility, shopping",3,"loan, finance, home_lifestyle",1,health_and_care,0.5761613047115731,0.6606354670696862
+491.0,0.5,3,"utility, finance, shopping",3,"loan, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+498.0,0.2,1,shopping,4,"loan, utility, finance, home_lifestyle",2,"financial_services, health_and_care",0.5761613047115731,0.6606354670696862
+507.0,1.0,2,"utility, home_lifestyle",0,,3,"loan, finance, shopping",0.5761613047115731,0.6606354670696862
+545.0,0.25,1,utility,3,"shopping, home_lifestyle, leisure",0,,0.5761613047115731,0.6606354670696862
+565.0,0.0,0,,3,"utility, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+595.0,0.3333333333333333,2,"loan, finance",4,"utility, shopping, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+603.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+621.0,0.25,1,finance,3,"utility, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+669.0,0.75,3,"loan, finance, leisure",1,utility,1,shopping,0.5761613047115731,0.6606354670696862
+671.0,0.5,2,"finance, shopping",2,"utility, home_lifestyle",1,public_services,0.5761613047115731,0.6606354670696862
+677.0,0.2,1,loan,4,"utility, financial_services, home_lifestyle, leisure",0,,0.5761613047115731,0.6606354670696862
+678.0,0.6,3,"loan, utility, shopping",2,"financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+684.0,1.0,3,"loan, finance, shopping",0,,0,,0.5761613047115731,0.6606354670696862
+692.0,0.5,1,home_lifestyle,1,utility,1,financial_services,0.5761613047115731,0.6606354670696862
+722.0,0.25,1,loan,3,"utility, health_and_care, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+732.0,0.16666666666666666,1,finance,5,"loan, utility, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+756.0,0.2,1,finance,4,"loan, utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+760.0,0.3333333333333333,1,loan,2,"finance, shopping",0,,0.5761613047115731,0.6606354670696862
+765.0,0.3333333333333333,2,"loan, shopping",4,"utility, finance, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+804.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",2,"health_and_care, transport_travel",0.5761613047115731,0.6606354670696862
+808.0,0.0,0,,3,"utility, shopping, home_lifestyle",1,transport_travel,0.5761613047115731,0.6606354670696862
+810.0,0.0,0,,1,utility,1,leisure,0.5761613047115731,0.6606354670696862
+811.0,0.0,0,,5,"loan, utility, shopping, health_and_care, home_lifestyle",2,"finance, financial_services",0.5761613047115731,0.6606354670696862
+844.0,0.6666666666666666,4,"utility, finance, financial_services, home_lifestyle",2,"loan, shopping",1,transport_travel,0.5761613047115731,0.6606354670696862
+857.0,1.0,4,"utility, finance, shopping, home_lifestyle",0,,2,"financial_services, leisure",0.5761613047115731,0.6606354670696862
+863.0,0.5,2,"loan, utility",2,"shopping, home_lifestyle",2,"health_and_care, public_services",0.5761613047115731,0.6606354670696862
+878.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+882.0,0.4,2,"finance, shopping",3,"utility, financial_services, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+889.0,0.5,1,utility,1,home_lifestyle,0,,0.5761613047115731,0.6606354670696862
+890.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+894.0,1.0,3,"loan, utility, home_lifestyle",0,,2,"finance, shopping",0.5761613047115731,0.6606354670696862
+908.0,0.25,1,utility,3,"finance, shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+1004.0,1.0,3,"utility, shopping, home_lifestyle",0,,3,"loan, financial_services, public_services",0.5761613047115731,0.6606354670696862
+1018.0,0.3333333333333333,1,home_lifestyle,2,"utility, shopping",1,finance,0.5761613047115731,0.6606354670696862
+1026.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+1028.0,0.3333333333333333,1,shopping,2,"loan, utility",0,,0.5761613047115731,0.6606354670696862
+1030.0,0.2,1,finance,4,"utility, shopping, financial_services, health_and_care",0,,0.5761613047115731,0.6606354670696862
+1033.0,0.5,2,"loan, utility",2,"health_and_care, home_lifestyle",1,shopping,0.5761613047115731,0.6606354670696862
+1035.0,0.2,1,utility,4,"loan, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1039.0,0.0,0,,4,"loan, utility, shopping, home_lifestyle",2,"finance, transport_travel",0.5761613047115731,0.6606354670696862
+1042.0,0.4,2,"utility, financial_services",3,"loan, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+1052.0,0.5,2,"utility, shopping",2,"loan, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+1056.0,0.5,2,"finance, home_lifestyle",2,"loan, utility",0,,0.5761613047115731,0.6606354670696862
+1057.0,0.75,3,"utility, finance, home_lifestyle",1,shopping,3,"loan, financial_services, leisure",0.5761613047115731,0.6606354670696862
+1072.0,0.6666666666666666,2,"loan, utility",1,home_lifestyle,2,"finance, shopping",0.5761613047115731,0.6606354670696862
+1074.0,0.5,1,home_lifestyle,1,utility,0,,0.5761613047115731,0.6606354670696862
+1075.0,0.75,3,"utility, finance, shopping",1,home_lifestyle,1,financial_services,0.5761613047115731,0.6606354670696862
+1095.0,0.0,0,,5,"loan, utility, finance, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+1105.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1109.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1117.0,0.0,0,,4,"loan, utility, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+1118.0,0.25,1,utility,3,"loan, finance, shopping",0,,0.5761613047115731,0.6606354670696862
+1124.0,0.75,3,"loan, utility, shopping",1,home_lifestyle,2,"finance, financial_services",0.5761613047115731,0.6606354670696862
+1131.0,0.3333333333333333,1,utility,2,"financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1163.0,0.5,2,"shopping, home_lifestyle",2,"utility, finance",0,,0.5761613047115731,0.6606354670696862
+1171.0,0.2,1,loan,4,"utility, shopping, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1177.0,0.75,3,"shopping, financial_services, home_lifestyle",1,utility,3,"finance, health_and_care, leisure",0.5761613047115731,0.6606354670696862
+1179.0,0.3333333333333333,1,utility,2,"shopping, public_services",1,loan,0.5761613047115731,0.6606354670696862
+1201.0,0.0,0,,4,"loan, utility, shopping, home_lifestyle",1,health_and_care,0.5761613047115731,0.6606354670696862
+1214.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",3,"finance, financial_services, transport_travel",0.5761613047115731,0.6606354670696862
+1217.0,0.25,1,finance,3,"utility, home_lifestyle, leisure",1,shopping,0.5761613047115731,0.6606354670696862
+1222.0,0.75,3,"loan, utility, shopping",1,home_lifestyle,2,"finance, leisure",0.5761613047115731,0.6606354670696862
+1223.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+1229.0,0.5,3,"utility, finance, shopping",3,"loan, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1232.0,0.4,2,"loan, shopping",3,"utility, health_and_care, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+1236.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+1243.0,0.0,0,,4,"loan, utility, home_lifestyle, leisure",2,"finance, shopping",0.5761613047115731,0.6606354670696862
+1262.0,0.2,1,loan,4,"utility, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1273.0,0.3333333333333333,1,loan,2,"utility, home_lifestyle",2,"finance, public_services",0.5761613047115731,0.6606354670696862
+1279.0,0.2,1,finance,4,"loan, utility, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1293.0,0.3333333333333333,1,finance,2,"utility, shopping",0,,0.5761613047115731,0.6606354670696862
+1314.0,0.0,0,,3,"loan, utility, home_lifestyle",1,shopping,0.5761613047115731,0.6606354670696862
+1324.0,1.0,2,"utility, home_lifestyle",0,,1,finance,0.5761613047115731,0.6606354670696862
+1375.0,0.2,1,shopping,4,"loan, utility, financial_services, leisure",1,finance,0.5761613047115731,0.6606354670696862
+1392.0,0.25,1,finance,3,"utility, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1393.0,0.3333333333333333,2,"loan, finance",4,"utility, shopping, health_and_care, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+1399.0,0.2,1,finance,4,"utility, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1412.0,0.16666666666666666,1,shopping,5,"loan, utility, finance, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1413.0,0.5,2,"utility, finance",2,"shopping, leisure",0,,0.5761613047115731,0.6606354670696862
+1420.0,0.2,1,utility,4,"loan, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1425.0,0.16666666666666666,1,utility,5,"loan, shopping, financial_services, home_lifestyle, public_services",1,finance,0.5761613047115731,0.6606354670696862
+1449.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",2,"finance, transport_travel",0.5761613047115731,0.6606354670696862
+1486.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+1502.0,0.2,1,finance,4,"loan, utility, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+1505.0,0.6666666666666666,2,"loan, utility",1,shopping,0,,0.5761613047115731,0.6606354670696862
+1506.0,0.25,1,finance,3,"loan, utility, shopping",0,,0.5761613047115731,0.6606354670696862
+1514.0,0.25,1,loan,3,"utility, finance, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1523.0,0.14285714285714285,1,utility,6,"loan, finance, shopping, home_lifestyle, transport_travel, leisure",0,,0.5761613047115731,0.6606354670696862
+1538.0,1.0,1,shopping,0,,3,"loan, utility, finance",0.5761613047115731,0.6606354670696862
+1552.0,0.16666666666666666,1,health_and_care,5,"loan, utility, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1557.0,0.3333333333333333,2,"loan, utility",4,"finance, shopping, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1558.0,0.14285714285714285,1,loan,6,"utility, finance, shopping, financial_services, home_lifestyle, leisure",0,,0.5761613047115731,0.6606354670696862
+1559.0,0.4,2,"utility, finance",3,"shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+1564.0,0.5,2,"finance, shopping",2,"home_lifestyle, leisure",1,health_and_care,0.5761613047115731,0.6606354670696862
+1587.0,0.3333333333333333,1,home_lifestyle,2,"loan, utility",1,shopping,0.5761613047115731,0.6606354670696862
+1601.0,0.0,0,,2,"utility, financial_services",1,shopping,0.5761613047115731,0.6606354670696862
+1612.0,0.8,4,"loan, utility, finance, shopping",1,home_lifestyle,2,"financial_services, health_and_care",0.5761613047115731,0.6606354670696862
+1627.0,0.2857142857142857,2,"loan, utility",5,"finance, shopping, financial_services, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+1633.0,0.2,1,loan,4,"utility, financial_services, home_lifestyle, public_services",1,shopping,0.5761613047115731,0.6606354670696862
+1644.0,0.0,0,,4,"loan, utility, finance, home_lifestyle",2,"financial_services, public_services",0.5761613047115731,0.6606354670696862
+1651.0,0.6,3,"loan, utility, finance",2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1653.0,0.5,1,loan,1,utility,0,,0.5761613047115731,0.6606354670696862
+1663.0,0.5,1,home_lifestyle,1,utility,5,"loan, shopping, financial_services, transport_travel, public_services",0.5761613047115731,0.6606354670696862
+1666.0,0.25,1,utility,3,"finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1695.0,0.75,3,"utility, finance, shopping",1,home_lifestyle,1,loan,0.5761613047115731,0.6606354670696862
+1698.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+1728.0,0.2,1,shopping,4,"utility, finance, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+1741.0,0.5,2,"finance, shopping",2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1742.0,0.2,1,finance,4,"loan, utility, shopping, home_lifestyle",1,health_and_care,0.5761613047115731,0.6606354670696862
+1766.0,0.16666666666666666,1,utility,5,"loan, shopping, financial_services, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+1771.0,0.0,0,,3,"loan, utility, home_lifestyle",1,shopping,0.5761613047115731,0.6606354670696862
+1780.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1789.0,0.6666666666666666,4,"utility, finance, shopping, home_lifestyle",2,"loan, public_services",2,"financial_services, transport_travel",0.5761613047115731,0.6606354670696862
+1834.0,0.6666666666666666,2,"utility, shopping",1,home_lifestyle,2,"loan, finance",0.5761613047115731,0.6606354670696862
+1860.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1861.0,0.2,1,shopping,4,"loan, utility, finance, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+1863.0,0.3333333333333333,1,utility,2,"loan, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+1872.0,0.0,0,,5,"loan, utility, shopping, home_lifestyle, public_services",1,health_and_care,0.5761613047115731,0.6606354670696862
+1877.0,0.0,0,,3,"utility, shopping, home_lifestyle",3,"loan, finance, leisure",0.5761613047115731,0.6606354670696862
+1953.0,0.0,0,,4,"utility, shopping, home_lifestyle, transport_travel",3,"loan, finance, financial_services",0.5761613047115731,0.6606354670696862
+1967.0,0.25,1,public_services,3,"loan, utility, shopping",2,"finance, health_and_care",0.5761613047115731,0.6606354670696862
+1979.0,0.3333333333333333,2,"finance, shopping",4,"loan, utility, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2005.0,0.4,2,"utility, financial_services",3,"loan, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2006.0,0.16666666666666666,1,loan,5,"utility, finance, shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+2015.0,0.0,0,,5,"loan, utility, health_and_care, home_lifestyle, public_services",1,finance,0.5761613047115731,0.6606354670696862
+2016.0,0.2,1,shopping,4,"loan, utility, home_lifestyle, leisure",1,finance,0.5761613047115731,0.6606354670696862
+2032.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",2,"loan, financial_services",0.5761613047115731,0.6606354670696862
+2043.0,0.4,2,"finance, shopping",3,"utility, health_and_care, leisure",0,,0.5761613047115731,0.6606354670696862
+2045.0,0.14285714285714285,1,loan,6,"utility, finance, shopping, health_and_care, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+2054.0,0.16666666666666666,1,shopping,5,"loan, utility, financial_services, health_and_care, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+2068.0,0.4,2,"finance, shopping",3,"utility, health_and_care, home_lifestyle",2,"loan, leisure",0.5761613047115731,0.6606354670696862
+2092.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2154.0,0.8,4,"loan, finance, shopping, home_lifestyle",1,utility,0,,0.5761613047115731,0.6606354670696862
+2168.0,0.25,1,shopping,3,"utility, financial_services, home_lifestyle",2,"finance, health_and_care",0.5761613047115731,0.6606354670696862
+2187.0,0.2,1,utility,4,"finance, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2214.0,0.0,0,,3,"loan, utility, shopping",1,finance,0.5761613047115731,0.6606354670696862
+2248.0,0.5,2,"finance, shopping",2,"loan, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2251.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",2,"finance, transport_travel",0.5761613047115731,0.6606354670696862
+2270.0,0.2,1,finance,4,"loan, utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2298.0,0.5,2,"loan, utility",2,"shopping, home_lifestyle",2,"finance, health_and_care",0.5761613047115731,0.6606354670696862
+2321.0,0.3333333333333333,2,"utility, finance",4,"loan, shopping, home_lifestyle, public_services",1,transport_travel,0.5761613047115731,0.6606354670696862
+2324.0,0.0,0,,4,"loan, utility, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+2342.0,0.4,2,"finance, shopping",3,"utility, financial_services, health_and_care",2,"loan, leisure",0.5761613047115731,0.6606354670696862
+2368.0,0.8,4,"loan, utility, shopping, home_lifestyle",1,financial_services,2,"finance, transport_travel",0.5761613047115731,0.6606354670696862
+2370.0,0.25,1,home_lifestyle,3,"utility, shopping, financial_services",1,finance,0.5761613047115731,0.6606354670696862
+2371.0,0.25,1,utility,3,"shopping, home_lifestyle, leisure",1,finance,0.5761613047115731,0.6606354670696862
+2379.0,0.5,1,utility,1,financial_services,2,"loan, transport_travel",0.5761613047115731,0.6606354670696862
+2388.0,0.5,2,"utility, financial_services",2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2402.0,0.4,2,"utility, finance",3,"loan, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2452.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+2453.0,0.0,0,,3,"utility, health_and_care, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+2464.0,0.75,3,"utility, shopping, home_lifestyle",1,loan,1,leisure,0.5761613047115731,0.6606354670696862
+2466.0,0.4,2,"utility, shopping",3,"loan, home_lifestyle, public_services",1,finance,0.5761613047115731,0.6606354670696862
+2474.0,0.5,2,"utility, shopping",2,"financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2484.0,0.4,2,"loan, utility",3,"finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2495.0,0.0,0,,3,"utility, shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+2502.0,0.6666666666666666,2,"utility, shopping",1,home_lifestyle,1,finance,0.5761613047115731,0.6606354670696862
+2510.0,0.2,1,utility,4,"loan, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2513.0,0.6666666666666666,2,"utility, shopping",1,home_lifestyle,1,loan,0.5761613047115731,0.6606354670696862
+2520.0,0.5,2,"finance, shopping",2,"utility, home_lifestyle",1,transport_travel,0.5761613047115731,0.6606354670696862
+2528.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2537.0,0.6666666666666666,2,"utility, home_lifestyle",1,loan,2,"finance, shopping",0.5761613047115731,0.6606354670696862
+2544.0,0.4,2,"loan, shopping",3,"utility, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+2555.0,0.0,0,,2,"utility, home_lifestyle",2,"loan, finance",0.5761613047115731,0.6606354670696862
+2562.0,0.6,3,"finance, shopping, home_lifestyle",2,"loan, utility",0,,0.5761613047115731,0.6606354670696862
+2565.0,1.0,3,"utility, shopping, home_lifestyle",0,,0,,0.5761613047115731,0.6606354670696862
+2567.0,1.0,4,"loan, utility, finance, shopping",0,,1,health_and_care,0.5761613047115731,0.6606354670696862
+2580.0,0.3333333333333333,2,"loan, finance",4,"utility, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2631.0,0.3333333333333333,1,finance,2,"utility, home_lifestyle",1,shopping,0.5761613047115731,0.6606354670696862
+2652.0,0.0,0,,3,"utility, shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+2660.0,0.5,1,shopping,1,utility,2,"loan, finance",0.5761613047115731,0.6606354670696862
+2697.0,0.25,1,utility,3,"loan, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2727.0,1.0,3,"utility, shopping, home_lifestyle",0,,0,,0.5761613047115731,0.6606354670696862
+2805.0,0.5,1,finance,1,utility,1,shopping,0.5761613047115731,0.6606354670696862
+2828.0,0.25,1,financial_services,3,"utility, shopping, home_lifestyle",1,transport_travel,0.5761613047115731,0.6606354670696862
+2841.0,0.3333333333333333,1,utility,2,"home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+2853.0,0.8333333333333334,5,"utility, finance, shopping, financial_services, home_lifestyle",1,loan,1,public_services,0.5761613047115731,0.6606354670696862
+2859.0,0.0,0,,3,"utility, financial_services, home_lifestyle",1,transport_travel,0.5761613047115731,0.6606354670696862
+2866.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",3,"finance, financial_services, leisure",0.5761613047115731,0.6606354670696862
+2882.0,0.25,2,"loan, financial_services",6,"utility, finance, shopping, home_lifestyle, leisure, public_services",0,,0.5761613047115731,0.6606354670696862
+2890.0,0.3333333333333333,2,"finance, shopping",4,"loan, utility, financial_services, home_lifestyle",1,public_services,0.5761613047115731,0.6606354670696862
+2894.0,0.3333333333333333,1,utility,2,"loan, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2930.0,0.2,1,utility,4,"loan, shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+2949.0,0.25,1,utility,3,"shopping, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+2956.0,0.2,1,loan,4,"utility, finance, shopping, home_lifestyle",1,public_services,0.5761613047115731,0.6606354670696862
+2964.0,0.4,2,"loan, home_lifestyle",3,"utility, finance, shopping",0,,0.5761613047115731,0.6606354670696862
+2965.0,0.2,1,shopping,4,"loan, utility, finance, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2972.0,0.2,1,loan,4,"utility, shopping, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+2990.0,0.16666666666666666,1,finance,5,"loan, utility, shopping, home_lifestyle, leisure",0,,0.5761613047115731,0.6606354670696862
+2993.0,0.0,0,,3,"utility, shopping, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+3002.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",2,"loan, finance",0.5761613047115731,0.6606354670696862
+3016.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+3043.0,0.6666666666666666,2,"utility, finance",1,home_lifestyle,2,"loan, shopping",0.5761613047115731,0.6606354670696862
+3065.0,0.5,2,"loan, utility",2,"shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+3084.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3089.0,0.4,2,"loan, home_lifestyle",3,"utility, finance, shopping",0,,0.5761613047115731,0.6606354670696862
+3096.0,0.2,1,utility,4,"loan, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3102.0,0.0,0,,3,"utility, shopping, home_lifestyle",2,"loan, financial_services",0.5761613047115731,0.6606354670696862
+3107.0,0.5,2,"loan, utility",2,"shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+3124.0,0.25,1,shopping,3,"utility, health_and_care, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+3132.0,0.0,0,,5,"utility, finance, shopping, home_lifestyle, public_services",1,financial_services,0.5761613047115731,0.6606354670696862
+3139.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3155.0,0.2,1,shopping,4,"loan, utility, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3196.0,0.5,2,"loan, home_lifestyle",2,"utility, leisure",2,"finance, shopping",0.5761613047115731,0.6606354670696862
+3205.0,0.0,0,,2,"utility, health_and_care",1,transport_travel,0.5761613047115731,0.6606354670696862
+3207.0,0.16666666666666666,1,loan,5,"utility, finance, shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+3211.0,0.16666666666666666,1,utility,5,"loan, finance, shopping, financial_services, home_lifestyle",1,transport_travel,0.5761613047115731,0.6606354670696862
+3215.0,0.25,1,loan,3,"utility, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+3221.0,0.0,0,,5,"loan, utility, shopping, financial_services, home_lifestyle",2,"finance, public_services",0.5761613047115731,0.6606354670696862
+3225.0,0.25,1,utility,3,"shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+3230.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3242.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",1,leisure,0.5761613047115731,0.6606354670696862
+3245.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3251.0,0.3333333333333333,1,home_lifestyle,2,"loan, utility",2,"shopping, financial_services",0.5761613047115731,0.6606354670696862
+3263.0,0.125,1,loan,7,"utility, finance, shopping, financial_services, health_and_care, home_lifestyle, leisure",0,,0.5761613047115731,0.6606354670696862
+3264.0,0.0,0,,3,"utility, finance, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+3271.0,0.3333333333333333,1,finance,2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3299.0,0.25,1,utility,3,"shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3313.0,0.25,1,finance,3,"utility, shopping, home_lifestyle",1,health_and_care,0.5761613047115731,0.6606354670696862
+3316.0,0.6666666666666666,2,"utility, shopping",1,home_lifestyle,0,,0.5761613047115731,0.6606354670696862
+3320.0,0.3333333333333333,1,loan,2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3322.0,0.0,0,,4,"utility, shopping, financial_services, home_lifestyle",2,"loan, finance",0.5761613047115731,0.6606354670696862
+3334.0,1.0,5,"loan, utility, finance, shopping, home_lifestyle",0,,0,,0.5761613047115731,0.6606354670696862
+3350.0,0.2,1,loan,4,"utility, financial_services, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+3359.0,0.25,1,utility,3,"loan, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+3382.0,0.5,2,"loan, utility",2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3431.0,0.4,2,"loan, utility",3,"shopping, home_lifestyle, public_services",1,health_and_care,0.5761613047115731,0.6606354670696862
+3434.0,0.2,1,loan,4,"utility, finance, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3444.0,0.5,1,utility,1,shopping,0,,0.5761613047115731,0.6606354670696862
+3460.0,0.25,1,finance,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3463.0,0.6666666666666666,2,"utility, finance",1,home_lifestyle,1,shopping,0.5761613047115731,0.6606354670696862
+3510.0,0.2,1,utility,4,"loan, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3515.0,0.3333333333333333,1,finance,2,"utility, public_services",2,"financial_services, health_and_care",0.5761613047115731,0.6606354670696862
+3520.0,0.5,1,utility,1,shopping,4,"loan, finance, financial_services, home_lifestyle",0.5761613047115731,0.6606354670696862
+3554.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3560.0,0.6,3,"utility, finance, shopping",2,"financial_services, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+3581.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+3590.0,0.5,2,"utility, shopping",2,"financial_services, home_lifestyle",2,"finance, leisure",0.5761613047115731,0.6606354670696862
+3593.0,0.5,2,"utility, shopping",2,"loan, home_lifestyle",2,"finance, leisure",0.5761613047115731,0.6606354670696862
+3594.0,0.3333333333333333,1,home_lifestyle,2,"loan, utility",2,"shopping, public_services",0.5761613047115731,0.6606354670696862
+3599.0,0.0,0,,5,"loan, utility, shopping, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+3614.0,0.8,4,"loan, utility, finance, shopping",1,home_lifestyle,2,"financial_services, public_services",0.5761613047115731,0.6606354670696862
+3620.0,0.25,1,finance,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3639.0,0.3333333333333333,1,utility,2,"shopping, public_services",1,transport_travel,0.5761613047115731,0.6606354670696862
+3642.0,0.25,1,loan,3,"utility, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3651.0,0.2,1,utility,4,"loan, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3685.0,0.3333333333333333,1,utility,2,"finance, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3703.0,0.0,0,,4,"loan, utility, financial_services, home_lifestyle",2,"finance, shopping",0.5761613047115731,0.6606354670696862
+3708.0,0.0,0,,3,"utility, financial_services, home_lifestyle",3,"finance, shopping, leisure",0.5761613047115731,0.6606354670696862
+3768.0,0.5,2,"loan, shopping",2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3779.0,0.0,0,,4,"loan, utility, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+3786.0,0.0,0,,4,"utility, finance, shopping, home_lifestyle",1,leisure,0.5761613047115731,0.6606354670696862
+3803.0,0.6,3,"utility, finance, shopping",2,"loan, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3835.0,0.5,3,"loan, utility, finance",3,"shopping, financial_services, home_lifestyle",1,public_services,0.5761613047115731,0.6606354670696862
+3838.0,0.25,1,shopping,3,"loan, utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3842.0,0.5,2,"utility, home_lifestyle",2,"loan, shopping",0,,0.5761613047115731,0.6606354670696862
+3890.0,0.5,2,"loan, utility",2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3900.0,0.25,1,loan,3,"utility, home_lifestyle, leisure",2,"finance, shopping",0.5761613047115731,0.6606354670696862
+3902.0,0.8,4,"loan, utility, finance, leisure",1,shopping,3,"financial_services, health_and_care, home_lifestyle",0.5761613047115731,0.6606354670696862
+3916.0,0.0,0,,4,"loan, utility, shopping, home_lifestyle",2,"finance, financial_services",0.5761613047115731,0.6606354670696862
+3928.0,0.3333333333333333,2,"finance, shopping",4,"utility, financial_services, health_and_care, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3932.0,0.0,0,,4,"utility, shopping, health_and_care, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+3940.0,0.25,1,utility,3,"shopping, financial_services, home_lifestyle",3,"finance, transport_travel, public_services",0.5761613047115731,0.6606354670696862
+3953.0,0.6666666666666666,4,"loan, utility, finance, home_lifestyle",2,"shopping, leisure",0,,0.5761613047115731,0.6606354670696862
+3960.0,0.3333333333333333,1,utility,2,"shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+3986.0,0.8,4,"loan, utility, finance, home_lifestyle",1,shopping,1,financial_services,0.5761613047115731,0.6606354670696862
+3987.0,0.6666666666666666,2,"loan, utility",1,home_lifestyle,0,,0.5761613047115731,0.6606354670696862
+4003.0,0.25,1,utility,3,"shopping, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+4035.0,0.3333333333333333,1,utility,2,"financial_services, home_lifestyle",2,"loan, public_services",0.5761613047115731,0.6606354670696862
+4049.0,0.0,0,,5,"loan, utility, shopping, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+4050.0,0.6,3,"loan, shopping, home_lifestyle",2,"utility, financial_services",1,leisure,0.5761613047115731,0.6606354670696862
+4052.0,0.3333333333333333,1,shopping,2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4057.0,0.8,4,"loan, utility, shopping, home_lifestyle",1,financial_services,2,"finance, leisure",0.5761613047115731,0.6606354670696862
+4080.0,0.3333333333333333,1,utility,2,"loan, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4086.0,0.25,1,loan,3,"utility, shopping, financial_services",0,,0.5761613047115731,0.6606354670696862
+4095.0,0.2,1,utility,4,"loan, finance, shopping, public_services",0,,0.5761613047115731,0.6606354670696862
+4099.0,0.25,1,utility,3,"loan, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4107.0,1.0,3,"utility, finance, shopping",0,,1,leisure,0.5761613047115731,0.6606354670696862
+4109.0,0.6,3,"loan, finance, shopping",2,"utility, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4115.0,0.75,3,"utility, finance, shopping",1,home_lifestyle,0,,0.5761613047115731,0.6606354670696862
+4130.0,0.16666666666666666,1,utility,5,"finance, shopping, home_lifestyle, leisure, public_services",1,loan,0.5761613047115731,0.6606354670696862
+4148.0,0.5,1,utility,1,home_lifestyle,2,"loan, public_services",0.5761613047115731,0.6606354670696862
+4171.0,0.25,1,shopping,3,"utility, financial_services, home_lifestyle",1,loan,0.5761613047115731,0.6606354670696862
+4189.0,0.4,2,"loan, utility",3,"shopping, financial_services, home_lifestyle",1,transport_travel,0.5761613047115731,0.6606354670696862
+4199.0,0.25,1,utility,3,"loan, health_and_care, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+4203.0,0.6666666666666666,2,"utility, financial_services",1,home_lifestyle,2,"loan, shopping",0.5761613047115731,0.6606354670696862
+4215.0,1.0,1,utility,0,,5,"loan, shopping, financial_services, health_and_care, public_services",0.5761613047115731,0.6606354670696862
+4225.0,0.0,0,,2,"utility, finance",2,"loan, public_services",0.5761613047115731,0.6606354670696862
+4237.0,0.6666666666666666,2,"utility, shopping",1,home_lifestyle,2,"finance, transport_travel",0.5761613047115731,0.6606354670696862
+4243.0,0.25,1,utility,3,"loan, shopping, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862
+4259.0,0.0,0,,5,"loan, utility, finance, shopping, home_lifestyle",1,financial_services,0.5761613047115731,0.6606354670696862
+4265.0,0.6666666666666666,2,"utility, home_lifestyle",1,shopping,3,"loan, finance, health_and_care",0.5761613047115731,0.6606354670696862
+4268.0,0.25,1,loan,3,"utility, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4271.0,0.2,1,loan,4,"utility, shopping, financial_services, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4277.0,0.2,1,loan,4,"utility, shopping, home_lifestyle, public_services",0,,0.5761613047115731,0.6606354670696862
+4283.0,0.2,1,utility,4,"loan, finance, shopping, home_lifestyle",0,,0.5761613047115731,0.6606354670696862
+4303.0,0.5,1,home_lifestyle,1,utility,3,"loan, finance, public_services",0.5761613047115731,0.6606354670696862
+4333.0,0.2,1,shopping,4,"loan, utility, financial_services, home_lifestyle",1,finance,0.5761613047115731,0.6606354670696862

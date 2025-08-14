@@ -746,7 +746,10 @@ if __name__ == "__main__":
     # T0/T1/predT1
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
-    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
+    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
 
     # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1')
     # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1_predicted')
+
+    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1')
+    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1_predicted')
