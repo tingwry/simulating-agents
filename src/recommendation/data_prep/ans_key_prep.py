@@ -3,14 +3,14 @@ import numpy as np
 from sklearn.utils import resample
 
 # binary (0/1)
-def binary_ans_key_prep():
-    user_item_matrix = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix.csv')
+def binary_ans_key_prep(input_path, output_path):
+    user_item_matrix = pd.read_csv(input_path)
 
     user_item_matrix_binary = user_item_matrix.copy()
-    user_item_matrix_binary.iloc[:, 1:] = np.where(user_item_matrix.iloc[:, 1:] > 0, 1, 0)
+    cat = ['loan','utility','finance','shopping','financial_services','health_and_care','home_lifestyle','transport_travel','leisure','public_services']
+    for c in cat:
+        user_item_matrix_binary[c] = np.where(user_item_matrix[c] > 0, 1, 0)
 
-
-    output_path = 'src/recommendation/cluster_based/eval/ans_key.csv'
     user_item_matrix_binary.to_csv(output_path, index=False)
 
 
@@ -269,11 +269,13 @@ if __name__ == "__main__":
 
 
     # Assuming df is your DataFrame
-    df = pd.read_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
+    # df = pd.read_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
     # df = df.sort_values(by='CUST_ID', ascending=True)
     # print(df.head(10))
 
     # If you want to reset the index after sorting (optional)
-    df = df.sort_values(by='CUST_ID', ascending=True).reset_index(drop=True)
-    print(df.head(10))
-    df.to_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv', index=False)
+    # df = df.sort_values(by='CUST_ID', ascending=True).reset_index(drop=True)
+    # print(df.head(10))
+    # df.to_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv', index=False)
+
+    binary_ans_key_prep('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv', 'src/recommendation/data/T1_predicted/demog_grouped_catbased.csv')

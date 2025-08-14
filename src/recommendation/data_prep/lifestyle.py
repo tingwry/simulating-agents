@@ -21,8 +21,8 @@ def df_with_lifestyle(df, lifestyle, filename):
 
 def keep_demog_col(path):
     df = pd.read_csv(path)
-    features = ['CUST_ID', 'Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group',
-                'loan','utility','finance','shopping','financial_services','health_and_care','home_lifestyle','transport_travel','leisure','public_services']
+    features = ['CUST_ID', 'Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
+                # 'loan','utility','finance','shopping','financial_services','health_and_care','home_lifestyle','transport_travel','leisure','public_services']
     
     df = df[features]
     df.to_csv(path, index=False)
@@ -208,13 +208,13 @@ if __name__ == "__main__":
 
 
     # train
-    remove_nan('src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv')
-    remove_nan('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv')
-    remove_nan('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm.csv')
+    # remove_nan('src/recommendation/data/T0/demog_ranking_grouped_catbased.csv')
+    # remove_nan('src/recommendation/data/T1/demog_ranking_grouped_catbased.csv')
+    # remove_nan('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv')
 
-    # df_t0_path = 'src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv'
-    # df_t1_path = 'src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv'
-    # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm.csv'
+    # df_t0_path = 'src/recommendation/data/T0/demog_ranking_grouped_catbased.csv'
+    # df_t1_path = 'src/recommendation/data/T1/demog_ranking_grouped_catbased.csv'
+    # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv'
 
 
     # test
@@ -222,11 +222,11 @@ if __name__ == "__main__":
     # remove_nan('src/recommendation/data/T1/test_with_lifestyle.csv')
     # remove_nan('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
 
-    # df_t0_path = 'src/recommendation/data/T0/test_with_lifestyle.csv'
-    # df_t1_path = 'src/recommendation/data/T1/test_with_lifestyle.csv'
-    # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle.csv'
+    df_t0_path = 'src/recommendation/data/T0/test_with_lifestyle.csv'
+    df_t1_path = 'src/recommendation/data/T1/test_with_lifestyle.csv'
+    df_t1_predicted_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle.csv'
 
-    # df_t0_filtered, df_t1_filtered, df_t1_predicted_filtered = filter_matching_customers(df_t0_path, df_t1_path, df_t1_predicted_path)
+    df_t0_filtered, df_t1_filtered, df_t1_predicted_filtered = filter_matching_customers(df_t0_path, df_t1_path, df_t1_predicted_path)
 
 
 

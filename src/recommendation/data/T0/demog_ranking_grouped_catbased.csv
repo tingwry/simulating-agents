@@ -20,8 +20,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 86,0.0,30,Male,bachelor's degree,single,Southern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 87,0.0,24,Female,others,single,Northeastern,Student,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 89,0.0,61,Female,others,single,Central,Corporate Employee,0.1999800019998,0.0514948505149485,0.5692430756924307,0.1792820717928207,0.0,0.0,0.0,0.0,0.0,0.0
-91,0.0,23,Male,Unknown,single,Northeastern,Student,0.0,0.0042799279170035,0.0,0.0,0.0,0.9957200720829966,0.0,0.0,0.0,0.0
-95,0.0,25,Male,Unknown,Unknown,Eastern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 105,0.0,37,Female,master's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 106,0.0,39,Female,bachelor's degree,single,Central,Student,0.0,0.0,0.5207630014562566,0.4272573008785669,0.0,0.0,0.0,0.0,0.0519796976651764,0.0
 109,0.0,41,Male,others,single,Northeastern,Entrepreneur,0.7846973922427922,0.2153026077572077,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -36,9 +34,7 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 141,0.0,47,Male,bachelor's degree,single,Central,Professional,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 143,0.0,39,Male,bachelor's degree,married,Northern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 146,1.0,40,Female,high school,married,Central,Entrepreneur,0.0,0.5370313489337052,0.2775963572188767,0.08083094208463,0.0,0.0,0.1045413517627881,0.0,0.0,0.0
-154,0.0,47,Male,Unknown,Unknown,Central,Corporate Employee,0.9612720363003164,0.0,0.0063550974236435,0.0,0.0,0.0,0.0293605500972329,0.0,0.003012316178807,0.0
 156,0.0,28,Female,high school,single,Southern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-159,0.0,31,Male,Unknown,single,Central,Entrepreneur,0.0,0.7910431250473053,0.2089568749526946,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 160,0.0,37,Female,bachelor's degree,single,Central,Corporate Employee,0.8903229241236328,0.0,0.0,0.0,0.1096770758763672,0.0,0.0,0.0,0.0,0.0
 162,0.0,58,Male,bachelor's degree,married,Central,Corporate Employee,0.8503359239684104,0.0,0.1351525018313869,0.0145115742002026,0.0,0.0,0.0,0.0,0.0,0.0
 164,0.0,46,Female,high school,single,Central,Corporate Employee,0.0,0.0,0.0,0.7965095182887435,0.0,0.0,0.2034904817112564,0.0,0.0,0.0
@@ -66,19 +62,14 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 220,0.0,26,Female,bachelor's degree,single,Central,Student,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 223,0.0,49,Male,high school,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 225,0.0,51,Female,less than high school,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-226,0.0,24,Female,Unknown,single,Central,Corporate Employee,0.2877350075674307,0.0,0.7122649924325694,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 229,0.0,56,Male,bachelor's degree,married,Northern,Corporate Employee,0.2160753658047705,0.0,0.2565644417718982,0.3609941872118661,0.1483263178993786,0.0,0.0,0.0180396873120865,0.0,0.0
 233,0.0,35,Female,high school,married,Northeastern,Corporate Employee,0.0,0.0,0.1731904838576321,0.826809516142368,0.0,0.0,0.0,0.0,0.0,0.0
 234,0.0,28,Female,high school,single,Southern,Student,0.3541127002944318,0.0868998164428557,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5589874832627124
 242,0.0,37,Female,high school,married,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-244,0.0,27,Male,Unknown,single,Central,Corporate Employee,0.0,0.1053055381587187,0.0,0.8946944618412812,0.0,0.0,0.0,0.0,0.0,0.0
 245,0.0,50,Male,less than high school,single,Central,Corporate Employee,0.7245041999934653,0.0142161456471266,0.1097493641646963,0.1515302901947117,0.0,0.0,0.0,0.0,0.0,0.0
-248,0.0,21,Female,Unknown,Unknown,Northeastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 249,0.0,38,Female,bachelor's degree,married,Central,Corporate Employee,0.3717600448236397,0.5815044066842456,0.0,0.0,0.0,0.0,0.0467355484921147,0.0,0.0,0.0
-265,0.0,32,Male,Unknown,single,Northeastern,Corporate Employee,0.0,0.0,0.8947565543071161,0.045692883895131,0.0,0.0,0.0595505617977528,0.0,0.0,0.0
 268,0.0,31,Female,high school,married,Northeastern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 269,0.0,47,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.3928188638799571,0.0712754555198285,0.0,0.0,0.0,0.5359056806002144,0.0,0.0
-272,0.0,30,Female,Unknown,single,Central,Corporate Employee,0.5406007104761351,0.0,0.1358035446370667,0.16726195661643,0.0,0.0,0.0,0.0,0.1563337882703681,0.0
 274,0.0,42,Male,bachelor's degree,married,Central,Corporate Employee,0.7310860982565783,0.0081766310205752,0.1161068446145968,0.1161068446145968,0.0,0.0,0.0285235814936526,0.0,0.0,0.0
 277,0.0,38,Male,less than high school,single,Central,Corporate Employee,0.0,0.1481481481481481,0.0,0.4814814814814814,0.0,0.0,0.3703703703703703,0.0,0.0,0.0
 278,0.0,49,Female,less than high school,married,Eastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -98,13 +89,11 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 320,0.0,51,Female,bachelor's degree,single,Central,Homemaker,0.9323653685597922,0.0092236363096978,0.0095355549057251,0.0,0.0,0.0,0.0,0.0,0.0488754402247848,0.0
 325,1.0,53,Female,others,married,Western,Entrepreneur,0.0,0.238490827275874,0.0,0.7236387450656883,0.0,0.0,0.0378704276584376,0.0,0.0,0.0
 328,0.0,31,Female,bachelor's degree,single,Northern,Student,0.0,0.0,0.6076031534484482,0.3473676331183432,0.0,0.0450292134332085,0.0,0.0,0.0,0.0
-330,0.0,24,Male,Unknown,single,Central,Student,0.0,0.0,0.0089992800575953,0.0,0.9910007199424046,0.0,0.0,0.0,0.0,0.0
 336,0.0,41,Male,master's degree,married,Southern,Freelancer,0.1951524198398144,0.0273813828160654,0.0,0.0,0.0,0.0,0.7774661973441203,0.0,0.0,0.0
 338,0.0,29,Female,less than high school,single,Central,Freelancer,0.0,0.0,0.0660744031093836,0.9161576901721266,0.0,0.0,0.0,0.0177679067184897,0.0,0.0
 346,0.0,47,Male,bachelor's degree,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 347,0.0,55,Male,bachelor's degree,single,Central,Entrepreneur,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 348,0.0,30,Male,bachelor's degree,single,Central,Corporate Employee,0.6429762771759281,0.0366466472430677,0.2015747774980592,0.0914972388455403,0.0,0.0,0.0168459784620093,0.010459080775395,0.0,0.0
-349,0.0,39,Female,Unknown,others,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 353,0.0,32,Female,vocational certificate,married,Central,Corporate Employee,0.2775320031122864,0.0122940018762948,0.0405776494929307,0.0205681727357035,0.2036407607277979,0.0,0.0269034981609777,0.0110976929914033,0.0046969023872707,0.4026893185153349
 354,0.0,46,Male,high school,married,Central,Freelancer,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 359,0.0,25,Male,vocational certificate,single,Northeastern,Student,0.2019951612977271,0.323348345246457,0.3139785242417147,0.0229539956020144,0.0,0.0,0.0,0.0,0.0,0.1377239736120866
@@ -114,8 +103,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 369,0.0,45,Female,bachelor's degree,married,Southern,Entrepreneur,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.5
 370,0.0,39,Male,less than high school,married,Southern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 374,0.0,24,Male,bachelor's degree,single,Central,Student,0.972914526680002,0.0,0.0,0.0270854733199978,0.0,0.0,0.0,0.0,0.0,0.0
-376,0.0,62,Male,Unknown,single,Central,Corporate Employee,0.0,0.8154739807394144,0.1845260192605856,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-378,0.0,20,Female,Unknown,single,Northern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 379,0.0,36,Female,vocational certificate,single,Northeastern,Corporate Employee,0.0,0.0,0.1465264609550077,0.5087053956214446,0.3447681434235476,0.0,0.0,0.0,0.0,0.0
 381,0.0,32,Male,bachelor's degree,single,Western,Corporate Employee,0.7705100872291158,0.0,0.2294899127708841,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 383,0.0,48,Female,vocational certificate,married,Central,Corporate Employee,0.0,0.7621075369090157,0.0,0.2378924630909843,0.0,0.0,0.0,0.0,0.0,0.0
@@ -124,24 +111,17 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 395,0.0,52,Male,bachelor's degree,single,Central,Corporate Employee,0.8237662906035124,0.0,0.1762337093964876,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 396,0.0,43,Female,bachelor's degree,married,Central,Entrepreneur,0.0,0.9375,0.0,0.0625,0.0,0.0,0.0,0.0,0.0,0.0
 398,0.0,39,Female,others,single,Central,Freelancer,0.8583192594219472,0.0,0.1416807405780527,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-400,0.0,41,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.5190829105897273,0.4809170894102727,0.0,0.0,0.0,0.0,0.0,0.0
 401,0.0,34,Female,less than high school,single,Central,Corporate Employee,0.0,0.5929416074735921,0.0,0.4070583925264078,0.0,0.0,0.0,0.0,0.0,0.0
 405,0.0,28,Male,less than high school,single,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 406,0.0,28,Male,vocational certificate,single,Southern,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 408,0.0,51,Female,others,married,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 410,0.0,51,Female,high school,married,Central,Unemployed,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-416,0.0,22,Male,Unknown,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-419,0.0,25,Male,Unknown,Unknown,Central,Corporate Employee,0.0,0.0,0.3359149015582719,0.0,0.0,0.0,0.0,0.0,0.6640850984417281,0.0
-420,0.0,51,Female,Unknown,Unknown,Northeastern,Freelancer,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-421,0.0,21,Female,Unknown,single,Central,Corporate Employee,0.4672360796384553,0.0,0.2610676280647753,0.2716962922967693,0.0,0.0,0.0,0.0,0.0,0.0
 422,0.0,36,Female,vocational certificate,single,Southern,Corporate Employee,0.4733433703086273,0.4300305531680884,0.064417384348856,0.032208692174428,0.0,0.0,0.0,0.0,0.0,0.0
 423,0.0,47,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-425,0.0,25,Female,Unknown,single,Central,Student,0.0,0.0395121903475545,0.3967734399236063,0.3637086674386036,0.0,0.0,0.0,0.0,0.2000057022902355,0.0
 432,0.0,27,Female,others,others,Southern,Student,0.0,0.0,0.8872,0.0,0.0,0.0,0.0,0.0,0.1128,0.0
 436,0.0,33,Female,bachelor's degree,single,Southern,Entrepreneur,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 442,0.0,32,Female,high school,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 445,0.0,46,Female,less than high school,married,Northeastern,Freelancer,0.9090392162346076,0.0909607837653923,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-448,0.0,23,Male,Unknown,single,Central,Freelancer,0.0,0.0,0.2674418604651162,0.2674418604651162,0.0,0.0,0.0,0.4651162790697674,0.0,0.0
 449,0.0,38,Female,bachelor's degree,others,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 452,0.0,34,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0571326866601406,0.0,0.4360594464714781,0.1779834475393788,0.3288244193290024,0.0,0.0,0.0,0.0
 453,0.0,80,Female,bachelor's degree,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -151,7 +131,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 467,0.0,38,Male,vocational certificate,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 474,0.0,52,Female,doctorate's degree,divorce,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 475,0.0,33,Male,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-478,0.0,36,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.6204238921001927,0.3795761078998073,0.0,0.0,0.0,0.0,0.0,0.0
 480,0.0,41,Male,vocational certificate,married,Northeastern,Corporate Employee,0.0,0.0942037380290392,0.2115481155390794,0.6942481464318814,0.0,0.0,0.0,0.0,0.0,0.0
 481,0.0,58,Male,high school,single,Central,Freelancer,0.0,0.0,0.0,0.9285714285714286,0.0,0.0,0.0,0.0714285714285714,0.0,0.0
 484,2.0,47,Female,high school,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
@@ -188,7 +167,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 560,0.0,37,Male,bachelor's degree,single,Central,Freelancer,0.0,0.0093880964188131,0.9799159884484115,0.0106959151327752,0.0,0.0,0.0,0.0,0.0,0.0
 563,0.0,33,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 566,0.0,25,Male,vocational certificate,single,Southern,Student,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-567,0.0,22,Female,Unknown,single,Northern,Student,0.5056696291756053,0.0,0.4186331596690162,0.0680355501072632,0.0076616610481152,0.0,0.0,0.0,0.0,0.0
 574,0.0,35,Male,vocational certificate,single,Central,Corporate Employee,0.8757733801091667,0.0,0.021687608221165,0.0422474608148294,0.0,0.0,0.0108438041105825,0.0494477467442562,0.0,0.0
 575,0.0,49,Male,others,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 576,0.0,38,Female,high school,single,Central,Corporate Employee,0.0,0.0,0.0350151640474221,0.964984835952578,0.0,0.0,0.0,0.0,0.0,0.0
@@ -208,7 +186,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 616,0.0,49,Female,master's degree,divorce,Central,Professional,0.1012829169480081,0.0,0.8987170830519919,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 617,0.0,27,Male,less than high school,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 625,0.0,57,Female,high school,single,Central,Unemployed,0.0,0.7563847357341329,0.0229069359911487,0.0,0.0,0.0,0.0941475069236214,0.0,0.0,0.1265608213510969
-629,0.0,59,Male,Unknown,single,Central,Freelancer,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
 630,0.0,50,Male,master's degree,married,Central,Professional,0.7571525554290185,0.0,0.0,0.2428474445709814,0.0,0.0,0.0,0.0,0.0,0.0
 631,0.0,32,Female,bachelor's degree,single,Southern,Corporate Employee,0.0,0.0,0.9192699192699192,0.0,0.0,0.0807300807300807,0.0,0.0,0.0,0.0
 635,0.0,43,Female,bachelor's degree,married,Central,Corporate Employee,0.3806112296800465,0.1589201734563,0.0129572792225175,0.0,0.4475113176411359,0.0,0.0,0.0,0.0,0.0
@@ -225,21 +202,17 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 664,0.0,51,Male,bachelor's degree,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 667,0.0,26,Male,high school,single,Central,Student,0.0,0.0,0.5012581662983383,0.4987418337016617,0.0,0.0,0.0,0.0,0.0,0.0
 670,0.0,53,Male,less than high school,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-673,0.0,22,Female,Unknown,single,Northern,Student,0.9868438882625118,0.0,0.0131561117374882,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 674,0.0,32,Female,others,others,Eastern,Student,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 675,0.0,50,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 679,0.0,36,Female,high school,married,Eastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 680,0.0,38,Male,bachelor's degree,single,Eastern,Corporate Employee,0.0,0.0017389533261902,0.0452783021076786,0.0297826477244895,0.8541204696013845,0.0,0.0690796272402571,0.0,0.0,0.0
 686,0.0,28,Female,high school,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-688,0.0,26,Male,Unknown,single,Central,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 691,0.0,60,Female,others,divorce,Northern,Unemployed,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 695,0.0,35,Male,high school,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 696,0.0,30,Male,bachelor's degree,single,Central,Student,0.1846131655737886,0.0118718725382507,0.3876665668097948,0.3876665668097948,0.0,0.0281818282683708,0.0,0.0,0.0,0.0
 697,0.0,52,Female,bachelor's degree,single,Eastern,Corporate Employee,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
 698,0.0,42,Female,vocational certificate,divorce,Eastern,Corporate Employee,0.0,0.0,0.7912200102092904,0.0,0.0,0.2087799897907095,0.0,0.0,0.0,0.0
 702,0.0,36,Female,others,single,Southern,Corporate Employee,0.0,0.0,0.3226466017829394,0.0,0.0,0.0064611106567432,0.089801259507647,0.5765927864562035,0.0044982415964668,0.0
-703,0.0,41,Male,Unknown,Unknown,Southern,Freelancer,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
-705,0.0,25,Male,Unknown,Unknown,Central,Corporate Employee,0.0,0.0,0.0,0.4570791527313266,0.0,0.5429208472686734,0.0,0.0,0.0,0.0
 707,0.0,36,Female,high school,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 712,0.0,50,Male,bachelor's degree,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 716,0.0,56,Male,high school,married,Central,Corporate Employee,0.0,0.3661337964782393,0.0,0.6338662035217606,0.0,0.0,0.0,0.0,0.0,0.0
@@ -260,29 +233,22 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 761,0.0,35,Female,others,single,Western,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 764,0.0,33,Female,less than high school,single,Northeastern,Student,0.0,0.0,0.4562973766429187,0.4562973766429187,0.0,0.0,0.0017138283669443,0.0,0.0,0.0856914183472181
 767,0.0,35,Female,others,single,Eastern,Corporate Employee,0.0,0.6336753258373348,0.3663246741626651,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-769,0.0,23,Male,Unknown,single,Western,Student,0.0,0.0572537529422799,0.6331036084523273,0.2898115600895078,0.0,0.0,0.0137566941056138,0.0,0.006074384410271,0.0
 770,0.0,31,Female,high school,single,Eastern,Entrepreneur,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 771,0.0,30,Female,high school,single,Northeastern,Homemaker,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 773,0.0,47,Male,vocational certificate,single,Eastern,Corporate Employee,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
 775,0.0,51,Male,others,married,Central,Corporate Employee,0.0,0.8024483237740272,0.0329252793709954,0.1646263968549773,0.0,0.0,0.0,0.0,0.0,0.0
 776,1.0,47,Male,high school,married,Central,Corporate Employee,0.0,0.0931160532410637,0.0,0.0,0.9068839467589362,0.0,0.0,0.0,0.0,0.0
 780,0.0,61,Male,bachelor's degree,married,Central,Entrepreneur,0.997442490128012,0.0,0.0,0.0,0.0,0.0,0.0,0.0025575098719881,0.0,0.0
-782,0.0,23,Female,Unknown,single,Central,Student,0.0,0.1570619754252702,0.1803735581207962,0.0,0.6625644664539336,0.0,0.0,0.0,0.0,0.0
 785,0.0,42,Male,bachelor's degree,married,Southern,Corporate Employee,0.6671848468977573,0.0833113718321229,0.2495037812701197,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-787,0.0,23,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 789,0.0,34,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.5833099162605477,0.0,0.0,0.4166900837394522,0.0,0.0,0.0,0.0,0.0
 790,0.0,20,Female,less than high school,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 792,0.0,33,Female,high school,single,Central,Corporate Employee,0.0,0.0,0.6853415195702226,0.0,0.0,0.3146584804297774,0.0,0.0,0.0,0.0
-797,0.0,42,Male,Unknown,others,Central,Professional,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 800,0.0,44,Male,high school,single,Central,Corporate Employee,0.9224806201550388,0.0,0.0387596899224806,0.0387596899224806,0.0,0.0,0.0,0.0,0.0,0.0
 814,0.0,49,Male,high school,single,Southern,Entrepreneur,0.5240014497373443,0.0,0.0371473361076299,0.0,0.3580676573205186,0.0807835568345072,0.0,0.0,0.0,0.0
-816,0.0,23,Female,Unknown,Unknown,Central,Student,0.932673396142686,0.0,0.0,0.0,0.067326603857314,0.0,0.0,0.0,0.0,0.0
 817,0.0,21,Male,high school,single,Central,Corporate Employee,0.0,0.2182188987083616,0.0,0.0,0.0,0.0,0.0,0.1019714479945615,0.0,0.6798096532970769
 831,0.0,37,Female,high school,married,Eastern,Corporate Employee,0.6750170221683852,0.1896760874839452,0.1353068903476696,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 833,0.0,46,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.6289593151081374,0.0,0.2980419936849653,0.0,0.0,0.0341236485523366,0.0388750426545606,0.0,0.0
-834,0.0,26,Female,Unknown,single,Northern,Corporate Employee,0.3792295272403074,0.0,0.527061067760088,0.0937094049996046,0.0,0.0,0.0,0.0,0.0,0.0
 836,0.0,31,Female,less than high school,single,Northeastern,Corporate Employee,0.7072323727774371,0.2927676272225628,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-837,0.0,27,Male,Unknown,single,Central,Entrepreneur,0.152862030146451,0.0484218182005748,0.2979846056834403,0.4836582714470115,0.0,0.0,0.0119151855429082,0.0,0.0051580889796139,0.0
 838,0.0,43,Female,high school,married,Southern,Entrepreneur,0.5290475988934249,0.1047321864863929,0.3621802147740871,0.0,0.0,0.0040399998460952,0.0,0.0,0.0,0.0
 841,0.0,43,Female,bachelor's degree,married,Central,Corporate Employee,0.3007140394724465,0.0212355834682336,0.0,0.0,0.6780503770593199,0.0,0.0,0.0,0.0,0.0
 847,0.0,33,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
@@ -297,7 +263,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 868,0.0,42,Female,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 869,0.0,51,Male,high school,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 871,0.0,32,Female,vocational certificate,single,Northern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-873,0.0,26,Male,Unknown,single,Western,Freelancer,0.0,0.0,0.3729299141382128,0.0,0.0,0.0,0.6270700858617871,0.0,0.0,0.0
 874,0.0,48,Male,bachelor's degree,married,Northeastern,Entrepreneur,0.1419509462489961,0.025864199657118,0.4189057630633848,0.3282602035174102,0.0,0.0,0.0,0.0,0.0,0.0850188875130907
 877,0.0,49,Male,less than high school,single,Central,Entrepreneur,0.0,0.0782309576132885,0.0,0.9217690423867114,0.0,0.0,0.0,0.0,0.0,0.0
 881,0.0,61,Female,master's degree,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
@@ -316,7 +281,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 917,0.0,64,Female,bachelor's degree,married,Northeastern,Corporate Employee,0.0,0.0,0.5455308434746118,0.0,0.0,0.0,0.0,0.4544691565253881,0.0,0.0
 919,0.0,34,Female,vocational certificate,single,Eastern,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 923,2.0,53,Male,less than high school,married,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.2829880043620502,0.7170119956379498,0.0,0.0,0.0,0.0
-924,0.0,27,Female,vocational certificate,Unknown,Northern,Student,0.0,0.0,0.7682149605835256,0.1612834711162817,0.0507008362897402,0.0,0.0,0.0,0.0198007320104525,0.0
 926,0.0,36,Male,vocational certificate,single,Central,Corporate Employee,0.7914347826902479,0.1485558012728531,0.0600094160368988,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 931,0.0,37,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 936,0.0,46,Male,doctorate's degree,single,Southern,Professional,0.4933946570114492,0.0,0.0024464233290928,0.0,0.480110578334475,0.0,0.0,0.0145562188081025,0.0094921225168803,0.0
@@ -347,11 +311,9 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 987,0.0,62,Female,high school,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 989,0.0,46,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.1432409824846011,0.0,0.0,0.0,0.0,0.0,0.8567590175153988,0.0
 992,0.0,31,Male,high school,single,Central,Student,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-994,0.0,23,Female,Unknown,Unknown,Central,Student,0.0,0.0,0.5211894036030462,0.4788105963969538,0.0,0.0,0.0,0.0,0.0,0.0
 999,0.0,40,Female,high school,single,Central,Freelancer,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1001,0.0,49,Male,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1009,0.0,46,Female,vocational certificate,married,Central,Unemployed,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
-1011,0.0,19,Female,Unknown,single,Southern,Student,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 1013,0.0,22,Male,high school,single,Eastern,Student,0.7843855628715876,0.0,0.2125568894956422,0.0,0.0,0.0,0.0,0.0,0.0030575476327701,0.0
 1015,0.0,45,Female,bachelor's degree,married,Central,Corporate Employee,0.9430583705162722,0.038757781323224,0.0,0.0181838481605037,0.0,0.0,0.0,0.0,0.0,0.0
 1016,2.0,73,Female,less than high school,married,Northeastern,Entrepreneur,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -365,7 +327,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1047,0.0,48,Female,bachelor's degree,single,Northeastern,Entrepreneur,0.0,0.0,0.5550789399931492,0.4344112976053311,0.0,0.0077850091863108,0.0,0.0,0.0,0.0027247532152087
 1049,0.0,29,Female,bachelor's degree,single,Eastern,Corporate Employee,0.0,0.0,0.7854650602104877,0.196512107706974,0.0,0.0,0.0085371309864654,0.0,0.0094857010960727,0.0
 1051,0.0,43,Male,bachelor's degree,married,Central,Corporate Employee,0.914420438280208,0.0,0.0663006494642343,0.0192789122555574,0.0,0.0,0.0,0.0,0.0,0.0
-1054,0.0,25,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.3075738018903277,0.6924261981096723,0.0,0.0,0.0,0.0,0.0,0.0
 1063,0.0,54,Female,less than high school,married,Central,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 1065,0.0,28,Male,others,single,Northern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1066,0.0,33,Female,bachelor's degree,single,Central,Professional,0.6402262258197648,0.0,0.1798868870901175,0.1798868870901175,0.0,0.0,0.0,0.0,0.0,0.0
@@ -384,24 +345,18 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1090,0.0,30,Male,high school,single,Southern,Corporate Employee,0.014311538021504,0.0,0.0062406921011569,0.0,0.9736932428123182,0.0,0.0,0.0,0.0057545270650208,0.0
 1100,0.0,32,Female,bachelor's degree,single,Central,Homemaker,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1101,0.0,47,Female,others,married,Northeastern,Entrepreneur,0.5736205784173469,0.2805127773570086,0.0,0.0056663581026115,0.1402002861230329,0.0,0.0,0.0,0.0,0.0
-1102,0.0,29,Female,Unknown,single,Central,Corporate Employee,0.0,0.4589122423588739,0.1419184536565289,0.0,0.0,0.0126149736583581,0.0,0.0,0.386554330326239,0.0
-1103,0.0,29,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1106,0.0,36,Female,bachelor's degree,single,Northern,Professional,0.9849133362817344,0.0,0.0150866637182657,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1108,0.0,21,Male,less than high school,single,Southern,Unemployed,0.0,0.0,0.4615384615384615,0.4615384615384615,0.0,0.0769230769230769,0.0,0.0,0.0,0.0
-1119,0.0,30,Male,Unknown,Unknown,Central,Unemployed,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1126,0.0,31,Male,high school,single,Northeastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1128,0.0,25,Male,others,single,Southern,Entrepreneur,0.5912166730674572,0.0481754141131118,0.360607912819431,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1130,0.0,56,Female,bachelor's degree,married,Central,Homemaker,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
-1132,0.0,19,Female,Unknown,single,Northeastern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1133,0.0,36,Male,others,single,Central,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 1134,0.0,33,Male,less than high school,single,Central,Corporate Employee,0.0,0.4721593380919388,0.0,0.5035206161481076,0.0,0.0,0.0,0.0243200457599535,0.0,0.0
 1135,0.0,30,Male,others,married,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1136,0.0,47,Male,master's degree,single,Southern,Entrepreneur,0.0120710284251374,0.0,0.0,0.0,0.9879289715748626,0.0,0.0,0.0,0.0,0.0
-1137,0.0,21,Female,Unknown,Unknown,Central,Corporate Employee,0.0,0.0417805544709098,0.0154236626317844,0.6987504880905896,0.0,0.0,0.2440452948067161,0.0,0.0,0.0
 1138,0.0,23,Male,high school,single,Central,Student,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 1139,0.0,25,Male,vocational certificate,married,Eastern,Corporate Employee,0.0,0.4759615384615384,0.0,0.5240384615384616,0.0,0.0,0.0,0.0,0.0,0.0
 1142,0.0,49,Male,less than high school,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1143,0.0,32,Female,Unknown,single,Northern,Entrepreneur,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1145,0.0,26,Female,high school,single,Central,Corporate Employee,0.935073409461664,0.0,0.064926590538336,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1146,0.0,43,Female,less than high school,single,Southern,Corporate Employee,0.0321530344451399,0.195498333818733,0.0,0.7723486317361271,0.0,0.0,0.0,0.0,0.0,0.0
 1147,1.0,33,Female,less than high school,married,Western,Homemaker,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -424,7 +379,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1196,0.0,50,Female,bachelor's degree,married,Northeastern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1202,0.0,57,Male,high school,married,Central,Unemployed,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1206,0.0,60,Female,bachelor's degree,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1209,0.0,53,Female,Unknown,single,Central,Entrepreneur,0.0068262313565449,0.0348052011716117,0.0,0.9583685674718432,0.0,0.0,0.0,0.0,0.0,0.0
 1210,0.0,26,Male,high school,single,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1218,0.0,38,Female,bachelor's degree,single,Northern,Corporate Employee,0.2433302536169083,0.0806353158568218,0.3724236262982662,0.3036108042280035,0.0,0.0,0.0,0.0,0.0,0.0
 1219,0.0,46,Male,bachelor's degree,married,Central,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
@@ -433,8 +387,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1227,0.0,35,Female,bachelor's degree,single,Northern,Student,0.0,0.0,0.9851598372819804,0.0148401627180194,0.0,0.0,0.0,0.0,0.0,0.0
 1230,1.0,67,Male,high school,married,Central,Unemployed,0.0,0.1864083138149173,0.0,0.0,0.0,0.8135916861850827,0.0,0.0,0.0,0.0
 1239,1.0,31,Female,high school,married,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
-1244,0.0,20,Female,Unknown,single,Southern,Student,0.0,0.0,0.7980535279805353,0.2019464720194647,0.0,0.0,0.0,0.0,0.0,0.0
-1245,0.0,28,Female,Unknown,single,Southern,Unemployed,0.0,0.1629968651186776,0.5859412107970198,0.0,0.2510619240843025,0.0,0.0,0.0,0.0,0.0
 1246,0.0,38,Female,bachelor's degree,single,Central,Freelancer,0.0,0.0,0.8094594594594594,0.1905405405405405,0.0,0.0,0.0,0.0,0.0,0.0
 1252,0.0,43,Male,high school,widow,Western,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1255,0.0,35,Male,vocational certificate,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -458,7 +410,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1311,0.0,30,Male,others,others,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1313,0.0,30,Male,others,others,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1319,0.0,27,Female,bachelor's degree,married,Central,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
-1326,0.0,21,Male,Unknown,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1328,0.0,31,Male,others,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1336,1.0,56,Female,bachelor's degree,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1340,0.0,32,Female,others,single,Eastern,Corporate Employee,0.0,0.0620581382558523,0.4723958281251562,0.4655460336189914,0.0,0.0,0.0,0.0,0.0,0.0
@@ -467,7 +418,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1349,0.0,48,Female,bachelor's degree,single,Central,Corporate Employee,0.9678678490579125,0.0,0.0321321509420875,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1354,0.0,44,Male,less than high school,widow,Central,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1355,0.0,27,Male,others,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
-1356,0.0,26,Female,Unknown,single,Southern,Corporate Employee,0.0,0.4944055979412196,0.5055944020587805,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1357,0.0,57,Female,master's degree,single,Central,Corporate Employee,0.8973155038999885,0.0699972986147872,0.0,0.0,0.0,0.0152743913482356,0.0,0.0,0.0174128061369885,0.0
 1359,0.0,29,Male,high school,single,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1360,0.0,30,Female,bachelor's degree,married,Northeastern,Professional,0.7643901217864562,0.1633750117047237,0.0722348665088201,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -475,7 +425,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1367,0.0,27,Female,high school,divorce,Southern,Freelancer,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 1368,0.0,65,Female,less than high school,married,Central,Freelancer,0.0,0.9616579974519812,0.0,0.0,0.0,0.0383420025480188,0.0,0.0,0.0,0.0
 1372,0.0,52,Female,less than high school,married,Western,Unemployed,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-1376,0.0,22,Female,Unknown,single,Southern,Student,0.0339213025780189,0.0,0.0,0.0,0.0,0.0,0.0,0.966078697421981,0.0,0.0
 1377,0.0,40,Female,others,married,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1378,0.0,48,Male,vocational certificate,married,Eastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1381,0.0,52,Female,less than high school,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -494,7 +443,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1423,0.0,45,Female,vocational certificate,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1424,0.0,23,Female,high school,single,Central,Student,0.0,0.0,0.7836667501699889,0.2163332498300111,0.0,0.0,0.0,0.0,0.0,0.0
 1429,2.0,60,Male,high school,married,Central,Professional,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-1431,0.0,25,Male,Unknown,others,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1436,0.0,58,Female,less than high school,married,Central,Corporate Employee,0.0868650736523103,0.0,0.0347240691894951,0.8784108571581944,0.0,0.0,0.0,0.0,0.0,0.0
 1443,0.0,31,Female,bachelor's degree,single,Central,Unemployed,0.0,0.0,0.28001852475581,0.71998147524419,0.0,0.0,0.0,0.0,0.0,0.0
 1445,0.0,34,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
@@ -537,7 +485,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1571,0.0,55,Male,others,others,Eastern,Corporate Employee,0.6920879661614704,0.2681100194009398,0.0036562430731332,0.0072005137021517,0.0,0.0289452576623048,0.0,0.0,0.0,0.0
 1573,0.0,44,Male,bachelor's degree,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1574,0.0,54,Female,vocational certificate,separate,Central,Other,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1576,0.0,22,Female,Unknown,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1580,0.0,30,Female,high school,single,Northeastern,Student,0.0,0.398673295915665,0.4279069171429304,0.1734197869414046,0.0,0.0,0.0,0.0,0.0,0.0
 1583,0.0,41,Male,bachelor's degree,married,Central,Corporate Employee,0.9953369423918884,0.0,0.0012688592130915,0.0026011613868377,0.0,0.0,0.0007930370081822,0.0,0.0,0.0
 1584,0.0,35,Female,high school,single,Central,Corporate Employee,0.2707286865326636,0.0,0.6545629525681502,0.0725742303592119,0.0,0.0,0.0021341305399742,0.0,0.0,0.0
@@ -550,15 +497,12 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1603,0.0,52,Female,less than high school,married,Central,Entrepreneur,0.0,0.7631633620884333,0.2368366379115667,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1604,1.0,43,Female,master's degree,single,Central,Freelancer,0.0,0.0,0.3177652228499686,0.3177652228499686,0.0,0.0,0.0,0.0,0.3644695543000628,0.0
 1605,0.0,55,Female,bachelor's degree,married,Central,Corporate Employee,0.8009943009255489,0.0101138880396865,0.0569947494823574,0.0,0.0,0.0,0.131897061552407,0.0,0.0,0.0
-1606,0.0,32,Male,Unknown,Unknown,Central,Unemployed,0.0,0.0279503359101409,0.449613478853579,0.0,0.52243618523628,0.0,0.0,0.0,0.0,0.0
 1608,0.0,64,Female,master's degree,married,Northern,Corporate Employee,0.0796292576337174,0.0,0.0,0.0,0.9203707423662826,0.0,0.0,0.0,0.0,0.0
 1609,1.0,44,Female,high school,married,Eastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-1610,0.0,60,Female,Unknown,married,Central,Homemaker,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1611,0.0,36,Female,high school,single,Central,Entrepreneur,0.9326069324287456,0.0,0.0336965337856272,0.0336965337856272,0.0,0.0,0.0,0.0,0.0,0.0
 1616,0.0,41,Female,others,single,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1619,1.0,43,Female,high school,married,Southern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1620,0.0,37,Female,less than high school,single,Central,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1621,0.0,27,Male,Unknown,married,Eastern,Freelancer,0.0,0.0441947559244734,0.0,0.0,0.0,0.637063358064885,0.3185316790324425,0.0,0.0,0.000210206978199
 1622,0.0,31,Female,vocational certificate,married,Central,Corporate Employee,0.4562335185641419,0.5437664814358582,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1625,0.0,25,Male,vocational certificate,single,Eastern,Unemployed,0.0,0.313117693326103,0.4611784477241528,0.2257038589497442,0.0,0.0,0.0,0.0,0.0,0.0
 1630,0.0,47,Male,others,single,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -569,7 +513,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1646,0.0,34,Female,less than high school,single,Central,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1647,0.0,36,Male,high school,single,Central,Corporate Employee,0.7690864176262301,0.2309135823737698,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1650,0.0,39,Female,bachelor's degree,married,Western,Corporate Employee,0.0,0.0,0.0,0.6311992786293958,0.3688007213706041,0.0,0.0,0.0,0.0,0.0
-1655,0.0,31,Female,Unknown,married,Central,Professional,0.0,0.0,0.6866135854690222,0.3133864145309779,0.0,0.0,0.0,0.0,0.0,0.0
 1656,0.0,36,Female,bachelor's degree,single,Eastern,Corporate Employee,0.3975257036506111,0.222790269052624,0.3039132189342697,0.0757708083624952,0.0,0.0,0.0,0.0,0.0,0.0
 1657,0.0,59,Male,master's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1661,0.0,28,Female,others,single,Central,Professional,0.0,0.0,0.7810338850062953,0.2189661149937047,0.0,0.0,0.0,0.0,0.0,0.0
@@ -580,7 +523,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1677,0.0,50,Male,bachelor's degree,married,Eastern,Corporate Employee,0.0,0.1750565741467695,0.4124717129266153,0.4124717129266153,0.0,0.0,0.0,0.0,0.0,0.0
 1679,0.0,40,Female,bachelor's degree,single,Eastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1683,0.0,28,Male,high school,single,Western,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1686,0.0,25,Female,Unknown,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1687,0.0,43,Female,high school,single,Central,Corporate Employee,0.0,0.0912842398753028,0.0,0.9087157601246972,0.0,0.0,0.0,0.0,0.0,0.0
 1689,0.0,44,Male,bachelor's degree,married,Southern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1690,0.0,38,Female,high school,married,Central,Unemployed,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -591,7 +533,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1700,0.0,43,Female,bachelor's degree,married,Central,Homemaker,0.0,0.0660830685865677,0.3591724797159665,0.5747444516974655,0.0,0.0,0.0,0.0,0.0,0.0
 1703,0.0,29,Male,others,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1705,0.0,28,Female,vocational certificate,single,Northeastern,Corporate Employee,0.3253422057767762,0.0,0.071907134320783,0.0,0.0,0.5307415850238476,0.0720090748785931,0.0,0.0,0.0
-1706,0.0,28,Male,Unknown,single,Central,Corporate Employee,0.9701655360710724,0.0,0.0298344639289276,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1707,0.0,34,Male,others,single,Eastern,Corporate Employee,0.0,0.0,0.4019434628975265,0.3330388692579505,0.0,0.0,0.2650176678445229,0.0,0.0,0.0
 1708,1.0,60,Male,bachelor's degree,single,Eastern,Entrepreneur,0.0,0.6787260072582221,0.0,0.0,0.0,0.0,0.0,0.3212739927417779,0.0,0.0
 1710,0.0,29,Male,bachelor's degree,single,Southern,Student,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
@@ -599,34 +540,27 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1712,0.0,32,Female,others,married,Northeastern,Entrepreneur,0.6334034328281412,0.1063824843106043,0.2412092079863629,0.0,0.0,0.0,0.0,0.0,0.0190048748748914,0.0
 1717,0.0,25,Female,others,single,Central,Corporate Employee,0.0,0.7982062780269058,0.0,0.0,0.0,0.2017937219730941,0.0,0.0,0.0,0.0
 1721,0.0,40,Male,others,single,Central,Corporate Employee,0.0,0.0,0.0,0.183094293561184,0.0,0.0,0.0,0.0,0.0,0.816905706438816
-1724,0.0,23,Female,Unknown,single,Eastern,Corporate Employee,0.5129666571672842,0.0,0.4870333428327159,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1727,0.0,31,Female,others,single,Northeastern,Corporate Employee,0.2944595118171251,0.1402621722846442,0.5652783158982306,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1729,1.0,48,Male,bachelor's degree,divorce,Southern,Corporate Employee,0.1150540069254782,0.0,0.0083155472031386,0.0113100113384302,0.8653204345329528,0.0,0.0,0.0,0.0,0.0
-1731,0.0,24,Male,Unknown,single,Northern,Student,0.0,0.2631578947368421,0.7368421052631579,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1732,0.0,50,Male,Unknown,single,Northeastern,Unemployed,0.0,0.0,0.3429555519107758,0.6098081023454158,0.0,0.0,0.0,0.0,0.0,0.0472363457438084
 1735,0.0,47,Female,others,single,Central,Corporate Employee,0.747987968457849,0.0,0.0,0.252012031542151,0.0,0.0,0.0,0.0,0.0,0.0
 1738,1.0,63,Female,vocational certificate,widow,Southern,Homemaker,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1739,0.0,56,Male,master's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1740,0.0,38,Male,vocational certificate,single,Northeastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1743,0.0,26,Female,bachelor's degree,single,Northeastern,Student,0.9652340286527604,0.0,0.0,0.0347659713472397,0.0,0.0,0.0,0.0,0.0,0.0
-1745,0.0,23,Female,Unknown,single,Central,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1749,0.0,39,Female,bachelor's degree,married,Central,Corporate Employee,0.0,0.0,0.2634271099744245,0.0,0.0,0.0,0.0,0.0,0.7365728900255755,0.0
 1753,0.0,29,Male,bachelor's degree,single,Central,Corporate Employee,0.5137844611528822,0.0,0.0,0.0,0.0927318295739348,0.0,0.0,0.3934837092731829,0.0,0.0
 1755,0.0,36,Female,others,single,Central,Professional,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1756,0.0,61,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.4510802740207272,0.0,0.0,0.0,0.5489197259792727,0.0,0.0,0.0,0.0
 1759,0.0,31,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
 1760,0.0,41,Female,bachelor's degree,single,Southern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1772,Unknown,33,Female,Unknown,Unknown,Unknown,Agriculture/Trade,0.0,0.5,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 1779,0.0,28,Female,others,married,Northeastern,Professional,0.0,0.0,0.0226628895184136,0.9773371104815864,0.0,0.0,0.0,0.0,0.0,0.0
 1781,1.0,52,Male,bachelor's degree,married,Central,Corporate Employee,0.9433962264150944,0.0,0.0,0.0,0.0,0.0058055152394775,0.0,0.0507982583454281,0.0,0.0
-1787,0.0,23,Female,Unknown,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1788,0.0,37,Male,others,others,Central,Corporate Employee,0.9694596711041504,0.0,0.0,0.0,0.0,0.0,0.0305403288958496,0.0,0.0,0.0
 1791,0.0,41,Female,master's degree,single,Eastern,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1792,0.0,44,Female,bachelor's degree,divorce,Western,Entrepreneur,0.0,0.0,0.9079575905860422,0.0920424094139578,0.0,0.0,0.0,0.0,0.0,0.0
 1794,0.0,33,Female,less than high school,single,Central,Corporate Employee,0.7748423110251296,0.1533943713376638,0.0717633176372067,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1796,0.0,24,Female,others,single,Central,Corporate Employee,0.0,0.0,0.924580570069364,0.0754194299306358,0.0,0.0,0.0,0.0,0.0,0.0
 1801,0.0,31,Male,bachelor's degree,single,Central,Corporate Employee,0.0086322549691504,0.0509283966373313,0.9350501505398496,0.0053891978536684,0.0,0.0,0.0,0.0,0.0,0.0
-1802,0.0,22,Male,Unknown,single,Central,Student,0.1535589433450941,0.0,0.4088042951669408,0.0415966642962379,0.396040097191727,0.0,0.0,0.0,0.0,0.0
 1804,0.0,26,Male,others,single,Central,Corporate Employee,0.1758473446146863,0.0,0.4120763276926568,0.4120763276926568,0.0,0.0,0.0,0.0,0.0,0.0
 1805,0.0,33,Female,vocational certificate,married,Northeastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1807,0.0,44,Male,high school,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -635,12 +569,10 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1819,0.0,52,Female,others,married,Eastern,Corporate Employee,0.0,0.0,0.0112496312846889,0.0,0.9887503687153112,0.0,0.0,0.0,0.0,0.0
 1820,0.0,29,Male,bachelor's degree,single,Central,Professional,0.8874570930167126,0.0,0.1125429069832873,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1822,0.0,28,Female,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1825,0.0,34,Female,Unknown,single,Northeastern,Professional,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1826,0.0,38,Male,vocational certificate,married,Central,Corporate Employee,0.0,0.8869748023363178,0.0,0.0,0.0,0.0,0.0,0.0,0.1130251976636822,0.0
 1830,0.0,46,Male,bachelor's degree,single,Northern,Corporate Employee,0.91515912109432,0.0791270794222238,0.0,0.0,0.0,0.0,0.0,0.0,0.005713799483456,0.0
 1831,0.0,43,Male,master's degree,married,Central,Corporate Employee,0.9936213169227665,0.0,0.0040520312490147,0.0,0.0,0.0,0.0,0.0,0.0023266518282186,0.0
 1833,1.0,39,Male,high school,married,Northern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1835,0.0,21,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1837,0.0,52,Female,bachelor's degree,others,Central,Unemployed,0.7672241829062452,0.2041967162804971,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0285791008132576
 1838,0.0,39,Female,bachelor's degree,single,Southern,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 1842,0.0,33,Female,others,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -657,7 +589,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1869,0.0,53,Female,others,single,Central,Freelancer,0.9872013258401432,0.0127986741598567,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1878,1.0,47,Female,others,single,Central,Entrepreneur,0.7008052252037591,0.2991947747962408,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1879,0.0,34,Female,bachelor's degree,single,Central,Corporate Employee,0.625,0.0,0.375,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1880,0.0,20,Male,Unknown,Unknown,Eastern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1882,0.0,31,Female,high school,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1883,0.0,51,Female,vocational certificate,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1885,0.0,32,Female,bachelor's degree,single,Western,Entrepreneur,0.3788573763561071,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6211426236438928
@@ -671,7 +602,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1912,0.0,32,Male,less than high school,single,Central,Other,0.0,0.0,0.5481213582479405,0.4518786417520595,0.0,0.0,0.0,0.0,0.0,0.0
 1914,0.0,32,Female,bachelor's degree,single,Western,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1915,0.0,49,Female,less than high school,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-1916,0.0,27,Female,Unknown,single,Central,Corporate Employee,0.0,0.0469426060627842,0.0711231825326562,0.0,0.8819342114045594,0.0,0.0,0.0,0.0,0.0
 1917,0.0,40,Male,vocational certificate,single,Eastern,Freelancer,0.5323917194381972,0.0937930319996201,0.3620162969422009,0.0117989516199816,0.0,0.0,0.0,0.0,0.0,0.0
 1921,0.0,26,Male,vocational certificate,single,Central,Corporate Employee,0.4189897834416465,0.0,0.3840328704122517,0.1969773461461017,0.0,0.0,0.0,0.0,0.0,0.0
 1923,0.0,36,Female,high school,single,Central,Corporate Employee,0.7680545646528353,0.1060611537595642,0.1258842815876005,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -689,10 +619,8 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 1955,0.0,26,Female,high school,single,Central,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1960,0.0,37,Male,less than high school,single,Eastern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 1963,0.0,56,Female,bachelor's degree,married,Central,Freelancer,0.9907269006951196,0.0,0.0,0.0,0.0,0.0092730993048803,0.0,0.0,0.0,0.0
-1968,0.0,26,Male,Unknown,single,Eastern,Student,0.0,0.0,0.9132231404958676,0.0867768595041322,0.0,0.0,0.0,0.0,0.0,0.0
 1969,0.0,21,Female,less than high school,single,Northeastern,Student,0.0,0.0,0.5849813273669856,0.4150186726330144,0.0,0.0,0.0,0.0,0.0,0.0
 1970,0.0,43,Female,bachelor's degree,single,Western,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-1976,0.0,22,Male,Unknown,single,Central,Student,0.0,0.0,0.0,0.0,0.0559875147842031,0.0,0.0,0.9440124852157968,0.0,0.0
 1977,0.0,40,Male,high school,single,Southern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 1978,0.0,29,Male,less than high school,single,Southern,Student,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 1987,0.0,44,Female,high school,single,Central,Entrepreneur,0.1683498569026216,0.1000966315845298,0.3657767557564242,0.3657767557564242,0.0,0.0,0.0,0.0,0.0,0.0
@@ -713,7 +641,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2025,0.0,58,Female,others,divorce,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2027,0.0,27,Male,bachelor's degree,married,Northern,Entrepreneur,0.0208985152703592,0.0,0.0009781233613682,0.0,0.9781233613682724,0.0,0.0,0.0,0.0,0.0
 2034,0.0,45,Female,bachelor's degree,single,Northeastern,Corporate Employee,0.6064171977949337,0.0006149097158809,0.1811112033475684,0.1811112033475684,0.0,0.0,0.0307454857940482,0.0,0.0,0.0
-2035,0.0,19,Female,Unknown,Unknown,Central,Homemaker,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2036,0.0,57,Female,bachelor's degree,single,Eastern,Homemaker,0.0835533571738912,0.0,0.0,0.0,0.0,0.0,0.9164466428261088,0.0,0.0,0.0
 2042,0.0,39,Female,bachelor's degree,single,Central,Corporate Employee,0.9686609686609686,0.0,0.0313390313390313,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2047,0.0,41,Female,bachelor's degree,single,Central,Corporate Employee,1.966873423175122e-05,0.0,0.0,0.0,0.9999803312657684,0.0,0.0,0.0,0.0,0.0
@@ -723,12 +650,10 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2056,0.0,35,Male,bachelor's degree,single,Northeastern,Entrepreneur,0.1019356613705484,0.0614783657613607,0.0,0.0,0.0,0.3058069841116452,0.5307789887564456,0.0,0.0,0.0
 2059,0.0,45,Male,bachelor's degree,single,Central,Professional,0.70113497158099,0.0255204630784754,0.1638556835038562,0.1094888818366783,0.0,0.0,0.0,0.0,0.0,0.0
 2065,0.0,40,Female,bachelor's degree,single,Central,Corporate Employee,0.5978058097183975,0.285866571910811,0.0,0.0752864884072132,0.0,0.0,0.0,0.0,0.0410411299635782,0.0
-2067,0.0,64,Female,Unknown,married,Eastern,Homemaker,0.0,0.6281256493731385,0.0,0.3718743506268615,0.0,0.0,0.0,0.0,0.0,0.0
 2076,0.0,37,Male,high school,single,Central,Entrepreneur,0.0,0.5152393528508702,0.3058320003149144,0.0,0.1789286468342154,0.0,0.0,0.0,0.0,0.0
 2079,0.0,45,Female,vocational certificate,married,Central,Entrepreneur,0.8503666462655244,0.096388013317078,0.0517685821315529,0.0,0.0,0.0,0.0,0.0,0.0,0.0014767582858446
 2080,0.0,55,Female,bachelor's degree,married,Central,Corporate Employee,0.846877412325445,0.1531225876745551,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2082,0.0,51,Male,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2088,0.0,24,Female,Unknown,single,Central,Corporate Employee,0.7365116775196319,0.2126944136859108,0.0507939087944573,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2095,0.0,31,Female,high school,married,Northern,Corporate Employee,0.0,0.1774730402905688,0.8225269597094312,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2096,1.0,54,Female,vocational certificate,married,Western,Entrepreneur,0.0,0.5189938508345295,0.0,0.0,0.4810061491654704,0.0,0.0,0.0,0.0,0.0
 2102,0.0,50,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -737,14 +662,12 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2114,0.0,63,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
 2115,0.0,51,Female,bachelor's degree,married,Central,Professional,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2116,0.0,42,Male,bachelor's degree,single,Southern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2121,0.0,32,Female,Unknown,single,Central,Entrepreneur,0.6010499669547217,0.0,0.3989500330452782,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2122,0.0,32,Male,others,single,Northern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2124,0.0,68,Female,bachelor's degree,single,Northern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2125,0.0,27,Female,less than high school,single,Northeastern,Unemployed,0.3714463743282186,0.0,0.0389438429784251,0.3779499961056157,0.0,0.19238258431342,0.0,0.0,0.0192772022743204,0.0
 2129,0.0,66,Male,master's degree,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2130,0.0,31,Female,vocational certificate,single,Eastern,Corporate Employee,0.0,0.7368421052631579,0.0,0.0,0.0,0.0,0.2631578947368421,0.0,0.0,0.0
 2131,0.0,33,Female,high school,married,Eastern,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-2132,0.0,51,Male,Unknown,married,Southern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2133,0.0,55,Female,master's degree,married,Central,Professional,0.3868722815342032,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6131277184657967
 2136,0.0,49,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 2137,0.0,37,Female,high school,divorce,Eastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -763,13 +686,11 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2176,0.0,30,Female,bachelor's degree,single,Central,Corporate Employee,0.2353335204077014,0.3532084762792719,0.3795950141663574,0.0318629891466693,0.0,0.0,0.0,0.0,0.0,0.0
 2181,0.0,41,Female,bachelor's degree,married,Northeastern,Professional,0.0,0.5963097327032176,0.4036902672967823,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2182,0.0,36,Male,high school,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2185,0.0,21,Female,Unknown,single,Central,Student,0.0,0.0,0.7174781788329494,0.1412609105835252,0.0,0.0,0.1412609105835252,0.0,0.0,0.0
 2191,0.0,41,Female,bachelor's degree,single,Central,Corporate Employee,0.8080186129166362,0.0,0.0,0.0,0.0,0.0890322603667272,0.0657482724351482,0.0,0.0372008542814882,0.0
 2199,0.0,36,Male,high school,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2202,0.0,36,Female,bachelor's degree,married,Northeastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2204,2.0,63,Female,master's degree,single,Central,Entrepreneur,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 2205,0.0,60,Female,others,single,Central,Professional,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2209,0.0,31,Female,Unknown,single,Southern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2212,1.0,51,Female,others,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2215,0.0,21,Female,high school,single,Southern,Student,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 2217,0.0,59,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
@@ -780,7 +701,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2229,1.0,47,Female,less than high school,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2232,0.0,55,Female,high school,single,Central,Unemployed,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 2233,0.0,40,Female,master's degree,single,Central,Corporate Employee,0.4999153258949935,0.0,0.0435525832092725,0.3599387042088636,0.0,0.0257857727441431,0.0708076139427272,0.0,0.0,0.0
-2235,0.0,21,Female,Unknown,single,Central,Student,0.0,0.6497996394658583,0.0855407438026018,0.0453538171839298,0.0,0.21930579954761,0.0,0.0,0.0,0.0
 2236,0.0,24,Female,bachelor's degree,single,Eastern,Student,0.0,0.0,0.646794711898229,0.353205288101771,0.0,0.0,0.0,0.0,0.0,0.0
 2237,0.0,37,Female,others,others,Central,Student,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 2238,0.0,51,Male,less than high school,single,Western,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -791,18 +711,13 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2249,0.0,32,Female,others,single,Northeastern,Corporate Employee,0.0,0.0,0.3243178630626036,0.0232236206990765,0.0,0.3436868180907451,0.0632957505327771,0.0,0.2454759476147975,0.0
 2250,0.0,51,Male,less than high school,married,Northeastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2252,0.0,61,Male,master's degree,married,Central,Homemaker,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2253,0.0,30,Female,Unknown,single,Eastern,Corporate Employee,0.0,0.8887900471520298,0.1112099528479701,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2254,0.0,48,Male,others,others,Southern,Other,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
-2255,0.0,26,Female,Unknown,single,Northeastern,Student,0.0,0.0,0.8595543551654288,0.1404456448345712,0.0,0.0,0.0,0.0,0.0,0.0
 2258,0.0,31,Male,high school,single,Central,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2260,0.0,50,Female,others,married,Southern,Freelancer,0.1576072517348055,0.8423927482651945,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2261,0.0,55,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.6954323725055432,0.0,0.0,0.0,0.3045676274944567,0.0,0.0,0.0
 2262,0.0,28,Male,bachelor's degree,single,Central,Corporate Employee,0.3727385377073274,0.031696004160673,0.3052739408023543,0.2902915173296452,0.0,0.0,0.0,0.0,0.0,0.0
 2264,0.0,25,Female,others,others,Northern,Student,0.6894194410789002,0.0190818727549615,0.2441945633829467,0.0083926669454049,0.0,0.0,0.0389114558377865,0.0,0.0,0.0
 2266,1.0,40,Male,high school,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2267,0.0,44,Female,Unknown,Unknown,Northeastern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2271,0.0,23,Female,Unknown,married,Western,Entrepreneur,0.0,0.0,0.7489361702127659,0.0,0.0,0.0,0.0,0.0,0.0,0.251063829787234
-2272,0.0,42,Male,Unknown,Unknown,Central,Corporate Employee,0.0,0.0,0.2183597458555466,0.1091798729277733,0.1460600306726064,0.1168480245380851,0.3482071131234938,0.0,0.0613452128824947,0.0
 2273,0.0,36,Male,high school,single,Central,Corporate Employee,0.0,0.2373198242037433,0.0,0.0,0.0,0.0,0.0,0.7626801757962566,0.0,0.0
 2277,0.0,45,Female,doctorate's degree,single,Northeastern,Professional,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2279,0.0,41,Female,high school,married,Eastern,Corporate Employee,0.0,0.3397344852276595,0.0,0.6602655147723404,0.0,0.0,0.0,0.0,0.0,0.0
@@ -825,7 +740,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2323,0.0,45,Female,others,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2327,0.0,45,Male,less than high school,single,Northeastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2330,0.0,40,Female,bachelor's degree,single,Central,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2338,0.0,25,Male,Unknown,Unknown,Southern,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2339,0.0,24,Female,others,single,Central,Student,0.0,0.2921501706484641,0.7078498293515358,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2341,0.0,46,Female,others,married,Central,Corporate Employee,0.2700447400178117,0.071238861105695,0.0,0.6587163988764932,0.0,0.0,0.0,0.0,0.0,0.0
 2346,0.0,49,Male,high school,single,Northeastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -837,7 +751,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2372,0.0,36,Female,bachelor's degree,single,Central,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2376,0.0,53,Male,high school,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2382,0.0,34,Male,others,married,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2383,0.0,21,Female,Unknown,Unknown,Eastern,Freelancer,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2384,0.0,58,Female,bachelor's degree,married,Central,Corporate Employee,0.8531689329977998,0.0081044112302002,0.0,0.0,0.0,0.1387266557719999,0.0,0.0,0.0,0.0
 2386,0.0,54,Female,bachelor's degree,married,Northern,Entrepreneur,0.0,0.0,0.7955010224948875,0.0,0.0,0.0,0.0,0.0,0.0,0.2044989775051124
 2390,0.0,54,Male,bachelor's degree,single,Northeastern,Entrepreneur,0.0,0.1840002108099415,0.0,0.0,0.0,0.0,0.014829959448628,0.0,0.0,0.8011698297414305
@@ -848,7 +761,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2399,0.0,54,Female,less than high school,married,Central,Entrepreneur,0.0,0.0,0.0,0.9452411994784876,0.0,0.0,0.0,0.0,0.0547588005215123,0.0
 2400,1.0,44,Male,vocational certificate,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2401,1.0,57,Female,less than high school,married,Central,Entrepreneur,0.0,0.7780090183836281,0.2219909816163718,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2403,0.0,23,Female,Unknown,single,Northeastern,Student,0.5086115274103727,0.0,0.3045908029714267,0.1867976696182005,0.0,0.0,0.0,0.0,0.0,0.0
 2404,0.0,19,Male,others,single,Southern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2406,0.0,48,Male,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2407,1.0,45,Female,high school,married,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -870,15 +782,10 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2443,0.0,25,Female,bachelor's degree,single,Northern,Corporate Employee,0.6225796961916987,0.1788484167736414,0.1985718870346598,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2444,0.0,39,Male,others,married,Eastern,Entrepreneur,0.9834672660662118,0.0,0.0,0.0,0.0,0.0,0.0,0.0165327339337881,0.0,0.0
 2445,1.0,55,Female,bachelor's degree,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2446,0.0,23,Female,Unknown,single,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2451,0.0,24,Female,others,others,Northeastern,Student,0.0,0.0,0.7033355433331154,0.1668658779146317,0.0,0.1297985787522528,0.0,0.0,0.0,0.0
-2462,0.0,25,Female,Unknown,single,Central,Corporate Employee,0.389645403624212,0.0726882542371568,0.4390167058768842,0.0986496362617469,0.0,0.0,0.0,0.0,0.0,0.0
-2470,0.0,20,Female,Unknown,single,Northern,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2471,0.0,25,Female,Unknown,single,Northeastern,Student,0.0,0.9374217772215268,0.0,0.0,0.0,0.0625782227784731,0.0,0.0,0.0,0.0
 2473,2.0,49,Female,bachelor's degree,married,Central,Professional,0.0461475301257815,0.0,0.4828416774779385,0.0,0.0,0.0,0.0,0.0,0.0,0.4710107923962801
 2475,0.0,52,Male,high school,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2477,0.0,36,Female,high school,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2478,0.0,19,Female,Unknown,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2483,0.0,41,Female,high school,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2485,0.0,48,Female,vocational certificate,married,Central,Corporate Employee,0.6093266299037725,0.1584046489758669,0.2322687211203605,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2488,0.0,27,Male,bachelor's degree,single,Central,Student,0.0,0.1149401479193579,0.378536444934012,0.378536444934012,0.0588944961458748,0.0,0.0629932017600037,0.0060992643067393,0.0,0.0
@@ -889,7 +796,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2511,0.0,47,Female,less than high school,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2514,0.0,50,Male,doctorate's degree,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
 2521,0.0,46,Male,bachelor's degree,married,Central,Corporate Employee,0.8030203545633617,0.0,0.1969796454366382,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2522,0.0,36,Male,Unknown,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2524,1.0,56,Male,less than high school,married,Central,Entrepreneur,0.6088555112258468,0.0,0.0,0.3911444887741532,0.0,0.0,0.0,0.0,0.0,0.0
 2527,0.0,31,Female,high school,single,Northeastern,Student,0.0,0.0,0.6214202892136054,0.3785797107863946,0.0,0.0,0.0,0.0,0.0,0.0
 2532,0.0,44,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.013880528861122,0.3191348927956163,0.1795906930405363,0.4873938853027253,0.0,0.0,0.0,0.0,0.0
@@ -905,7 +811,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2574,0.0,39,Female,vocational certificate,single,Northeastern,Corporate Employee,0.0,0.2059686556973768,0.0,0.0,0.0,0.0,0.2724515163992099,0.0,0.0,0.5215798279034133
 2575,0.0,34,Female,master's degree,single,Northern,Professional,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2577,0.0,29,Male,high school,married,Southern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2578,0.0,20,Male,Unknown,single,Northeastern,Student,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 2579,0.0,35,Male,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2582,0.0,57,Male,less than high school,married,Central,Entrepreneur,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2583,0.0,27,Female,bachelor's degree,single,Central,Student,0.0,0.0,0.5584737149406397,0.4415262850593603,0.0,0.0,0.0,0.0,0.0,0.0
@@ -921,9 +826,7 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2613,0.0,39,Female,vocational certificate,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2616,0.0,38,Female,bachelor's degree,single,Central,Corporate Employee,0.9173111393308672,0.0018698365925412,0.0077819286227594,0.0,0.073037095453832,0.0,0.0,0.0,0.0,0.0
 2618,0.0,53,Male,high school,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2620,0.0,23,Female,Unknown,single,Central,Student,0.094677484305629,0.0,0.6741529205479175,0.2311695951464534,0.0,0.0,0.0,0.0,0.0,0.0
 2622,0.0,45,Male,vocational certificate,single,Central,Freelancer,0.0,0.8958476482543631,0.0,0.0,0.0,0.0,0.1041523517456368,0.0,0.0,0.0
-2624,0.0,29,Female,Unknown,married,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2626,0.0,25,Female,less than high school,married,Central,Homemaker,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2632,0.0,23,Male,vocational certificate,single,Northeastern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2633,0.0,27,Female,others,single,Central,Corporate Employee,0.1020221962813075,0.01955347664027,0.4355829678819334,0.4251202271255012,0.0,0.0,0.0,0.000921908604849,0.0,0.0167992234661387
@@ -931,7 +834,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2638,0.0,63,Female,bachelor's degree,married,Central,Entrepreneur,0.9955288718531142,0.0044711281468856,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2640,0.0,27,Female,others,single,Central,Student,0.0,0.0,0.5000923694858893,0.3727754348814989,0.1271321956326118,0.0,0.0,0.0,0.0,0.0
 2644,0.0,28,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
-2645,0.0,39,Female,Unknown,Unknown,Northeastern,Entrepreneur,0.0,0.0,0.8495502861815208,0.1504497138184791,0.0,0.0,0.0,0.0,0.0,0.0
 2646,0.0,41,Female,high school,married,Central,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2651,0.0,40,Male,high school,single,Southern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2661,0.0,22,Female,others,single,Northeastern,Student,0.0,0.4029656501899285,0.2985171749050357,0.2985171749050357,0.0,0.0,0.0,0.0,0.0,0.0
@@ -952,7 +854,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2694,0.0,22,Female,others,single,Northern,Student,0.0,0.1884062062224543,0.0,0.8115937937775457,0.0,0.0,0.0,0.0,0.0,0.0
 2698,0.0,28,Male,bachelor's degree,single,Central,Corporate Employee,0.6414715357029024,0.04061316660419,0.3179152976929075,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2706,0.0,25,Female,bachelor's degree,single,Central,Student,0.0,0.0,0.544362292051756,0.1746765249537892,0.0,0.0,0.0,0.0,0.2809611829944547,0.0
-2708,0.0,30,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.3417984642420015,0.0241144547694425,0.0,0.0,0.0,0.0,0.6340870809885559,0.0
 2710,0.0,50,Male,high school,married,Central,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 2712,1.0,59,Male,bachelor's degree,married,Central,Corporate Employee,0.0,0.2231302749227041,0.2923304519527465,0.4653507020850548,0.0,0.0,0.0,0.0,0.0191885710394944,0.0
 2713,0.0,31,Female,high school,single,Central,Corporate Employee,0.0395583008969368,0.3241390252157725,0.467492384498223,0.1057708580132002,0.0,0.0,0.0,0.0,0.0630394313758673,0.0
@@ -964,22 +865,18 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2729,0.0,48,Female,bachelor's degree,married,Central,Corporate Employee,0.9958910947240344,0.0041089052759657,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2731,0.0,44,Male,bachelor's degree,married,Central,Entrepreneur,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2734,1.0,39,Male,vocational certificate,married,Eastern,Corporate Employee,0.0,0.0,0.4212765957446808,0.2819148936170212,0.0,0.0,0.2968085106382979,0.0,0.0,0.0
-2738,0.0,53,Female,Unknown,single,Central,Entrepreneur,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2739,0.0,54,Female,bachelor's degree,single,Central,Corporate Employee,0.4847758122165838,0.0,0.0,0.5152241877834163,0.0,0.0,0.0,0.0,0.0,0.0
 2748,0.0,35,Female,others,married,Central,Corporate Employee,0.2297037006680054,0.0,0.0880291791320027,0.6822671201999918,0.0,0.0,0.0,0.0,0.0,0.0
 2751,0.0,26,Female,bachelor's degree,single,Central,Corporate Employee,0.3656361770550974,0.0,0.3489841457729165,0.285379677171986,0.0,0.0,0.0,0.0,0.0,0.0
 2760,0.0,54,Female,others,married,Central,Entrepreneur,0.0,0.0071750128178151,0.0,0.0,0.9928249871821848,0.0,0.0,0.0,0.0,0.0
 2762,0.0,35,Female,less than high school,single,Central,Freelancer,0.0,0.0,0.3112519079625483,0.0495634287980042,0.0,0.0,0.0,0.0,0.0,0.6391846632394473
-2763,Unknown,39,Female,Unknown,Unknown,Unknown,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2764,0.0,36,Female,master's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2769,0.0,40,Female,bachelor's degree,married,Central,Corporate Employee,0.9917491015062192,0.0082508984937809,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2771,3.0,48,Male,high school,married,Central,Freelancer,0.0,0.8800982052794853,0.1199017947205146,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2773,0.0,44,Male,Unknown,single,Eastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2774,0.0,42,Female,high school,single,Western,Entrepreneur,0.0,0.0,0.5531346996944407,0.0,0.4468653003055592,0.0,0.0,0.0,0.0,0.0
 2776,1.0,51,Female,high school,married,Eastern,Homemaker,0.9569927459949852,0.0430072540050146,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2778,0.0,27,Male,vocational certificate,single,Northeastern,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 2781,0.0,35,Female,bachelor's degree,single,Southern,Corporate Employee,0.0,0.0,0.0706654902498494,0.0,0.0,0.0,0.0068930672882598,0.0,0.0,0.9224414424618906
-2782,0.0,32,Male,Unknown,Unknown,Southern,Homemaker,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2784,0.0,41,Female,bachelor's degree,married,Northeastern,Entrepreneur,0.3805151721403529,0.4152567270767469,0.2042281007829001,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2785,1.0,59,Female,less than high school,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2791,0.0,39,Male,bachelor's degree,married,Northern,Professional,0.8116455941437924,0.1865605543718627,0.0017938514843448,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -988,42 +885,30 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2797,0.0,27,Female,high school,single,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2810,0.0,56,Female,master's degree,single,Northeastern,Corporate Employee,0.7379081579318885,0.0,0.2101476529740203,0.0,0.0,0.0,0.0,0.0428916748121333,0.0090525142819578,0.0
 2814,0.0,47,Male,others,married,Eastern,Corporate Employee,0.0,0.5328035228953797,0.4671964771046203,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2815,0.0,22,Female,Unknown,single,Central,Student,0.0,0.4601545225718792,0.0,0.4480498901731367,0.0,0.0,0.0917955872549841,0.0,0.0,0.0
-2817,0.0,27,Female,Unknown,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2821,0.0,47,Male,bachelor's degree,married,Central,Corporate Employee,0.8255304816436511,0.0,0.0,0.0,0.0,0.0,0.1744695183563489,0.0,0.0,0.0
 2824,0.0,58,Male,bachelor's degree,married,Southern,Agriculture/Trade,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2825,0.0,29,Male,Unknown,single,Northern,Corporate Employee,0.4398910829678571,0.0,0.3211512829423435,0.2389576340897994,0.0,0.0,0.0,0.0,0.0,0.0
 2827,0.0,32,Female,less than high school,single,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2832,0.0,40,Female,Unknown,single,Central,Corporate Employee,0.113464582729482,0.0,0.0,0.0,0.886535417270518,0.0,0.0,0.0,0.0,0.0
-2837,0.0,31,Female,Unknown,single,Eastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2840,0.0,26,Male,others,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2842,0.0,50,Male,high school,married,Northern,Corporate Employee,0.9226372796656016,0.0773627203343984,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2846,0.0,33,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.395751953125,0.0,0.0,0.0,0.0,0.0,0.0,0.604248046875,0.0
 2847,0.0,38,Male,high school,single,Southern,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2848,1.0,51,Female,master's degree,married,Central,Corporate Employee,0.0,0.0,0.2100840336134453,0.0,0.0896358543417367,0.0,0.0,0.7002801120448179,0.0,0.0
 2849,0.0,37,Female,vocational certificate,married,Southern,Entrepreneur,0.0,0.1749742702492291,0.1855559231471638,0.0,0.6394698066036072,0.0,0.0,0.0,0.0,0.0
-2854,0.0,20,Female,Unknown,single,Northeastern,Corporate Employee,0.0,0.3662335114990437,0.4587064188692198,0.1750600696317363,0.0,0.0,0.0,0.0,0.0,0.0
 2855,0.0,47,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.2648574862987184,0.2253325998818328,0.2743923558054723,0.0,0.0,0.0,0.2354175580139763,0.0
 2857,0.0,41,Male,others,married,Northeastern,Entrepreneur,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2867,0.0,53,Male,bachelor's degree,married,Northern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2868,0.0,55,Male,master's degree,married,Central,Entrepreneur,0.0,0.3603026734090553,0.3480528487193174,0.2836597313132783,0.0,0.0079847465583488,0.0,0.0,0.0,0.0
 2874,0.0,61,Male,bachelor's degree,single,Eastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-2875,0.0,32,Male,high school,Unknown,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2878,0.0,43,Male,bachelor's degree,married,Central,Corporate Employee,0.1303224840135523,0.0,0.4719145253919126,0.3977629905945351,0.0,0.0,0.0,0.0,0.0,0.0
 2880,0.0,42,Female,bachelor's degree,widow,Central,Corporate Employee,0.6302168051942576,0.0,0.1813510922497533,0.1840906135546713,0.0,0.0,0.0043414890013176,0.0,0.0,0.0
-2881,0.0,30,Male,Unknown,married,Central,Freelancer,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 2883,0.0,43,Female,high school,single,Western,Freelancer,0.5425867507886435,0.0,0.4127234490010515,0.0446898002103049,0.0,0.0,0.0,0.0,0.0,0.0
-2884,0.0,26,Female,Unknown,single,Eastern,Entrepreneur,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 2885,0.0,28,Male,high school,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-2888,0.0,28,Female,Unknown,single,Central,Corporate Employee,0.6578677640119134,0.0,0.2087954079246683,0.0901585181976573,0.0,0.0,0.0,0.0,0.0431783098657609,0.0
-2892,0.0,36,Female,Unknown,single,Northern,Unemployed,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 2898,0.0,51,Male,bachelor's degree,married,Central,Corporate Employee,0.7900980398796342,0.2099019601203658,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2901,0.0,42,Female,others,single,Eastern,Entrepreneur,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2903,1.0,73,Male,master's degree,married,Central,Unemployed,0.0,0.0661691769422643,0.0,0.0,0.0,0.6225538820384905,0.3112769410192452,0.0,0.0,0.0
 2905,0.0,45,Male,vocational certificate,married,Northeastern,Entrepreneur,0.0,0.1282051282051282,0.0,0.0,0.0,0.8717948717948718,0.0,0.0,0.0,0.0
 2909,0.0,37,Male,others,married,Northeastern,Unemployed,0.0,0.1064768854744045,0.029669382206322,0.0,0.0,0.0,0.8638537323192734,0.0,0.0,0.0
 2910,0.0,31,Male,bachelor's degree,single,Central,Freelancer,0.0,0.0,0.9051708851488356,0.0948291148511645,0.0,0.0,0.0,0.0,0.0,0.0
-2913,0.0,22,Male,Unknown,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2915,0.0,53,Male,high school,single,Central,Corporate Employee,0.1267826347163927,0.1263888998259691,0.1729598626652702,0.0,0.573868602792368,0.0,0.0,0.0,0.0,0.0
 2919,0.0,72,Male,bachelor's degree,married,Northeastern,Unemployed,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2924,0.0,36,Male,vocational certificate,single,Central,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1038,7 +923,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2945,0.0,33,Male,high school,single,Western,Student,0.0,0.5452414794205704,0.0997973810747875,0.1508301327607585,0.0,0.0,0.0,0.0,0.2041310067438836,0.0
 2946,0.0,56,Female,less than high school,single,Northeastern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 2947,0.0,33,Female,vocational certificate,single,Northeastern,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-2948,0.0,34,Male,Unknown,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2950,0.0,31,Female,less than high school,married,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2954,0.0,30,Female,bachelor's degree,married,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2955,0.0,27,Female,others,single,Southern,Corporate Employee,0.5928827946457721,0.0,0.4071172053542279,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1060,14 +944,12 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3007,0.0,53,Male,others,married,Central,Entrepreneur,0.0,0.0359535930478573,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.9640464069521428
 3010,0.0,26,Male,vocational certificate,single,Western,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 3014,0.0,25,Female,less than high school,single,Southern,Student,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3015,0.0,20,Female,Unknown,single,Western,Corporate Employee,0.0,0.0,0.6405693950177936,0.3594306049822064,0.0,0.0,0.0,0.0,0.0,0.0
 3017,2.0,49,Female,others,single,Northeastern,Corporate Employee,0.6413971168328193,0.0,0.0,0.0,0.0,0.0,0.0,0.3586028831671806,0.0,0.0
 3018,0.0,29,Female,high school,single,Central,Corporate Employee,0.0,0.1105380006121693,0.8016130261080866,0.0255293326685905,0.0,0.0323794808322829,0.0,0.0,0.0299401597788705,0.0
 3019,0.0,39,Female,vocational certificate,single,Northeastern,Student,0.0,0.3057373525056131,0.6942626474943868,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3020,0.0,45,Female,bachelor's degree,married,Northeastern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3022,0.0,51,Female,others,single,Northeastern,Corporate Employee,0.0,0.4162808611956208,0.5837191388043791,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3023,0.0,27,Female,others,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3024,0.0,52,Female,Unknown,married,Northeastern,Entrepreneur,0.0,0.0,0.506749079670954,0.493250920329046,0.0,0.0,0.0,0.0,0.0,0.0
 3025,0.0,62,Female,bachelor's degree,married,Southern,Professional,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3026,0.0,39,Female,bachelor's degree,single,Northeastern,Corporate Employee,0.0,0.7542067514489512,0.0,0.2457932485510488,0.0,0.0,0.0,0.0,0.0,0.0
 3028,0.0,31,Female,bachelor's degree,single,Southern,Corporate Employee,0.0,0.0778809782215835,0.4713831920547678,0.0015164972149528,0.0,0.1557695389292417,0.2934497935794541,0.0,0.0,0.0
@@ -1079,12 +961,8 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3048,0.0,53,Male,high school,married,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3050,0.0,35,Female,high school,single,Southern,Freelancer,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3053,0.0,25,Female,less than high school,single,Eastern,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3054,0.0,20,Male,Unknown,single,Southern,Student,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
 3057,0.0,49,Male,high school,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3061,1.0,51,Male,less than high school,married,Western,Corporate Employee,0.0,0.0732034470091432,0.0,0.9267965529908568,0.0,0.0,0.0,0.0,0.0,0.0
-3067,0.0,26,Female,Unknown,single,Central,Student,0.0,0.0313741688143205,0.0,0.0,0.8784534565107363,0.0,0.0,0.0,0.0,0.0901723746749431
-3070,0.0,26,Male,Unknown,single,Central,Freelancer,0.0,0.0924214417744916,0.2144177449168207,0.6931608133086876,0.0,0.0,0.0,0.0,0.0,0.0
-3071,0.0,35,Male,Unknown,single,Northern,Corporate Employee,0.8694951414308072,0.0,0.0652524292845963,0.0652524292845963,0.0,0.0,0.0,0.0,0.0,0.0
 3075,0.0,39,Male,bachelor's degree,single,Northern,Corporate Employee,0.7078186698698952,0.0442999128068553,0.0,0.1003643145591477,0.0,0.1211747629847978,0.0263423397793038,0.0,0.0,0.0
 3078,0.0,23,Male,high school,single,Central,Student,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3082,0.0,47,Female,others,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1094,7 +972,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3091,0.0,37,Female,others,married,Central,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3095,0.0,21,Male,others,single,Central,Student,0.0,0.0,0.4615959079920991,0.4615959079920991,0.0768081840158017,0.0,0.0,0.0,0.0,0.0
 3097,0.0,28,Male,others,single,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
-3098,0.0,37,Male,Unknown,Unknown,Northeastern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3099,0.0,28,Female,others,single,Southern,Student,0.6106870229007634,0.0,0.3893129770992366,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3100,0.0,24,Male,vocational certificate,single,Northern,Student,0.0,0.0157072729147406,0.5400374099193956,0.3982356405502089,0.0372817633342013,0.0,0.0087379132814534,0.0,0.0,0.0
 3105,0.0,36,Female,high school,single,Southern,Freelancer,0.0,0.0,0.8512133805346057,0.0442018604247325,0.0,0.0,0.1045847590406617,0.0,0.0,0.0
@@ -1102,7 +979,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3109,0.0,37,Female,high school,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3112,0.0,26,Male,high school,single,Northeastern,Freelancer,0.0,0.4918336236933798,0.0,0.5081663763066202,0.0,0.0,0.0,0.0,0.0,0.0
 3116,0.0,28,Female,vocational certificate,single,Eastern,Corporate Employee,0.0,0.0,0.6142494704745944,0.3857505295254055,0.0,0.0,0.0,0.0,0.0,0.0
-3117,0.0,28,Female,Unknown,single,Eastern,Corporate Employee,0.9366778581958696,0.0,0.0633221418041305,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3118,0.0,36,Female,others,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3119,0.0,48,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3121,0.0,31,Female,bachelor's degree,married,Central,Corporate Employee,0.0,0.9915356711003628,0.0084643288996372,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1114,7 +990,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3137,0.0,39,Female,bachelor's degree,divorce,Central,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3142,0.0,35,Female,bachelor's degree,single,Central,Unemployed,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3143,0.0,51,Female,vocational certificate,single,Southern,Entrepreneur,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
-3144,0.0,22,Female,Unknown,single,Central,Student,0.8152302700422358,0.0,0.1047186119364369,0.012524080015688,0.0,0.0294975042474758,0.0,0.0,0.0380295337581633,0.0
 3145,0.0,27,Female,others,single,Central,Corporate Employee,0.9235699561968564,0.0764300438031435,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3148,0.0,49,Male,others,married,Northeastern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3149,0.0,28,Female,bachelor's degree,single,Central,Corporate Employee,0.2605071205279611,0.0,0.3697464397360194,0.3697464397360194,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1137,17 +1012,14 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3198,0.0,29,Female,vocational certificate,single,Southern,Corporate Employee,0.0,0.1306761407793938,0.0,0.0,0.8571111357832797,0.0,0.0,0.0,0.0122127234373265,0.0
 3200,0.0,41,Female,others,married,Eastern,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
 3210,0.0,50,Male,bachelor's degree,married,Southern,Corporate Employee,0.9029279503178232,0.0,0.0,0.0,0.0,0.0,0.0970720496821767,0.0,0.0,0.0
-3218,0.0,22,Female,Unknown,single,Central,Student,0.0,0.0,0.3103448275862069,0.6896551724137931,0.0,0.0,0.0,0.0,0.0,0.0
 3222,0.0,24,Female,less than high school,single,Western,Corporate Employee,0.9271237357992502,0.0,0.0728762642007498,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3223,2.0,59,Female,bachelor's degree,single,Central,Corporate Employee,0.7575958867812812,0.0,0.1212020566093594,0.1212020566093594,0.0,0.0,0.0,0.0,0.0,0.0
 3226,0.0,23,Male,bachelor's degree,single,Central,Student,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3227,0.0,42,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.9364729932795915,0.0635270067204084,0.0,0.0,0.0,0.0,0.0,0.0
-3228,0.0,27,Male,Unknown,single,Central,Unemployed,0.0,0.9176416609314064,0.0,0.0,0.0,0.0,0.0,0.0,0.0823583390685937,0.0
 3232,0.0,36,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3234,0.0,43,Female,vocational certificate,married,Northern,Freelancer,0.144211249906018,0.5163797084948928,0.0,0.0,0.0,0.0,0.3394090415990892,0.0,0.0,0.0
 3235,0.0,40,Female,high school,married,Eastern,Entrepreneur,0.0,0.8102214715427096,0.1897785284572903,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3236,0.0,29,Male,others,single,Northern,Professional,0.6728019428439688,0.1250985196169799,0.0586135549707225,0.0,0.1434859825683287,0.0,0.0,0.0,0.0,0.0
-3239,0.0,22,Male,Unknown,single,Southern,Student,0.0,0.0,0.0493237867939538,0.0,0.0,0.0,0.950676213206046,0.0,0.0,0.0
 3240,0.0,33,Male,vocational certificate,single,Central,Entrepreneur,0.0,0.326152064265954,0.2458047526441621,0.2739050645046427,0.0,0.0,0.1541381185852412,0.0,0.0,0.0
 3244,0.0,41,Male,bachelor's degree,married,Central,Corporate Employee,0.9029057576579672,0.0970942423420329,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3250,0.0,44,Female,bachelor's degree,single,Central,Unemployed,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
@@ -1164,12 +1036,9 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3283,0.0,61,Male,bachelor's degree,married,Central,Entrepreneur,0.0,0.4899188689854606,0.0,0.0,0.4245894678861182,0.0,0.0309835557646626,0.0,0.0545081073637584,0.0
 3285,0.0,29,Male,bachelor's degree,single,Southern,Professional,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3287,0.0,32,Female,vocational certificate,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3288,0.0,25,Female,Unknown,single,Southern,Freelancer,0.3379910324264797,0.0,0.3351626226213257,0.3268463449521945,0.0,0.0,0.0,0.0,0.0,0.0
 3290,0.0,25,Male,high school,single,Central,Corporate Employee,0.5794481010194261,0.0,0.3431389177745451,0.0774129812060287,0.0,0.0,0.0,0.0,0.0,0.0
 3293,0.0,56,Female,high school,widow,Central,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-3295,0.0,26,Female,Unknown,single,Central,Corporate Employee,0.1974390547188237,0.0,0.4883568582017578,0.3142040870794184,0.0,0.0,0.0,0.0,0.0,0.0
 3296,0.0,31,Male,bachelor's degree,single,Central,Student,0.0,0.0,0.944733112895607,0.0,0.0,0.0,0.0,0.055266887104393,0.0,0.0
-3297,0.0,46,Female,Unknown,married,Eastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3298,0.0,52,Female,high school,single,Central,Entrepreneur,0.0,0.0400687756747346,0.0,0.9385326792386248,0.0,0.0,0.0,0.0,0.0213985450866406,0.0
 3300,0.0,35,Female,bachelor's degree,single,Southern,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 3301,0.0,39,Female,high school,single,Central,Unemployed,0.0,0.0,0.0,0.6101095146578811,0.0,0.1883865653884872,0.1538543668588511,0.0,0.0323968152283334,0.015252737866447
@@ -1177,7 +1046,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3310,0.0,50,Female,master's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3314,0.0,42,Male,high school,married,Western,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
 3315,0.0,64,Female,bachelor's degree,married,Central,Corporate Employee,0.6111337905671287,0.022416746776358,0.0,0.3664494626565131,0.0,0.0,0.0,0.0,0.0,0.0
-3326,0.0,26,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.4898210968254098,0.5101789031745901,0.0,0.0,0.0,0.0,0.0,0.0
 3327,0.0,41,Female,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3328,0.0,31,Male,high school,single,Eastern,Corporate Employee,0.6078062155836483,0.0,0.3921937844163517,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3329,0.0,46,Female,less than high school,single,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1186,10 +1054,7 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3337,0.0,49,Female,bachelor's degree,single,Eastern,Professional,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 3338,0.0,33,Female,bachelor's degree,single,Northeastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3341,1.0,70,Female,others,married,Central,Entrepreneur,0.1347700861670219,0.3406804190568835,0.0,0.0,0.0,0.5245494947760945,0.0,0.0,0.0,0.0
-3343,0.0,28,Female,Unknown,single,Central,Corporate Employee,0.9802720190149214,0.0,0.0197279809850785,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3344,0.0,41,Female,vocational certificate,married,Eastern,Corporate Employee,0.2593599996921781,0.0157193125566344,0.0,0.7002949319040135,0.024625755847174,0.0,0.0,0.0,0.0,0.0
-3351,0.0,22,Female,Unknown,married,Southern,Unemployed,0.0,0.5402581438229871,0.0,0.2692071296865396,0.0,0.0,0.1905347264904732,0.0,0.0,0.0
-3352,0.0,27,Female,Unknown,Unknown,Central,Corporate Employee,0.0,0.0594849873312429,0.1791146987538847,0.0828537411672255,0.0515528196954064,0.6269937530522405,0.0,0.0,0.0,0.0
 3353,0.0,31,Male,less than high school,single,Central,Corporate Employee,0.0,0.0,0.9104984220666952,0.0895015779333047,0.0,0.0,0.0,0.0,0.0,0.0
 3354,0.0,25,Female,vocational certificate,single,Eastern,Student,0.0,0.0,0.4814025365021848,0.4814025365021848,0.0,0.0,0.0371949269956303,0.0,0.0,0.0
 3355,0.0,51,Male,bachelor's degree,single,Central,Entrepreneur,0.2299273144374738,0.0,0.0,0.0,0.7700726855625262,0.0,0.0,0.0,0.0,0.0
@@ -1220,15 +1085,12 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3416,0.0,64,Female,master's degree,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3418,0.0,31,Male,bachelor's degree,single,Southern,Student,0.0,0.0,0.644196074095665,0.0,0.0,0.1949885921622627,0.0,0.1608153337420723,0.0,0.0
 3419,0.0,53,Male,bachelor's degree,married,Central,Corporate Employee,0.3113861856887142,0.0,0.0,0.0,0.6886138143112858,0.0,0.0,0.0,0.0,0.0
-3420,0.0,26,Male,Unknown,single,Central,Corporate Employee,0.0,0.6966082899169335,0.1203105057225953,0.0,0.0,0.0,0.1830812043604712,0.0,0.0,0.0
 3421,1.0,47,Male,bachelor's degree,married,Central,Corporate Employee,0.2911741868691226,0.6750388232249159,0.0125204900353722,0.0140734190320075,0.0,0.0,0.0,0.00107842291433,0.0061146579242515,0.0
 3426,0.0,43,Female,bachelor's degree,single,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3432,0.0,44,Female,bachelor's degree,single,Northern,Corporate Employee,0.5915864574028171,0.0,0.216818901581705,0.014808887994936,0.1767857530205418,0.0,0.0,0.0,0.0,0.0
-3433,0.0,19,Female,Unknown,Unknown,Northeastern,Student,0.0,0.0,0.7867647058823529,0.213235294117647,0.0,0.0,0.0,0.0,0.0,0.0
 3436,0.0,42,Male,less than high school,married,Eastern,Corporate Employee,0.3879605389521317,0.1129536954276182,0.0,0.0,0.4990857656202502,0.0,0.0,0.0,0.0,0.0
 3437,0.0,31,Male,high school,single,Eastern,Corporate Employee,0.6156394434657688,0.0,0.1219280331237887,0.2624325234104424,0.0,0.0,0.0,0.0,0.0,0.0
 3443,0.0,26,Female,high school,single,Eastern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3445,0.0,28,Female,Unknown,Unknown,Central,Corporate Employee,0.65192023104053,0.3480797689594701,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3446,0.0,34,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3447,0.0,24,Male,others,single,Central,Corporate Employee,0.0,0.0,0.6519759310456985,0.3480240689543015,0.0,0.0,0.0,0.0,0.0,0.0
 3450,0.0,41,Male,bachelor's degree,single,Eastern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1248,9 +1110,7 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3473,0.0,33,Female,bachelor's degree,single,Central,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3478,0.0,49,Female,bachelor's degree,married,Eastern,Corporate Employee,0.6075432570799041,0.3748090578334891,0.0176476850866067,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3487,0.0,54,Female,less than high school,married,Central,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-3489,0.0,33,Female,Unknown,single,Northeastern,Homemaker,0.0,0.1970479704797048,0.1649446494464944,0.0003690036900369,0.6376383763837639,0.0,0.0,0.0,0.0,0.0
 3495,0.0,65,Female,high school,married,Southern,Homemaker,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3503,0.0,25,Female,Unknown,single,Northeastern,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 3504,0.0,62,Female,bachelor's degree,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3505,1.0,48,Female,less than high school,separate,Southern,Corporate Employee,0.6375295783816117,0.0,0.3624704216183883,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3507,0.0,42,Female,bachelor's degree,single,Central,Corporate Employee,0.967188640707413,0.0,0.032811359292587,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1258,12 +1118,10 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3513,0.0,49,Female,bachelor's degree,single,Central,Professional,0.0301487957203526,0.0028179864011272,0.012626660205349,0.0068212942408542,0.9475852634323167,0.0,0.0,0.0,0.0,0.0
 3514,0.0,32,Male,less than high school,married,Northeastern,Corporate Employee,0.462916439273186,0.040698923816871,0.196845195671768,0.1409179945672927,0.1586214466708821,0.0,0.0,0.0,0.0,0.0
 3519,0.0,27,Female,high school,single,Central,Student,0.0,0.0,0.757455268389662,0.2425447316103379,0.0,0.0,0.0,0.0,0.0,0.0
-3521,0.0,22,Female,Unknown,single,Northeastern,Student,0.1142138223324922,0.7645438124222468,0.0351427145638437,0.0,0.0,0.0,0.0,0.0860996506814172,0.0,0.0
 3523,0.0,44,Male,bachelor's degree,single,Central,Corporate Employee,0.3060099364387748,0.0,0.5637877712506627,0.0888415944499668,0.0,0.0,0.0,0.0,0.0413606978605956,0.0
 3524,0.0,38,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3526,1.0,53,Female,others,married,Central,Entrepreneur,0.0,0.394929509287832,0.0,0.6050704907121679,0.0,0.0,0.0,0.0,0.0,0.0
 3530,0.0,24,Female,others,others,Northeastern,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3532,0.0,39,Male,Unknown,married,Eastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3537,0.0,30,Male,bachelor's degree,single,Central,Entrepreneur,0.0,0.0,0.9735141434473992,0.0264858565526009,0.0,0.0,0.0,0.0,0.0,0.0
 3539,0.0,55,Male,high school,married,Southern,Entrepreneur,0.0,0.0172205385140935,0.0,0.9827794614859064,0.0,0.0,0.0,0.0,0.0,0.0
 3540,0.0,31,Female,bachelor's degree,single,Eastern,Student,0.0,0.0,0.5594897528490362,0.038456127186606,0.0,0.0,0.0,0.0,0.4020541199643577,0.0
@@ -1271,7 +1129,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3546,0.0,59,Male,bachelor's degree,married,Central,Corporate Employee,0.5286583954531593,0.4713416045468406,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3547,0.0,42,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3553,0.0,27,Female,vocational certificate,single,Northern,Corporate Employee,0.0,0.1890415494123489,0.089254579686782,0.0,0.0,0.0,0.7217038709008688,0.0,0.0,0.0
-3559,0.0,21,Male,Unknown,single,Central,Student,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 3563,1.0,47,Male,vocational certificate,married,Central,Corporate Employee,0.0,0.0072160068505833,0.9927839931494166,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3565,0.0,37,Male,vocational certificate,single,Northeastern,Unemployed,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3566,0.0,39,Female,others,single,Northern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1280,19 +1137,16 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3582,0.0,45,Female,vocational certificate,married,Eastern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3586,0.0,44,Male,bachelor's degree,married,Northeastern,Corporate Employee,0.0107585354307913,0.0,0.9892414645692088,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3588,0.0,22,Female,less than high school,single,Central,Corporate Employee,0.0,0.4471865049619763,0.5528134950380237,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3591,0.0,53,Male,Unknown,married,Eastern,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3592,0.0,46,Female,high school,separate,Central,Corporate Employee,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
 3596,0.0,48,Male,others,married,Northeastern,Entrepreneur,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
 3597,1.0,32,Female,high school,married,Northeastern,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3607,0.0,26,Male,less than high school,single,Northern,Student,0.0,0.0,0.8852459016393442,0.0,0.0,0.0,0.0,0.0,0.1147540983606557,0.0
 3608,0.0,84,Female,master's degree,married,Central,Homemaker,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
 3609,0.0,35,Male,high school,single,Eastern,Student,0.0,0.0029363653146754,0.072217543400774,0.0042805307543004,0.078362599821058,0.0,0.0051602717375462,0.0,0.0,0.8370426889716458
-3610,0.0,42,Male,Unknown,single,Southern,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3615,0.0,25,Female,others,single,Southern,Student,0.5642710851463874,0.0107943862476497,0.1412251544453397,0.1204505774912704,0.0,0.0,0.1632587966693527,0.0,0.0,0.0
 3616,0.0,37,Female,bachelor's degree,single,Central,Corporate Employee,0.6656882408132699,0.1386983206080586,0.1514551573945753,0.0,0.0,0.0,0.0328389556953853,0.0025823556248009,0.0087369698639098,0.0
 3622,0.0,39,Female,high school,single,Central,Corporate Employee,0.0,0.0,0.0259403372243839,0.0129701686121919,0.0,0.5421530479896238,0.0,0.4189364461738002,0.0,0.0
 3623,0.0,46,Female,bachelor's degree,married,Central,Unemployed,0.0,0.2468821628055168,0.0,0.3423880479397614,0.0,0.1345095902620491,0.0,0.0,0.2762201989926726,0.0
-3626,0.0,29,Male,Unknown,single,Central,Unemployed,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3627,0.0,33,Female,others,single,Eastern,Student,0.7220537699615929,0.0,0.1098179160641258,0.1098179160641258,0.0,0.0291551989550776,0.0291551989550776,0.0,0.0,0.0
 3636,0.0,45,Male,bachelor's degree,married,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3640,0.0,29,Male,vocational certificate,single,Central,Corporate Employee,0.2935766089283199,0.1228955428812843,0.2917639240951978,0.2917639240951978,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1308,7 +1162,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3660,0.0,28,Female,less than high school,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3663,0.0,51,Female,others,others,Central,Professional,0.0,0.4385980506449418,0.1543894676024847,0.0771947338012423,0.0,0.0136748864129747,0.0,0.1387112103300092,0.1774316512083471,0.0
 3665,0.0,37,Male,bachelor's degree,married,Central,Corporate Employee,0.0505057902418697,0.178047832018906,0.0,0.0,0.7241372492012008,0.0,0.0,0.0,0.0473091285380234,0.0
-3666,0.0,21,Female,Unknown,single,Southern,Entrepreneur,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3669,0.0,48,Male,bachelor's degree,married,Central,Entrepreneur,0.3052430772386901,0.0,0.0001903797039543,0.0001903797039543,0.6943761633534012,0.0,0.0,0.0,0.0,0.0
 3671,0.0,48,Female,bachelor's degree,married,Central,Freelancer,0.0,0.0,0.7547683923705722,0.2452316076294278,0.0,0.0,0.0,0.0,0.0,0.0
 3675,0.0,34,Male,high school,single,Central,Freelancer,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1322,7 +1175,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3698,0.0,32,Female,bachelor's degree,single,Central,Corporate Employee,0.1028808348436811,0.0009173541106894,0.0151543469724742,0.0,0.8779473215831989,0.0,0.0,0.0,0.0031001424899562,0.0
 3700,0.0,46,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.7973820561767112,0.2026179438232888,0.0,0.0,0.0,0.0,0.0,0.0
 3702,0.0,43,Male,bachelor's degree,single,Central,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3704,0.0,32,Female,Unknown,single,Central,Unemployed,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3705,0.0,52,Female,high school,married,Northern,Entrepreneur,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3706,0.0,48,Male,bachelor's degree,married,Central,Entrepreneur,0.3111722357533057,0.2293685124430478,0.0,0.0,0.0,0.0,0.0,0.0,0.4594592518036465,0.0
 3707,0.0,47,Male,others,married,Central,Entrepreneur,0.2566988224345229,0.0,0.0,0.7433011775654771,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1341,16 +1193,13 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3737,0.0,47,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3740,0.0,41,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3742,0.0,24,Female,others,single,Southern,Student,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
-3748,0.0,24,Male,Unknown,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3749,0.0,58,Male,vocational certificate,married,Central,Entrepreneur,0.0,0.0,0.2104179708869826,0.7895820291130174,0.0,0.0,0.0,0.0,0.0,0.0
 3750,0.0,35,Male,high school,single,Central,Corporate Employee,0.0,0.0,0.5108463323475444,0.4891536676524556,0.0,0.0,0.0,0.0,0.0,0.0
 3754,1.0,35,Female,others,others,Northeastern,Corporate Employee,0.0,0.1308266389622019,0.0,0.0,0.0,0.0,0.8395292339820446,0.0,0.0,0.0
-3756,0.0,19,Female,Unknown,single,Central,Corporate Employee,0.0,0.1796896373209648,0.7369745741667474,0.0833357885122878,0.0,0.0,0.0,0.0,0.0,0.0
 3758,0.0,28,Female,high school,single,Eastern,Corporate Employee,0.0,0.0,0.0,0.0958466453674121,0.0,0.0,0.0,0.0,0.9041533546325878,0.0
 3759,0.0,39,Female,less than high school,married,Central,Entrepreneur,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
 3760,0.0,57,Female,less than high school,married,Central,Entrepreneur,0.3065683640608811,0.6934316359391188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3761,0.0,52,Female,bachelor's degree,single,Central,Entrepreneur,0.930909669464222,0.0468159579968975,0.0111371862694403,0.0111371862694403,0.0,0.0,0.0,0.0,0.0,0.0
-3767,0.0,42,Female,Unknown,Unknown,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3770,0.0,32,Male,high school,single,Central,Corporate Employee,0.8311061935659723,0.0,0.1688938064340277,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3774,0.0,24,Male,high school,single,Southern,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3775,0.0,55,Female,bachelor's degree,single,Central,Corporate Employee,0.7006301000032695,0.2993698999967303,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1387,14 +1236,11 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3845,0.0,28,Female,high school,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3846,0.0,32,Male,high school,single,Central,Student,0.0,0.0,0.430391061452514,0.5696089385474861,0.0,0.0,0.0,0.0,0.0,0.0
 3847,0.0,63,Male,bachelor's degree,married,Northeastern,Homemaker,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3848,0.0,25,Female,Unknown,married,Central,Entrepreneur,0.6988139847160804,0.0,0.3011860152839195,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3849,0.0,39,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-3851,0.0,41,Female,Unknown,single,Central,Corporate Employee,0.7178040020523345,0.0,0.0,0.0,0.2821959979476655,0.0,0.0,0.0,0.0,0.0
 3857,0.0,38,Female,bachelor's degree,married,Central,Corporate Employee,0.0,0.0518624196365698,0.8813855850203243,0.0392050675531942,0.0,0.0,0.0275469277899117,0.0,0.0,0.0
 3858,0.0,33,Female,others,single,Central,Corporate Employee,0.6301369863013698,0.0,0.0,0.0,0.3698630136986301,0.0,0.0,0.0,0.0,0.0
 3860,0.0,35,Female,vocational certificate,married,Central,Entrepreneur,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3865,0.0,26,Male,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3869,0.0,23,Female,Unknown,married,Northeastern,Homemaker,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3870,0.0,34,Female,high school,divorce,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3871,0.0,60,Female,others,single,Northeastern,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3873,0.0,24,Female,less than high school,married,Northeastern,Freelancer,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
@@ -1412,19 +1258,16 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3924,0.0,49,Male,high school,married,Central,Entrepreneur,0.6332116279119686,0.3667883720880314,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3925,0.0,44,Female,vocational certificate,married,Western,Freelancer,0.1286449399656946,0.0,0.8713550600343053,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3931,0.0,44,Male,bachelor's degree,single,Central,Freelancer,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3933,0.0,41,Female,Unknown,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3935,0.0,48,Female,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3936,0.0,41,Male,bachelor's degree,single,Eastern,Entrepreneur,0.9313231834641714,0.041531045585046,0.0238103104747304,1.5733304132320863e-05,0.0,0.0,0.0,0.0,0.0,0.0033197271719197
 3937,0.0,53,Female,less than high school,married,Eastern,Freelancer,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 3938,0.0,30,Female,high school,single,Western,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3941,0.0,24,Female,Unknown,single,Central,Corporate Employee,0.8611983080571023,0.0,0.060742097814861,0.0780595941280366,0.0,0.0,0.0,0.0,0.0,0.0
 3942,0.0,25,Female,others,single,Southern,Student,0.0,0.0,0.789157049885442,0.0,0.0,0.210842950114558,0.0,0.0,0.0,0.0
 3943,0.0,30,Male,vocational certificate,single,Central,Corporate Employee,0.7891770229940405,0.0,0.0,0.0,0.0,0.2108229770059595,0.0,0.0,0.0,0.0
 3946,0.0,28,Female,others,single,Central,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3950,0.0,48,Female,less than high school,married,Central,Entrepreneur,0.0,0.3112327344590263,0.0,0.6887672655409738,0.0,0.0,0.0,0.0,0.0,0.0
 3952,0.0,37,Female,bachelor's degree,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3955,0.0,42,Female,bachelor's degree,married,Southern,Corporate Employee,0.9820465561524476,0.0,0.0179534438475522,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3956,0.0,26,Male,Unknown,single,Central,Corporate Employee,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 3957,0.0,29,Female,bachelor's degree,single,Eastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3959,0.0,48,Male,high school,married,Northern,Freelancer,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 3962,0.0,24,Female,high school,single,Central,Student,0.9085365853658536,0.0,0.0,0.0914634146341463,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1434,15 +1277,12 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 3978,0.0,47,Male,high school,married,Northeastern,Other,0.0,0.7423853400084154,0.0,0.0,0.0,0.0,0.2576146599915846,0.0,0.0,0.0
 3979,0.0,29,Male,others,others,Central,Student,0.0,0.0,0.0,0.8711451581221764,0.0,0.0,0.0,0.1288548418778236,0.0,0.0
 3981,0.0,56,Female,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3985,0.0,20,Male,Unknown,married,Southern,Freelancer,0.0,0.0,0.0,0.0,0.0,0.0,0.0038701994641262,0.0,0.9961298005358736,0.0
 3988,0.0,53,Female,master's degree,married,Central,Entrepreneur,0.3742414025623736,0.4922454484153742,0.0,0.0,0.0,0.0,0.0,0.0,0.1335131490222522,0.0
 3989,0.0,21,Male,vocational certificate,single,Northeastern,Student,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 3990,0.0,29,Female,bachelor's degree,single,Northeastern,Corporate Employee,0.0,0.179489660956805,0.4716281170360334,0.3006548598341882,0.0,0.0482273621729733,0.0,0.0,0.0,0.0
 3994,0.0,46,Male,vocational certificate,married,Southern,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 3995,1.0,57,Female,less than high school,married,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-3997,0.0,20,Female,Unknown,Unknown,Northern,Student,0.0,0.385322240158947,0.614677759841053,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4001,0.0,54,Male,high school,married,Central,Corporate Employee,0.0,0.0,0.0,0.5151983513652756,0.4848016486347243,0.0,0.0,0.0,0.0,0.0
-4002,0.0,26,Female,Unknown,single,Northern,Entrepreneur,0.0,0.0,0.5185154884083134,0.0,0.3707339835949833,0.0,0.0836310416609852,0.0,0.027119486335718,0.0
 4009,0.0,40,Male,vocational certificate,single,Southern,Entrepreneur,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
 4015,0.0,43,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.00063305162536,0.0,0.0,0.0,0.0,0.0,0.974899503054474,0.0,0.0244674453201658
 4016,0.0,25,Female,high school,single,Central,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1482,7 +1322,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 4112,0.0,25,Male,bachelor's degree,single,Central,Corporate Employee,0.0,0.0,0.5429916845094788,0.3744712317235867,0.0,0.0,0.0825370837669345,0.0,0.0,0.0
 4113,0.0,28,Female,high school,single,Central,Entrepreneur,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4114,0.0,37,Male,high school,single,Central,Corporate Employee,0.7922988551281542,0.2077011448718456,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-4117,0.0,22,Male,Unknown,Unknown,Central,Corporate Employee,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
 4118,0.0,23,Female,others,single,Central,Student,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4121,0.0,40,Male,vocational certificate,single,Central,Corporate Employee,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
 4122,0.0,30,Male,others,single,Central,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1495,7 +1334,6 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 4151,0.0,25,Female,high school,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4153,0.0,54,Male,less than high school,married,Southern,Entrepreneur,0.0,0.0808907066575778,0.0,0.7585397258198894,0.1605695675225327,0.0,0.0,0.0,0.0,0.0
 4155,0.0,52,Female,bachelor's degree,others,Central,Corporate Employee,0.6965014508242312,0.0,0.0,0.0,0.3034985491757688,0.0,0.0,0.0,0.0,0.0
-4156,0.0,24,Male,Unknown,single,Central,Student,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4158,0.0,26,Female,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4159,0.0,36,Female,high school,single,Northeastern,Corporate Employee,0.0,0.7581903276131046,0.2418096723868954,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4160,0.0,45,Male,bachelor's degree,single,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1521,13 +1359,11 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 4204,0.0,23,Female,others,others,Northeastern,Student,0.0,0.1274867266296424,0.4362566366851788,0.4362566366851788,0.0,0.0,0.0,0.0,0.0,0.0
 4208,0.0,34,Female,bachelor's degree,married,Central,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4210,0.0,24,Male,others,single,Northern,Student,0.9375183930178004,0.0624816069821997,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-4214,0.0,46,Male,Unknown,Unknown,Central,Entrepreneur,0.0,0.0,0.627039627039627,0.0,0.0,0.372960372960373,0.0,0.0,0.0,0.0
 4216,0.0,29,Male,bachelor's degree,single,Central,Student,0.0,0.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0,0.0
 4218,0.0,27,Female,others,others,Central,Student,0.0,0.0,0.2260014538776447,0.0,0.3837471783295711,0.0,0.1201362053793473,0.0,0.2701151624134369,0.0
 4220,0.0,41,Male,bachelor's degree,married,Northeastern,Corporate Employee,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4221,0.0,32,Female,bachelor's degree,married,Northern,Corporate Employee,0.2571700194128244,0.0,0.3714149902935877,0.3714149902935877,0.0,0.0,0.0,0.0,0.0,0.0
 4224,2.0,54,Female,less than high school,married,Central,Freelancer,0.0,0.0030000622347202,0.0,0.7143705031161091,0.0,0.1884196230994471,0.0942098115497235,0.0,0.0,0.0
-4229,0.0,29,Male,Unknown,single,Southern,Corporate Employee,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4234,0.0,57,Male,doctorate's degree,married,Central,Professional,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 4252,0.0,27,Male,high school,single,Southern,Other,0.0,0.0,0.1004398826979472,0.1004398826979472,0.7991202346041055,0.0,0.0,0.0,0.0,0.0
 4253,0.0,33,Female,others,single,Southern,Corporate Employee,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

@@ -205,6 +205,90 @@ def merge_catboost_classifier_evaluations(root_dir, output_csv_path):
         return None
     
 
+def merge_multi_nn_evaluations(root_dir, output_csv_path):
+    """
+    Merge DEFAULT THRESHOLD evaluation metrics for CatBoost classifier across T0, T1, and T1_predicted cases.
+    
+    Args:
+        root_dir (str): Root folder containing the eval_results
+        output_csv_path (str): Path to save the final CSV summary
+    """
+    records = []
+    
+    # Define the paths we need to check
+    cases = [
+        ('T0', 'multilabel/neural_network'),
+        ('T1', 'multilabel/T1/neural_network'),
+        ('T1_predicted', 'multilabel/T1_predicted/neural_network')
+    ]
+    
+    for case_name, rel_path in cases:
+        case_dir = os.path.join(root_dir, rel_path)
+        file_path = os.path.join(case_dir, 'evaluation_metrics_optimal_thrs.json')
+        
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+            
+            binary_metrics = data.get("Evaluation Metrics", {}).get("binary_metrics", {})
+            ranking_metrics = data.get("Evaluation Metrics", {}).get("ranking_metrics", {})
+            
+            f1_score = binary_metrics.get("f1_score")
+            f_beta_score = binary_metrics.get("f_beta_score")
+            ndcg = ranking_metrics.get("average_ndcg_with_probs")
+            
+            # Calculate harmonic mean of F1 and NDCG
+            if f1_score and ndcg and (f1_score + ndcg) > 0:
+                harmonic_mean = (2 * f1_score * ndcg) / (f1_score + ndcg)
+            else:
+                harmonic_mean = None
+
+            # Harmonic mean of F-Beta and NDCG
+            if f_beta_score and ndcg and (f_beta_score + ndcg) > 0:
+                harmonic_mean_fbeta = (2 * f_beta_score * ndcg) / (f_beta_score + ndcg)
+            else:
+                harmonic_mean_fbeta = None
+            
+            record = {
+                "Method": "Multilabel",
+                "Model": "Neural Network",
+                "Threshold": "Optimal Threshold",
+                "Case": case_name,
+                "Total Predictions": binary_metrics.get("total_predictions"),
+                "True Positives": binary_metrics.get("true_positives"),
+                "False Positives": binary_metrics.get("false_positives"),
+                "False Negatives": binary_metrics.get("false_negatives"),
+                "Precision": binary_metrics.get("precision"),
+                "Recall": binary_metrics.get("recall"),
+                "F1 Score": f1_score,
+                "F-Beta Score": f_beta_score,
+                "Accuracy": binary_metrics.get("accuracy"),
+                "NDCG": ndcg,
+                "Harmonic Mean (F1, NDCG)": harmonic_mean,
+                "Harmonic Mean (F-Beta, NDCG)": harmonic_mean_fbeta,
+            }
+            records.append(record)
+        else:
+            print(f"Warning: Evaluation file not found at {file_path}")
+    
+    # Create DataFrame and save
+    if records:
+        df = pd.DataFrame(records)
+        
+        # Reorder columns to have Case after Model
+        cols = df.columns.tolist()
+        case_idx = cols.index("Case")
+        cols.insert(3, cols.pop(case_idx))  # Move Case to position 3
+        df = df[cols]
+        
+        df.to_csv(output_csv_path, index=False)
+        print(f"Saved Neural Network evaluation summary to: {output_csv_path}")
+        return df
+    else:
+        print("No evaluation files found. No CSV generated.")
+        return None
+    
+
 def combine_evaluation_results(output_path='src/recommendation/evaluation/eval_results/combined_catboost_regressor_evaluation_summary.csv'):
     # Define the files and their corresponding method labels
     eval_files = {
@@ -251,9 +335,14 @@ if __name__ == "__main__":
     #     ]
     # )
 
-    merge_catboost_classifier_evaluations(
+    # merge_catboost_classifier_evaluations(
+    #     root_dir='src/recommendation/evaluation/eval_results',
+    #     output_csv_path='src/recommendation/evaluation/eval_results/catboost_classifier_summary.csv'
+    # )
+
+    merge_multi_nn_evaluations(
         root_dir='src/recommendation/evaluation/eval_results',
-        output_csv_path='src/recommendation/evaluation/eval_results/catboost_classifier_summary.csv'
+        output_csv_path='src/recommendation/evaluation/eval_results/neural_network_summary.csv'
     )
 
     # combined_results = combine_evaluation_results()
