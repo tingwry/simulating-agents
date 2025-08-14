@@ -302,10 +302,12 @@ def load_and_preprocess_data(DATA_PATH):
     numerical_features = ['Number of Children', 'Age']
     label_encode_features = ['Gender', 'Education level']
     binary_encode_features = ['Marital status', 'Region', 'Occupation Group']
-    categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
-                 'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
-                 'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-                 'government', 'travel', 'transportation', 'visit', 'system_dpst']
+    # categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
+    #              'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
+    #              'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
+    #              'government', 'travel', 'transportation', 'visit', 'system_dpst']
+    categories = ['loan','utility','finance','shopping','financial_services',
+                     'health_and_care','home_lifestyle','transport_travel','leisure','public_services']
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
@@ -335,8 +337,9 @@ def load_and_preprocess_data(DATA_PATH):
     preprocessor = ColumnTransformer(transformers=transformers)
 
     # Fit the preprocessor to the data
-    feature_cols = [col for col in df.columns if col not in categories]
-    preprocessor.fit(df[feature_cols])
+    # feature_cols = [col for col in df.columns if col not in categories and col != 'CUST_ID']
+    # feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
+    # preprocessor.fit(df[feature_cols])
     
     return df, preprocessor
 

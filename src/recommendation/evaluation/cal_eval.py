@@ -208,36 +208,30 @@ if __name__ == "__main__":
 
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
-    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=0.2)
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
-    # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=0)
-    # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
-    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
     # evaluate_transaction_predictions(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
 
         # T1 evaluation
-    evaluate_transaction_predictions(
-        method="binary", 
-        is_regressor=False, 
-        method_model="catboost", 
-        threshold=None,
-        data='T1'
-    )
-    
-    # T1_predicted evaluation
     # evaluate_transaction_predictions(
     #     method="binary", 
     #     is_regressor=False, 
     #     method_model="catboost", 
     #     threshold=None,
-    #     data='T1_predicted'
+    #     data='T1'
     # )
+    
+    # T1_predicted evaluation
+    evaluate_transaction_predictions(
+        method="binary", 
+        is_regressor=False, 
+        method_model="catboost", 
+        threshold=None,
+        data='T1_predicted'
+    )

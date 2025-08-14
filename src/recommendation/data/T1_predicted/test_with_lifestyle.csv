@@ -270,7 +270,7 @@ Number of Children,Number of Vehicles,Gender,Education level,Marital status,Savi
 0,1.0,Female,master's degree,married,6.0,6.0,4.0,1.0,2.0,1.0,0.0,1.0,19039.77,33.0,2.2,1.0,4.0,9.0,1.0,2.0,24.0,1.0,4.0,43325.0,24345.0,42.0,Central,Corporate Employee,2956
 0,0.0,Female,bachelor's degree,single,6.0,6.0,1.0,0.0,6.0,1.0,0.0,1.0,86932.27,27.0,2.25,1.0,7.0,3.0,1.0,1.0,24.0,1.0,6.0,109379.0,35496.79,52.0,Southern,Corporate Employee,2964
 0,,Female,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,2933.53,43.0,2.05,1.0,5.0,13.0,1.0,2.0,30.0,1.0,4.0,33897.0,31339.51,46.0,Central,Corporate Employee,2965
-0,,Female,others,married,4.0,4.0,1.0,2.0,1.0,2.0,0.0,1.0,111178.08,42.0,2.33,1.0,8.0,7.0,1.0,2.0,35.0,1.0,7.0,140283.6,82194.26,74.0,Central,Retiree,2972
+0,,Female,others,married,4.0,4.0,1.0,2.0,1.0,2.0,0.0,1.0,111178.08,42.0,2.33,1.0,8.0,7.0,1.0,2.0,35.0,1.0,7.0,140283.6,82194.26,74.0,Central,Retired,2972
 0,0.0,Female,high school,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,0.45,55.0,3.06,2.0,7.0,29.0,1.0,4.0,26.0,1.0,3.0,19315.0,19315.0,33.0,Central,Corporate Employee,2990
 0,0.0,Male,vocational certificate,single,9.0,9.0,2.0,2.0,5.0,0.0,0.0,1.0,11693.66,31.0,1.72,1.0,4.0,6.0,1.0,2.0,25.0,1.0,4.0,33637.0,45466.1,48.0,Central,Corporate Employee,2993
 0,1.0,Female,others,married,9.0,8.0,4.0,2.0,5.0,1.0,0.0,2.0,36068.74,315.0,10.16,1.0,24.0,89.0,1.0,11.0,226.0,1.0,17.0,340833.42,308502.84,40.0,Western,Corporate Employee,3002

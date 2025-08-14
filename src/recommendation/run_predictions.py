@@ -7,9 +7,6 @@ import torch
 from torch.utils.data import DataLoader, TensorDataset
 import json
 
-# PREDICTION_OUTPUT = 'src/recommendation/catboost/predictions/transaction_predictions_grouped_catbased.csv'
-# PREDICTION_OUTPUT_T1 = 'src/recommendation/catboost/T1/predictions/transaction_predictions_grouped_catbased.csv'
-
 
 def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0'):
     DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS, = prediction_path_indicator(
@@ -20,7 +17,13 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
     df = preprocess_unknown_values(df)
     
     # Prepare features and labels
-    feature_cols = [col for col in df.columns if col not in categories]
+    # feature_cols = [col for col in df.columns if col not in categories and col != 'CUST_ID']
+    X_df = df[feature_cols]
+
+    # Handle customer ID
+    id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
+    if id_col not in df.columns:
+        raise ValueError("No customer ID column found")
     
 
     if method == "reinforcement_learning":
@@ -49,8 +52,6 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
         predictions_df = pd.DataFrame()
         scores_df = pd.DataFrame()
         
-        # Handle customer ID
-        id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
         predictions_df['cust_id'] = df[id_col]
         scores_df['cust_id'] = df[id_col]
         
@@ -71,22 +72,23 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
         return predictions_df, scores_df
     
     else:
-        _, preprocessor = load_and_preprocess_data(TEST_DATA_PATH)
-
-        X_df = df[feature_cols]
         # Initialize output DataFrames
         binary_predictions = pd.DataFrame()
         prediction_scores = pd.DataFrame()
         
-        # Handle customer ID
-        id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
-        if id_col not in df.columns:
-            raise ValueError("No customer ID column found")
         binary_predictions['cust_id'] = df[id_col]
         prediction_scores['cust_id'] = df[id_col]
 
         if method == "binary":
-            X_all = preprocessor.fit_transform(X_df)
+            try:
+                preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
+                print("✅ Loaded preprocessor from saved models")
+            except FileNotFoundError:
+                print("⚠️ Preprocessor not found in model directory, falling back to data loading")
+                # _, preprocessor = load_and_preprocess_data(TEST_DATA_PATH)
+            
+            # Transform features using the loaded preprocessor
+            X_all = preprocessor.transform(X_df)
 
             for category in categories:
                 model_path = f"{MODEL_DIR}/{category}_model{OPTIMAL_THRS}.pkl"
@@ -216,31 +218,26 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 if __name__ == "__main__":
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
+    feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
-    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0.2)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0)
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=0.5)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
-    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=0.2)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=0)
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=0.5)
 
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None)
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=0.5)
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=0.5)
 
     # run_predictions(method="reinforcement_learning", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
 
 
     
     # T1 predictions
-    run_predictions(method="binary", is_regressor=False, categories=categories, 
-                   method_model="catboost", threshold=None, data='T1')
+    # run_predictions(method="binary", is_regressor=False, categories=categories, 
+    #                method_model="catboost", threshold=None, data='T1')
     
     # T1_predicted predictions
-    # run_predictions(method="binary", is_regressor=False, categories=categories, 
-    #                method_model="catboost", threshold=None, data='T1_predicted')
+    run_predictions(method="binary", is_regressor=False, categories=categories, 
+                   method_model="catboost", threshold=None, data='T1_predicted')

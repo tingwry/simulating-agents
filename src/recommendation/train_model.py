@@ -3,7 +3,7 @@ from catboost import CatBoostRegressor, CatBoostClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error, precision_score, r2_score, recall_score, accuracy_score, classification_report, roc_auc_score
+from sklearn.metrics import mean_squared_error, mean_absolute_error, precision_score, r2_score, recall_score, accuracy_score, classification_report, roc_auc_score, f1_score
 from sklearn.multioutput import MultiOutputClassifier
 import joblib
 import os
@@ -69,7 +69,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
         print(DATA_PATH)
         
         # Get feature columns (exclude target categories)
-        feature_cols = [col for col in df.columns if col not in categories]
+        # feature_cols = [col for col in df.columns if col not in categories and col != 'CUST_ID']
         X_df = df[feature_cols]
         
         # Fit preprocessor on feature columns only
@@ -135,7 +135,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                         # Evaluate
                         y_pred = reg.predict(X_test)
 
-                        if threshold != None:
+                        if threshold is not None:
                             # Regression metrics
                             mse = mean_squared_error(y_test, y_pred)
                             rmse = np.sqrt(mse)
@@ -171,9 +171,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             
                             # Calculate metrics
                             accuracy = accuracy_score(y_true_binary, y_pred_binary)
-                            precision = precision_score(y_true_binary, y_pred_binary)
-                            recall = recall_score(y_true_binary, y_pred_binary)
-                            f1 = f1_score(y_true_binary, y_pred_binary)
+                            precision = precision_score(y_true_binary, y_pred_binary, zero_division=0)
+                            recall = recall_score(y_true_binary, y_pred_binary, zero_division=0)
+                            f1 = f1_score(y_true_binary, y_pred_binary, zero_division=0)
                             
                             # Regression metrics
                             mse = mean_squared_error(y_test, y_pred)
@@ -220,16 +220,16 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                         )
                         clf.fit(X_train, y_train)
 
-                        if threshold != None:
+                        if threshold is not None:
                             # Evaluate with better handling of warnings
                             y_pred_proba = clf.predict_proba(X_test)[:, 1]  # Get probabilities for class 1
                             y_pred = (y_pred_proba > threshold).astype(int)
 
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
-                            precision = precision_score(y_test, y_pred)
-                            recall = recall_score(y_test, y_pred)
-                            f1 = f1_score(y_test, y_pred)
+                            precision = precision_score(y_test, y_pred, zero_division=0)
+                            recall = recall_score(y_test, y_pred, zero_division=0)
+                            f1 = f1_score(y_test, y_pred, zero_division=0)
                             roc_auc = roc_auc_score(y_test, y_pred_proba)
                             
                             # Print metrics
@@ -267,9 +267,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
-                            precision = precision_score(y_test, y_pred)
-                            recall = recall_score(y_test, y_pred)
-                            f1 = f1_score(y_test, y_pred)
+                            precision = precision_score(y_test, y_pred, zero_division=0)
+                            recall = recall_score(y_test, y_pred, zero_division=0)
+                            f1 = f1_score(y_test, y_pred, zero_division=0)
                             roc_auc = roc_auc_score(y_test, y_val_proba)
                             
                             print(f"  Optimal threshold: {optimal_threshold:.4f}")
@@ -358,9 +358,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             
                             # Calculate metrics
                             accuracy = accuracy_score(y_true_binary, y_pred_binary)
-                            precision = precision_score(y_true_binary, y_pred_binary)
-                            recall = recall_score(y_true_binary, y_pred_binary)
-                            f1 = f1_score(y_true_binary, y_pred_binary)
+                            precision = precision_score(y_true_binary, y_pred_binary, zero_division=0)
+                            recall = recall_score(y_true_binary, y_pred_binary, zero_division=0)
+                            f1 = f1_score(y_true_binary, y_pred_binary, zero_division=0)
                             
                             # Regression metrics
                             mse = mean_squared_error(y_test, y_pred)
@@ -424,9 +424,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
-                            precision = precision_score(y_test, y_pred)
-                            recall = recall_score(y_test, y_pred)
-                            f1 = f1_score(y_test, y_pred)
+                            precision = precision_score(y_test, y_pred, zero_division=0)
+                            recall = recall_score(y_test, y_pred, zero_division=0)
+                            f1 = f1_score(y_test, y_pred, zero_division=0)
                             roc_auc = roc_auc_score(y_test, y_pred_proba)
                             
                             # Print metrics
@@ -464,9 +464,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
-                            precision = precision_score(y_test, y_pred)
-                            recall = recall_score(y_test, y_pred)
-                            f1 = f1_score(y_test, y_pred)
+                            precision = precision_score(y_test, y_pred, zero_division=0)
+                            recall = recall_score(y_test, y_pred, zero_division=0)
+                            f1 = f1_score(y_test, y_pred, zero_division=0)
                             roc_auc = roc_auc_score(y_test, y_val_proba)
                             
                             print(f"  Optimal threshold: {optimal_threshold:.4f}")
@@ -497,7 +497,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                         joblib.dump(model_data, f"{MODEL_DIR}/{category}_model{OPTIMAL_THRS}.pkl")
 
 
-            if threshold == None:
+            if threshold is None:
                 with open(f"{MODEL_DIR}/optimal_thresholds.json", 'w') as f:
                     json.dump(optimal_thresholds, f, indent=2)
                 
@@ -704,6 +704,9 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                     'optimal_threshold': optimal_thresholds.get(category, threshold)
                 }
 
+        # Ensure METRICS_DIR exists
+        os.makedirs(METRICS_DIR, exist_ok=True)
+
         with open(f"{METRICS_DIR}/training_metrics{OPTIMAL_THRS}.json", 'w') as f:
             json.dump(results, f, indent=2)
         
@@ -725,27 +728,22 @@ if __name__ == "__main__":
     TEST_SIZE = 0.2
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
+    feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
     
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
-    # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0.2)
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
-    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0)
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
-    # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=0.5)
-    # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=0.5)
 
     # train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
 
 
     # T0/T1/predT1
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
+    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
+    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
