@@ -148,6 +148,13 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
     precision = total_true_positives / (total_true_positives + total_false_positives) if (total_true_positives + total_false_positives) > 0 else 0
     recall = total_true_positives / (total_true_positives + total_false_negatives) if (total_true_positives + total_false_negatives) > 0 else 0
     f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+
+    # Calculate F-beta score (beta=0.5 to weight precision higher)
+    beta = 0.5
+    if (precision > 0) and (recall > 0):
+        f_beta = (1 + beta**2) * (precision * recall) / (beta**2 * precision + recall)
+    else:
+        f_beta = 0
     
     # Calculate accuracy (correctly predicted categories / total categories)
     total_categories = len(category_cols) * total_customers
@@ -174,6 +181,7 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
         "precision": round(precision, 4),
         "recall": round(recall, 4),
         "f1_score": round(f1_score, 4),
+        "f_beta_score": round(f_beta, 4),  # Added F-beta score
         "accuracy": round(accuracy, 4),
         "hit_rate": round(overall_hit_rate, 4)
     }
@@ -203,18 +211,17 @@ def evaluate_transaction_predictions(transaction_predictions, ans_key, probabili
 
 
 # binary_predictions = pd.read_csv('src/recommendation/base_line_all_1/data/all_1.csv')
-binary_predictions = pd.read_csv('src/recommendation/base_line_all_1/data/all_1_grouped_catbased.csv')
+binary_predictions = pd.read_csv('src/recommendation/baseline/baseline_all_1/data/all_1_grouped_catbased.csv')
 # probability_predictions = pd.read_csv('src/recommendation/binary_classification_rand_reg/T0/predictions/transaction_predictions_grouped_scores.csv')
 # ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix_grouped.csv')
-ans_key = pd.read_csv('src/data/cf_demog_summary/user_item_matrix/user_item_matrix_grouped_catbased.csv')
+ans_key = pd.read_csv('src/recommendation/data/ans_key/grouped_catbased.csv')
 
 # Run evaluation
 detailed_results, metrics = evaluate_transaction_predictions(
     binary_predictions, 
     ans_key, 
     # probabilities_df=probability_predictions,
-    # output_folder="src/recommendation/binary_classification_rand_reg/T0/eval_results"
-    output_folder="src/recommendation/base_line_all_1/eval_results_grouped_catbased"
+    output_folder="src/recommendation/baseline/baseline_all_1/eval_results_grouped_catbased"
 )
 
 # View first few rows of detailed results

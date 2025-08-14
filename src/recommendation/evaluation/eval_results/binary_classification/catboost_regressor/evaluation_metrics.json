@@ -2,19 +2,20 @@
   "Evaluation Metrics": {
     "binary_metrics": {
       "total_customers": 392.0,
-      "total_predictions": 675.0,
-      "total_actual": 392.0,
-      "true_positives": 352.0,
-      "false_positives": 323.0,
-      "false_negatives": 520.0,
-      "precision": 0.5215,
-      "recall": 0.4037,
-      "f1_score": 0.4551,
-      "accuracy": 0.7156,
-      "hit_rate": 0.5215
+      "total_predictions": 3920.0,
+      "total_actual": 2764.0,
+      "true_positives": 872.0,
+      "false_positives": 3048.0,
+      "false_negatives": 0.0,
+      "precision": 0.2224,
+      "recall": 1.0,
+      "f1_score": 0.3639,
+      "f_beta_score": 0.2634,
+      "accuracy": 0.0987,
+      "hit_rate": 0.2224
     },
     "ranking_metrics": {
-      "average_ndcg_with_probs": 0.7305044213843297
+      "average_ndcg_with_probs": 0.690286661764027
     }
   }
 }

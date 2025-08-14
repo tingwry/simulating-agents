@@ -83,7 +83,7 @@ Number of Children,Number of Vehicles,Gender,Education level,Marital status,Savi
 0,1.0,Female,bachelor's degree,single,4.0,4.0,2.0,1.0,1.0,1.0,0.0,1.0,1795.21,7.0,1.4,1.0,2.0,3.0,1.0,1.0,4.0,1.0,1.0,51500.0,52392.0,55.0,Central,Corporate Employee,3207
 1,1.0,Male,bachelor's degree,married,5.0,5.0,3.0,1.0,4.0,0.0,0.0,2.0,3790.47,53.0,2.52,1.0,7.0,8.0,1.0,2.0,45.0,1.0,6.0,137060.0,133412.43,45.0,Eastern,Entrepreneur,1039
 0,0.0,Male,vocational certificate,single,6.0,5.0,6.0,0.0,2.0,1.0,0.0,2.0,50473.79,38.0,4.75,1.0,16.0,11.0,1.0,6.0,27.0,1.0,10.0,182645.23,332317.72,44.0,Central,Corporate Employee,1538
-0,1.0,Female,others,married - non registered,9.0,8.0,4.0,2.0,5.0,1.0,0.0,2.0,36068.74,315.0,10.16,1.0,24.0,89.0,1.0,11.0,226.0,1.0,17.0,340833.42,308502.84,40.0,Western,Corporate Employee,3002
+0,1.0,Female,others,married,9.0,8.0,4.0,2.0,5.0,1.0,0.0,2.0,36068.74,315.0,10.16,1.0,24.0,89.0,1.0,11.0,226.0,1.0,17.0,340833.42,308502.84,40.0,Western,Corporate Employee,3002
 0,0.0,Female,high school,married,4.0,3.0,2.0,0.0,2.0,1.0,0.0,1.0,20392.71,85.0,2.93,1.0,7.0,46.0,1.0,4.0,39.0,1.0,5.0,94382.0,74734.99,58.0,Southern,Corporate Employee,2727
 0,0.0,Male,bachelor's degree,single,4.0,4.0,1.0,0.0,5.0,0.0,0.0,1.0,3130.16,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,500.0,200.0,38.0,Northeastern,Other,2697
 0,1.0,Male,master's degree,single,11.0,8.0,12.0,1.0,5.0,0.0,0.0,4.0,9093.16,63.0,2.52,1.0,7.0,11.0,1.0,3.0,52.0,1.0,6.0,148047.48,223910.01,40.0,Eastern,Entrepreneur,3211
@@ -387,7 +387,7 @@ Number of Children,Number of Vehicles,Gender,Education level,Marital status,Savi
 0,1.0,Male,master's degree,single,4.0,4.0,4.0,3.0,1.0,1.0,0.0,2.0,9312731.68,4.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,1.0,1.0,200000.0,1400.0,48.0,Northeastern,Entrepreneur,3102
 0,1.0,Male,master's degree,single,5.0,5.0,2.0,1.0,4.0,0.0,0.0,2.0,10.03,78.0,2.89,1.0,8.0,12.0,1.0,2.0,66.0,1.0,6.0,19164.0,42250.03,45.0,Central,Corporate Employee,204
 0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,37.0,Central,Corporate Employee,810
-0,1.0,Male,others,married - registered,5.0,5.0,1.0,1.0,3.0,1.0,0.0,1.0,2429.07,101.0,3.37,1.0,9.0,81.0,1.0,8.0,20.0,1.0,3.0,909260.0,916980.0,59.0,Northeastern,Entrepreneur,1179
+0,1.0,Male,others,married,5.0,5.0,1.0,1.0,3.0,1.0,0.0,1.0,2429.07,101.0,3.37,1.0,9.0,81.0,1.0,8.0,20.0,1.0,3.0,909260.0,916980.0,59.0,Northeastern,Entrepreneur,1179
 0,0.0,Female,high school,married,6.0,6.0,2.0,1.0,4.0,1.0,0.0,1.0,101739.43,84.0,3.23,1.0,8.0,14.0,1.0,2.0,70.0,1.0,6.0,312258.76,226146.84,38.0,Eastern,Corporate Employee,1324
 0,,Male,bachelor's degree,single,6.0,6.0,4.0,0.0,3.0,0.0,0.0,1.0,8238.98,52.0,2.17,1.0,6.0,20.0,1.0,2.0,32.0,1.0,5.0,38714.0,30491.05,26.0,Central,Corporate Employee,13
 0,1.0,Male,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,72072.62,79.0,3.29,1.0,9.0,65.0,1.0,8.0,14.0,1.0,2.0,253007.82,304054.71,38.0,Northeastern,Entrepreneur,1033

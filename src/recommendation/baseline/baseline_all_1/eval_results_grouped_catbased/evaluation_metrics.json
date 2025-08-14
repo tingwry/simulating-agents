@@ -10,6 +10,7 @@
       "precision": 0.2224,
       "recall": 1.0,
       "f1_score": 0.3639,
+      "f_beta_score": 0.2634,
       "accuracy": 0.038,
       "hit_rate": 0.2224
     },

@@ -43,6 +43,7 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
                 ranking_metrics = data.get("Evaluation Metrics", {}).get("ranking_metrics", {})
 
                 f1_score = binary_metrics.get("f1_score")
+                f_beta_score = binary_metrics.get("f_beta_score")
                 ndcg = ranking_metrics.get("average_ndcg_with_probs")
 
                 # Harmonic mean of F1 and NDCG
@@ -50,6 +51,12 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
                     harmonic_mean = (2 * f1_score * ndcg) / (f1_score + ndcg)
                 else:
                     harmonic_mean = None
+
+                # Harmonic mean of F-Beta and NDCG
+                if f_beta_score and ndcg and (f_beta_score + ndcg) > 0:
+                    harmonic_mean_fbeta = (2 * f_beta_score * ndcg) / (f_beta_score + ndcg)
+                else:
+                    harmonic_mean_fbeta = None
 
                 record = {
                     "Method": task_type,
@@ -62,9 +69,11 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
                     "Precision": binary_metrics.get("precision"),
                     "Recall": binary_metrics.get("recall"),
                     "F1 Score": f1_score,
+                    "F-Beta Score": f_beta_score,
                     "Accuracy": binary_metrics.get("accuracy"),
                     "NDCG": ndcg,
                     "Harmonic Mean (F1, NDCG)": harmonic_mean,
+                    "Harmonic Mean (F-Beta, NDCG)": harmonic_mean_fbeta,
                 }
                 records.append(record)
 
@@ -76,6 +85,7 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
                     data = json.load(f)
                 binary_metrics = data.get("Evaluation Metrics", {}).get("binary_metrics", {})
                 f1_score = binary_metrics.get("f1_score")
+                f_beta_score = binary_metrics.get("f_beta_score")
                 accuracy = binary_metrics.get("accuracy")
                 precision = binary_metrics.get("precision")
                 recall = binary_metrics.get("recall")
@@ -95,9 +105,11 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
                     "Precision": precision,
                     "Recall": recall,
                     "F1 Score": f1_score,
+                    "F-Beta Score": f_beta_score,
                     "Accuracy": accuracy,
                     "NDCG": "-",
                     "Harmonic Mean (F1, NDCG)": "-",
+                    "Harmonic Mean (F-Beta, NDCG)": "-",
                 }
                 records.append(record)
             except Exception as e:
@@ -109,9 +121,9 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
     print(f"Saved evaluation summary to: {output_csv_path}")
 
 
-def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
+def merge_catboost_classifier_evaluations(root_dir, output_csv_path):
     """
-    Merge DEFAULT THRESHOLD evaluation metrics for CatBoost regressor across T0, T1, and T1_predicted cases.
+    Merge DEFAULT THRESHOLD evaluation metrics for CatBoost classifier across T0, T1, and T1_predicted cases.
     
     Args:
         root_dir (str): Root folder containing the eval_results
@@ -121,14 +133,14 @@ def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
     
     # Define the paths we need to check
     cases = [
-        ('T0', 'binary_classification/catboost_regressor'),
-        ('T1', 'binary_classification/T1/catboost_regressor'),
-        ('T1_predicted', 'binary_classification/T1_predicted/catboost_regressor')
+        ('T0', 'binary_classification/catboost_classifier'),
+        ('T1', 'binary_classification/T1/catboost_classifier'),
+        ('T1_predicted', 'binary_classification/T1_predicted/catboost_classifier')
     ]
     
     for case_name, rel_path in cases:
         case_dir = os.path.join(root_dir, rel_path)
-        file_path = os.path.join(case_dir, 'evaluation_metrics.json')
+        file_path = os.path.join(case_dir, 'evaluation_metrics_optimal_thrs.json')
         
         if os.path.exists(file_path):
             with open(file_path, 'r') as f:
@@ -138,6 +150,7 @@ def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
             ranking_metrics = data.get("Evaluation Metrics", {}).get("ranking_metrics", {})
             
             f1_score = binary_metrics.get("f1_score")
+            f_beta_score = binary_metrics.get("f_beta_score")
             ndcg = ranking_metrics.get("average_ndcg_with_probs")
             
             # Calculate harmonic mean of F1 and NDCG
@@ -145,11 +158,17 @@ def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
                 harmonic_mean = (2 * f1_score * ndcg) / (f1_score + ndcg)
             else:
                 harmonic_mean = None
+
+            # Harmonic mean of F-Beta and NDCG
+            if f_beta_score and ndcg and (f_beta_score + ndcg) > 0:
+                harmonic_mean_fbeta = (2 * f_beta_score * ndcg) / (f_beta_score + ndcg)
+            else:
+                harmonic_mean_fbeta = None
             
             record = {
                 "Method": "Binary",
-                "Model": "CatBoost Regressor",
-                "Threshold": "Default Threshold",
+                "Model": "CatBoost Classifier",
+                "Threshold": "Optimal Threshold",
                 "Case": case_name,
                 "Total Predictions": binary_metrics.get("total_predictions"),
                 "True Positives": binary_metrics.get("true_positives"),
@@ -158,9 +177,11 @@ def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
                 "Precision": binary_metrics.get("precision"),
                 "Recall": binary_metrics.get("recall"),
                 "F1 Score": f1_score,
+                "F-Beta Score": f_beta_score,
                 "Accuracy": binary_metrics.get("accuracy"),
                 "NDCG": ndcg,
                 "Harmonic Mean (F1, NDCG)": harmonic_mean,
+                "Harmonic Mean (F-Beta, NDCG)": harmonic_mean_fbeta,
             }
             records.append(record)
         else:
@@ -177,11 +198,49 @@ def merge_catboost_regressor_evaluations(root_dir, output_csv_path):
         df = df[cols]
         
         df.to_csv(output_csv_path, index=False)
-        print(f"Saved CatBoost regressor evaluation summary to: {output_csv_path}")
+        print(f"Saved CatBoost classifier evaluation summary to: {output_csv_path}")
         return df
     else:
         print("No evaluation files found. No CSV generated.")
         return None
+    
+
+def combine_evaluation_results(output_path='src/recommendation/evaluation/eval_results/combined_catboost_regressor_evaluation_summary.csv'):
+    # Define the files and their corresponding method labels
+    eval_files = {
+        'default_threshold': 'src/recommendation/evaluation/eval_results/catboost_regressor_default_threshold_summary.csv',
+        'optimal_threshold_balance': 'src/recommendation/evaluation/eval_results/catboost_regressor_optimal_threshold_balance_summary.csv',
+        'optimal_threshold_hrmnc_mean': 'src/recommendation/evaluation/eval_results/catboost_regressor_optimal_threshold_hrmnc_mean_summary.csv',
+        'optimal_threshold_max_f1': 'src/recommendation/evaluation/eval_results/catboost_regressor_optimal_threshold_max_f1_summary.csv'
+    }
+    
+    combined_df = pd.DataFrame()
+    
+    for method_name, file_path in eval_files.items():
+        if os.path.exists(file_path):
+            # Read the CSV file
+            df = pd.read_csv(file_path)
+            
+            # Add a column for the threshold method
+            df['Threshold_Method'] = method_name
+            
+            # Concatenate with the combined dataframe
+            combined_df = pd.concat([combined_df, df], ignore_index=True)
+        else:
+            print(f"Warning: File not found - {file_path}")
+    
+    # Reorder columns to have Threshold_Method early in the dataframe
+    cols = combined_df.columns.tolist()
+    cols.insert(3, cols.pop(cols.index('Threshold_Method')))
+    combined_df = combined_df[cols]
+    
+    # Save the combined results
+    combined_df.to_csv(output_path, index=False)
+    print(f"Combined evaluation results saved to: {output_path}")
+    
+    return combined_df
+
+
 
 if __name__ == "__main__":
     # extract_all_evaluation_metrics(
@@ -192,7 +251,10 @@ if __name__ == "__main__":
     #     ]
     # )
 
-    merge_catboost_regressor_evaluations(
+    merge_catboost_classifier_evaluations(
         root_dir='src/recommendation/evaluation/eval_results',
-        output_csv_path='src/recommendation/evaluation/eval_results/catboost_regressor_default_threshold_summary.csv'
+        output_csv_path='src/recommendation/evaluation/eval_results/catboost_classifier_summary.csv'
     )
+
+    # combined_results = combine_evaluation_results()
+    # print(combined_results.head())

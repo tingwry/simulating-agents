@@ -1,0 +1,4 @@
+Method,Model,Threshold,Case,Total Predictions,True Positives,False Positives,False Negatives,Precision,Recall,F1 Score,Accuracy,NDCG,"Harmonic Mean (F1, NDCG)"
+Binary,CatBoost Regressor,Optimal Threshold,T0,2847.0,740.0,2107.0,132.0,0.2599,0.8486,0.398,0.2745,0.7334991672208584,0.51601039931993
+Binary,CatBoost Regressor,Optimal Threshold,T1,2105.0,621.0,1484.0,251.0,0.295,0.7122,0.4172,0.4286,0.7288340108524265,0.5306466412832962
+Binary,CatBoost Regressor,Optimal Threshold,T1_predicted,2585.0,709.0,1876.0,163.0,0.2743,0.8131,0.4102,0.3311,0.7332054290657296,0.5260791305644095

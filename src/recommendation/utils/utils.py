@@ -5,7 +5,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.metrics import f1_score, precision_recall_curve
+from sklearn.metrics import f1_score, precision_recall_curve, precision_score, recall_score
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -123,10 +123,14 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
     if method == "reinforcement_learning":
         DATA_PATH = f'{base_data_path}/rl'
         MODEL_DIR = f'{base_model_path}/rl'
-        METRICS_DIR = ""
+        METRICS_DIR = f'{base_metrics_path}/rl'
     else:
         if method == "binary":
-            DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased.csv'
+            # Use non-normalized data for binary regression cases
+            if is_regressor:
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm.csv'
+            else:
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased.csv'
 
             model_type = "regressor" if is_regressor else "classifier"
             
@@ -167,14 +171,16 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
         data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
-        tuple: (DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT)
+        tuple: (DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS)
     """
-
     base_data_path = 'src/recommendation/data'
     base_model_path = 'src/recommendation/models'
     base_prediction_path = 'src/recommendation/predictions'
 
     OPTIMAL_THRS = ""
+    
+    # Set TEST_DATA_PATH based on data version
+    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle.csv'
     
     if method == "reinforcement_learning":
         DATA_DIR = f'{base_data_path}/rl'
@@ -209,7 +215,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     
     PREDICTION_OUTPUT += f'/transaction_predictions{OPTIMAL_THRS}.csv'
 
-    return DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, OPTIMAL_THRS
+    return DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS
 
 def evaluation_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
     """Determine the appropriate paths for evaluation outputs.
@@ -222,13 +228,19 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
         data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
-        tuple: (PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR)
+        tuple: (PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, ANS_KEY_DIR, OPTIMAL_THRS)
     """
-
     base_prediction_path = 'src/recommendation/predictions'
     base_eval_path = 'src/recommendation/evaluation/eval_results'
+    base_ans_key_path = 'src/recommendation/data/ans_key'
 
     OPTIMAL_THRS = ""
+    
+    # Set answer key path based on method and model type
+    if method == "binary" and is_regressor:
+        ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased_no_norm.csv'
+    else:
+        ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased.csv'
     
     if method == "reinforcement_learning":
         PREDICTIONS_DIR = f'{base_prediction_path}/rl'
@@ -266,7 +278,7 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
     SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
     
-    return PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, OPTIMAL_THRS
+    return PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, ANS_KEY_DIR, OPTIMAL_THRS
 
 
 def preprocess_unknown_values(df):
@@ -328,35 +340,85 @@ def load_and_preprocess_data(DATA_PATH):
     
     return df, preprocessor
 
-def find_optimal_regression_threshold(y_true, y_pred):
-    """Find optimal threshold for converting regression outputs to binary predictions"""
-    # Convert true values to binary (1 if > 0, else 0)
-    y_true_binary = (y_true > 0).astype(int)
+# def find_optimal_regression_threshold(y_true, y_pred):
+#     """Find optimal threshold for converting regression outputs to binary predictions"""
+#     # Convert true values to binary (1 if > 0, else 0)
+#     y_true_binary = (y_true > 0).astype(int)
     
-    # Try different thresholds to find the one that maximizes F1 score
+#     # Try different thresholds to find the one that maximizes F1 score
+#     thresholds = np.linspace(0, np.max(y_pred), 100)
+#     best_threshold = 0
+#     best_f1 = -1
+    
+#     for threshold in thresholds:
+#         y_pred_binary = (y_pred >= threshold).astype(int)
+#         f1 = f1_score(y_true_binary, y_pred_binary)
+#         if f1 > best_f1:
+#             best_f1 = f1
+#             best_threshold = threshold
+    
+#     return best_threshold
+
+
+def find_optimal_regression_threshold(y_true, y_pred, beta=0.5):
+    """Find optimal threshold for converting regression outputs to binary predictions
+    using a weighted harmonic mean of precision and recall. (F-beta Score)
+    
+    Args:
+        y_true: True values
+        y_pred: Predicted values
+        beta: Weight for recall in harmonic mean (higher beta favors recall)
+    """
+    y_true_binary = (y_true > 0).astype(int)
     thresholds = np.linspace(0, np.max(y_pred), 100)
     best_threshold = 0
-    best_f1 = -1
+    best_score = -1
     
     for threshold in thresholds:
         y_pred_binary = (y_pred >= threshold).astype(int)
-        f1 = f1_score(y_true_binary, y_pred_binary)
-        if f1 > best_f1:
-            best_f1 = f1
+        
+        precision = precision_score(y_true_binary, y_pred_binary, zero_division=0)
+        recall = recall_score(y_true_binary, y_pred_binary, zero_division=0)
+        
+        if (precision + recall) > 0:
+            score = (1 + beta**2) * (precision * recall) / (beta**2 * precision + recall)
+        else:
+            score = 0
+            
+        if score > best_score:
+            best_score = score
             best_threshold = threshold
     
     return best_threshold
 
-def find_optimal_classification_threshold(y_true, y_proba):
-    """Find optimal threshold that maximizes F1 score"""
-    precision, recall, thresholds = precision_recall_curve(y_true, y_proba)
-    # Convert to F1 score
-    f1_scores = 2 * (precision * recall) / (precision + recall + 1e-9)
-    # Find threshold that gives maximum F1 score
-    optimal_idx = np.argmax(f1_scores)
-    optimal_threshold = thresholds[optimal_idx]
-    return optimal_threshold
+# def find_optimal_classification_threshold(y_true, y_proba):
+#     """Find optimal threshold that maximizes F1 score"""
+#     precision, recall, thresholds = precision_recall_curve(y_true, y_proba)
+#     # Convert to F1 score
+#     f1_scores = 2 * (precision * recall) / (precision + recall + 1e-9)
+#     # Find threshold that gives maximum F1 score
+#     optimal_idx = np.argmax(f1_scores)
+#     optimal_threshold = thresholds[optimal_idx]
+#     return optimal_threshold
 
+def find_optimal_classification_threshold(y_true, y_proba, beta=0.5):
+    """Find optimal threshold that maximizes F-beta score
+    
+    Args:
+        y_true: True binary labels
+        y_proba: Predicted probabilities
+        beta: Weight for recall in harmonic mean (higher beta favors recall)
+    """
+    precision, recall, thresholds = precision_recall_curve(y_true, y_proba)
+    
+    # Calculate F-beta scores
+    f_beta_scores = (1 + beta**2) * (precision * recall) / (beta**2 * precision + recall + 1e-9)
+    
+    # Find threshold that gives maximum F-beta score
+    optimal_idx = np.argmax(f_beta_scores)
+    optimal_threshold = thresholds[optimal_idx]
+    
+    return optimal_threshold
 
 # Define a custom Dataset class
 class TransactionDataset(Dataset):
@@ -452,11 +514,13 @@ def load_dataset_components(data_dir):
     
     raise Exception("Could not load dataset using any method")
 
-def find_percentile_thresholds(data_dir, model_dir, OPTIMAL_THRS, percentile=75):
-    """Find thresholds based on Q-value percentiles"""
+def find_optimal_rl_thresholds(data_dir, model_dir, OPTIMAL_THRS, beta=0.5):
+    """Find optimal thresholds for RL model by maximizing F-beta score"""
     
-    # Load dataset to get Q-value distribution
+    # Load dataset components
     dataset = load_dataset_components(data_dir)
+    categories = joblib.load(f'{data_dir}/categories.pkl')
+    preprocessor = joblib.load(f'{data_dir}/preprocessor.pkl')
     
     # Load model
     model_path = f'{model_dir}/cql_model_txn_counts{OPTIMAL_THRS}.d3'
@@ -464,30 +528,37 @@ def find_percentile_thresholds(data_dir, model_dir, OPTIMAL_THRS, percentile=75)
     model.build_with_dataset(dataset)
     model.load_model(model_path)
     
-    # Get number of actions (categories)
-    categories = joblib.load(f'{data_dir}/categories.pkl')
-    n_actions = len(categories)
-    
-    # Get observations from dataset
-    # Try different ways to access observations based on how dataset was created
+    # Get observations and true labels
     try:
-        # If dataset was created with numpy arrays
-        observations = np.load(f'{data_dir}/observations.npy')
+        # Try to load preprocessed test data
+        test_df = pd.read_csv(f'{data_dir}/test_with_lifestyle.csv')
+        test_df = preprocess_unknown_values(test_df)
+        X_test = preprocessor.transform(test_df.drop(columns=categories))
+        y_true = test_df[categories].values
     except:
-        try:
-            # If dataset is MDPDataset
-            observations = np.array([dataset.episodes[i].observations for i in range(len(dataset.episodes))])
-            observations = observations.reshape(-1, observations.shape[-1])
-        except:
-            raise ValueError("Could not access observations from dataset")
+        # Fallback to using training data if test data not available
+        observations = np.array([dataset.episodes[i].observations for i in range(len(dataset.episodes))])
+        observations = observations.reshape(-1, observations.shape[-1])
+        X_test = observations
+        y_true = np.zeros((len(X_test), len(categories)))  # Dummy labels
     
-    # Get Q-values for training data
-    q_values = np.zeros((len(observations), n_actions))
-    for action_idx in range(n_actions):
-        actions = np.full(len(observations), action_idx)
-        q_values[:, action_idx] = model.predict_value(observations, actions)
+    # Get Q-values for test data
+    q_values = np.zeros((len(X_test), len(categories)))
+    for action_idx in range(len(categories)):
+        actions = np.full(len(X_test), action_idx)
+        q_values[:, action_idx] = model.predict_value(X_test, actions)
     
-    # Calculate percentiles for each category
-    thresholds = np.percentile(q_values, percentile, axis=0)
+    # Find optimal threshold for each category
+    optimal_thresholds = {}
+    for i, category in enumerate(categories):
+        y_true_binary = (y_true[:, i] > 0).astype(int)
+        y_pred_scores = q_values[:, i]
+        
+        # Find threshold that maximizes F-beta score
+        optimal_thresholds[category] = find_optimal_regression_threshold(
+            y_true_binary, 
+            y_pred_scores,
+            beta=beta
+        )
     
-    return {cat: thresh for cat, thresh in zip(categories, thresholds)}
+    return optimal_thresholds

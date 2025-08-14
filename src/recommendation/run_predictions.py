@@ -12,7 +12,7 @@ import json
 
 
 def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0'):
-    DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, OPTIMAL_THRS = prediction_path_indicator(
+    DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS, = prediction_path_indicator(
         method, is_regressor, method_model, threshold, data
     )
     # Load and preprocess full dataset
@@ -37,7 +37,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
         model.load_model(model_path)
         
         # Get optimal thresholds for each category
-        optimal_thresholds = find_percentile_thresholds(DATA_DIR, MODEL_DIR, OPTIMAL_THRS, percentile)
+        optimal_thresholds = find_optimal_rl_thresholds(DATA_DIR, MODEL_DIR, OPTIMAL_THRS, beta=0.5)
         
         # Get Q-values for all actions (representing expected transaction counts)
         q_values = np.zeros((len(X), len(categories)))
@@ -107,7 +107,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                     pred_counts = model.predict(X_all)
 
                     # For binary evaluation: 1 if count > 0, else 0
-                    binary_predictions[category] = (pred_counts >= binary_threshold).astype(int)
+                    binary_predictions[category] = (pred_counts > binary_threshold).astype(int)
                     
                     # For scores: use actual predicted counts (will be normalized in evaluation)
                     prediction_scores[category] = pred_counts
@@ -116,7 +116,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                 else:
                     # Get probabilities and predictions using optimal threshold
                     y_proba = model.predict_proba(X_all)[:, 1]
-                    y_pred = (y_proba >= binary_threshold).astype(int)
+                    y_pred = (y_proba > binary_threshold).astype(int)
                     
                     binary_predictions[category] = y_pred
                     prediction_scores[category] = y_proba
@@ -142,7 +142,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
                 for i, category in enumerate(categories):
                     # Use provided threshold if available, otherwise use optimal threshold from training
                     current_threshold = threshold if threshold is not None else optimal_thresholds.get(category, 0.5)
-                    binary_predictions[category] = (y_proba[:, i] >= current_threshold).astype(int)
+                    binary_predictions[category] = (y_proba[:, i] > current_threshold).astype(int)
                     prediction_scores[category] = y_proba[:, i]
                     
                     print(f"Processed: {category} (Threshold={current_threshold:.4f})")
@@ -216,17 +216,16 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 if __name__ == "__main__":
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
-    
-    # T0 predictions (default)
-    # TEST_DATA_PATH = 'src/recommendation/data/T0/test_with_lifestyle.csv'
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0.2)
+    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=0.5)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=0.2)
+    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=0)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=0.5)
 
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
@@ -237,13 +236,11 @@ if __name__ == "__main__":
     # run_predictions(method="reinforcement_learning", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
 
 
+    
     # T1 predictions
-    # TEST_DATA_PATH = 'src/recommendation/data/T1/test_with_lifestyle.csv'
-    # run_predictions(method="binary", is_regressor=True, categories=categories, 
-    #                method_model="catboost", threshold=0.2, data='T1')
+    # run_predictions(method="binary", is_regressor=False, categories=categories, 
+    #                method_model="catboost", threshold=None, data='T1')
     
     # T1_predicted predictions
-    TEST_DATA_PATH = 'src/recommendation/data/T1_predicted/test_with_lifestyle.csv'
-    run_predictions(method="binary", is_regressor=True, categories=categories, 
-                   method_model="catboost", threshold=0.2, data='T1_predicted')
-    
+    run_predictions(method="binary", is_regressor=False, categories=categories, 
+                   method_model="catboost", threshold=None, data='T1_predicted')

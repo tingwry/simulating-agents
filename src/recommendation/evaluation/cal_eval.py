@@ -6,7 +6,7 @@ from sklearn.metrics import ndcg_score
 from src.recommendation.utils.utils import *
 
 def evaluate_transaction_predictions(method, is_regressor, method_model, threshold=None, data='T0'):    
-    PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, OPTIMAL_THRS = evaluation_path_indicator(
+    PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, ANS_KEY_DIR, OPTIMAL_THRS = evaluation_path_indicator(
         method, is_regressor, method_model, threshold, data
     )
     
@@ -137,6 +137,13 @@ def evaluate_transaction_predictions(method, is_regressor, method_model, thresho
     precision = total_true_positives / (total_true_positives + total_false_positives) if (total_true_positives + total_false_positives) > 0 else 0
     recall = total_true_positives / (total_true_positives + total_false_negatives) if (total_true_positives + total_false_negatives) > 0 else 0
     f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+
+    # Calculate F-beta score (beta=0.5 to weight precision higher)
+    beta = 0.5
+    if (precision > 0) and (recall > 0):
+        f_beta = (1 + beta**2) * (precision * recall) / (beta**2 * precision + recall)
+    else:
+        f_beta = 0
     
     # Calculate accuracy (correctly predicted categories / total categories)
     total_categories = len(category_cols) * total_customers
@@ -163,6 +170,7 @@ def evaluate_transaction_predictions(method, is_regressor, method_model, thresho
         "precision": round(precision, 4),
         "recall": round(recall, 4),
         "f1_score": round(f1, 4),
+        "f_beta_score": round(f_beta, 4),  # Added F-beta score
         "accuracy": round(accuracy, 4),
         "hit_rate": round(overall_hit_rate, 4)
     }
@@ -194,15 +202,16 @@ def evaluate_transaction_predictions(method, is_regressor, method_model, thresho
 
 
 if __name__ == "__main__":
-    ANS_KEY_DIR = 'src/recommendation/data/ans_key/grouped_catbased.csv'
 
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=0.2)
+    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=None)
     # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
+    # evaluate_transaction_predictions(method="binary", is_regressor=True, method_model="catboost", threshold=0)
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
@@ -212,20 +221,20 @@ if __name__ == "__main__":
 
     # evaluate_transaction_predictions(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
 
-    # T1 evaluation
+        # T1 evaluation
     # evaluate_transaction_predictions(
     #     method="binary", 
-    #     is_regressor=True, 
+    #     is_regressor=False, 
     #     method_model="catboost", 
-    #     threshold=0.2,
+    #     threshold=None,
     #     data='T1'
     # )
     
     # T1_predicted evaluation
     evaluate_transaction_predictions(
         method="binary", 
-        is_regressor=True, 
+        is_regressor=False, 
         method_model="catboost", 
-        threshold=0.2,
+        threshold=None,
         data='T1_predicted'
     )

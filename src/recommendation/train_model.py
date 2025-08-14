@@ -20,6 +20,10 @@ from d3rlpy.preprocessing import MinMaxRewardScaler
 
 def train_model(method, is_regressor, method_model=None, threshold=None, data='T0'):
     DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS = train_model_path_indicator(method, is_regressor, method_model, threshold, data)
+    print(MODEL_DIR)
+    print(METRICS_DIR)
+    os.makedirs(os.path.dirname(MODEL_DIR), exist_ok=True)
+    os.makedirs(os.path.dirname(METRICS_DIR), exist_ok=True)
 
     if method == "reinforcement_learning":
         """Train offline RL model with transaction count rewards"""
@@ -160,7 +164,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             optimal_thresholds[category] = optimal_threshold
                             
                             # Evaluate with optimal threshold
-                            y_pred_binary = (y_pred >= optimal_threshold).astype(int)
+                            y_pred_binary = (y_pred > optimal_threshold).astype(int)
                             y_true_binary = (y_test > 0).astype(int)
                             
                             # Calculate metrics
@@ -217,7 +221,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                         if threshold != None:
                             # Evaluate with better handling of warnings
                             y_pred_proba = clf.predict_proba(X_test)[:, 1]  # Get probabilities for class 1
-                            y_pred = (y_pred_proba >= threshold).astype(int)
+                            y_pred = (y_pred_proba > threshold).astype(int)
 
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
@@ -257,7 +261,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             optimal_thresholds[category] = optimal_threshold
                             
                             # Evaluate with optimal threshold
-                            y_pred = (y_val_proba >= optimal_threshold).astype(int)
+                            y_pred = (y_val_proba > optimal_threshold).astype(int)
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
@@ -347,7 +351,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             optimal_thresholds[category] = optimal_threshold
                             
                             # Evaluate with optimal threshold
-                            y_pred_binary = (y_pred >= optimal_threshold).astype(int)
+                            y_pred_binary = (y_pred > optimal_threshold).astype(int)
                             y_true_binary = (y_test > 0).astype(int)
                             
                             # Calculate metrics
@@ -414,7 +418,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                         if threshold != None:
                             # Evaluate
                             y_pred_proba = model.predict_proba(X_test)[:, 1]  # Get probabilities for class 1
-                            y_pred = (y_pred_proba >= threshold).astype(int)  # Convert to binary predictions
+                            y_pred = (y_pred_proba > threshold).astype(int)  # Convert to binary predictions
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
@@ -454,7 +458,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                             optimal_thresholds[category] = optimal_threshold
                             
                             # Evaluate with optimal threshold
-                            y_pred = (y_val_proba >= optimal_threshold).astype(int)
+                            y_pred = (y_val_proba > optimal_threshold).astype(int)
                             
                             # Classification metrics
                             accuracy = accuracy_score(y_test, y_pred)
@@ -542,7 +546,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
 
                 # Handle thresholding
                 if threshold is not None:
-                    y_pred_binary = (y_pred_proba >= threshold).astype(int)
+                    y_pred_binary = (y_pred_proba > threshold).astype(int)
                     optimal_thresholds = {cat: threshold for cat in categories}
                 else:
                     optimal_thresholds = {}
@@ -550,7 +554,7 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                     for i, cat in enumerate(categories):
                         optimal_threshold = find_optimal_classification_threshold(y_test[:, i], y_pred_proba[:, i])
                         optimal_thresholds[cat] = float(optimal_threshold)
-                        y_pred_binary[:, i] = (y_pred_proba[:, i] >= optimal_threshold).astype(int)
+                        y_pred_binary[:, i] = (y_pred_proba[:, i] > optimal_threshold).astype(int)
                 
                 # Save model and preprocessing components
                 joblib.dump({
@@ -723,10 +727,12 @@ if __name__ == "__main__":
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0.2)
+    # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=0.5)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2)
+    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=0.5)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
@@ -738,6 +744,6 @@ if __name__ == "__main__":
 
 
     # T0/T1/predT1
-    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2, data='T0')
-    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2, data='T1')
-    train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0.2, data='T1_predicted')
+    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
+    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
+    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
