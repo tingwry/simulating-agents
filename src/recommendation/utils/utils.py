@@ -238,9 +238,9 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     
     # Set answer key path based on method and model type
     if method == "binary" and is_regressor:
-        ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased_no_norm.csv'
+        ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased_amt_no_norm.csv'
     else:
-        ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased.csv'
+        ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased_amt.csv'
     
     if method == "reinforcement_learning":
         PREDICTIONS_DIR = f'{base_prediction_path}/rl'

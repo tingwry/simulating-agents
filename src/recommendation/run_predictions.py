@@ -238,9 +238,9 @@ if __name__ == "__main__":
 
     
     # T1 predictions
-    # run_predictions(method="binary", is_regressor=False, categories=categories, 
-    #                method_model="catboost", threshold=None, data='T1')
+    run_predictions(method="binary", is_regressor=False, categories=categories, 
+                   method_model="catboost", threshold=None, data='T1')
     
     # T1_predicted predictions
-    run_predictions(method="binary", is_regressor=False, categories=categories, 
-                   method_model="catboost", threshold=None, data='T1_predicted')
+    # run_predictions(method="binary", is_regressor=False, categories=categories, 
+    #                method_model="catboost", threshold=None, data='T1_predicted')

@@ -84,4 +84,14 @@ if __name__ == "__main__":
 
     # print(df.head())
 
-    print(clean('src/recommendation/data/T1/test_with_lifestyle.csv').head())
+    # print(clean('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv').head())
+
+
+    train_df_T1 = pd.read_csv('src/recommendation/data/T1/test_with_lifestyle.csv')
+    # print(train_df_T1.head())
+    # train_df_T1['Age'] = train_df_T1['Age'] + 2
+    # print(train_df_T1.head())
+
+    
+
+    train_df_T1.to_csv('src/recommendation/data/T1/test_with_lifestyle.csv', index=False)

@@ -15,7 +15,7 @@
       "hit_rate": 0.3083
     },
     "ranking_metrics": {
-      "average_ndcg_with_probs": 0.6799910753139189
+      "average_ndcg_with_probs": 0.6455916728308114
     }
   }
 }

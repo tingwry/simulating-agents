@@ -65,6 +65,8 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
 
     else:
         df, preprocessor = load_and_preprocess_data(DATA_PATH)
+
+        print(DATA_PATH)
         
         # Get feature columns (exclude target categories)
         feature_cols = [col for col in df.columns if col not in categories]
@@ -745,5 +747,5 @@ if __name__ == "__main__":
 
     # T0/T1/predT1
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
-    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
+    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
+    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')

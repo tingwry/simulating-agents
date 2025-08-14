@@ -5,7 +5,9 @@ import pandas as pd
 train_with_lifestyle_pred_T1 = pd.read_csv('src/recommendation/data/T1_predicted/train_with_lifestyle.csv')
 
 # ans_key_grouped = pd.read_csv('src/recommendation/data/ans_key/grouped_catbased.csv')
-ans_key_grouped_no_norm = pd.read_csv('src/recommendation/data/ans_key/grouped_catbased_no_norm.csv')
+# ans_key_grouped_no_norm = pd.read_csv('src/recommendation/data/ans_key/grouped_catbased_no_norm.csv')
+# ans_key_grouped = pd.read_csv('src/recommendation/data/ans_key/grouped_catbased_amt.csv')
+ans_key_grouped_no_norm = pd.read_csv('src/recommendation/data/ans_key/grouped_catbased_amt_no_norm.csv')
 
 
 def merge_demog_with_labels(demog, labels):
@@ -29,6 +31,10 @@ merged_data = merge_demog_with_labels(train_with_lifestyle_pred_T1, ans_key_grou
 
 print(f"Merged DataFrame shape: {merged_data.shape}")
 print(merged_data.head())
+
+# merged_data.to_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased.csv', index=False)
+# merged_data.to_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased.csv', index=False)
+# merged_data.to_csv('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv', index=False)
 
 # merged_data.to_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv', index=False)
 # merged_data.to_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv', index=False)

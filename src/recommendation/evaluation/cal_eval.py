@@ -22,10 +22,13 @@ def evaluate_transaction_predictions(method, is_regressor, method_model, thresho
     
     # Merge dataframes on cust_id
     merged = pd.merge(transaction_predictions, ans_key, on='cust_id', how='inner', suffixes=('_pred', '_true'))
+
+    # print(merged.head(10))
     
     # Merge probabilities if provided
     if probabilities_df is not None:
         merged = pd.merge(merged, probabilities_df, on='cust_id', suffixes=('', '_prob'))
+        print(merged.head(10))
 
     # Initialize results list
     results = []
@@ -222,19 +225,19 @@ if __name__ == "__main__":
     # evaluate_transaction_predictions(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
 
         # T1 evaluation
-    # evaluate_transaction_predictions(
-    #     method="binary", 
-    #     is_regressor=False, 
-    #     method_model="catboost", 
-    #     threshold=None,
-    #     data='T1'
-    # )
-    
-    # T1_predicted evaluation
     evaluate_transaction_predictions(
         method="binary", 
         is_regressor=False, 
         method_model="catboost", 
         threshold=None,
-        data='T1_predicted'
+        data='T1'
     )
+    
+    # T1_predicted evaluation
+    # evaluate_transaction_predictions(
+    #     method="binary", 
+    #     is_regressor=False, 
+    #     method_model="catboost", 
+    #     threshold=None,
+    #     data='T1_predicted'
+    # )

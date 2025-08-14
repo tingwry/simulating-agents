@@ -263,6 +263,17 @@ if __name__ == "__main__":
     # print(user_item_matrix)
     # user_item_matrix.to_csv('src/recommendation/data/ans_key/grouped_catbased_amt_by_column.csv', index=False)
 
-    user_item_matrix = group_categories_without_normalization(lifestyle)
-    print(user_item_matrix)
-    user_item_matrix.to_csv('src/recommendation/data/ans_key/grouped_catbased_amt_no_norm.csv', index=False)
+    # user_item_matrix = group_categories_without_normalization(lifestyle)
+    # print(user_item_matrix)
+    # user_item_matrix.to_csv('src/recommendation/data/ans_key/grouped_catbased_amt_no_norm.csv', index=False)
+
+
+    # Assuming df is your DataFrame
+    df = pd.read_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
+    # df = df.sort_values(by='CUST_ID', ascending=True)
+    # print(df.head(10))
+
+    # If you want to reset the index after sorting (optional)
+    df = df.sort_values(by='CUST_ID', ascending=True).reset_index(drop=True)
+    print(df.head(10))
+    df.to_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv', index=False)

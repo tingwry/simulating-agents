@@ -1,12 +1,12 @@
 {
-  "loan": 0.68,
-  "utility": 0.32237747795194127,
-  "finance": 0.3847111199980732,
-  "shopping": 0.06,
-  "financial_services": 0.02940127388535032,
-  "health_and_care": 0.4678555779535053,
-  "home_lifestyle": 0.06,
-  "transport_travel": 0.13,
-  "leisure": 0.01,
-  "public_services": 0.1
+  "loan": 0.57,
+  "utility": 0.2463842437755481,
+  "finance": 0.32909854697240365,
+  "shopping": 0.05134964578712263,
+  "financial_services": 0.6141535396807732,
+  "health_and_care": 0.713464108989738,
+  "home_lifestyle": 0.15,
+  "transport_travel": 0.0,
+  "leisure": 0.56,
+  "public_services": 0.0
 }
