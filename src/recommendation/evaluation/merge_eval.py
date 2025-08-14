@@ -335,15 +335,15 @@ if __name__ == "__main__":
     #     ]
     # )
 
-    # merge_catboost_classifier_evaluations(
-    #     root_dir='src/recommendation/evaluation/eval_results',
-    #     output_csv_path='src/recommendation/evaluation/eval_results/catboost_classifier_summary.csv'
-    # )
-
-    merge_multi_nn_evaluations(
+    merge_catboost_classifier_evaluations(
         root_dir='src/recommendation/evaluation/eval_results',
-        output_csv_path='src/recommendation/evaluation/eval_results/neural_network_summary.csv'
+        output_csv_path='src/recommendation/evaluation/eval_results/catboost_classifier_summary.csv'
     )
+
+    # merge_multi_nn_evaluations(
+    #     root_dir='src/recommendation/evaluation/eval_results',
+    #     output_csv_path='src/recommendation/evaluation/eval_results/neural_network_summary.csv'
+    # )
 
     # combined_results = combine_evaluation_results()
     # print(combined_results.head())

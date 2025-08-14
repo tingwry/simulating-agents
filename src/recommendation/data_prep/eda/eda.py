@@ -87,9 +87,20 @@ df_T0 = pd.read_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased.c
 df_T1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased.csv')
 df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv')
 
+# df_T0 = pd.read_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv')
+# df_T1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv')
+# df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm.csv')
+
+# df_T0 = pd.read_csv('src/recommendation/data/T0/demog_grouped_catbased.csv')
+# df_T1 = pd.read_csv('src/recommendation/data/T1/demog_grouped_catbased.csv')
+# df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_grouped_catbased.csv')
+
 # test
 # df_T0 = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
 # df_T1 = pd.read_csv('src/recommendation/data/T1/test_with_lifestyle.csv')
 # df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
 
 plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions', show_plots=False)
+# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_no_norm', show_plots=False)
+# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_no_rank', show_plots=False)
+# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_test', show_plots=False)

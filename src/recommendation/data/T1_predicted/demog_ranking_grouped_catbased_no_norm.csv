@@ -919,7 +919,7 @@ CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occu
 2935,0,28.0,Female,bachelor's degree,single,Eastern,Corporate Employee,0.0,0.0,1635.85,1635.85,0.0,0.0,0.0,0.0,0.0,0.0
 2938,0,49.0,Female,master's degree,married,Eastern,Entrepreneur,6200.0,2362.1299999999997,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2940,0,40.0,Male,bachelor's degree,married,Eastern,Corporate Employee,3540.38,0.0,400.0,0.0,0.0,4470.0,2235.0,0.0,0.0,0.0
-2943,2,67.0,Female,less than high school,married,Central,retire,7000.0,618.46,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2943,2,67.0,Female,less than high school,married,Central,Retired,7000.0,618.46,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 2945,0,35.0,Male,high school,single,Western,Corporate Employee,0.0,1442.36,264.0,399.0,0.0,0.0,0.0,0.0,540.0,0.0
 2946,0,58.0,Female,less than high school,single,Northeastern,Corporate Employee,0.0,0.0,0.0,13000.0,0.0,0.0,0.0,0.0,0.0,0.0
 2947,0,35.0,Female,vocational certificate,single,Northeastern,Corporate Employee,0.0,0.0,0.0,0.0,2261.6,0.0,0.0,0.0,0.0,0.0

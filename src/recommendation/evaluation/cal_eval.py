@@ -229,11 +229,11 @@ if __name__ == "__main__":
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1')
     
     # T1_predicted evaluation
-    # evaluate_transaction_predictions(
-    #     method="binary", 
-    #     is_regressor=False, 
-    #     method_model="catboost", 
-    #     threshold=None,
-    #     data='T1_predicted'
-    # )
-    evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1_predicted')
+    evaluate_transaction_predictions(
+        method="binary", 
+        is_regressor=False, 
+        method_model="catboost", 
+        threshold=None,
+        data='T1_predicted'
+    )
+    # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1_predicted')
