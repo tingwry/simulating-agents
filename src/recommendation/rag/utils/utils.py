@@ -3,6 +3,10 @@ from src.client.qdrant import *
 from qdrant_client import models
 from tqdm import tqdm
 import torch
+import pandas as pd
+import os
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 
@@ -23,6 +27,14 @@ def create_collection(client, collection_name, vector_size=384):
 def prepare_documents(df):
     """Convert DataFrame rows to Qdrant document format with detailed progress"""
     documents = []
+    
+    # Transaction categories to track
+    transaction_categories = [
+        'loan', 'utility', 'finance', 'shopping', 'financial_services', 
+        'health_and_care', 'home_lifestyle', 'transport_travel', 
+        'leisure', 'public_services'
+    ]
+    
     print("\n" + "="*50)
     print("Preparing documents for embedding...")
     print(f"Total rows to process: {len(df)}")
@@ -34,10 +46,22 @@ def prepare_documents(df):
             print(f"\nProcessing row {current}/{len(df)} - CUST_ID: {row['CUST_ID']}")
         
         try:
+            # Prepare transaction categories data
+            transaction_data = {}
+            performed_categories = []
+            
+            for category in transaction_categories:
+                if category in row:
+                    transaction_data[category] = int(row[category])
+                    if int(row[category]) == 1:
+                        performed_categories.append(category)
+                else:
+                    transaction_data[category] = 0
+            
             document = {
                 "id": int(row['CUST_ID']),
                 "metadata": {
-                    "full_profile_T0": {
+                    "demographics": {
                         "age": row['Age'],
                         "education": row['Education level'],
                         "marital_status": row['Marital status'],
@@ -45,15 +69,19 @@ def prepare_documents(df):
                         "region": row['Region'],
                         "children": row['Number of Children'],
                         "gender": row['Gender'],
-                        "txn cat": ,
                         "demog_summary": row['Demog Summary']
-                    }
+                    },
+                    "transactions": transaction_data,
+                    "performed_categories": performed_categories,  # List of categories where value = 1
+                    "total_active_categories": len(performed_categories)  # Count of active categories
                 },
-                "embedding_text": row['Summary']
+                "embedding_text": row['Demog Summary']  # This is what we'll embed
             }
             documents.append(document)
+            
             if current % 100 == 0:
                 print(f"✔ Prepared document {current} | Last CUST_ID: {row['CUST_ID']}")
+                print(f"  Active transaction categories: {len(performed_categories)}")
                 
         except Exception as e:
             print(f"\n⚠️ Error processing row {current} (CUST_ID: {row.get('CUST_ID', 'UNKNOWN')}): {str(e)}")
@@ -66,7 +94,6 @@ def prepare_documents(df):
 
 
 def generate_embeddings(documents, model_name="sentence-transformers/all-mpnet-base-v2"):
-    """Generate embeddings for all documents"""
     """Generate embeddings with enhanced progress tracking"""
     print("\n" + "="*50)
     print("Generating document embeddings...")
@@ -93,13 +120,12 @@ def generate_embeddings(documents, model_name="sentence-transformers/all-mpnet-b
             batch_size=32,
             device='cuda' if torch.cuda.is_available() else 'cpu'
         )
-        print(f"Generated {len(embeddings)} embeddings")
+        print(f"Generated {len(embeddings)} embeddings with shape: {embeddings.shape}")
         
         # Add embeddings to documents
         print("\nAssigning embeddings to documents...")
         for i, (doc, emb) in enumerate(zip(documents, embeddings)):
-            print(emb.tolist().dtype())
-            doc["embedding"] = emb.tolist()
+            doc["embedding"] = emb.tolist()  # Convert numpy array to list
             if (i+1) % 100 == 0:
                 print(f"Assigned embeddings to {i+1}/{len(documents)} documents")
                 
@@ -146,12 +172,12 @@ def upload_to_qdrant(client, collection_name, documents, batch_size=100):
                     wait=True
                 )
                 success_count += len(points)
+                print(f"✔ Uploaded batch of {len(points)} documents (total: {success_count})")
                 points = []
-                print(f"✔ Uploaded batch up to document {i+1}")
                 
         except Exception as e:
             error_count += 1
-            print(f"\n⚠️ Error uploading document {i+1} (CUST_ID: {doc.get('id', 'UNKNOWN')}):{str(e)}")
+            print(f"\n⚠️ Error uploading document {i+1} (CUST_ID: {doc.get('id', 'UNKNOWN')}): {str(e)}")
             continue
     
     print("\n" + "="*50)
@@ -161,3 +187,4 @@ def upload_to_qdrant(client, collection_name, documents, batch_size=100):
     if error_count > 0:
         print("Note: Some documents failed to upload. Check error logs above.")
     print("="*50)
+

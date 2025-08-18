@@ -14,6 +14,9 @@ import pickle
 from d3rlpy.dataset import MDPDataset
 from d3rlpy.algos import DiscreteCQLConfig
 import joblib
+from sentence_transformers import SentenceTransformer
+from src.client.qdrant import get_qdrant_client
+from tqdm import tqdm
 
 class MultiColumnLabelEncoder(BaseEstimator, TransformerMixin):
     """Label encoder that handles multiple columns properly"""
@@ -582,3 +585,92 @@ def find_optimal_rl_thresholds(data_dir, model_dir, OPTIMAL_THRS, beta=0.5):
         )
     
     return optimal_thresholds
+
+
+def retrieve_similar_customers_for_recommendations(test_df, collection_name, top_k=5):
+    """
+    Retrieve similar customers from Qdrant vector database for transaction recommendations.
+    
+    Args:
+        test_df: DataFrame with customers to predict for (must have 'Demog Summary' column)
+        collection_name: Name of Qdrant collection
+        top_k: Number of similar customers to retrieve
+    
+    Returns:
+        dict: Customer ID mapped to similar customers data
+    """
+    model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")  # Use same model as embedding
+    client = get_qdrant_client()
+    
+    results = {}
+    
+    # Validate that Demog Summary column exists
+    if 'Demog Summary' not in test_df.columns:
+        raise ValueError("Test dataset must contain 'Demog Summary' column")
+    
+    print(f"Retrieving similar customers for {len(test_df)} customers using demographic summaries...")
+    
+    for idx, row in tqdm(test_df.iterrows(), total=len(test_df), desc="Querying similar customers"):
+        try:
+            # Use the existing demographic summary
+            query_text = row['Demog Summary']
+            
+            if pd.isna(query_text) or query_text.strip() == '':
+                print(f"Warning: Empty demographic summary for customer {row.get('CUST_ID', idx)}")
+                query_text = create_demographic_summary(row)  # Fallback
+            
+            # Generate embedding for query
+            query_embedding = model.encode(query_text).tolist()
+            
+            # Search for similar customers
+            search_results = client.search(
+                collection_name=collection_name,
+                query_vector=query_embedding,
+                limit=top_k,
+                with_payload=True,
+                with_vectors=False
+            )
+            
+            similar_customers = []
+            for result in search_results:
+                similar_customers.append({
+                    "id": result.id,
+                    "score": result.score,
+                    "metadata": result.payload
+                })
+            
+            customer_id = row.get('CUST_ID', row.get('cust_id', idx))
+            results[customer_id] = {
+                "query_text": query_text,
+                "similar_customers": similar_customers
+            }
+            
+        except Exception as e:
+            print(f"Error processing customer {row.get('CUST_ID', idx)}: {str(e)}")
+            customer_id = row.get('CUST_ID', row.get('cust_id', idx))
+            results[customer_id] = {
+                "error": str(e),
+                "query_text": row.get('Demog Summary', ''),
+                "similar_customers": []
+            }
+    
+    return results
+
+def create_demographic_summary(row):
+    """Create a demographic summary if not available in the data."""
+    try:
+        age = row.get('Age', 'unknown')
+        gender = row.get('Gender', 'unknown')
+        education = row.get('Education level', 'unknown')
+        marital_status = row.get('Marital status', 'unknown')
+        occupation = row.get('Occupation Group', 'unknown')
+        region = row.get('Region', 'unknown')
+        children = row.get('Number of Children', 0)
+        
+        summary = (f"A {age}-year-old {gender} with {education} education, "
+                  f"{marital_status} status, working as {occupation} in {region} region "
+                  f"with {children} children.")
+        return summary
+    except Exception:
+        return "Customer demographic information"
+    

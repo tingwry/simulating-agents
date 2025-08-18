@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 T_DIFF = '2'
 
 def create_transaction_prediction_prompt(customer_row, categories):
@@ -149,6 +150,235 @@ def format_customer_data_for_prompt(customer_row):
     }
     
     return customer_data
+
+
+
+# rag
+def create_rag_transaction_prediction_prompt(customer_row, categories, similar_customers_data):
+    """
+    Create prediction prompt with similar customers context for transaction categories.
+    
+    Args:
+        customer_row: Customer data row
+        categories: List of transaction categories to predict
+        similar_customers_data: Retrieved similar customers data
+    
+    Returns:
+        str: Complete prompt with context
+    """
+    
+    # Get customer profile
+    customer_profile = format_customer_profile_for_transactions(customer_row)
+    
+    # Format similar customers examples
+    similar_examples = format_similar_customers_transaction_examples(similar_customers_data)
+    
+    # Create categories list
+    categories_str = "', '".join(categories)
+    
+    prompt = f"""# Transaction Category Prediction with Similar Customer Context
+
+## Your Task
+You are a financial behavior analyst. Based on the customer's demographic and financial profile, predict which transaction categories they are likely to engage with. Use the similar customers' examples as reference patterns.
+
+## Target Customer Profile
+{customer_profile}
+
+## Similar Customer Examples
+{similar_examples}
+
+## Transaction Categories to Predict
+Predict likelihood (0 = will not use, 1 = will use) for these categories:
+['{categories_str}']
+
+## Category Definitions
+- **loan**: Personal loans, credit facilities
+- **utility**: Electricity, water, phone bills, internet
+- **finance**: Investment products, financial planning services
+- **shopping**: Retail purchases, e-commerce transactions
+- **financial_services**: Banking services, insurance, financial consultations
+- **health_and_care**: Healthcare payments, medical services, pharmacy
+- **home_lifestyle**: Home improvement, furniture, household items
+- **transport_travel**: Transportation, travel bookings, vehicle services
+- **leisure**: Entertainment, dining, recreation, hobbies
+- **public_services**: Government services, taxes, official payments
+
+## Prediction Guidelines
+
+### Consider Customer Context:
+1. **Demographic Factors**: Age, education, occupation, family status
+2. **Financial Behavior**: Spending patterns, account usage, cash flow
+3. **Life Stage**: Career phase, family formation, financial maturity
+4. **Regional Factors**: Location-based service availability and preferences
+
+### Learn from Similar Customers:
+1. **Pattern Recognition**: How do customers with similar profiles behave?
+2. **Life Stage Patterns**: What categories are common for this demographic?
+3. **Financial Capacity**: Do spending patterns support certain categories?
+4. **Behavioral Consistency**: Are there consistent patterns across similar customers?
+
+### Prediction Logic:
+- **Essential Services**: Utility, basic financial services (high likelihood for most)
+- **Life Stage Services**: Health care varies by age, family services vary by children
+- **Income-Dependent**: Loans, investments depend on financial capacity
+- **Lifestyle Services**: Shopping, leisure depend on demographics and income
+- **Professional Needs**: Business services depend on occupation type
+
+## Output Format
+```json
+{{
+  "customer_id": "{customer_row.get('CUST_ID', customer_row.get('cust_id', 'unknown'))}",
+  "predictions": {{
+    {', '.join([f'"{cat}": 0' for cat in categories])}
+  }},
+  "confidence_scores": {{
+    {', '.join([f'"{cat}": 0.0' for cat in categories])}
+  }},
+  "reasoning": {{
+    {', '.join([f'"{cat}": "explanation based on customer profile and similar examples"' for cat in categories])}
+  }}
+}}
+```
+
+## Key Considerations
+- **Similar Customer Patterns**: Reference the examples but adapt to this customer's unique profile
+- **Demographic Logic**: Ensure predictions align with customer's life stage and capacity
+- **Financial Realism**: Consider if customer's financial profile supports each category
+- **Consistency**: Ensure predictions are internally consistent and logical
+- **Context Integration**: Blend insights from similar customers with individual customer analysis
+
+Provide realistic predictions based on the customer's profile and the patterns observed in similar customers.
+"""
+    
+    return prompt
+
+
+def format_customer_profile_for_transactions(customer_row):
+    """Format customer profile for transaction prediction using available data."""
+    try:
+        # Extract key demographic info
+        customer_id = customer_row.get('CUST_ID', customer_row.get('cust_id', 'unknown'))
+        age = customer_row.get('Age', 'unknown')
+        gender = customer_row.get('Gender', 'unknown')
+        education = customer_row.get('Education level', 'unknown')
+        marital_status = customer_row.get('Marital status', 'unknown')
+        occupation = customer_row.get('Occupation Group', 'unknown')
+        region = customer_row.get('Region', 'unknown')
+        children = customer_row.get('Number of Children', 0)
+        
+        # Use the existing demographic summary
+        demog_summary = customer_row.get('Demog Summary', 'No demographic summary available')
+        
+        profile = f"""**Customer ID:** {customer_id}
+
+**Demographic Summary:**
+{demog_summary}
+
+**Key Demographics:**
+- Age: {age} years
+- Gender: {gender}
+- Education: {education}
+- Marital Status: {marital_status}
+- Occupation: {occupation}
+- Region: {region}
+- Number of Children: {children}
+
+**Current Transaction Categories (if available):**"""
+        
+        # Add current transaction usage if available
+        transaction_categories = ['loan', 'utility', 'finance', 'shopping', 'financial_services', 
+                                'health_and_care', 'home_lifestyle', 'transport_travel', 
+                                'leisure', 'public_services']
+        
+        current_usage = []
+        for cat in transaction_categories:
+            if cat in customer_row:
+                usage = customer_row.get(cat, 0)
+                status = "✓ Active" if usage == 1 else "✗ Not Active"
+                current_usage.append(f"- {cat}: {status}")
+        
+        if current_usage:
+            profile += "\n" + "\n".join(current_usage)
+        else:
+            profile += "\n- Current transaction data not available (this is what we're predicting)"
+        
+        # Add financial indicators if available
+        financial_cols = ['Deposit Account Balance', 'Savings Account', 'Payment', 'Health Insurance']
+        if any(col in customer_row for col in financial_cols):
+            profile += f"""
+
+**Financial Indicators:**"""
+            if 'Deposit Account Balance' in customer_row:
+                profile += f"\n- Deposit Balance: ${customer_row.get('Deposit Account Balance', 0):,.2f}"
+            if 'Savings Account' in customer_row:
+                profile += f"\n- Savings Account Usage: {customer_row.get('Savings Account', 0):.1%}"
+            if 'Payment' in customer_row:
+                profile += f"\n- Payment Services: {customer_row.get('Payment', 0):.1%}"
+            if 'Health Insurance' in customer_row:
+                profile += f"\n- Health Insurance: {customer_row.get('Health Insurance', 0):.1%}"
+        
+        return profile
+        
+    except Exception as e:
+        return f"**Customer ID:** {customer_row.get('CUST_ID', 'unknown')}\n**Error formatting profile:** {str(e)}"
+
+
+def format_similar_customers_transaction_examples(similar_customers_data):
+    """Format similar customers data into examples for the prompt."""
+    if not similar_customers_data or not similar_customers_data.get('similar_customers'):
+        return "No similar customers found for reference."
+    
+    examples = "Here are examples from customers with similar demographic profiles:\n\n"
+    
+    for i, customer in enumerate(similar_customers_data['similar_customers'][:3], 1):  # Limit to top 3
+        try:
+            metadata = customer.get('metadata', {})
+            demographics = metadata.get('demographics', {})
+            transactions = metadata.get('transactions', {})
+            score = customer.get('score', 0)
+            
+            examples += f"### Similar Customer {i} (Similarity: {score:.2f})\n"
+            
+            # Demographics
+            examples += "**Profile:**\n"
+            examples += f"- Age: {demographics.get('age', 'unknown')}, "
+            examples += f"Gender: {demographics.get('gender', 'unknown')}, "
+            examples += f"Education: {demographics.get('education', 'unknown')}\n"
+            examples += f"- Occupation: {demographics.get('occupation', 'unknown')}, "
+            examples += f"Marital Status: {demographics.get('marital_status', 'unknown')}, "
+            examples += f"Children: {demographics.get('children', 0)}\n"
+            examples += f"- Region: {demographics.get('region', 'unknown')}\n"
+            
+            # Transaction patterns
+            examples += "\n**Transaction Categories Used:**\n"
+            active_categories = []
+            inactive_categories = []
+            
+            for category, usage in transactions.items():
+                if usage == 1:
+                    active_categories.append(category)
+                else:
+                    inactive_categories.append(category)
+            
+            if active_categories:
+                examples += f"- ✓ Active: {', '.join(active_categories)}\n"
+            if inactive_categories:
+                examples += f"- ✗ Not Used: {', '.join(inactive_categories)}\n"
+            
+            examples += "\n"
+            
+        except Exception as e:
+            examples += f"### Similar Customer {i}\n**Error processing data:** {str(e)}\n\n"
+    
+    examples += "\n**Pattern Analysis:**\n"
+    examples += "Use these examples to understand how customers with similar demographics typically engage with different transaction categories. "
+    examples += "Look for patterns in age groups, occupations, family status, and regional preferences.\n"
+    
+    return examples
+
+
+
+
 
 # UTILS
 

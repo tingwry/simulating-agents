@@ -11,6 +11,7 @@ import json
 from src.recommendation.prompts import *
 from src.client.llm import get_aoi_client
 
+os.environ["TOKENIZERS_PARALLELISM"] = "false" 
 
 def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0'):
     DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS, = prediction_path_indicator(
@@ -340,11 +341,11 @@ def get_llm_prediction(prompt, predicted_actions=None):
     ]
     
     # Add predicted actions if provided
-    if predicted_actions:
-        messages.append({
-            "role": "user", 
-            "content": f"Predicted actions at time T1: {predicted_actions}"
-        })
+    # if predicted_actions:
+    #     messages.append({
+    #         "role": "user", 
+    #         "content": f"Predicted actions at time T1: {predicted_actions}"
+    #     })
     
     response = client.chat.completions.create(
         model="gpt-4o",
@@ -356,10 +357,148 @@ def get_llm_prediction(prompt, predicted_actions=None):
     return response.choices[0].message.content
 
 
+
+
+def run_rag_transaction_predictions(test_df, collection_name, categories, output_dir=None, top_k=5):
+    """
+    Main function to run RAG-based transaction category predictions.
+    
+    Args:
+        test_df: Test dataset DataFrame
+        collection_name: Qdrant collection name for similar customer retrieval
+        categories: List of transaction categories to predict
+        output_dir: Directory to save results
+        top_k: Number of similar customers to retrieve
+    
+    Returns:
+        tuple: (binary_predictions_df, prediction_scores_df, reasoning_df)
+    """
+    
+    print("Starting RAG-based transaction category prediction...")
+    
+    # Retrieve similar customers for all test customers
+    print("Step 1: Retrieving similar customers...")
+    similar_customers_data = retrieve_similar_customers_for_recommendations(
+        test_df, collection_name, top_k=top_k
+    )
+    
+    # Save similar customers data
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+        similar_output_file = os.path.join(output_dir, "similar_customers_transaction_data.json")
+        with open(similar_output_file, 'w', encoding='utf-8') as f:
+            json.dump(similar_customers_data, f, indent=4, ensure_ascii=False)
+        print(f"Similar customers data saved to: {similar_output_file}")
+    
+    # Initialize output DataFrames
+    id_col = 'CUST_ID' if 'CUST_ID' in test_df.columns else 'cust_id'
+    
+    binary_predictions = pd.DataFrame()
+    prediction_scores = pd.DataFrame()
+    reasoning_df = pd.DataFrame()
+    
+    binary_predictions[id_col] = test_df[id_col]
+    prediction_scores[id_col] = test_df[id_col]
+    reasoning_df[id_col] = test_df[id_col]
+    
+    # Track processed and failed customers
+    processed = []
+    failed = []
+    
+    print(f"Step 2: Processing {len(test_df)} customers for predictions...")
+    
+    # Process each customer
+    for i in tqdm(range(len(test_df)), desc="Processing customers"):
+        customer_row = test_df.iloc[i]
+        customer_id = customer_row[id_col]
+        
+        try:
+            # Get similar customers data for this customer
+            cust_similar_data = similar_customers_data.get(customer_id, {})
+            
+            if not cust_similar_data.get('similar_customers'):
+                print(f"\nWarning: No similar customers found for {customer_id}")
+                # Continue with empty context rather than failing
+                cust_similar_data = {'similar_customers': []}
+            
+            # Create RAG-enhanced prediction prompt
+            prompt = create_rag_transaction_prediction_prompt(
+                customer_row, categories, cust_similar_data
+            )
+            
+            # Get LLM prediction
+            response = get_llm_prediction(prompt)
+            
+            # Parse response
+            json_str = re.sub(r'^```json|```$', '', response.strip(), flags=re.MULTILINE).strip()
+            prediction = json.loads(json_str)
+            
+            # Extract predictions and scores for each category
+            for category in categories:
+                # Get binary prediction (0 or 1)
+                binary_pred = prediction.get('predictions', {}).get(category, 0)
+                binary_predictions.loc[i, category] = int(binary_pred)
+                
+                # Get confidence score (0.0 to 1.0)
+                confidence = prediction.get('confidence_scores', {}).get(category, 0.0)
+                prediction_scores.loc[i, category] = float(confidence)
+                
+                # Get reasoning text
+                reasoning = prediction.get('reasoning', {}).get(category, 'No reasoning provided')
+                reasoning_df.loc[i, category] = str(reasoning)
+            
+            processed.append(customer_id)
+            
+        except Exception as e:
+            print(f"❌ Error processing customer {customer_id}: {str(e)}")
+            failed.append(customer_id)
+            
+            # Fill with default values for failed predictions
+            for category in categories:
+                binary_predictions.loc[i, category] = 0
+                prediction_scores.loc[i, category] = 0.0
+                reasoning_df.loc[i, category] = f"Failed to process: {str(e)}"
+            continue
+    
+    # Save outputs
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+        
+        binary_output = os.path.join(output_dir, "rag_transaction_predictions.csv")
+        binary_predictions.to_csv(binary_output, index=False)
+        
+        scores_output = os.path.join(output_dir, "rag_transaction_prediction_scores.csv")
+        prediction_scores.to_csv(scores_output, index=False)
+        
+        reasoning_output = os.path.join(output_dir, "rag_transaction_prediction_reasoning.csv")
+        reasoning_df.to_csv(reasoning_output, index=False)
+        
+        print(f"\nResults saved to:")
+        print(f"- Binary predictions: {binary_output}")
+        print(f"- Prediction scores: {scores_output}")
+        print(f"- Reasoning: {reasoning_output}")
+    
+    # Print summary
+    print(f"\nProcessing complete:")
+    print(f"- Successfully processed: {len(processed)} customers")
+    print(f"- Failed to process: {len(failed)} customers")
+    if failed:
+        print(f"Failed customer IDs: {failed[:10]}{'...' if len(failed) > 10 else ''}")
+    
+    return binary_predictions, prediction_scores, reasoning_df
+
+
+
 if __name__ == "__main__":
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
     feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
+
+    COLLECTION_NAME = "customers"
+    OUTPUT_DIR = "src/recommendation/predictions/llm/rag/results"
+    test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_v1.csv")
+    # testtest = test_df.head()
+    testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
@@ -388,8 +527,17 @@ if __name__ == "__main__":
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
 
 
-    binary_preds, scores = run_predictions_llm(
-    method="indiv", 
-    categories=categories, 
-    data='T0'
-)
+#     binary_preds, scores = run_predictions_llm(
+#     method="indiv", 
+#     categories=categories, 
+#     data='T0'
+# )
+    binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
+        test_df=test_df,
+        collection_name=COLLECTION_NAME,
+        categories=categories,
+        output_dir=OUTPUT_DIR,
+        top_k=5,
+        restart_failed_only=True
+    )
+    print("RAG-based transaction category prediction completed!")
