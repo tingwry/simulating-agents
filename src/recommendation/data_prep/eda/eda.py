@@ -192,13 +192,24 @@ def plot_txn_category_comparison(df_T0, df_T1, df_T1_predicted, save_path=None):
 # plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_test', show_plots=False)
 
 ### Plot Txn Categories ###
-df_T0 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
-df_T1 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
-df_T1_predicted = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1_predicted/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
+# df_T0 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
+# df_T1 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
+# df_T1_predicted = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1_predicted/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
+
+# plot_txn_category_comparison(
+#     df_T0, 
+#     df_T1, 
+#     df_T1_predicted,
+#     save_path='src/recommendation/data_prep/eda/transaction_category_comparison.png'
+# )
+
+df_T0 = pd.read_csv('src/recommendation/evaluation/eval_results/llm/detailed_evaluation_results_optimal_thrs.csv')
+df_T1 = pd.read_csv('src/recommendation/evaluation/eval_results/llm/detailed_evaluation_results_optimal_thrs.csv')
+df_T1_predicted = pd.read_csv('src/recommendation/evaluation/eval_results/llm/detailed_evaluation_results_optimal_thrs.csv')
 
 plot_txn_category_comparison(
     df_T0, 
     df_T1, 
     df_T1_predicted,
-    save_path='src/recommendation/data_prep/eda/transaction_category_comparison.png'
+    save_path='src/recommendation/data_prep/eda/transaction_category_comparison_llm.png'
 )

@@ -164,10 +164,10 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     """Determine the appropriate paths for prediction outputs.
     
     Args:
-        method: Either "binary", "multilabel", or "reinforcement_learning"
+        method: Either "binary", "multilabel", "reinforcement_learning", or "llm"
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
-                     ("random_forests", "catboost", "multioutputclassifier", "neural_network")
+                     ("random_forests", "catboost", "multioutputclassifier", "neural_network", "llm")
         data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
@@ -186,6 +186,13 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
         DATA_DIR = f'{base_data_path}/rl'
         MODEL_DIR = f'{base_model_path}/rl'
         PREDICTION_OUTPUT = f'{base_prediction_path}/rl'
+    elif method == "llm":
+        DATA_DIR = f'{base_data_path}/{data}'
+        MODEL_DIR = f'{base_model_path}/llm'
+        if data in ['T1', 'T1_predicted']:
+            PREDICTION_OUTPUT = f'{base_prediction_path}/llm/{data}'
+        else:  # T0 case
+            PREDICTION_OUTPUT = f'{base_prediction_path}/llm'
     else:
         DATA_DIR = f'{base_data_path}/{data}'
         
@@ -208,7 +215,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
                 PREDICTION_OUTPUT = f'{base_prediction_path}/multilabel/{method_model}'
             
         else:
-            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
+            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', or 'llm'")
         
     if threshold == None:
         OPTIMAL_THRS = "_optimal_thrs"
@@ -221,10 +228,10 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     """Determine the appropriate paths for evaluation outputs.
     
     Args:
-        method: Either "binary", "multilabel", or "reinforcement_learning"
+        method: Either "binary", "multilabel", "reinforcement_learning", or "llm"
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
-                     ("random_forests", "catboost", "multioutputclassifier", "neural_network")
+                     ("random_forests", "catboost", "multioutputclassifier", "neural_network", "llm")
         data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
@@ -233,7 +240,7 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     base_prediction_path = 'src/recommendation/predictions'
     base_eval_path = 'src/recommendation/evaluation/eval_results'
     base_ans_key_path = 'src/recommendation/data/ans_key'
-
+    
     OPTIMAL_THRS = ""
     
     # Set answer key path based on method and model type
@@ -246,6 +253,15 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
         PREDICTIONS_DIR = f'{base_prediction_path}/rl'
         SCORES_DIR = f'{base_prediction_path}/rl'
         EVAL_RESULTS_DIR = f'{base_eval_path}/rl'
+    elif method == "llm":
+        if data in ['T1', 'T1_predicted']:
+            PREDICTIONS_DIR = f'{base_prediction_path}/llm/{data}'
+            SCORES_DIR = f'{base_prediction_path}/llm/{data}'
+            EVAL_RESULTS_DIR = f'{base_eval_path}/llm/{data}'
+        else:  # T0 case
+            PREDICTIONS_DIR = f'{base_prediction_path}/llm'
+            SCORES_DIR = f'{base_prediction_path}/llm'
+            EVAL_RESULTS_DIR = f'{base_eval_path}/llm'
     else:
         if method == "binary":
             model_type = "regressor" if is_regressor else "classifier"
@@ -270,15 +286,16 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
                 EVAL_RESULTS_DIR = f'{base_eval_path}/multilabel/{method_model}'
             
         else:
-            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
+            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', or 'llm'")
         
     if threshold == None:
         OPTIMAL_THRS = "_optimal_thrs"
-
+    
     PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
     SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
     
     return PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, ANS_KEY_DIR, OPTIMAL_THRS
+
 
 
 def preprocess_unknown_values(df):

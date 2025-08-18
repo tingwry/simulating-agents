@@ -1,11 +1,15 @@
+import re
 import pandas as pd
 import joblib
 import os
 import numpy as np
+from tqdm import tqdm
 from src.recommendation.utils.utils import *
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 import json
+from src.recommendation.prompts import *
+from src.client.llm import get_aoi_client
 
 
 def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0'):
@@ -213,6 +217,143 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 
         return binary_predictions, prediction_scores
 
+def run_predictions_llm(method="indiv", is_regressor=False, categories=None, threshold=None, data='T0'):
+    """
+    Run LLM-based predictions for transaction categories using demographic data.
+    
+    Args:
+        method: Prediction method ("indiv" for individual)
+        method_model: Not used for LLM but kept for consistency
+        is_regressor: Not used for LLM but kept for consistency  
+        categories: List of transaction categories to predict
+        threshold: Not used for LLM but kept for consistency
+        percentile: Not used for LLM but kept for consistency
+        data: Data version ('T0', 'T1', 'T1_predicted')
+    
+    Returns:
+        tuple: (binary_predictions_df, prediction_scores_df)
+    """
+    
+    # Use similar path structure as run_predictions
+    DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS = prediction_path_indicator(
+        "llm", is_regressor, "llm", threshold, data
+    )
+    
+    # Load and preprocess full dataset
+    df = pd.read_csv(TEST_DATA_PATH)
+    # df = df.head(3)
+    df = preprocess_unknown_values(df)
+    
+    # Handle customer ID
+    id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
+    if id_col not in df.columns:
+        raise ValueError("No customer ID column found")
+    
+    # Initialize output DataFrames
+    binary_predictions = pd.DataFrame()
+    prediction_scores = pd.DataFrame()
+    reasoning_df = pd.DataFrame()
+    
+    binary_predictions['cust_id'] = df[id_col]
+    prediction_scores['cust_id'] = df[id_col]
+    reasoning_df['cust_id'] = df[id_col]
+    
+    # Track processed and failed customers
+    processed = []
+    failed = []
+    
+    print(f"Processing {len(df)} customers for transaction category predictions...")
+    
+    # Process each customer
+    for i in tqdm(range(len(df)), desc="Processing customers"):
+        customer_row = df.iloc[i]
+        customer_id = customer_row[id_col]
+        
+        try:
+            # Create prediction prompt for transaction categories
+            prompt = create_transaction_prediction_prompt(customer_row, categories)
+
+            print(prompt)
+            
+            # Get LLM prediction
+            response = get_llm_prediction(prompt)
+            
+            # Parse response
+            json_str = re.sub(r'^```json|```$', '', response.strip(), flags=re.MULTILINE).strip()
+            prediction = json.loads(json_str)
+            
+            # Extract predictions and scores for each category
+            for category in categories:
+                # Get binary prediction (0 or 1)
+                binary_pred = prediction.get('predictions', {}).get(category, 0)
+                binary_predictions.loc[i, category] = int(binary_pred)
+                
+                # Get confidence score (0.0 to 1.0)
+                confidence = prediction.get('confidence_scores', {}).get(category, 0.0)
+                prediction_scores.loc[i, category] = float(confidence)
+
+                # Get reasoning text
+                reasoning = prediction.get('reasoning', {}).get(category, 'No reasoning provided')
+                reasoning_df.loc[i, category] = str(reasoning)
+            
+            processed.append(customer_id)
+            
+        except Exception as e:
+            print(f"❌ Error processing customer {customer_id}: {str(e)}")
+            failed.append(customer_id)
+            
+            # Fill with default values for failed predictions
+            for category in categories:
+                binary_predictions.loc[i, category] = 0
+                prediction_scores.loc[i, category] = 0.0
+                reasoning_df.loc[i, category] = f"Failed to process: {str(e)}"
+            continue
+    
+    # Save outputs
+    os.makedirs(os.path.dirname(PREDICTION_OUTPUT), exist_ok=True)
+    binary_predictions.to_csv(PREDICTION_OUTPUT, index=False)
+    
+    scores_output = PREDICTION_OUTPUT.replace('.csv', '_scores.csv')
+    prediction_scores.to_csv(scores_output, index=False)
+
+    reasoning_output = PREDICTION_OUTPUT.replace('.csv', '_reasoning.csv')
+    reasoning_df.to_csv(reasoning_output, index=False)
+    
+    # Print summary
+    print(f"\nProcessing complete:")
+    print(f"- Successfully processed: {len(processed)} customers")
+    print(f"- Failed to process: {len(failed)} customers")
+    if failed:
+        print(f"Failed customer IDs: {failed[:10]}{'...' if len(failed) > 10 else ''}")
+    
+    print(f"\nBinary predictions saved to: {PREDICTION_OUTPUT}")
+    print(f"Prediction scores saved to: {scores_output}")
+    
+    return binary_predictions, prediction_scores
+
+def get_llm_prediction(prompt, predicted_actions=None):
+    client = get_aoi_client()
+
+    messages = [
+        {"role": "system", "content": "You are a transactional categories prediction assistant."},
+        {"role": "user", "content": prompt}
+    ]
+    
+    # Add predicted actions if provided
+    if predicted_actions:
+        messages.append({
+            "role": "user", 
+            "content": f"Predicted actions at time T1: {predicted_actions}"
+        })
+    
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=messages,
+        temperature=0.7,
+        max_tokens=1000
+    )
+    
+    return response.choices[0].message.content
 
 
 if __name__ == "__main__":
@@ -244,4 +385,11 @@ if __name__ == "__main__":
     # run_predictions(method="binary", is_regressor=False, categories=categories, 
     #                method_model="catboost", threshold=None, data='T1_predicted')
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1_predicted')
-    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
+
+
+    binary_preds, scores = run_predictions_llm(
+    method="indiv", 
+    categories=categories, 
+    data='T0'
+)
