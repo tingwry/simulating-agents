@@ -9,11 +9,12 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 from src.client.llm import *
 
-# train_T0 = pd.read_csv("src/data/T0/train_with_lifestyle.csv")
-test_T0 = pd.read_csv("src/data/T0/test_with_lifestyle.csv")
-# DIR = "src/data/cf_demog_summary/train_T0_demog_summ.csv"
-DIR = "src/data/cf_demog_summary/test_T0_demog_summ.csv"
-checkpoint_dir = 'src/recommendation/cf/summary_checkpoints'
+train_T0 = pd.read_csv("src/recommendation/data/T0/demog_grouped_catbased.csv")
+test_T0 = pd.read_csv("src/recommendation/data/T0/test_with_lifestyle.csv")
+
+train_DIR = "src/recommendation/data/rag/train_T0_demog_summ"
+test_DIR = "src/recommendation/data/rag/test_T0_demog_summ"
+checkpoint_dir = 'src/recommendation/data/rag/summary_checkpoints'
 
 # Context at T0
 def context_summarizer(x):
@@ -27,20 +28,21 @@ def context_summarizer(x):
         - Number of Children: {x['Number of Children']}
         """
     
-    full_prompt = """You are a customer analytics specialist creating demographic profiles for a recommendation system that predicts transaction categories (charity, loans, travel, insurance, etc.).
+    full_prompt = """You are a customer insights analyst tasked with creating comprehensive customer profiles for similarity matching and retrieval. 
 
-Your task is to transform customer demographic data into a contextual narrative that captures demographic intersections. This summary will be converted to vector embeddings and used to map customers to latent collaborative filtering spaces.
+Your task is to synthesize the provided customer data into a rich, descriptive paragraph that captures demographic characteristics. This summary will be used for vector embedding and stored in a database to find customers with similar profiles.
 
-CRITICAL REQUIREMENTS:
-1. Include ALL demographic elements naturally within the narrative: age, gender, education level, marital status, occupation group, region, and number of children
-2. Keep consistent structure but vary language to avoid repetition
+REQUIREMENTS:
+1. Include ALL demographic elements: age, gender, education level, marital status, occupation group, region, and number of children
+2. Create a cohesive narrative that describes what type of customer this person is
+3. Use descriptive language that would help identify similar customers
 
 
 OUTPUT FORMAT:
 Create a single, flowing paragraph (100-120 words) that weaves together demographic elements into a cohesive customer persona.
 
-EXAMPLE STRUCTURE:
-"This customer represents a [life stage descriptor] [gender] [occupation context] based in [region context] with [education implications] and [family situation]."
+EXAMPLE TONE:
+"This customer represents a [age group] [gender] [occupation context] based in [region] with [education implications] and [family situation]."
 
 Customer Demographic Data:"""
 
@@ -101,8 +103,8 @@ def save_checkpoint(df, dir_path, checkpoint_name):
     path = os.path.join(dir_path, filename)
     
     # Save as pickle (preserves dtypes better than CSV)
-    df.to_pickle(path)
-    print(f"✅ Checkpoint saved: {path}")
+    # df.to_pickle(path)
+    # print(f"✅ Checkpoint saved: {path}")
     
     # Also keep a CSV version for readability
     csv_path = os.path.join(dir_path, f"{checkpoint_name}_{timestamp}.csv")
@@ -113,19 +115,15 @@ def save_checkpoint(df, dir_path, checkpoint_name):
 
 def demog_summary_prep(train_T0, DIR):
     # testtest = train_T0.head()
+    testtest = train_T0.copy()
     # second_q = train_T0.iloc[(len(train_T0)//4)*3:].copy()
     # second_q = train_T0.iloc[len(train_T0)//4:].copy()
-    second_q = train_T0.copy()
 
-    train_T0_with_summ = merge_summaries(second_q)
+    test_T0_with_summ = merge_summaries(testtest)
     # save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_summaries")
 
-    # train_T0_with_summ = pd.read_csv('src/similar_indiv/rag/checkpoints/01_with_summaries_20250627_224753.csv')
-
-    # save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_demog_summ")
-
     # save_csv_file(DIR, train_T0_with_summ, 'train_T0_demog_summ', next_version=None)
-    save_csv_file(DIR, train_T0_with_summ, 'test_T0_demog_summ', next_version=None)
+    save_csv_file(DIR, test_T0_with_summ, 'test_T0_demog_summ', next_version=None)
 
 # demog_summary_prep(train_T0, DIR)
 
@@ -135,4 +133,5 @@ def demog_summary_prep(train_T0, DIR):
 # train_T0_demog_summ = pd.concat([part1, part2], axis=0, ignore_index=True)
 # test_T0_demog_summ.to_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ.csv', index=False)
 
-demog_summary_prep(test_T0, DIR)
+# demog_summary_prep(train_T0, train_DIR)
+demog_summary_prep(test_T0, test_DIR)
