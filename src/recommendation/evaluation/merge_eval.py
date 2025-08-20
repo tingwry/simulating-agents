@@ -423,10 +423,10 @@ if __name__ == "__main__":
     #     output_csv_path='src/recommendation/evaluation/eval_results/catboost_classifier_summary.csv'
     # )
 
-    merge_random_forests_classifier_evaluations(
-        root_dir='src/recommendation/evaluation/eval_results',
-        output_csv_path='src/recommendation/evaluation/eval_results/random_forests_classifier_summary.csv'
-    )
+    # merge_random_forests_classifier_evaluations(
+    #     root_dir='src/recommendation/evaluation/eval_results',
+    #     output_csv_path='src/recommendation/evaluation/eval_results/random_forests_classifier_summary.csv'
+    # )
 
     # merge_multi_nn_evaluations(
     #     root_dir='src/recommendation/evaluation/eval_results',
@@ -435,3 +435,8 @@ if __name__ == "__main__":
 
     # combined_results = combine_evaluation_results()
     # print(combined_results.head())
+
+    df = pd.read_csv('src/recommendation/evaluation/eval_results/all_evaluation_summary.csv')
+    df = df[['Method', 'Model', 'Precision', 'Recall', 'F-Beta Score', 'NDCG', 'Harmonic Mean (F-Beta, NDCG)']]
+
+    df.to_csv('src/recommendation/evaluation/eval_results/all_evaluation_summary_filtered.csv', index=False)

@@ -45,7 +45,7 @@ def transform_customer_data(csv_path, test_csv, output_path):
         'CUST_ID'
     ]
 
-    final_output_path = output_path + '/test_with_lifestyle.csv'
+    final_output_path = output_path + '/test_with_lifestyle_single.csv'
     df[columns_to_keep].to_csv(final_output_path, index=False)
     
     # Return the transformed dataframe with only the selected columns
@@ -54,7 +54,11 @@ def transform_customer_data(csv_path, test_csv, output_path):
 
 if __name__ == "__main__":
     # demog_at_T1_path = 'src/recommendation/data/T1_predicted/train_with_lifestyle_pred_T1.csv'
-    demog_at_T1_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle_pred_T1.csv'
+    # demog_at_T1_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle_pred_T1.csv'
+
+    # demog_at_T1_path = 'src/data_refresher/prediction/pred_results/train_with_lifestyle_pred_T1_single.csv'
+    demog_at_T1_path = 'src/data_refresher/prediction/pred_results/test_with_lifestyle_pred_T1_single.csv'
+
     # train_with_lifestyle_T0_path = 'src/recommendation/data/T0/train_with_lifestyle.csv'
     test_with_lifestyle_T0_path = 'src/recommendation/data/T0/test_with_lifestyle.csv'
     output_path = 'src/recommendation/data/T1_predicted'

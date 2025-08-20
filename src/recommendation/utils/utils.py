@@ -231,10 +231,11 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     """Determine the appropriate paths for evaluation outputs.
     
     Args:
-        method: Either "binary", "multilabel", "reinforcement_learning", or "llm"
+        method: Either "binary", "multilabel", "reinforcement_learning", "llm", or "rag"
         is_regressor: Boolean indicating if using regression (True) or classification (False)
         method_model: String specifying the modeling approach 
-                     ("random_forests", "catboost", "multioutputclassifier", "neural_network", "llm")
+                     ("random_forests", "catboost", "multioutputclassifier", 
+                      "neural_network", "llm", "rag")
         data: Data version ('T0', 'T1', or 'T1_predicted')
     
     Returns:
@@ -265,6 +266,15 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
             PREDICTIONS_DIR = f'{base_prediction_path}/llm'
             SCORES_DIR = f'{base_prediction_path}/llm'
             EVAL_RESULTS_DIR = f'{base_eval_path}/llm'
+    elif method == "rag":
+        if data in ['T1', 'T1_predicted']:
+            PREDICTIONS_DIR = f'{base_prediction_path}/llm/rag/{data}'
+            SCORES_DIR = f'{base_prediction_path}/llm/rag/{data}'
+            EVAL_RESULTS_DIR = f'{base_eval_path}/llm/rag/{data}'
+        else:  # T0 case
+            PREDICTIONS_DIR = f'{base_prediction_path}/llm/rag/results'
+            SCORES_DIR = f'{base_prediction_path}/llm/rag/results'
+            EVAL_RESULTS_DIR = f'{base_eval_path}/llm/rag'
     else:
         if method == "binary":
             model_type = "regressor" if is_regressor else "classifier"
@@ -289,13 +299,18 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
                 EVAL_RESULTS_DIR = f'{base_eval_path}/multilabel/{method_model}'
             
         else:
-            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', or 'llm'")
+            raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', 'llm', or 'rag'")
         
     if threshold == None:
         OPTIMAL_THRS = "_optimal_thrs"
     
-    PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
-    SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
+    # For RAG method, we have specific filenames
+    if method == "rag":
+        PREDICTIONS_DIR += '/rag_transaction_predictions.csv'
+        SCORES_DIR += '/rag_transaction_prediction_scores.csv'
+    else:
+        PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
+        SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
     
     return PREDICTIONS_DIR, SCORES_DIR, EVAL_RESULTS_DIR, ANS_KEY_DIR, OPTIMAL_THRS
 

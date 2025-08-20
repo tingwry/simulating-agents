@@ -1,0 +1,354 @@
+Number of Children,Number of Vehicles,Gender,Education level,Marital status,Savings Account,Savings Account Subgroup,Health Insurance,Lending,Payment,Service,Business Lending,Deposit Account,Deposit Account Balance,Deposit Account Transactions,Deposit Account Transactions AVG,Deposit Account Transactions MIN,Deposit Account Transactions MAX,Deposit Account Inflow,Deposit Account Inflow MIN,Deposit Account Inflow MAX,Deposit Account Outflow,Deposit Account Outflow MIN,Deposit Account Outflow MAX,Deposit Account Inflow Amount,Deposit Account Outflow Amount,Age,Region,Occupation Group,CUST_ID
+0,0.0,Male,others,married,3.0,3.0,2.0,0.0,2.0,1.0,0.0,1.0,7339.08,77.0,3.5,1.0,7.0,6.0,1.0,2.0,71.0,1.0,7.0,204954.54,218119.0,37.0,Northeastern,Corporate Employee,4050
+1,0.0,Female,high school,married,4.0,4.0,1.0,0.0,4.0,2.0,0.0,1.0,1805.86,63.0,3.15,1.0,7.0,25.0,1.0,3.0,38.0,1.0,5.0,58330.0,59992.0,34.0,Western,Corporate Employee,1392
+0,1.0,Male,bachelor's degree,single,6.0,6.0,1.0,1.0,5.0,1.0,0.0,1.0,1002565.42,228.0,7.35,2.0,13.0,126.0,1.0,9.0,102.0,1.0,6.0,297233.0,179979.62,50.0,Central,Corporate Employee,1663
+0,0.0,Male,bachelor's degree,single,7.0,7.0,2.0,2.0,4.0,1.0,0.0,1.0,13064.86,57.0,2.19,1.0,5.0,21.0,1.0,2.0,36.0,1.0,4.0,36831.42,36122.99,49.0,Central,Corporate Employee,1877
+0,2.0,Female,bachelor's degree,widow,9.0,9.0,3.0,1.0,7.0,1.0,0.0,1.0,36306.78,59.0,2.11,1.0,5.0,11.0,1.0,2.0,48.0,1.0,5.0,265590.37,278121.56,57.0,Southern,Corporate Employee,3431
+0,0.0,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,36.0,Central,Corporate Employee,110
+1,0.0,Female,bachelor's degree,married,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,3619.78,64.0,2.56,1.0,10.0,9.0,1.0,2.0,55.0,1.0,8.0,30030.1,28486.12,37.0,Central,Corporate Employee,3334
+0,1.0,Female,high school,married,9.0,8.0,4.0,1.0,5.0,0.0,0.0,1.0,62057.27,101.0,3.74,1.0,9.0,19.0,1.0,2.0,82.0,1.0,8.0,126933.25,76474.28,46.0,Eastern,Corporate Employee,3520
+0,0.0,Male,high school,single,2.0,2.0,2.0,0.0,1.0,1.0,0.0,2.0,18.99,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,25.0,Northern,Student,150
+0,1.0,Male,vocational certificate,single,2.0,2.0,0.0,0.0,1.0,1.0,0.0,0.0,,,,,,,,,,,,,,32.0,Eastern,Corporate Employee,2168
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,51.0,Eastern,Corporate Employee,2474
+2,0.0,Female,vocational certificate,married,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,879.19,20.0,1.67,1.0,5.0,9.0,1.0,2.0,11.0,1.0,3.0,17880.0,20399.93,63.0,Eastern,Corporate Employee,2388
+0,0.0,Male,high school,single,3.0,3.0,2.0,1.0,2.0,1.0,0.0,2.0,173582.1,43.0,2.15,1.0,6.0,37.0,1.0,6.0,6.0,1.0,4.0,203196.0,662548.58,36.0,Central,Corporate Employee,1105
+0,0.0,Female,high school,married,3.0,3.0,1.0,0.0,2.0,1.0,0.0,1.0,160.83,11.0,1.38,1.0,3.0,2.0,1.0,1.0,9.0,1.0,2.0,1900.0,1741.55,41.0,Central,Homemaker,3685
+0,1.0,Male,high school,single,12.0,9.0,7.0,1.0,9.0,1.0,0.0,4.0,22712.44,76.0,3.04,1.0,9.0,25.0,1.0,3.0,51.0,1.0,8.0,2011500.0,2052223.86,47.0,Central,Entrepreneur,3215
+0,0.0,Female,high school,single,2.0,2.0,1.0,0.0,2.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.1,31.0,Central,Corporate Employee,2043
+0,0.0,Female,bachelor's degree,single,5.0,5.0,1.0,0.0,5.0,0.0,0.0,1.0,1065.0,7.0,1.75,1.0,3.0,2.0,1.0,1.0,5.0,1.0,2.0,1800.0,2010.0,49.0,Central,Entrepreneur,765
+0,1.0,Male,master's degree,single,5.0,5.0,2.0,0.0,7.0,0.0,0.0,2.0,34254.19,51.0,2.32,1.0,4.0,6.0,1.0,2.0,45.0,1.0,4.0,62420.0,66096.85,39.0,Northeastern,Corporate Employee,498
+0,0.0,Female,bachelor's degree,single,3.0,3.0,2.0,0.0,3.0,1.0,0.0,2.0,193255.33,308.0,9.94,3.0,17.0,71.0,1.0,6.0,237.0,2.0,13.0,10038855.94,9942414.41,30.0,Central,Corporate Employee,462
+0,0.0,Female,high school,single,4.0,4.0,2.0,0.0,4.0,0.0,0.0,2.0,487.86,38.0,1.9,1.0,7.0,8.0,1.0,2.0,30.0,1.0,5.0,15668.0,42728.13,26.0,Central,Corporate Employee,2631
+0,0.0,Male,high school,single,3.0,3.0,2.0,0.0,3.0,0.0,0.0,2.0,0.26,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,29.0,Southern,Corporate Employee,1217
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,35.0,Central,Corporate Employee,306
+0,0.0,Female,master's degree,single,5.0,5.0,2.0,1.0,2.0,1.0,1.0,2.0,1369.87,107.0,3.69,1.0,10.0,55.0,1.0,5.0,52.0,1.0,6.0,100983.78,102381.17,32.0,Central,Corporate Employee,2528
+0,,Female,high school,single,4.0,4.0,2.0,0.0,3.0,0.0,0.0,1.0,169040.95,62.0,2.82,1.0,9.0,34.0,1.0,6.0,28.0,1.0,7.0,12198.0,38116.3,34.0,Northeastern,Corporate Employee,2154
+0,,Male,others,married,7.0,5.0,4.0,0.0,4.0,1.0,0.0,1.0,11581.86,33.0,1.57,1.0,3.0,5.0,1.0,2.0,28.0,1.0,3.0,18630.0,19113.0,73.0,Central,Corporate Employee,1523
+0,,Female,high school,single,4.0,4.0,1.0,0.0,5.0,1.0,0.0,1.0,153.27,87.0,3.35,1.0,14.0,17.0,1.0,5.0,70.0,1.0,10.0,79983.0,84740.86,46.0,Central,Corporate Employee,1695
+0,,Female,others,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,40.0,Western,Corporate Employee,3986
+0,0.0,Female,vocational certificate,single,7.0,6.0,3.0,0.0,5.0,1.0,0.0,2.0,80214.83,324.0,10.45,2.0,58.0,103.0,1.0,49.0,221.0,2.0,18.0,199715.0,122544.57,36.0,Central,Corporate Employee,1601
+0,1.0,Female,bachelor's degree,single,6.0,5.0,3.0,1.0,4.0,1.0,0.0,3.0,0.05,15.0,1.67,1.0,2.0,8.0,1.0,2.0,7.0,1.0,1.0,20250.0,20250.51,55.0,Northeastern,Entrepreneur,2045
+0,0.0,Female,high school,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,35.0,Central,Corporate Employee,2214
+0,0.0,Male,bachelor's degree,single,4.0,4.0,5.0,0.0,3.0,1.0,0.0,1.0,4029.0,111.0,3.7,1.0,10.0,23.0,1.0,2.0,88.0,1.0,8.0,127214.01,133199.93,34.0,Central,Corporate Employee,3614
+0,0.0,Male,vocational certificate,single,4.0,4.0,1.0,0.0,4.0,0.0,0.0,1.0,23685.09,169.0,7.68,1.0,32.0,73.0,1.0,16.0,96.0,1.0,16.0,683012.28,670861.93,28.0,Central,Corporate Employee,3651
+0,0.0,Female,bachelor's degree,separate,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,44.0,Southern,Corporate Employee,464
+0,1.0,Male,high school,single,4.0,4.0,1.0,1.0,2.0,0.0,0.0,1.0,1067.66,15.0,2.14,1.0,3.0,5.0,1.0,2.0,10.0,1.0,2.0,26200.0,27090.0,34.0,Central,Entrepreneur,2555
+0,1.0,Female,bachelor's degree,married,6.0,6.0,4.0,2.0,4.0,0.0,0.0,3.0,203078.18,427.0,13.77,1.0,30.0,362.0,1.0,24.0,65.0,1.0,8.0,863896.0,1772282.32,44.0,Central,Entrepreneur,1131
+0,0.0,Female,high school,single,4.0,4.0,2.0,0.0,2.0,1.0,0.0,1.0,37909.17,197.0,6.57,3.0,12.0,113.0,1.0,7.0,84.0,1.0,7.0,767385.0,736029.43,43.0,Eastern,Entrepreneur,1042
+1,,Female,others,single,4.0,4.0,3.0,0.0,3.0,2.0,0.0,2.0,25.71,34.0,1.7,1.0,4.0,16.0,1.0,2.0,18.0,1.0,3.0,17412.46,18070.75,63.0,Eastern,Entrepreneur,890
+0,0.0,Male,vocational certificate,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,0.78,138.0,7.67,2.0,16.0,60.0,1.0,6.0,78.0,1.0,10.0,60083.16,60083.0,31.0,Central,Freelancer,1741
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,40.0,Central,Corporate Employee,2324
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,42.0,Eastern,Corporate Employee,3322
+0,0.0,Female,others,married,2.0,2.0,2.0,0.0,1.0,1.0,0.0,2.0,10751.68,44.0,1.91,1.0,4.0,13.0,1.0,2.0,31.0,1.0,3.0,33570.0,38820.0,34.0,Central,Corporate Employee,291
+0,,Male,high school,single,3.0,3.0,3.0,0.0,1.0,0.0,0.0,1.0,9000.0,10.0,1.43,1.0,4.0,2.0,1.0,1.0,8.0,1.0,3.0,11210.0,10450.0,26.0,Eastern,Corporate Employee,1026
+0,0.0,Male,high school,single,5.0,5.0,2.0,0.0,5.0,1.0,0.0,2.0,38245.5,33.0,2.2,1.0,6.0,13.0,1.0,2.0,20.0,1.0,4.0,143700.0,160535.2,55.0,Eastern,Entrepreneur,3107
+0,0.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,34.0,Central,Corporate Employee,1558
+0,1.0,Female,master's degree,single,4.0,4.0,4.0,1.0,4.0,0.0,0.0,3.0,181492.43,40.0,2.67,1.0,8.0,8.0,1.0,5.0,32.0,1.0,5.0,321692.0,157830.67,39.0,Western,Professional,4049
+0,,Female,others,single,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,,,,,,,,,,,,,,29.0,Central,Corporate Employee,4095
+0,1.0,Male,others,single,3.0,3.0,1.0,0.0,2.0,1.0,1.0,1.0,17903.12,48.0,2.29,1.0,5.0,12.0,1.0,4.0,36.0,1.0,4.0,20410.14,24015.07,35.0,Northeastern,Professional,3581
+0,0.0,Male,bachelor's degree,single,5.0,5.0,2.0,0.0,5.0,0.0,0.0,2.0,103642.38,18.0,1.64,1.0,3.0,11.0,1.0,3.0,7.0,1.0,1.0,148710.0,52620.0,38.0,Central,Corporate Employee,3460
+0,0.0,Female,bachelor's degree,single,6.0,6.0,1.0,0.0,6.0,1.0,0.0,1.0,86932.27,27.0,2.25,1.0,7.0,3.0,1.0,1.0,24.0,1.0,6.0,109379.0,35496.79,52.0,Southern,Corporate Employee,2964
+0,1.0,Female,master's degree,single,6.0,5.0,3.0,2.0,1.0,1.0,0.0,1.0,329209.87,4.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,1.0,1.0,400000.0,601000.0,47.0,Central,Professional,3205
+0,0.0,Female,less than high school,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,55.0,Northern,Homemaker,3554
+0,0.0,Female,bachelor's degree,single,7.0,7.0,2.0,2.0,5.0,0.0,0.0,2.0,17.43,312.0,10.06,2.0,24.0,114.0,1.0,9.0,198.0,2.0,18.0,204493.13,204475.97,37.0,Eastern,Entrepreneur,1766
+0,2.0,Female,high school,married,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,19971.13,41.0,1.64,1.0,3.0,24.0,1.0,2.0,17.0,1.0,3.0,9283.0,15182.86,46.0,Central,Homemaker,3842
+0,0.0,Female,vocational certificate,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,31.0,Eastern,Corporate Employee,692
+0,,Male,bachelor's degree,married,7.0,7.0,5.0,1.0,5.0,1.0,0.0,2.0,71654.9,58.0,2.52,1.0,7.0,14.0,1.0,2.0,44.0,1.0,5.0,158245.7,113678.26,46.0,Central,Corporate Employee,3089
+0,0.0,Female,master's degree,single,3.0,3.0,1.0,0.0,3.0,0.0,0.0,1.0,12606.01,143.0,4.93,1.0,14.0,31.0,1.0,6.0,112.0,1.0,9.0,23408.91,39348.5,26.0,Central,Corporate Employee,1564
+0,0.0,Male,high school,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,248.01,5.0,1.0,1.0,1.0,3.0,1.0,1.0,2.0,1.0,1.0,1200.0,1000.0,54.0,Central,Corporate Employee,310
+0,0.0,Female,master's degree,single,5.0,5.0,1.0,2.0,5.0,0.0,0.0,1.0,54996.2,181.0,6.03,2.0,12.0,24.0,1.0,3.0,157.0,2.0,11.0,175214.52,156184.35,32.0,Southern,Corporate Employee,135
+0,1.0,Female,less than high school,married,9.0,8.0,6.0,1.0,7.0,0.0,0.0,4.0,380338.21,193.0,6.43,1.0,32.0,101.0,1.0,24.0,92.0,1.0,9.0,473732.52,374960.51,50.0,Central,Corporate Employee,152
+0,1.0,Male,others,single,4.0,4.0,1.0,2.0,1.0,1.0,0.0,1.0,213.26,4.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,1.0,1.0,39500.0,40000.0,58.0,Northeastern,Entrepreneur,2495
+0,0.0,Female,high school,single,6.0,6.0,1.0,1.0,5.0,0.0,0.0,1.0,4899.7,143.0,4.93,1.0,21.0,34.0,1.0,6.0,109.0,1.0,15.0,49477.2,46166.07,45.0,Southern,Corporate Employee,3084
+0,0.0,Female,high school,single,4.0,3.0,3.0,0.0,1.0,0.0,0.0,2.0,3372517.88,14.0,2.0,1.0,4.0,5.0,1.0,2.0,9.0,1.0,2.0,327.38,65049.1,46.0,Central,Entrepreneur,1028
+0,0.0,Female,bachelor's degree,married,5.0,5.0,1.0,0.0,3.0,0.0,0.0,1.0,260.44,12.0,1.71,1.0,3.0,3.0,1.0,1.0,9.0,1.0,2.0,31300.0,32929.0,40.0,Northern,Homemaker,316
+0,0.0,Female,high school,single,4.0,4.0,2.0,0.0,6.0,1.0,0.0,2.0,5350.05,195.0,6.29,1.0,12.0,45.0,1.0,4.0,150.0,1.0,11.0,12777.5,13331.0,25.0,Central,Corporate Employee,4107
+0,0.0,Male,bachelor's degree,single,3.0,3.0,1.0,0.0,2.0,0.0,0.0,1.0,14438.59,28.0,2.0,1.0,4.0,13.0,1.0,2.0,15.0,1.0,3.0,14940.0,11012.0,26.0,Southern,Entrepreneur,180
+0,1.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,50.0,Central,Corporate Employee,1171
+0,0.0,Female,doctorate's degree,single,5.0,5.0,5.0,1.0,4.0,0.0,0.0,2.0,34473.35,27.0,2.7,1.0,10.0,8.0,1.0,5.0,19.0,1.0,6.0,69523.11,68707.93,49.0,Central,Professional,145
+0,0.0,Female,bachelor's degree,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,262531.4,39.0,2.17,1.0,5.0,2.0,1.0,1.0,37.0,1.0,5.0,130061.69,26197.0,28.0,Central,Corporate Employee,1177
+0,1.0,Female,bachelor's degree,single,4.0,4.0,2.0,1.0,1.0,1.0,0.0,1.0,1795.21,7.0,1.4,1.0,2.0,3.0,1.0,1.0,4.0,1.0,1.0,51500.0,52392.0,55.0,Central,Corporate Employee,3207
+1,1.0,Male,bachelor's degree,married,5.0,5.0,3.0,1.0,4.0,0.0,0.0,2.0,3790.47,53.0,2.52,1.0,7.0,8.0,1.0,2.0,45.0,1.0,6.0,137060.0,133412.43,45.0,Eastern,Entrepreneur,1039
+0,0.0,Male,vocational certificate,single,6.0,5.0,6.0,0.0,2.0,1.0,0.0,2.0,50473.79,38.0,4.75,1.0,16.0,11.0,1.0,6.0,27.0,1.0,10.0,182645.23,332317.72,44.0,Central,Corporate Employee,1538
+0,1.0,Female,others,married,9.0,8.0,4.0,2.0,5.0,1.0,0.0,2.0,36068.74,315.0,10.16,1.0,24.0,89.0,1.0,11.0,226.0,1.0,17.0,340833.42,308502.84,40.0,Western,Corporate Employee,3002
+0,0.0,Female,high school,married,4.0,3.0,2.0,0.0,2.0,1.0,0.0,1.0,20392.71,85.0,2.93,1.0,7.0,46.0,1.0,4.0,39.0,1.0,5.0,94382.0,74734.99,58.0,Southern,Corporate Employee,2727
+0,1.0,Male,master's degree,single,11.0,8.0,12.0,1.0,5.0,0.0,0.0,4.0,9093.16,63.0,2.52,1.0,7.0,11.0,1.0,3.0,52.0,1.0,6.0,148047.48,223910.01,40.0,Eastern,Entrepreneur,3211
+0,0.0,Male,bachelor's degree,single,4.0,4.0,2.0,0.0,5.0,0.0,0.0,2.0,5276.32,24.0,1.71,1.0,3.0,2.0,1.0,1.0,22.0,1.0,3.0,9141.0,7954.93,27.0,Central,Corporate Employee,2187
+0,0.0,Male,less than high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,45.0,Western,Corporate Employee,151
+0,1.0,Female,master's degree,married,5.0,5.0,1.0,1.0,5.0,1.0,0.0,1.0,180467.85,69.0,3.0,1.0,10.0,16.0,1.0,4.0,53.0,1.0,10.0,348122.0,312832.55,44.0,Central,Corporate Employee,2853
+0,0.0,Male,high school,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,34.0,Eastern,Corporate Employee,4271
+0,0.0,Female,bachelor's degree,single,8.0,8.0,4.0,4.0,5.0,2.0,0.0,3.0,7713.74,83.0,3.77,1.0,17.0,29.0,1.0,4.0,54.0,1.0,13.0,99727.03,92436.8,30.0,Central,Corporate Employee,684
+1,0.0,Female,high school,married,5.0,5.0,1.0,0.0,4.0,1.0,0.0,1.0,1085.15,23.0,1.53,1.0,4.0,4.0,1.0,2.0,19.0,1.0,2.0,14000.0,22883.96,61.0,Central,Homemaker,1214
+0,0.0,Female,vocational certificate,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,406.6,62.0,2.95,1.0,7.0,16.0,1.0,2.0,46.0,1.0,6.0,7714.0,7408.0,31.0,Central,Corporate Employee,1223
+0,4.0,Female,bachelor's degree,widow,10.0,10.0,10.0,2.0,6.0,1.0,0.0,2.0,3704709.76,94.0,3.62,1.0,12.0,21.0,1.0,2.0,73.0,1.0,10.0,202504.88,439367.9,68.0,Central,Entrepreneur,4215
+0,1.0,Female,bachelor's degree,single,2.0,2.0,0.0,2.0,1.0,0.0,0.0,0.0,,,,,,,,,,,,,,61.0,Eastern,Corporate Employee,2453
+0,,Female,others,single,5.0,5.0,1.0,1.0,3.0,1.0,0.0,1.0,1122.34,48.0,2.82,1.0,8.0,14.0,1.0,4.0,34.0,1.0,6.0,10597.0,10761.18,37.0,Central,Corporate Employee,3124
+0,0.0,Female,high school,married,6.0,5.0,2.0,0.0,5.0,2.0,0.0,2.0,16075.5,103.0,3.68,1.0,14.0,31.0,1.0,8.0,72.0,1.0,9.0,149548.04,151590.78,39.0,Northern,Corporate Employee,2544
+0,0.0,Male,less than high school,single,4.0,4.0,1.0,0.0,4.0,0.0,0.0,1.0,18432.32,8.0,2.0,1.0,3.0,0.0,0.0,0.0,8.0,1.0,3.0,0.0,6795.0,61.0,Central,Entrepreneur,1666
+0,0.0,Female,vocational certificate,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,43.0,Southern,Homemaker,1780
+0,,Male,others,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,41.0,Central,Corporate Employee,3225
+0,0.0,Male,bachelor's degree,single,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,21450.47,142.0,5.07,2.0,12.0,27.0,1.0,4.0,115.0,1.0,8.0,81460.7,61372.51,30.0,Central,Corporate Employee,545
+0,0.0,Female,vocational certificate,married,3.0,3.0,1.0,1.0,1.0,0.0,0.0,1.0,6003.76,18.0,1.64,1.0,3.0,6.0,1.0,1.0,12.0,1.0,2.0,18505.0,18606.86,36.0,Central,Corporate Employee,1627
+0,,Female,high school,single,6.0,6.0,1.0,1.0,3.0,2.0,0.0,1.0,21.26,13.0,2.17,1.0,4.0,7.0,1.0,2.0,6.0,1.0,2.0,6836.0,7395.08,23.0,Central,Entrepreneur,4268
+0,0.0,Female,bachelor's degree,married,8.0,7.0,4.0,0.0,6.0,1.0,0.0,3.0,185030.04,43.0,2.26,1.0,5.0,24.0,1.0,3.0,19.0,1.0,2.0,407828.0,269522.27,50.0,Eastern,Entrepreneur,3359
+0,0.0,Male,bachelor's degree,single,4.0,4.0,1.0,0.0,5.0,1.0,0.0,1.0,89463.72,49.0,1.88,1.0,6.0,23.0,1.0,3.0,26.0,1.0,3.0,196363.33,134315.0,38.0,Northeastern,Corporate Employee,3139
+0,1.0,Female,master's degree,married,4.0,4.0,1.0,2.0,2.0,0.0,0.0,1.0,19980.83,3.0,1.5,1.0,2.0,1.0,1.0,1.0,2.0,2.0,2.0,20000.0,5666.9,48.0,Central,Homemaker,1834
+1,2.0,Female,bachelor's degree,married,2.0,2.0,1.0,0.0,2.0,1.0,0.0,1.0,149095.43,31.0,1.55,1.0,3.0,5.0,1.0,2.0,26.0,1.0,3.0,190000.0,77244.74,60.0,Central,Entrepreneur,1314
+0,1.0,Male,master's degree,single,8.0,8.0,7.0,2.0,5.0,1.0,0.0,2.0,112251.02,76.0,2.92,1.0,12.0,23.0,1.0,3.0,53.0,1.0,10.0,365043.34,274713.96,37.0,Central,Professional,4109
+0,1.0,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,42.0,Southern,Professional,844
+0,0.0,Male,high school,single,3.0,3.0,2.0,0.0,3.0,0.0,0.0,2.0,324.29,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,32.0,Eastern,Corporate Employee,1861
+0,0.0,Female,high school,single,3.0,3.0,1.0,0.0,2.0,1.0,0.0,1.0,78079.34,15.0,1.67,1.0,3.0,4.0,1.0,2.0,11.0,1.0,3.0,5880.0,16650.0,53.0,Central,Corporate Employee,3510
+0,1.0,Male,master's degree,married,7.0,7.0,2.0,2.0,6.0,1.0,0.0,2.0,668773.98,65.0,2.6,1.0,8.0,18.0,1.0,6.0,47.0,1.0,7.0,832119.26,265328.44,43.0,Central,Corporate Employee,1072
+0,1.0,Male,high school,single,4.0,4.0,1.0,0.0,5.0,0.0,0.0,1.0,9395.74,22.0,2.0,1.0,6.0,6.0,1.0,2.0,16.0,1.0,5.0,30804.25,30096.54,38.0,Eastern,Corporate Employee,2510
+0,0.0,Male,high school,single,6.0,6.0,1.0,1.0,5.0,2.0,0.0,1.0,69908.79,71.0,2.84,1.0,5.0,24.0,1.0,2.0,47.0,1.0,5.0,109730.0,73841.41,46.0,Eastern,Entrepreneur,3065
+2,2.0,Male,vocational certificate,others,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,1049.38,19.0,1.46,1.0,3.0,7.0,1.0,1.0,12.0,1.0,2.0,22500.0,22148.46,67.0,Eastern,Entrepreneur,1163
+0,0.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,38.0,Southern,Corporate Employee,1559
+0,0.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,34.0,Southern,Corporate Employee,2068
+2,0.0,Male,vocational certificate,married,5.0,5.0,2.0,1.0,2.0,2.0,0.0,1.0,4182.29,15.0,1.36,1.0,2.0,4.0,1.0,2.0,11.0,1.0,2.0,19899.0,19203.06,53.0,Eastern,Entrepreneur,2032
+0,0.0,Male,high school,single,7.0,5.0,8.0,0.0,3.0,1.0,0.0,2.0,72.12,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,2.17,0.0,40.0,Northeastern,Entrepreneur,3264
+0,0.0,Male,high school,married,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,44.0,Eastern,Corporate Employee,2652
+0,0.0,Male,high school,married,6.0,5.0,5.0,1.0,4.0,1.0,0.0,1.0,1500.05,180.0,7.2,1.0,16.0,52.0,1.0,6.0,128.0,1.0,12.0,97962.0,104464.27,46.0,Central,Corporate Employee,894
+0,0.0,Female,master's degree,married,6.0,5.0,3.0,1.0,2.0,1.0,0.0,1.0,0.58,40.0,2.5,1.0,6.0,17.0,1.0,3.0,23.0,1.0,3.0,93505.0,93504.42,49.0,Southern,Corporate Employee,2015
+0,,Female,bachelor's degree,single,5.0,5.0,3.0,0.0,4.0,0.0,0.0,1.0,546941.95,32.0,1.68,1.0,4.0,5.0,1.0,2.0,27.0,1.0,3.0,55930.0,51260.03,57.0,Central,Corporate Employee,2321
+1,0.0,Male,bachelor's degree,married,3.0,3.0,1.0,0.0,2.0,2.0,0.0,1.0,501.11,197.0,6.79,1.0,13.0,134.0,1.0,11.0,63.0,1.0,5.0,110270.3,110966.13,45.0,Central,Entrepreneur,2251
+0,,Female,less than high school,others,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,52.0,Northeastern,Corporate Employee,3299
+0,0.0,Male,high school,single,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,242.54,37.0,3.08,1.0,11.0,15.0,1.0,5.0,22.0,1.0,6.0,146290.0,146779.22,35.0,Eastern,Entrepreneur,3221
+0,0.0,Male,bachelor's degree,married,8.0,8.0,1.0,2.0,8.0,1.0,0.0,1.0,361.11,75.0,3.95,1.0,7.0,16.0,1.0,3.0,59.0,1.0,7.0,30388.0,30037.0,42.0,Eastern,Entrepreneur,1449
+1,,Female,bachelor's degree,married,4.0,4.0,1.0,0.0,2.0,1.0,0.0,1.0,44.58,45.0,2.65,1.0,8.0,16.0,1.0,2.0,29.0,1.0,6.0,89519.0,89558.37,48.0,Central,Corporate Employee,1872
+0,,Male,others,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,37.0,Northeastern,Corporate Employee,444
+0,0.0,Male,high school,married,5.0,5.0,1.0,0.0,5.0,1.0,0.0,1.0,2159.01,15.0,1.5,1.0,3.0,13.0,1.0,2.0,2.0,1.0,1.0,2239.0,1100.0,36.0,Central,Corporate Employee,2828
+0,0.0,Male,master's degree,single,5.0,5.0,4.0,1.0,2.0,1.0,0.0,1.0,252727.86,8.0,1.33,1.0,2.0,4.0,1.0,1.0,4.0,1.0,1.0,11965.0,13823.42,29.0,Central,Corporate Employee,185
+2,1.0,Female,bachelor's degree,married,4.0,4.0,3.0,2.0,1.0,1.0,0.0,2.0,3098842.49,5.0,1.25,1.0,2.0,4.0,1.0,2.0,1.0,1.0,1.0,634065.0,2139.78,55.0,Central,Homemaker,388
+0,0.0,Female,high school,single,5.0,5.0,5.0,0.0,5.0,1.0,0.0,2.0,0.0,209.0,8.36,2.0,22.0,81.0,1.0,7.0,128.0,1.0,20.0,18250.0,18251.87,29.0,Central,Corporate Employee,2537
+0,0.0,Female,master's degree,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,32.0,Central,Corporate Employee,2805
+0,0.0,Female,high school,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,1.33,91.0,3.79,1.0,11.0,41.0,1.0,4.0,50.0,1.0,9.0,5370.5,5369.42,30.0,Northern,Corporate Employee,1863
+0,1.0,Male,bachelor's degree,married,7.0,7.0,1.0,1.0,6.0,2.0,0.0,1.0,20.99,99.0,3.41,2.0,10.0,15.0,1.0,3.0,84.0,1.0,8.0,57209.0,80139.19,49.0,Eastern,Corporate Employee,239
+0,1.0,Female,high school,single,7.0,7.0,7.0,0.0,4.0,1.0,0.0,1.0,3098.05,99.0,3.96,1.0,10.0,26.0,1.0,4.0,73.0,1.0,7.0,228517.31,356536.01,35.0,Southern,Entrepreneur,1612
+0,0.0,Male,others,single,4.0,4.0,1.0,2.0,1.0,1.0,0.0,0.0,,,,,,,,,,,,,,33.0,Northern,Corporate Employee,878
+0,0.0,Female,bachelor's degree,married,11.0,9.0,8.0,4.0,3.0,1.0,0.0,3.0,76851.74,19.0,2.38,1.0,7.0,10.0,1.0,3.0,9.0,1.0,4.0,41865.88,57311.03,34.0,Central,Corporate Employee,85
+0,,Female,others,single,3.0,3.0,3.0,0.0,3.0,0.0,0.0,3.0,19.27,8.0,2.0,2.0,2.0,4.0,1.0,1.0,4.0,1.0,1.0,728.0,808.0,28.0,Northeastern,Entrepreneur,4099
+0,0.0,Male,bachelor's degree,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,831.67,89.0,3.18,1.0,8.0,14.0,1.0,3.0,75.0,1.0,7.0,20794.0,19962.42,27.0,Central,Corporate Employee,372
+0,0.0,Female,less than high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,48.0,Central,Homemaker,2949
+0,0.0,Male,vocational certificate,single,5.0,5.0,2.0,1.0,5.0,0.0,0.0,2.0,31119.31,256.0,9.48,1.0,29.0,81.0,1.0,10.0,175.0,1.0,19.0,195733.31,168379.13,59.0,Eastern,Corporate Employee,3932
+0,0.0,Male,bachelor's degree,single,5.0,5.0,5.0,1.0,4.0,1.0,0.0,2.0,77033.84,16.0,1.33,1.0,3.0,4.0,1.0,1.0,12.0,1.0,2.0,130840.0,107485.67,24.0,Central,Corporate Employee,3599
+0,0.0,Female,bachelor's degree,single,3.0,3.0,2.0,0.0,2.0,0.0,0.0,2.0,450197.8,58.0,2.42,1.0,11.0,13.0,1.0,4.0,45.0,1.0,7.0,171468.55,142502.32,39.0,Central,Corporate Employee,857
+0,0.0,Female,master's degree,married,5.0,5.0,3.0,2.0,4.0,2.0,0.0,2.0,107.56,99.0,4.5,1.0,16.0,35.0,1.0,7.0,64.0,1.0,9.0,52119.0,52725.2,39.0,Central,Corporate Employee,4148
+0,0.0,Female,high school,single,4.0,4.0,1.0,0.0,4.0,0.0,0.0,1.0,125.18,164.0,5.29,1.0,11.0,61.0,1.0,6.0,103.0,1.0,10.0,57324.79,63727.0,32.0,Eastern,Entrepreneur,189
+0,0.0,Female,bachelor's degree,married,6.0,6.0,3.0,3.0,3.0,1.0,0.0,2.0,3011.6,7.0,1.4,1.0,3.0,2.0,1.0,1.0,5.0,1.0,2.0,37000.0,43608.54,36.0,Northeastern,Entrepreneur,2882
+0,,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,31.0,Central,Corporate Employee,1953
+0,0.0,Male,bachelor's degree,married,9.0,8.0,6.0,2.0,4.0,1.0,0.0,1.0,0.33,36.0,4.5,2.0,8.0,17.0,1.0,4.0,19.0,1.0,5.0,60793.0,60797.3,42.0,Eastern,Corporate Employee,439
+0,1.0,Female,bachelor's degree,married,8.0,7.0,4.0,1.0,3.0,1.0,0.0,2.0,25041.32,34.0,2.27,1.0,10.0,13.0,1.0,3.0,21.0,1.0,9.0,30016.5,31231.05,52.0,Central,Corporate Employee,1505
+0,,Male,high school,single,2.0,2.0,1.0,0.0,1.0,1.0,0.0,1.0,13.03,22.0,1.83,1.0,7.0,5.0,1.0,2.0,17.0,1.0,7.0,9000.0,8987.0,26.0,Western,Corporate Employee,2562
+0,1.0,Female,bachelor's degree,married,4.0,4.0,3.0,0.0,2.0,0.0,0.0,2.0,211962.41,2.0,1.0,1.0,1.0,0.0,0.0,0.0,2.0,1.0,1.0,0.0,880.8,56.0,Central,Corporate Employee,4243
+0,0.0,Female,master's degree,single,5.0,5.0,2.0,1.0,1.0,1.0,0.0,1.0,0.62,14.0,2.0,1.0,4.0,6.0,1.0,3.0,8.0,1.0,2.0,23338.0,23338.0,44.0,Central,Corporate Employee,3900
+0,0.0,Female,high school,widow,6.0,6.0,1.0,1.0,4.0,1.0,0.0,1.0,5560.78,37.0,2.31,1.0,9.0,10.0,1.0,2.0,27.0,1.0,8.0,22760.0,19238.4,49.0,Central,Corporate Employee,3890
+0,1.0,Male,master's degree,married,9.0,7.0,11.0,2.0,3.0,1.0,0.0,3.0,553165.25,24.0,2.67,1.0,7.0,10.0,1.0,3.0,14.0,1.0,4.0,233679.63,338498.18,47.0,Central,Corporate Employee,1243
+1,1.0,Female,vocational certificate,married,5.0,5.0,1.0,0.0,4.0,0.0,0.0,1.0,360.74,93.0,3.21,1.0,8.0,38.0,1.0,8.0,55.0,1.0,5.0,38605.0,40091.25,55.0,Central,Freelancer,603
+0,0.0,Female,master's degree,married,7.0,7.0,3.0,1.0,7.0,0.0,0.0,2.0,89125.01,211.0,7.28,1.0,21.0,48.0,1.0,5.0,163.0,1.0,16.0,460002.78,498669.31,32.0,Northeastern,Corporate Employee,1052
+0,0.0,Female,high school,married,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,600.24,82.0,3.73,1.0,21.0,37.0,1.0,17.0,45.0,1.0,6.0,71166.99,100657.17,49.0,Northern,Corporate Employee,3987
+0,1.0,Male,others,single,7.0,6.0,6.0,2.0,3.0,0.0,0.0,2.0,94970.95,4.0,2.0,1.0,3.0,1.0,1.0,1.0,3.0,1.0,2.0,100000.0,8512.92,56.0,Central,Entrepreneur,197
+0,,Male,others,married,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,16019.15,64.0,2.37,1.0,7.0,10.0,1.0,2.0,54.0,1.0,5.0,55395.8,44963.47,46.0,Northeastern,Corporate Employee,2092
+0,1.0,Female,master's degree,single,4.0,4.0,1.0,0.0,5.0,1.0,0.0,1.0,50037.34,47.0,2.35,1.0,7.0,26.0,1.0,7.0,21.0,1.0,3.0,118016.0,101210.82,42.0,Southern,Corporate Employee,193
+0,,Female,others,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,40.0,Eastern,Corporate Employee,2402
+0,,Female,bachelor's degree,single,6.0,4.0,7.0,0.0,1.0,2.0,0.0,1.0,23041.69,17.0,1.42,1.0,3.0,1.0,1.0,1.0,16.0,1.0,3.0,22000.0,191165.6,42.0,Central,Corporate Employee,3263
+0,0.0,Female,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,35.0,Northeastern,Corporate Employee,4199
+0,0.0,Female,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,100.18,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,33.0,Eastern,Corporate Employee,3803
+0,0.0,Male,master's degree,single,7.0,6.0,8.0,1.0,3.0,2.0,0.0,2.0,136328.83,45.0,2.25,1.0,7.0,9.0,1.0,3.0,36.0,1.0,4.0,469722.93,369242.35,40.0,Central,Corporate Employee,1393
+0,0.0,Female,less than high school,single,3.0,3.0,1.0,0.0,2.0,0.0,0.0,1.0,2253.14,33.0,1.65,1.0,4.0,6.0,1.0,1.0,27.0,1.0,3.0,29825.0,36650.0,51.0,Northern,Corporate Employee,181
+0,1.0,Male,less than high school,widow,2.0,2.0,1.0,0.0,1.0,0.0,0.0,1.0,77.86,11.0,1.38,1.0,2.0,5.0,1.0,1.0,6.0,1.0,1.0,3000.0,3300.0,74.0,Central,Corporate Employee,3096
+2,1.0,Female,bachelor's degree,widow,3.0,3.0,1.0,1.0,1.0,0.0,0.0,1.0,80059.2,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,3000.0,0.0,62.0,Central,Corporate Employee,3320
+0,,Female,high school,single,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,4277.8,35.0,2.06,1.0,5.0,3.0,1.0,1.0,32.0,1.0,5.0,17374.48,20052.05,39.0,Central,Corporate Employee,1502
+0,1.0,Female,master's degree,single,8.0,7.0,4.0,2.0,9.0,1.0,0.0,4.0,39029.84,104.0,3.59,1.0,11.0,14.0,1.0,4.0,90.0,1.0,8.0,70495.5,202375.27,51.0,Central,Corporate Employee,206
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,44.0,Central,Corporate Employee,3838
+0,,Male,others,single,3.0,3.0,1.0,0.0,3.0,2.0,0.0,1.0,1233.34,77.0,3.08,1.0,12.0,41.0,1.0,5.0,36.0,1.0,7.0,33972.0,47430.08,28.0,Southern,Entrepreneur,1644
+0,0.0,Female,bachelor's degree,single,5.0,5.0,4.0,0.0,4.0,1.0,0.0,1.0,78.0,263.0,10.96,1.0,27.0,179.0,1.0,20.0,84.0,1.0,8.0,70051.57,70064.12,30.0,Northeastern,Corporate Employee,3786
+0,0.0,Male,bachelor's degree,single,2.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,39.0,Southern,Corporate Employee,756
+0,0.0,Female,high school,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,38.0,Central,Corporate Employee,34
+0,,Male,others,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,28.0,Eastern,Unemployed,3620
+0,,Male,others,married,5.0,5.0,2.0,1.0,2.0,1.0,0.0,1.0,47.52,85.0,3.27,1.0,11.0,28.0,1.0,5.0,57.0,1.0,6.0,50775.0,51000.25,46.0,Central,Corporate Employee,1587
+0,,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,44.0,Central,Corporate Employee,2930
+0,,Female,others,married,4.0,4.0,3.0,0.0,2.0,1.0,0.0,1.0,0.59,229.0,7.63,1.0,23.0,75.0,1.0,7.0,154.0,1.0,16.0,53637.0,53539.86,53.0,Central,Corporate Employee,2005
+0,0.0,Female,high school,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,4140.48,99.0,3.54,1.0,7.0,9.0,1.0,3.0,90.0,1.0,7.0,44710.0,46130.66,33.0,Central,Corporate Employee,377
+0,0.0,Female,high school,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,1154.07,40.0,2.35,1.0,6.0,13.0,1.0,4.0,27.0,1.0,5.0,73660.0,75159.59,35.0,Eastern,Corporate Employee,1124
+0,1.0,Female,master's degree,married,8.0,6.0,6.0,3.0,3.0,1.0,0.0,1.0,99845.03,54.0,2.25,1.0,6.0,16.0,1.0,3.0,38.0,1.0,5.0,263872.61,186501.0,53.0,Central,Corporate Employee,4057
+0,1.0,Male,doctorate's degree,single,6.0,6.0,3.0,1.0,4.0,0.0,0.0,2.0,209073.91,90.0,3.46,1.0,7.0,17.0,1.0,3.0,73.0,1.0,7.0,342622.48,186885.74,49.0,Northeastern,Professional,3594
+1,1.0,Female,high school,single,2.0,2.0,1.0,1.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,37.0,Eastern,Entrepreneur,671
+0,,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,39.0,Central,Corporate Employee,1075
+0,,Female,high school,single,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,0.0,14.0,2.33,1.0,4.0,6.0,1.0,2.0,8.0,1.0,2.0,18791.0,18791.0,27.0,Northeastern,Student,595
+0,0.0,Female,vocational certificate,married,5.0,5.0,1.0,1.0,4.0,1.0,0.0,1.0,10262.65,88.0,3.67,1.0,15.0,30.0,1.0,8.0,58.0,1.0,7.0,76349.0,66274.02,38.0,Eastern,Corporate Employee,1486
+0,,Female,others,single,3.0,3.0,1.0,0.0,3.0,0.0,0.0,1.0,9.78,57.0,3.0,1.0,8.0,16.0,1.0,3.0,41.0,1.0,6.0,7891.81,8693.15,30.0,Northern,Corporate Employee,908
+0,0.0,Male,high school,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,186.51,33.0,1.74,1.0,5.0,9.0,1.0,3.0,24.0,1.0,4.0,7455.0,9905.0,46.0,Northeastern,Corporate Employee,94
+2,1.0,Female,bachelor's degree,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,58.0,Northern,Entrepreneur,1728
+0,,Male,high school,single,4.0,4.0,1.0,0.0,2.0,1.0,0.0,1.0,40454.96,43.0,2.15,1.0,9.0,7.0,1.0,2.0,36.0,1.0,8.0,66637.0,53534.7,43.0,Southern,Corporate Employee,2894
+0,1.0,Female,others,single,4.0,4.0,2.0,1.0,3.0,2.0,0.0,2.0,22284.25,118.0,4.37,1.0,10.0,43.0,1.0,6.0,75.0,1.0,5.0,335891.0,345244.0,49.0,Southern,Entrepreneur,1018
+0,0.0,Male,others,married,7.0,7.0,2.0,1.0,5.0,0.0,0.0,1.0,495.84,45.0,3.21,1.0,6.0,15.0,1.0,3.0,30.0,1.0,5.0,56814.0,57678.91,32.0,Northeastern,Corporate Employee,2580
+0,0.0,Female,bachelor's degree,single,5.0,5.0,1.0,0.0,6.0,1.0,0.0,1.0,30923.19,264.0,8.52,2.0,16.0,50.0,1.0,4.0,214.0,2.0,15.0,126138.0,131211.99,48.0,Northeastern,Corporate Employee,1222
+0,0.0,Female,bachelor's degree,married,7.0,6.0,1.0,2.0,3.0,1.0,0.0,0.0,,,,,,,,,,,,,,54.0,Southern,Professional,4086
+2,0.0,Female,high school,single,3.0,3.0,1.0,0.0,2.0,1.0,0.0,1.0,1069.08,102.0,3.29,1.0,8.0,45.0,1.0,4.0,57.0,1.0,4.0,160194.0,161326.43,50.0,Southern,Entrepreneur,2565
+0,0.0,Male,vocational certificate,single,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,10490.18,56.0,2.43,1.0,5.0,17.0,1.0,2.0,39.0,1.0,4.0,78392.25,130453.43,38.0,Northeastern,Freelancer,3916
+0,0.0,Male,bachelor's degree,married,3.0,3.0,1.0,0.0,2.0,0.0,0.0,1.0,52.54,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,59.0,Central,Entrepreneur,2502
+0,,Female,others,single,6.0,6.0,1.0,0.0,5.0,1.0,0.0,1.0,29.46,142.0,4.58,1.0,12.0,25.0,1.0,3.0,117.0,1.0,9.0,53863.0,53868.37,37.0,Northern,Entrepreneur,2890
+0,0.0,Female,others,single,4.0,4.0,1.0,0.0,2.0,1.0,0.0,1.0,374.2,8.0,1.6,1.0,2.0,2.0,1.0,1.0,6.0,1.0,2.0,14731.0,27652.84,37.0,Eastern,Entrepreneur,1074
+0,,Female,bachelor's degree,single,5.0,5.0,2.0,0.0,3.0,1.0,0.0,2.0,12.0,30.0,2.5,1.0,6.0,8.0,1.0,2.0,22.0,1.0,5.0,38200.0,39887.72,26.0,Central,Corporate Employee,3271
+0,0.0,Female,high school,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,947.79,91.0,3.25,1.0,7.0,34.0,1.0,5.0,57.0,1.0,4.0,10781.0,10705.0,24.0,Central,Corporate Employee,2567
+0,1.0,Female,master's degree,single,4.0,4.0,2.0,2.0,3.0,1.0,0.0,2.0,10203.91,27.0,2.08,1.0,5.0,3.0,1.0,1.0,24.0,1.0,4.0,10955.0,24027.35,41.0,Central,Corporate Employee,3434
+0,1.0,Male,master's degree,married,5.0,4.0,3.0,1.0,1.0,0.0,0.0,2.0,55019.92,10.0,1.11,1.0,2.0,4.0,1.0,1.0,6.0,1.0,1.0,77350.0,158982.0,61.0,Central,Corporate Employee,1771
+1,1.0,Male,bachelor's degree,married,11.0,8.0,9.0,7.0,3.0,1.0,0.0,1.0,4108.07,97.0,3.46,1.0,10.0,20.0,1.0,3.0,77.0,1.0,9.0,757303.69,758921.68,50.0,Central,Corporate Employee,3902
+0,2.0,Female,bachelor's degree,married,8.0,5.0,7.0,2.0,3.0,2.0,0.0,2.0,37100.62,217.0,7.0,1.0,16.0,55.0,1.0,7.0,162.0,1.0,13.0,1479532.54,1455633.56,57.0,Central,Professional,333
+0,0.0,Male,vocational certificate,single,6.0,6.0,3.0,2.0,3.0,1.0,0.0,1.0,6.61,21.0,2.33,1.0,5.0,8.0,1.0,2.0,13.0,1.0,3.0,42310.09,56135.06,29.0,Eastern,Corporate Employee,240
+2,1.0,Male,bachelor's degree,married,5.0,5.0,2.0,0.0,4.0,1.0,0.0,1.0,500.25,26.0,2.6,1.0,8.0,8.0,1.0,4.0,18.0,1.0,4.0,125030.71,124531.0,56.0,Central,Corporate Employee,2054
+0,1.0,Female,high school,single,9.0,8.0,13.0,1.0,7.0,1.0,0.0,5.0,977332.31,349.0,12.03,7.0,24.0,318.0,4.0,23.0,31.0,1.0,3.0,222349.0,265963.6,61.0,Central,Entrepreneur,4130
+0,,Female,bachelor's degree,single,3.0,3.0,1.0,0.0,2.0,1.0,0.0,1.0,32554.08,72.0,3.0,1.0,8.0,18.0,1.0,4.0,54.0,1.0,6.0,78660.0,51591.36,28.0,Southern,Corporate Employee,1557
+0,0.0,Male,less than high school,single,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,,,,,,,,,,,,,,39.0,Central,Corporate Employee,1201
+0,0.0,Male,high school,single,2.0,2.0,1.0,0.0,1.0,2.0,0.0,1.0,3003.99,36.0,2.77,1.0,11.0,12.0,1.0,3.0,24.0,1.0,9.0,14863.72,12125.98,39.0,Central,Corporate Employee,1653
+0,,Female,bachelor's degree,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,418.08,85.0,3.04,1.0,6.0,35.0,1.0,4.0,50.0,1.0,3.0,14137.0,14719.55,30.0,Central,Corporate Employee,3928
+3,,Male,others,single,4.0,4.0,1.0,0.0,4.0,0.0,0.0,1.0,5283.2,45.0,1.96,1.0,6.0,4.0,1.0,2.0,41.0,1.0,5.0,134770.0,172729.93,55.0,Central,Entrepreneur,15
+0,0.0,Female,high school,single,3.0,3.0,2.0,0.0,2.0,1.0,0.0,1.0,2867.36,85.0,2.93,1.0,11.0,18.0,1.0,2.0,67.0,1.0,9.0,35066.5,34508.47,29.0,Southern,Corporate Employee,3463
+0,1.0,Female,bachelor's degree,married,7.0,6.0,1.0,3.0,5.0,0.0,0.0,1.0,221.0,9.0,1.8,1.0,3.0,3.0,1.0,2.0,6.0,1.0,2.0,88000.0,88183.61,52.0,Northeastern,Corporate Employee,1273
+1,0.0,Female,high school,divorce,6.0,6.0,1.0,0.0,5.0,1.0,0.0,1.0,118.41,86.0,3.31,1.0,8.0,23.0,1.0,2.0,63.0,1.0,6.0,17783.0,18033.84,48.0,Eastern,Corporate Employee,4003
+0,0.0,Male,vocational certificate,single,4.0,4.0,3.0,0.0,5.0,1.0,0.0,3.0,9.69,95.0,3.39,1.0,13.0,27.0,1.0,6.0,68.0,1.0,7.0,24850.6,25658.1,36.0,Central,Corporate Employee,3708
+0,0.0,Male,high school,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,10.04,64.0,3.05,1.0,9.0,21.0,1.0,4.0,43.0,1.0,6.0,14757.0,14806.18,24.0,Northern,Corporate Employee,3953
+0,0.0,Female,high school,single,5.0,5.0,2.0,1.0,4.0,1.0,0.0,2.0,264892.95,54.0,1.8,1.0,4.0,23.0,1.0,2.0,31.0,1.0,2.0,193576.38,6925.45,34.0,Central,Corporate Employee,491
+0,1.0,Male,master's degree,married,2.0,2.0,1.0,0.0,1.0,1.0,0.0,1.0,651418.51,72.0,3.13,1.0,7.0,11.0,1.0,3.0,61.0,1.0,7.0,278540.0,310278.78,45.0,Northeastern,Professional,1035
+0,0.0,Female,high school,single,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,5097.93,10.0,1.25,1.0,3.0,3.0,1.0,1.0,7.0,1.0,2.0,7800.0,17800.0,49.0,Central,Corporate Employee,2841
+0,0.0,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,36.0,Central,Corporate Employee,2342
+0,0.0,Male,less than high school,married,5.0,5.0,2.0,1.0,2.0,0.0,0.0,2.0,97348.06,111.0,3.96,1.0,15.0,15.0,1.0,2.0,96.0,1.0,15.0,172991.55,97794.37,47.0,Central,Corporate Employee,507
+0,0.0,Male,vocational certificate,single,6.0,6.0,2.0,0.0,4.0,0.0,0.0,1.0,4192.23,32.0,2.46,1.0,12.0,8.0,1.0,2.0,24.0,1.0,10.0,48361.95,44170.0,45.0,Northeastern,Corporate Employee,3779
+0,1.0,Female,less than high school,single,4.0,4.0,3.0,0.0,3.0,1.0,0.0,3.0,494028.83,127.0,4.54,1.0,11.0,62.0,1.0,6.0,65.0,1.0,7.0,420282.0,501533.72,59.0,Central,Entrepreneur,2464
+0,0.0,Female,master's degree,married,5.0,5.0,4.0,1.0,4.0,1.0,0.0,4.0,100289.1,35.0,1.67,1.0,5.0,8.0,1.0,2.0,27.0,1.0,3.0,48237.4,32759.97,46.0,Central,Corporate Employee,1651
+0,1.0,Female,high school,married,5.0,5.0,2.0,0.0,2.0,2.0,0.0,1.0,220.0,13.0,2.17,1.0,5.0,5.0,1.0,1.0,8.0,1.0,4.0,12000.0,11824.31,40.0,Central,Corporate Employee,3940
+0,0.0,Male,less than high school,married,6.0,6.0,2.0,1.0,4.0,1.0,0.0,1.0,5175.14,51.0,2.32,1.0,7.0,6.0,1.0,1.0,45.0,1.0,6.0,36090.0,35112.3,59.0,Central,Corporate Employee,2452
+0,0.0,Male,master's degree,single,5.0,5.0,2.0,1.0,3.0,1.0,0.0,1.0,129.61,13.0,1.86,1.0,3.0,4.0,1.0,1.0,9.0,1.0,3.0,10600.0,10536.95,34.0,Central,Corporate Employee,3242
+0,0.0,Female,vocational certificate,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,36.0,Western,Corporate Employee,434
+0,0.0,Male,high school,others,7.0,7.0,1.0,2.0,5.0,1.0,0.0,1.0,1936.39,47.0,2.47,1.0,7.0,23.0,1.0,4.0,24.0,1.0,5.0,40988.34,39856.0,44.0,Central,Corporate Employee,1262
+0,1.0,Female,bachelor's degree,married,8.0,6.0,10.0,3.0,3.0,1.0,0.0,1.0,6.18,17.0,4.25,2.0,7.0,5.0,1.0,2.0,12.0,1.0,5.0,118970.0,118964.0,46.0,Southern,Entrepreneur,3444
+0,0.0,Female,high school,single,5.0,5.0,2.0,0.0,5.0,1.0,0.0,2.0,0.36,154.0,5.5,2.0,14.0,54.0,1.0,5.0,100.0,1.0,9.0,104584.0,104823.7,28.0,Central,Corporate Employee,1399
+0,0.0,Female,master's degree,single,5.0,5.0,2.0,1.0,2.0,1.0,0.0,2.0,74431.77,259.0,8.35,2.0,39.0,140.0,1.0,35.0,119.0,1.0,11.0,1706672.0,1856542.52,35.0,Central,Entrepreneur,4265
+0,0.0,Female,master's degree,single,6.0,6.0,2.0,1.0,3.0,0.0,0.0,1.0,76.73,30.0,2.5,1.0,6.0,16.0,1.0,3.0,14.0,1.0,3.0,7243.0,7166.27,30.0,Eastern,Corporate Employee,2016
+0,0.0,Female,bachelor's degree,married,5.0,5.0,1.0,0.0,4.0,1.0,0.0,1.0,3558.49,147.0,5.07,1.0,12.0,30.0,1.0,3.0,117.0,1.0,9.0,118005.0,119792.47,45.0,Central,Corporate Employee,3560
+0,,Male,others,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,29.0,Northeastern,Corporate Employee,1056
+0,1.0,Female,master's degree,married,5.0,5.0,2.0,2.0,2.0,1.0,0.0,1.0,323079.79,21.0,1.91,1.0,6.0,5.0,1.0,1.0,16.0,1.0,6.0,107253.4,149222.18,46.0,Western,Corporate Employee,1514
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,44.0,Central,Corporate Employee,4171
+0,0.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,49.0,Central,Corporate Employee,1375
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,31.0,Western,Corporate Employee,331
+0,0.0,Female,master's degree,single,5.0,5.0,1.0,1.0,5.0,1.0,0.0,1.0,3176.0,98.0,4.26,1.0,11.0,37.0,1.0,5.0,61.0,1.0,7.0,42201.0,42181.54,44.0,Central,Corporate Employee,3196
+0,0.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,32.0,Central,Corporate Employee,4225
+0,,Female,high school,single,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,,,,,,,,,,,,,,25.0,Central,Corporate Employee,1293
+0,0.0,Male,master's degree,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,41209.99,38.0,1.81,1.0,5.0,5.0,1.0,1.0,33.0,1.0,4.0,106670.03,66618.93,50.0,Central,Entrepreneur,3590
+0,1.0,Male,bachelor's degree,married,6.0,6.0,2.0,1.0,5.0,1.0,0.0,2.0,328248.88,61.0,2.65,1.0,8.0,37.0,1.0,5.0,24.0,1.0,4.0,86600.0,130647.34,51.0,Western,Entrepreneur,3382
+0,,Female,bachelor's degree,married,4.0,4.0,1.0,2.0,3.0,1.0,0.0,1.0,141308.47,66.0,2.36,1.0,6.0,4.0,1.0,1.0,62.0,1.0,6.0,84782.3,112376.71,60.0,Central,Corporate Employee,722
+0,0.0,Female,bachelor's degree,single,4.0,4.0,2.0,0.0,5.0,1.0,0.0,2.0,6090.7,80.0,2.96,1.0,7.0,15.0,1.0,4.0,65.0,1.0,5.0,36837.28,35105.09,30.0,Northern,Corporate Employee,33
+0,1.0,Male,bachelor's degree,married,7.0,7.0,2.0,3.0,3.0,0.0,0.0,1.0,182.63,6.0,1.5,1.0,2.0,3.0,1.0,1.0,3.0,1.0,1.0,8100.0,8000.0,58.0,Central,Corporate Employee,2298
+0,0.0,Female,high school,single,3.0,3.0,1.0,0.0,2.0,0.0,0.0,1.0,4692.6,35.0,1.67,1.0,4.0,10.0,1.0,1.0,25.0,1.0,3.0,27550.0,23992.63,41.0,Northeastern,Homemaker,889
+0,1.0,Male,bachelor's degree,married,7.0,7.0,3.0,1.0,6.0,0.0,0.0,2.0,15129.66,50.0,2.17,1.0,5.0,17.0,1.0,2.0,33.0,1.0,5.0,58850.0,74019.73,47.0,Central,Corporate Employee,230
+0,0.0,Male,vocational certificate,single,3.0,3.0,1.0,0.0,4.0,0.0,0.0,1.0,14216.15,96.0,3.31,1.0,13.0,26.0,1.0,4.0,70.0,1.0,10.0,44733.88,44155.03,33.0,Central,Corporate Employee,3313
+0,0.0,Male,others,single,6.0,4.0,4.0,1.0,1.0,1.0,0.0,1.0,61364.73,39.0,1.86,1.0,4.0,8.0,1.0,2.0,31.0,1.0,4.0,396980.0,336152.24,47.0,Central,Entrepreneur,409
+0,0.0,Female,bachelor's degree,single,6.0,6.0,4.0,3.0,3.0,2.0,0.0,1.0,319.95,123.0,4.24,1.0,12.0,73.0,1.0,8.0,50.0,1.0,4.0,90100.0,91156.12,32.0,Central,Corporate Employee,1698
+0,0.0,Female,high school,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,0.45,55.0,3.06,2.0,7.0,29.0,1.0,4.0,26.0,1.0,3.0,19315.0,19315.0,33.0,Central,Corporate Employee,2990
+0,0.0,Male,vocational certificate,single,2.0,2.0,1.0,0.0,1.0,1.0,0.0,1.0,0.37,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,31.0,Central,Corporate Employee,1860
+0,,Female,bachelor's degree,single,4.0,4.0,2.0,0.0,4.0,0.0,0.0,2.0,99.59,59.0,2.68,1.0,6.0,33.0,1.0,4.0,26.0,1.0,3.0,5707.01,6423.86,27.0,Central,Corporate Employee,882
+0,1.0,Male,bachelor's degree,single,6.0,6.0,1.0,2.0,6.0,2.0,0.0,1.0,347334.79,57.0,3.17,1.0,8.0,0.0,0.0,0.0,57.0,1.0,8.0,0.0,129555.53,53.0,Central,Corporate Employee,4203
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,29.0,Central,Corporate Employee,4237
+1,1.0,Female,master's degree,married,5.0,5.0,1.0,0.0,4.0,0.0,1.0,1.0,0.66,54.0,3.0,1.0,14.0,16.0,1.0,3.0,38.0,1.0,12.0,183699.0,184730.79,34.0,Eastern,Corporate Employee,732
+0,,Female,bachelor's degree,single,3.0,3.0,3.0,1.0,1.0,1.0,0.0,3.0,116736.27,11.0,1.22,1.0,3.0,5.0,1.0,2.0,6.0,1.0,1.0,7772.0,6472.0,30.0,Central,Corporate Employee,760
+0,1.0,Female,bachelor's degree,single,5.0,5.0,1.0,3.0,3.0,1.0,0.0,1.0,37309.17,53.0,2.52,1.0,13.0,22.0,1.0,3.0,31.0,1.0,10.0,106275.0,121784.82,44.0,Central,Freelancer,4035
+1,0.0,Male,less than high school,single,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,5.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,61.0,Central,Entrepreneur,4052
+0,1.0,Female,master's degree,single,9.0,8.0,3.0,2.0,5.0,1.0,0.0,1.0,122801.71,81.0,3.24,1.0,16.0,27.0,1.0,8.0,54.0,1.0,8.0,169742.0,190352.48,51.0,Northern,Corporate Employee,678
+0,0.0,Male,high school,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,92.66,81.0,3.0,1.0,7.0,27.0,1.0,3.0,54.0,1.0,6.0,27253.0,28915.0,28.0,Central,Corporate Employee,252
+0,,Female,others,single,2.0,2.0,1.0,0.0,1.0,0.0,0.0,1.0,691.94,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,600.0,0.0,63.0,Central,Entrepreneur,3155
+0,,Female,master's degree,married,6.0,6.0,1.0,1.0,3.0,1.0,0.0,1.0,2751.86,7.0,1.0,1.0,1.0,4.0,1.0,1.0,3.0,1.0,1.0,2650.0,1673.0,47.0,Southern,Professional,326
+0,2.0,Female,others,married,8.0,7.0,3.0,1.0,5.0,1.0,0.0,1.0,130085.4,122.0,4.07,1.0,12.0,16.0,1.0,3.0,106.0,1.0,12.0,165525.07,77829.8,52.0,Central,Corporate Employee,3593
+0,0.0,Male,high school,single,3.0,3.0,1.0,0.0,2.0,0.0,0.0,1.0,227.02,42.0,2.8,1.0,8.0,8.0,1.0,2.0,34.0,1.0,7.0,17380.0,17178.0,33.0,Central,Corporate Employee,621
+0,0.0,Male,high school,single,5.0,5.0,3.0,0.0,4.0,1.0,0.0,3.0,26518.08,48.0,2.67,1.0,5.0,9.0,2.0,3.0,39.0,1.0,5.0,30937.27,15630.03,26.0,Southern,Corporate Employee,669
+0,0.0,Female,vocational certificate,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,47.0,Central,Freelancer,100
+0,1.0,Female,master's degree,married,5.0,5.0,1.0,0.0,3.0,1.0,0.0,1.0,16.57,111.0,3.96,1.0,10.0,19.0,1.0,2.0,92.0,1.0,9.0,149100.0,155256.2,56.0,Central,Professional,1967
+0,1.0,Male,bachelor's degree,married,4.0,4.0,1.0,2.0,1.0,1.0,0.0,1.0,82.68,5.0,1.67,1.0,2.0,2.0,1.0,1.0,3.0,1.0,1.0,8400.0,28600.0,47.0,Central,Entrepreneur,677
+0,,Female,others,widow,4.0,4.0,1.0,2.0,1.0,2.0,0.0,1.0,111178.08,42.0,2.33,1.0,8.0,7.0,1.0,2.0,35.0,1.0,7.0,140283.6,82194.26,74.0,Central,Corporate Employee,2972
+0,1.0,Female,bachelor's degree,married,3.0,3.0,2.0,4.0,2.0,1.0,0.0,2.0,135676.96,5.0,1.67,1.0,2.0,0.0,0.0,0.0,5.0,1.0,2.0,0.0,71108.76,58.0,Northeastern,Other,3245
+1,0.0,Female,vocational certificate,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,41.0,Eastern,Corporate Employee,3960
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,47.0,Eastern,Entrepreneur,1412
+0,0.0,Male,bachelor's degree,married,5.0,5.0,1.0,0.0,6.0,1.0,0.0,1.0,15539.7,26.0,1.86,1.0,5.0,5.0,1.0,2.0,21.0,1.0,4.0,41584.51,41961.0,60.0,Central,Corporate Employee,811
+0,1.0,Male,others,single,6.0,6.0,3.0,1.0,5.0,1.0,0.0,3.0,288151.31,114.0,4.07,1.0,15.0,47.0,1.0,11.0,67.0,1.0,7.0,510380.0,323339.72,51.0,Central,Entrepreneur,2379
+0,0.0,Male,high school,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,1313.26,192.0,6.19,2.0,12.0,35.0,1.0,6.0,157.0,2.0,8.0,27423.0,32199.13,27.0,Central,Corporate Employee,2520
+0,1.0,Female,bachelor's degree,married,6.0,6.0,3.0,0.0,5.0,1.0,0.0,1.0,8500.67,27.0,2.08,1.0,5.0,9.0,1.0,2.0,18.0,1.0,3.0,29330.0,21463.6,53.0,Northern,Entrepreneur,3515
+0,,Male,bachelor's degree,married,5.0,5.0,2.0,1.0,2.0,1.0,0.0,1.0,5.29,100.0,5.0,2.0,9.0,43.0,1.0,4.0,57.0,1.0,6.0,111223.0,111220.0,34.0,Northern,Agriculture/Trade,1279
+0,0.0,Female,high school,single,5.0,5.0,1.0,0.0,5.0,1.0,0.0,1.0,198.61,5.0,1.67,1.0,3.0,2.0,1.0,1.0,3.0,1.0,2.0,3432.0,3260.0,45.0,Central,Corporate Employee,2513
+0,0.0,Male,high school,single,2.0,2.0,0.0,0.0,2.0,0.0,0.0,0.0,,,,,,,,,,,,,,27.0,Eastern,Corporate Employee,1118
+0,0.0,Male,vocational certificate,single,9.0,9.0,2.0,2.0,5.0,0.0,0.0,1.0,11693.66,31.0,1.72,1.0,4.0,6.0,1.0,2.0,25.0,1.0,4.0,33637.0,45466.1,48.0,Central,Corporate Employee,2993
+1,1.0,Female,others,married,5.0,5.0,4.0,2.0,1.0,0.0,0.0,1.0,84.35,2.0,2.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,30000.0,30000.0,43.0,Southern,Corporate Employee,1095
+0,,Male,others,single,6.0,5.0,2.0,0.0,4.0,2.0,0.0,1.0,4020.03,123.0,3.97,1.0,11.0,47.0,1.0,5.0,76.0,1.0,6.0,89830.0,116910.0,61.0,Central,Entrepreneur,3639
+0,0.0,Female,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,1389.75,18.0,2.0,1.0,5.0,11.0,1.0,3.0,7.0,1.0,2.0,5404.45,4015.51,26.0,Central,Corporate Employee,2248
+0,,Female,master's degree,single,6.0,6.0,4.0,1.0,2.0,1.0,0.0,1.0,1290.32,110.0,4.23,1.0,14.0,47.0,1.0,10.0,63.0,1.0,5.0,35555.0,43733.87,34.0,Northern,Corporate Employee,1506
+0,0.0,Female,master's degree,single,4.0,4.0,2.0,1.0,3.0,1.0,0.0,2.0,0.0,15.0,3.0,1.0,4.0,7.0,1.0,2.0,8.0,1.0,2.0,11440.0,11441.0,33.0,Central,Corporate Employee,294
+0,0.0,Male,vocational certificate,single,4.0,4.0,1.0,0.0,4.0,0.0,0.0,1.0,10367.65,8.0,1.6,1.0,2.0,1.0,1.0,1.0,7.0,1.0,2.0,44361.0,34415.0,32.0,Central,Corporate Employee,1232
+0,0.0,Female,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,31.0,Central,Corporate Employee,1413
+0,,Male,others,widow,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,1800.44,13.0,2.6,1.0,4.0,4.0,1.0,2.0,9.0,1.0,3.0,5199.44,5005.0,66.0,Central,Corporate Employee,3768
+0,0.0,Female,vocational certificate,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,29433.81,164.0,5.47,1.0,11.0,101.0,1.0,7.0,63.0,1.0,7.0,54063.0,48600.25,33.0,Northeastern,Entrepreneur,2370
+0,,Female,master's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,2933.53,43.0,2.05,1.0,5.0,13.0,1.0,2.0,30.0,1.0,4.0,33897.0,31339.51,46.0,Central,Corporate Employee,2965
+0,0.0,Female,bachelor's degree,married,8.0,8.0,3.0,3.0,4.0,1.0,0.0,1.0,8222.95,121.0,4.03,1.0,10.0,19.0,1.0,3.0,102.0,1.0,7.0,83915.0,109040.71,46.0,Central,Entrepreneur,1004
+0,0.0,Female,bachelor's degree,single,10.0,9.0,7.0,1.0,8.0,2.0,0.0,4.0,151730.52,220.0,7.33,1.0,35.0,37.0,1.0,6.0,183.0,1.0,29.0,2002890.56,2037099.09,55.0,Central,Entrepreneur,804
+0,0.0,Male,high school,single,2.0,2.0,1.0,0.0,1.0,0.0,0.0,1.0,731.32,1.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,20.0,57.0,Central,Corporate Employee,808
+0,1.0,Female,less than high school,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,42.0,Central,Corporate Employee,30
+0,1.0,Male,bachelor's degree,married,9.0,8.0,6.0,1.0,6.0,1.0,1.0,2.0,2133.1,35.0,2.06,1.0,4.0,15.0,1.0,2.0,20.0,1.0,2.0,634778.63,634882.23,67.0,Central,Corporate Employee,3251
+0,0.0,Female,bachelor's degree,single,6.0,5.0,1.0,2.0,2.0,1.0,0.0,1.0,435.48,47.0,2.47,1.0,7.0,28.0,1.0,5.0,19.0,1.0,4.0,88355.0,88248.07,45.0,Central,Entrepreneur,3043
+0,0.0,Female,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,28.0,Central,Corporate Employee,4283
+0,0.0,Male,vocational certificate,married,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,6.88,27.0,1.42,1.0,3.0,4.0,1.0,1.0,23.0,1.0,2.0,9500.0,15500.0,66.0,Central,Freelancer,3316
+0,0.0,Female,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,36.0,Central,Corporate Employee,1552
+0,0.0,Male,high school,married,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,34218.04,26.0,1.63,1.0,4.0,3.0,1.0,1.0,23.0,1.0,4.0,50980.7,54296.23,41.0,Central,Corporate Employee,4080
+0,0.0,Female,bachelor's degree,single,5.0,5.0,1.0,0.0,5.0,1.0,0.0,1.0,369.81,30.0,2.0,1.0,5.0,8.0,1.0,3.0,22.0,1.0,3.0,10812.0,10635.83,41.0,Central,Corporate Employee,74
+0,0.0,Female,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,0.0,24.0,2.67,1.0,5.0,11.0,1.0,2.0,13.0,1.0,4.0,3430.16,5404.78,31.0,Central,Freelancer,446
+0,0.0,Female,master's degree,single,8.0,7.0,8.0,3.0,2.0,1.0,0.0,5.0,1481580.13,212.0,7.31,1.0,29.0,99.0,1.0,22.0,113.0,1.0,11.0,8539489.65,9449919.97,35.0,Southern,Professional,1057
+0,,Male,others,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,8984.46,163.0,5.43,1.0,13.0,81.0,1.0,8.0,82.0,1.0,6.0,67541.53,61558.0,51.0,Central,Professional,1117
+0,1.0,Male,bachelor's degree,married,6.0,6.0,4.0,3.0,4.0,1.0,0.0,1.0,68713.85,27.0,1.93,1.0,5.0,15.0,1.0,3.0,12.0,1.0,2.0,257525.0,222608.5,57.0,Central,Entrepreneur,2006
+3,0.0,Male,others,single,4.0,4.0,2.0,0.0,3.0,0.0,0.0,1.0,457.27,68.0,3.58,1.0,18.0,15.0,1.0,2.0,53.0,1.0,17.0,143100.0,153686.79,56.0,Central,Entrepreneur,1236
+0,1.0,Male,bachelor's degree,married,8.0,6.0,4.0,0.0,6.0,0.0,0.0,1.0,31004.29,62.0,2.21,1.0,8.0,10.0,1.0,2.0,52.0,1.0,6.0,103950.0,80014.07,62.0,Northern,Unemployed,403
+0,0.0,Female,high school,single,3.0,3.0,1.0,0.0,2.0,1.0,0.0,1.0,507.35,325.0,14.13,1.0,38.0,132.0,1.0,17.0,193.0,1.0,21.0,34323.5,34055.28,37.0,Northeastern,Corporate Employee,565
+1,1.0,Female,vocational certificate,married,10.0,9.0,4.0,3.0,4.0,0.0,0.0,1.0,2703.84,103.0,3.96,1.0,15.0,57.0,1.0,8.0,46.0,1.0,11.0,153939.0,151296.54,57.0,Northeastern,Entrepreneur,4189
+0,1.0,Female,bachelor's degree,married,7.0,5.0,7.0,3.0,2.0,1.0,0.0,2.0,6613.21,118.0,4.07,1.0,11.0,34.0,1.0,4.0,84.0,1.0,7.0,256471.0,259103.29,43.0,Central,Entrepreneur,2859
+0,0.0,Male,less than high school,single,4.0,4.0,1.0,0.0,3.0,0.0,0.0,1.0,9160.16,48.0,2.0,1.0,5.0,29.0,1.0,4.0,19.0,1.0,3.0,33272.0,38307.57,53.0,Central,Corporate Employee,215
+0,,Female,bachelor's degree,single,4.0,4.0,2.0,0.0,5.0,1.0,0.0,2.0,4607.12,218.0,7.03,1.0,16.0,64.0,1.0,7.0,154.0,1.0,10.0,44861.54,61902.74,29.0,Southern,Corporate Employee,3132
+0,0.0,Male,bachelor's degree,married,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,17809.99,23.0,1.64,1.0,5.0,2.0,1.0,1.0,21.0,1.0,5.0,7000.0,40212.29,61.0,Northeastern,Entrepreneur,2466
+0,0.0,Female,bachelor's degree,single,6.0,6.0,6.0,0.0,6.0,1.0,0.0,3.0,3157122.44,67.0,2.58,1.0,6.0,40.0,1.0,4.0,27.0,1.0,3.0,16060797.25,16327956.5,33.0,Central,Entrepreneur,863
+0,,Male,bachelor's degree,single,3.0,3.0,1.0,0.0,3.0,1.0,0.0,1.0,0.8,55.0,2.2,2.0,5.0,26.0,1.0,2.0,29.0,1.0,3.0,460793.28,460842.0,29.0,Central,Corporate Employee,3703
+0,,Female,others,single,4.0,4.0,1.0,0.0,4.0,1.0,0.0,1.0,1306.83,8.0,1.33,1.0,2.0,4.0,1.0,1.0,4.0,1.0,1.0,2680.0,1441.0,46.0,Central,Corporate Employee,322
+0,1.0,Female,bachelor's degree,married,4.0,4.0,1.0,1.0,2.0,1.0,0.0,1.0,1086.67,3.0,1.0,1.0,1.0,0.0,0.0,0.0,3.0,1.0,1.0,0.0,14000.0,59.0,Northern,Homemaker,4277
+0,,Female,others,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,1125.74,113.0,4.04,1.0,17.0,38.0,1.0,8.0,75.0,1.0,13.0,52087.58,52292.41,45.0,Northern,Corporate Employee,3835
+0,0.0,Female,high school,married,5.0,5.0,1.0,0.0,4.0,2.0,0.0,1.0,5046.23,48.0,2.67,1.0,9.0,32.0,1.0,4.0,16.0,1.0,5.0,109355.0,120157.0,49.0,Central,Corporate Employee,2660
+0,0.0,Female,high school,divorce,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,41.0,Northeastern,Homemaker,123
+0,,Male,high school,single,3.0,3.0,1.0,0.0,2.0,1.0,0.0,1.0,4.76,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,26.0,Northeastern,Corporate Employee,1229
+1,0.0,Female,vocational certificate,married,3.0,3.0,1.0,0.0,3.0,0.0,0.0,1.0,10159.59,12.0,1.2,1.0,3.0,3.0,1.0,1.0,9.0,1.0,2.0,25000.0,17539.86,48.0,Northeastern,Corporate Employee,290
+0,,Female,bachelor's degree,single,2.0,2.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,23.0,Northeastern,Student,4115
+0,1.0,Female,master's degree,married,6.0,6.0,4.0,1.0,2.0,1.0,0.0,1.0,19039.77,33.0,2.2,1.0,4.0,9.0,1.0,2.0,24.0,1.0,4.0,43325.0,24345.0,42.0,Central,Corporate Employee,2956
+0,1.0,Male,bachelor's degree,married,9.0,9.0,2.0,3.0,6.0,0.0,1.0,1.0,4105.11,186.0,6.0,2.0,13.0,72.0,1.0,5.0,114.0,1.0,10.0,208758.67,207497.13,40.0,Northeastern,Entrepreneur,1109
+0,1.0,Male,bachelor's degree,married,5.0,5.0,1.0,3.0,5.0,2.0,0.0,1.0,28534.12,35.0,2.19,1.0,6.0,5.0,1.0,1.0,30.0,1.0,5.0,202315.0,176320.65,40.0,Northern,Entrepreneur,355
+0,0.0,Male,bachelor's degree,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,36.0,Central,Corporate Employee,1030
+0,0.0,Female,bachelor's degree,single,4.0,4.0,2.0,1.0,2.0,1.0,0.0,2.0,6.03,2.0,2.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,700.0,700.0,31.0,Central,Corporate Employee,3642
+1,2.0,Female,bachelor's degree,widow,5.0,5.0,2.0,0.0,7.0,1.0,0.0,2.0,93.11,80.0,3.48,1.0,10.0,27.0,1.0,3.0,53.0,1.0,9.0,113448.3,118144.35,75.0,Central,Corporate Employee,1425
+0,1.0,Male,others,single,7.0,6.0,4.0,0.0,4.0,0.0,2.0,1.0,16844.43,112.0,4.0,1.0,10.0,65.0,1.0,8.0,47.0,1.0,6.0,689721.59,683785.21,39.0,Northeastern,Entrepreneur,257
+0,,Male,bachelor's degree,single,3.0,3.0,0.0,2.0,1.0,0.0,0.0,0.0,,,,,,,,,,,,,,37.0,Central,Professional,2484
+0,0.0,Female,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,51.0,Southern,Corporate Employee,4259
+0,1.0,Female,bachelor's degree,widow,5.0,5.0,2.0,2.0,4.0,1.0,0.0,2.0,11370.36,17.0,1.42,1.0,3.0,5.0,1.0,1.0,12.0,1.0,2.0,19204.13,24873.84,71.0,Central,Corporate Employee,1633
+0,1.0,Female,bachelor's degree,widow,4.0,4.0,1.0,3.0,2.0,1.0,0.0,1.0,125423.94,43.0,2.39,1.0,7.0,4.0,1.0,1.0,39.0,1.0,6.0,84675.0,165892.08,72.0,Central,Corporate Employee,3350
+1,1.0,Female,vocational certificate,widow,7.0,7.0,7.0,3.0,3.0,1.0,0.0,3.0,24745.95,86.0,3.07,1.0,7.0,7.0,1.0,4.0,79.0,1.0,7.0,104686.83,84916.77,67.0,Central,Entrepreneur,2866
+0,0.0,Female,high school,married,4.0,4.0,2.0,0.0,2.0,1.0,0.0,1.0,32602.98,18.0,1.64,1.0,3.0,6.0,1.0,2.0,12.0,1.0,2.0,20174.0,14423.14,45.0,Central,Corporate Employee,292
+0,0.0,Male,bachelor's degree,married,9.0,8.0,7.0,1.0,6.0,1.0,0.0,2.0,7761.62,85.0,3.27,1.0,11.0,8.0,1.0,2.0,77.0,1.0,10.0,44560.89,46969.07,42.0,Central,Corporate Employee,3016
+1,1.0,Female,others,married,4.0,4.0,2.0,1.0,3.0,1.0,0.0,2.0,15815.81,217.0,7.0,1.0,31.0,58.0,1.0,11.0,159.0,1.0,20.0,528814.2,537941.14,45.0,Central,Corporate Employee,2368
+0,0.0,Female,others,married,5.0,5.0,1.0,1.0,2.0,1.0,0.0,1.0,462.98,10.0,2.0,1.0,3.0,4.0,1.0,2.0,6.0,1.0,2.0,28350.0,28442.51,61.0,Central,Corporate Employee,3230
+0,1.0,Male,high school,single,4.0,3.0,2.0,0.0,3.0,0.0,0.0,1.0,233.06,80.0,3.48,1.0,11.0,27.0,1.0,6.0,53.0,1.0,6.0,22045.0,22301.8,38.0,Northern,Corporate Employee,1742
+0,0.0,Female,high school,single,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,,,,,,,,,,,,,,30.0,Eastern,Corporate Employee,2371
+1,1.0,Male,bachelor's degree,single,6.0,6.0,3.0,2.0,5.0,1.0,0.0,2.0,33407.3,18.0,1.8,1.0,4.0,7.0,1.0,2.0,11.0,1.0,3.0,63160.64,63300.0,58.0,Central,Entrepreneur,264
+1,0.0,Male,less than high school,married,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,52.0,Southern,Corporate Employee,1420
+0,0.0,Male,bachelor's degree,married,4.0,4.0,1.0,0.0,3.0,2.0,0.0,1.0,0.01,73.0,3.84,1.0,11.0,14.0,1.0,3.0,59.0,1.0,8.0,50300.0,52328.0,44.0,Central,Corporate Employee,2270
+0,1.0,Male,bachelor's degree,single,8.0,8.0,4.0,1.0,6.0,0.0,0.0,1.0,1220.02,32.0,2.46,1.0,4.0,12.0,1.0,2.0,20.0,1.0,3.0,116545.0,117505.0,45.0,Central,Corporate Employee,57
+3,0.0,Female,high school,divorce,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,45.0,Southern,Corporate Employee,4333
+0,1.0,Male,master's degree,single,4.0,4.0,4.0,3.0,1.0,1.0,0.0,2.0,9312731.68,4.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,1.0,1.0,200000.0,1400.0,48.0,Northeastern,Entrepreneur,3102
+0,1.0,Male,master's degree,single,5.0,5.0,2.0,1.0,4.0,0.0,0.0,2.0,10.03,78.0,2.89,1.0,8.0,12.0,1.0,2.0,66.0,1.0,6.0,19164.0,42250.03,45.0,Central,Corporate Employee,204
+0,0.0,Male,high school,single,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,37.0,Central,Corporate Employee,810
+0,1.0,Male,others,single,5.0,5.0,1.0,1.0,3.0,1.0,0.0,1.0,2429.07,101.0,3.37,1.0,9.0,81.0,1.0,8.0,20.0,1.0,3.0,909260.0,916980.0,59.0,Northeastern,Entrepreneur,1179
+0,0.0,Female,high school,married,6.0,6.0,2.0,1.0,4.0,1.0,0.0,1.0,101739.43,84.0,3.23,1.0,8.0,14.0,1.0,2.0,70.0,1.0,6.0,312258.76,226146.84,38.0,Eastern,Corporate Employee,1324
+0,,Male,bachelor's degree,single,6.0,6.0,4.0,0.0,3.0,0.0,0.0,1.0,8238.98,52.0,2.17,1.0,6.0,20.0,1.0,2.0,32.0,1.0,5.0,38714.0,30491.05,26.0,Central,Corporate Employee,13
+0,1.0,Male,bachelor's degree,single,4.0,4.0,1.0,0.0,3.0,1.0,0.0,1.0,72072.62,79.0,3.29,1.0,9.0,65.0,1.0,8.0,14.0,1.0,2.0,253007.82,304054.71,38.0,Northeastern,Entrepreneur,1033
+0,0.0,Female,bachelor's degree,single,7.0,6.0,4.0,2.0,3.0,0.0,0.0,1.0,2251.67,198.0,6.6,1.0,16.0,23.0,1.0,3.0,175.0,1.0,15.0,5085650.0,5160619.3,39.0,Central,Entrepreneur,1789
+0,0.0,Male,bachelor's degree,single,4.0,4.0,1.0,0.0,5.0,0.0,0.0,1.0,3130.16,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,500.0,200.0,38.0,Northeastern,Corporate Employee,2697
+0,1.0,Female,others,single,6.0,5.0,2.0,3.0,2.0,1.0,1.0,1.0,8079.63,289.0,9.32,3.0,28.0,115.0,1.0,21.0,174.0,2.0,10.0,1085192.0,1081813.55,46.0,Southern,Entrepreneur,4303
+0,0.0,Female,high school,single,3.0,3.0,2.0,0.0,3.0,1.0,0.0,2.0,0.33,82.0,3.42,1.0,10.0,23.0,1.0,4.0,59.0,1.0,7.0,92493.26,118644.94,36.0,Central,Corporate Employee,1979

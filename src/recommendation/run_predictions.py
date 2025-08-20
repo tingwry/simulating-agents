@@ -359,7 +359,7 @@ def get_llm_prediction(prompt, predicted_actions=None):
 
 
 
-def run_rag_transaction_predictions(test_df, collection_name, categories, output_dir=None, top_k=5):
+def run_rag_transaction_predictions(test_df, collection_name, categories, output_dir=None, top_k=5, cust_ids_to_repredict=None):
     """
     Main function to run RAG-based transaction category predictions.
     
@@ -369,37 +369,48 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
         categories: List of transaction categories to predict
         output_dir: Directory to save results
         top_k: Number of similar customers to retrieve
+        cust_ids_to_repredict: List of customer IDs to repredict (will replace existing predictions)
     
     Returns:
         tuple: (binary_predictions_df, prediction_scores_df, reasoning_df)
     """
     
     print("Starting RAG-based transaction category prediction...")
+    id_col = 'CUST_ID' if 'CUST_ID' in test_df.columns else 'cust_id'
+    
+    # Initialize output DataFrames by loading existing results if they exist
+    binary_predictions = pd.DataFrame()
+    prediction_scores = pd.DataFrame()
+    reasoning_df = pd.DataFrame()
+    
+    if output_dir:
+        try:
+            binary_predictions = pd.read_csv(os.path.join(output_dir, "rag_transaction_predictions.csv"))
+            prediction_scores = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_scores.csv"))
+            reasoning_df = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_reasoning.csv"))
+            
+            print(f"Loaded existing results with {len(binary_predictions)} customers")
+        except FileNotFoundError:
+            print("No existing results found, creating new prediction files")
+    
+    # If we have specific customers to repredict, filter the test_df
+    if cust_ids_to_repredict is not None:
+        test_df = test_df[test_df[id_col].isin(cust_ids_to_repredict)]
+        if len(test_df) == 0:
+            print("No matching customers found in test data")
+            return binary_predictions, prediction_scores, reasoning_df
+    
+    # Initialize DataFrames if they're empty
+    if binary_predictions.empty:
+        binary_predictions = pd.DataFrame(columns=[id_col] + categories)
+        prediction_scores = pd.DataFrame(columns=[id_col] + categories)
+        reasoning_df = pd.DataFrame(columns=[id_col] + categories)
     
     # Retrieve similar customers for all test customers
     print("Step 1: Retrieving similar customers...")
     similar_customers_data = retrieve_similar_customers_for_recommendations(
         test_df, collection_name, top_k=top_k
     )
-    
-    # Save similar customers data
-    if output_dir:
-        os.makedirs(output_dir, exist_ok=True)
-        similar_output_file = os.path.join(output_dir, "similar_customers_transaction_data.json")
-        with open(similar_output_file, 'w', encoding='utf-8') as f:
-            json.dump(similar_customers_data, f, indent=4, ensure_ascii=False)
-        print(f"Similar customers data saved to: {similar_output_file}")
-    
-    # Initialize output DataFrames
-    id_col = 'CUST_ID' if 'CUST_ID' in test_df.columns else 'cust_id'
-    
-    binary_predictions = pd.DataFrame()
-    prediction_scores = pd.DataFrame()
-    reasoning_df = pd.DataFrame()
-    
-    binary_predictions[id_col] = test_df[id_col]
-    prediction_scores[id_col] = test_df[id_col]
-    reasoning_df[id_col] = test_df[id_col]
     
     # Track processed and failed customers
     processed = []
@@ -418,7 +429,6 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
             
             if not cust_similar_data.get('similar_customers'):
                 print(f"\nWarning: No similar customers found for {customer_id}")
-                # Continue with empty context rather than failing
                 cust_similar_data = {'similar_customers': []}
             
             # Create RAG-enhanced prediction prompt
@@ -433,31 +443,55 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
             json_str = re.sub(r'^```json|```$', '', response.strip(), flags=re.MULTILINE).strip()
             prediction = json.loads(json_str)
             
-            # Extract predictions and scores for each category
+            # Check if this customer already exists in results
+            existing_idx = binary_predictions[binary_predictions[id_col] == customer_id].index
+            
+            if not existing_idx.empty:
+                # Update existing row
+                row_idx = existing_idx[0]
+                update_type = "Updated"
+            else:
+                # Add new row
+                row_idx = len(binary_predictions)
+                binary_predictions.loc[row_idx, id_col] = customer_id
+                prediction_scores.loc[row_idx, id_col] = customer_id
+                reasoning_df.loc[row_idx, id_col] = customer_id
+                update_type = "Added"
+            
+            # Update predictions for each category
             for category in categories:
                 # Get binary prediction (0 or 1)
                 binary_pred = prediction.get('predictions', {}).get(category, 0)
-                binary_predictions.loc[i, category] = int(binary_pred)
+                binary_predictions.loc[row_idx, category] = int(binary_pred)
                 
                 # Get confidence score (0.0 to 1.0)
                 confidence = prediction.get('confidence_scores', {}).get(category, 0.0)
-                prediction_scores.loc[i, category] = float(confidence)
+                prediction_scores.loc[row_idx, category] = float(confidence)
                 
                 # Get reasoning text
                 reasoning = prediction.get('reasoning', {}).get(category, 'No reasoning provided')
-                reasoning_df.loc[i, category] = str(reasoning)
+                reasoning_df.loc[row_idx, category] = str(reasoning)
             
             processed.append(customer_id)
+            print(f"{update_type} predictions for customer {customer_id}")
             
         except Exception as e:
             print(f"❌ Error processing customer {customer_id}: {str(e)}")
             failed.append(customer_id)
             
-            # Fill with default values for failed predictions
+            # Ensure the customer exists in the results (with default values)
+            existing_idx = binary_predictions[binary_predictions[id_col] == customer_id].index
+            row_idx = existing_idx[0] if not existing_idx.empty else len(binary_predictions)
+            
+            if existing_idx.empty:
+                binary_predictions.loc[row_idx, id_col] = customer_id
+                prediction_scores.loc[row_idx, id_col] = customer_id
+                reasoning_df.loc[row_idx, id_col] = customer_id
+            
             for category in categories:
-                binary_predictions.loc[i, category] = 0
-                prediction_scores.loc[i, category] = 0.0
-                reasoning_df.loc[i, category] = f"Failed to process: {str(e)}"
+                binary_predictions.loc[row_idx, category] = 0
+                prediction_scores.loc[row_idx, category] = 0.0
+                reasoning_df.loc[row_idx, category] = f"Failed to process: {str(e)}"
             continue
     
     # Save outputs
@@ -498,7 +532,7 @@ if __name__ == "__main__":
     OUTPUT_DIR = "src/recommendation/predictions/llm/rag/results"
     test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_v1.csv")
     # testtest = test_df.head()
-    testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
+    # testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
@@ -532,12 +566,27 @@ if __name__ == "__main__":
 #     categories=categories, 
 #     data='T0'
 # )
+
+    # binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
+    #     test_df=testtest,
+    #     collection_name=COLLECTION_NAME,
+    #     categories=categories,
+    #     output_dir=OUTPUT_DIR,
+    #     top_k=5,
+    #     restart_failed_only=True
+    # )
+    
+
+    # List of customer IDs you want to repredict
+    cust_ids_to_repredict = [2214]
+
     binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
-        test_df=test_df,
+        test_df=test_df,  # Your full test DataFrame
         collection_name=COLLECTION_NAME,
         categories=categories,
         output_dir=OUTPUT_DIR,
         top_k=5,
-        restart_failed_only=True
+        cust_ids_to_repredict=cust_ids_to_repredict  # This specifies which customers to repredict
     )
+
     print("RAG-based transaction category prediction completed!")

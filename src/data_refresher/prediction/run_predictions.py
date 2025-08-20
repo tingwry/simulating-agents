@@ -169,8 +169,9 @@ if __name__ == "__main__":
     # Load data cluster
     # df = pd.read_csv('src/clustering/approach_2_embed/pred_result/full_data_with_cluster/full_data_with_cluster_v2.csv')
     train_with_lifestyle_with_clus = pd.read_csv('src/data_refresher/clustering/approach_2_embed/pred_result/full_data_with_cluster/train_with_lifestyle_with_clus.csv')
-    # testtest = train_with_lifestyle_with_clus[train_with_lifestyle_with_clus['CUST_ID'].isin([2223, 353, 2013, 1183, 3358])] 
+    # testtest = train_with_lifestyle_with_clus[train_with_lifestyle_with_clus['CUST_ID'].isin([524])] 
     test_wth_lifestyle_with_clus = pd.read_csv('src/data_refresher/clustering/approach_2_embed/pred_result/full_data_with_cluster/test_wth_lifestyle_with_clus.csv')
+    testtest = test_wth_lifestyle_with_clus[test_wth_lifestyle_with_clus['CUST_ID'].isin([1789, 2697, 4303, 1979])] 
 
     # setup
     COLLECTION_NAME = "customer_transitions"
@@ -178,8 +179,8 @@ if __name__ == "__main__":
     VERSIONED_DIR = None  # Will be set when saving results
     output_dir = "src/data_refresher/prediction/pred_results"
 
-    file_name = "test_with_lifestyle_pred_T1"
+    file_name = "test_with_lifestyle_pred_T1_single"
     
     # Process customers and save results
-    results_df = run_predictions(test_wth_lifestyle_with_clus, method="cluster", stage="multi", change_analysis=True, batch_size=None)
-    save_final_results(results_df, output_dir, file_name)
+    results_df = run_predictions(testtest, method="cluster", stage="single", change_analysis=True, batch_size=None)
+    save_final_results_append(results_df, output_dir, file_name)
