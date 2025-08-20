@@ -558,7 +558,7 @@ if __name__ == "__main__":
     # run_predictions(method="binary", is_regressor=False, categories=categories, 
     #                method_model="catboost", threshold=None, data='T1_predicted')
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1_predicted')
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
+    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
 
 
 #     binary_preds, scores = run_predictions_llm(
@@ -578,15 +578,15 @@ if __name__ == "__main__":
     
 
     # List of customer IDs you want to repredict
-    cust_ids_to_repredict = [2214]
+    # cust_ids_to_repredict = [2214]
 
-    binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
-        test_df=test_df,  # Your full test DataFrame
-        collection_name=COLLECTION_NAME,
-        categories=categories,
-        output_dir=OUTPUT_DIR,
-        top_k=5,
-        cust_ids_to_repredict=cust_ids_to_repredict  # This specifies which customers to repredict
-    )
+    # binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
+    #     test_df=test_df,  # Your full test DataFrame
+    #     collection_name=COLLECTION_NAME,
+    #     categories=categories,
+    #     output_dir=OUTPUT_DIR,
+    #     top_k=5,
+    #     cust_ids_to_repredict=cust_ids_to_repredict  # This specifies which customers to repredict
+    # )
 
-    print("RAG-based transaction category prediction completed!")
+    # print("RAG-based transaction category prediction completed!")

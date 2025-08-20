@@ -133,13 +133,13 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
             if is_regressor:
                 DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm.csv'
             else:
-                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased.csv'
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_single.csv'
 
             model_type = "regressor" if is_regressor else "classifier"
             
             if data in ['T1', 'T1_predicted']:
-                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}'
-                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}'
+                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}_single'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}_single'
             else:  # T0 case
                 MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
                 METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}'
@@ -183,7 +183,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     OPTIMAL_THRS = ""
     
     # Set TEST_DATA_PATH based on data version
-    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle.csv'
+    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_single.csv'
     
     if method == "reinforcement_learning":
         DATA_DIR = f'{base_data_path}/rl'
@@ -203,8 +203,8 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
             model_type = "regressor" if is_regressor else "classifier"
             
             if data in ['T1', 'T1_predicted']:
-                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}'
-                PREDICTION_OUTPUT = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}'
+                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}_single'
+                PREDICTION_OUTPUT = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}_single'
             else:  # T0 case
                 MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
                 PREDICTION_OUTPUT = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
@@ -248,7 +248,7 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     OPTIMAL_THRS = ""
     
     # Set answer key path based on method and model type
-    if method == "binary" and is_regressor:
+    if method == "binary":
         ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased_amt_no_norm.csv'
     else:
         ANS_KEY_DIR = f'{base_ans_key_path}/grouped_catbased_amt.csv'
@@ -280,9 +280,9 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
             model_type = "regressor" if is_regressor else "classifier"
             
             if data in ['T1', 'T1_predicted']:
-                PREDICTIONS_DIR = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}'
-                SCORES_DIR = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}'
-                EVAL_RESULTS_DIR = f'{base_eval_path}/binary_classification/{data}/{method_model}_{model_type}'
+                PREDICTIONS_DIR = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}_single'
+                SCORES_DIR = f'{base_prediction_path}/binary_classification/{data}/{method_model}_{model_type}_single'
+                EVAL_RESULTS_DIR = f'{base_eval_path}/binary_classification/{data}/{method_model}_{model_type}_single'
             else:  # T0 case
                 PREDICTIONS_DIR = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'
                 SCORES_DIR = f'{base_prediction_path}/binary_classification/{method_model}_{model_type}'

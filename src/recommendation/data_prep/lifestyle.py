@@ -220,9 +220,9 @@ if __name__ == "__main__":
     # remove_nan('src/recommendation/data/T1/demog_grouped_catbased.csv')
     # remove_nan('src/recommendation/data/T1_predicted/demog_grouped_catbased.csv')
 
-    # df_t0_path = 'src/recommendation/data/T0/demog_ranking_grouped_catbased.csv'
-    # df_t1_path = 'src/recommendation/data/T1/demog_ranking_grouped_catbased.csv'
-    # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv'
+    df_t0_path = 'src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv'
+    df_t1_path = 'src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv'
+    df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm_single.csv'
     # df_t0_path = 'src/recommendation/data/T0/demog_grouped_catbased.csv'
     # df_t1_path = 'src/recommendation/data/T1/demog_grouped_catbased.csv'
     # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_grouped_catbased.csv'
@@ -234,9 +234,9 @@ if __name__ == "__main__":
     # remove_nan('src/recommendation/data/T1/test_with_lifestyle.csv')
     # remove_nan('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
 
-    df_t0_path = 'src/recommendation/data/T0/test_with_lifestyle.csv'
-    df_t1_path = 'src/recommendation/data/T1/test_with_lifestyle.csv'
-    df_t1_predicted_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle.csv'
+    # df_t0_path = 'src/recommendation/data/T0/test_with_lifestyle.csv'
+    # df_t1_path = 'src/recommendation/data/T1/test_with_lifestyle.csv'
+    # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle_single.csv'
 
     df_t0_filtered, df_t1_filtered, df_t1_predicted_filtered = filter_matching_customers(df_t0_path, df_t1_path, df_t1_predicted_path)
 
