@@ -131,28 +131,29 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
         if method == "binary":
             # Use non-normalized data for binary regression cases
             if is_regressor:
-                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm.csv'
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_t0.csv'
             else:
-                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_single.csv'
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_t0.csv'
+                # DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_single.csv'
 
             model_type = "regressor" if is_regressor else "classifier"
             
             if data in ['T1', 'T1_predicted']:
-                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}_single'
-                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}_single'
+                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}_single_t0'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}_single_t0'
             else:  # T0 case
-                MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
-                METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}'
+                MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}_t0'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}_t0'
             
         elif method == "multilabel":
-            DATA_PATH = f'{base_data_path}/{data}/demog_grouped_catbased.csv'
+            DATA_PATH = f'{base_data_path}/{data}/demog_grouped_catbased_t0.csv'
 
             if data in ['T1', 'T1_predicted']:
-                MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}'
-                METRICS_DIR = f'{base_metrics_path}/multilabel/{data}/{method_model}'
+                MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}_t0'
+                METRICS_DIR = f'{base_metrics_path}/multilabel/{data}/{method_model}_t0'
             else:  # T0 case
-                MODEL_DIR = f'{base_model_path}/multilabel/{method_model}'
-                METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}'
+                MODEL_DIR = f'{base_model_path}/multilabel/{method_model}_t0'
+                METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}_t0'
             
         else:
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
@@ -183,7 +184,8 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     OPTIMAL_THRS = ""
     
     # Set TEST_DATA_PATH based on data version
-    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_single.csv'
+    # TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_single.csv'
+    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle.csv'
     
     if method == "reinforcement_learning":
         DATA_DIR = f'{base_data_path}/rl'
@@ -329,20 +331,14 @@ def preprocess_unknown_values(df):
     return df
 
 def load_and_preprocess_data(DATA_PATH):
-    """Load and preprocess data with improved encoding"""
+    """Load and preprocess data with transaction amounts as features"""
     df = pd.read_csv(DATA_PATH)
     df = preprocess_unknown_values(df)
     
     # Define features and categories
-    numerical_features = ['Number of Children', 'Age']
+    numerical_features = ['Number of Children', 'Age'] + transaction_amount_cols
     label_encode_features = ['Gender', 'Education level']
     binary_encode_features = ['Marital status', 'Region', 'Occupation Group']
-    # categories = ['charity', 'loan', 'utility', 'investment', 'finance', 'shopping',
-    #              'personal_care', 'medical', 'home_and_living', 'insurance', 'automotive',
-    #              'restaurant', 'business', 'entertainment', 'bank', 'education', 'pet_care',
-    #              'government', 'travel', 'transportation', 'visit', 'system_dpst']
-    categories = ['loan','utility','finance','shopping','financial_services',
-                     'health_and_care','home_lifestyle','transport_travel','leisure','public_services']
     
     # Filter features that actually exist in the dataframe
     numerical_features = [col for col in numerical_features if col in df.columns]
@@ -371,11 +367,6 @@ def load_and_preprocess_data(DATA_PATH):
     
     preprocessor = ColumnTransformer(transformers=transformers)
 
-    # Fit the preprocessor to the data
-    # feature_cols = [col for col in df.columns if col not in categories and col != 'CUST_ID']
-    # feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
-    # preprocessor.fit(df[feature_cols])
-    
     return df, preprocessor
 
 # def find_optimal_regression_threshold(y_true, y_pred):

@@ -535,7 +535,7 @@ if __name__ == "__main__":
     # testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
+    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
@@ -558,7 +558,7 @@ if __name__ == "__main__":
     # run_predictions(method="binary", is_regressor=False, categories=categories, 
     #                method_model="catboost", threshold=None, data='T1_predicted')
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1_predicted')
-    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
 
 
 #     binary_preds, scores = run_predictions_llm(

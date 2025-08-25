@@ -62,14 +62,12 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
         
         return cql
 
-
     else:
         df, preprocessor = load_and_preprocess_data(DATA_PATH)
 
         print(DATA_PATH)
         
-        # Get feature columns (exclude target categories)
-        # feature_cols = [col for col in df.columns if col not in categories and col != 'CUST_ID']
+        # Get feature columns (now includes transaction amounts)
         X_df = df[feature_cols]
         
         # Fit preprocessor on feature columns only
@@ -92,31 +90,10 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
                     print(f"Warning: Category '{category}' has no transactions. Skipping...")
                     continue
 
-
                 if is_regressor:
                     X_train, X_test, y_train, y_test = train_test_split(
                         X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
                 else:
-                    # # Check class distribution for stratification
-                    # class_counts = y.value_counts()
-                    # min_class_count = class_counts.min()
-
-                    # # Check if we have both classes
-                    # unique_classes = y.unique()
-                    # if len(unique_classes) < 2:
-                    #     print(f"Warning: Category '{category}' has only one class. Skipping...")
-                    #     continue
-                    
-                    # # If any class has fewer than 2 samples, we can't use stratification
-                    # if min_class_count < 2:
-                    #     print(f"Warning: Category '{category}' has classes with too few samples (min: {min_class_count}). Using random split...")
-                    #     X_train, X_test, y_train, y_test = train_test_split(
-                    #         X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
-                    # else:
-                    #     # Safe to use stratification
-                    #     X_train, X_test, y_train, y_test = train_test_split(
-                    #         X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=y)
-
                     y_binary = (y > 0).astype(int)
                     
                     X_train, X_test, y_train, y_test = train_test_split(
@@ -731,7 +708,7 @@ if __name__ == "__main__":
     feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
     
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
-    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
+    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
@@ -752,4 +729,4 @@ if __name__ == "__main__":
     # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1_predicted')
 
     # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1')
-    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1_predicted')
+    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1_predicted')

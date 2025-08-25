@@ -201,11 +201,11 @@ def create_demographics_dashboard(csv_path, save_path="demographics_dashboard.pn
     
     # Define colors
     # colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD']
-    colors = ['#0f3741', '#3e809d', '#82528d', '#ded2f7', '#DDA0DD', '#97298e']
+    colors = ['#0f3741', '#0f3741', '#0f3741', '#3e809d', '#0f3741', '#0f3741']
     
     # 1. Age Distribution (Top Left)
     ax1 = axes[0, 0]
-    ax1.hist(df['Age'], bins=15, color=colors[0], alpha=0.7, edgecolor='black', linewidth=0.5)
+    ax1.hist(df['Age'], bins=15, color=colors[0], alpha=1, edgecolor='black', linewidth=0.5)
     ax1.set_title('Age', fontsize=18, fontweight='bold')
     ax1.set_xlabel('Age', fontsize=14)
     ax1.set_ylabel('Count', fontsize=14)
@@ -220,7 +220,7 @@ def create_demographics_dashboard(csv_path, save_path="demographics_dashboard.pn
     ax2 = axes[0, 1]
     education_counts = df['Education level'].value_counts()
     y_pos = np.arange(len(education_counts))
-    bars = ax2.barh(y_pos, education_counts.values, color=colors[1], alpha=0.8)
+    bars = ax2.barh(y_pos, education_counts.values, color=colors[1], alpha=1)
     ax2.set_yticks(y_pos)
     ax2.set_yticklabels(education_counts.index, fontsize=12)
     ax2.set_title('Education Level', fontsize=18, fontweight='bold')
@@ -250,7 +250,7 @@ def create_demographics_dashboard(csv_path, save_path="demographics_dashboard.pn
     ax4 = axes[1, 0]
     marital_counts = df['Marital status'].value_counts()
     bars = ax4.bar(range(len(marital_counts)), marital_counts.values, 
-                   color=colors[4], alpha=0.8, edgecolor='black', linewidth=0.5)
+                   color=colors[4], alpha=1, edgecolor='black', linewidth=0.5)
     ax4.set_xticks(range(len(marital_counts)))
     ax4.set_xticklabels(marital_counts.index, rotation=45, ha='right', fontsize=12)
     ax4.set_title('Marital Status', fontsize=18, fontweight='bold')
@@ -267,7 +267,7 @@ def create_demographics_dashboard(csv_path, save_path="demographics_dashboard.pn
     ax5 = axes[1, 1]
     occupation_counts = df['Occupation Group'].value_counts()
     y_pos = np.arange(len(occupation_counts))
-    bars = ax5.barh(y_pos, occupation_counts.values, color=colors[5], alpha=0.8)
+    bars = ax5.barh(y_pos, occupation_counts.values, color=colors[5], alpha=1)
     ax5.set_yticks(y_pos)
     ax5.set_yticklabels(occupation_counts.index, fontsize=12)
     ax5.set_title('Occupation Group', fontsize=18, fontweight='bold')
@@ -284,7 +284,7 @@ def create_demographics_dashboard(csv_path, save_path="demographics_dashboard.pn
     ax6 = axes[1, 2]
     region_counts = df['Region'].value_counts()
     bars = ax6.bar(range(len(region_counts)), region_counts.values, 
-                   color=colors[:len(region_counts)], alpha=0.8, 
+                   color=colors[0], alpha=1, 
                    edgecolor='black', linewidth=0.5)
     ax6.set_xticks(range(len(region_counts)))
     ax6.set_xticklabels(region_counts.index, rotation=45, ha='right', fontsize=12)
@@ -394,14 +394,193 @@ def create_transaction_categories_chart(csv_path, transaction_cols, save_path="t
     
     return fig
 
+
+
+
+import json
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import hmean
+
+def create_harmonic_mean_chart(rf_file, zeroshot_file, rag_file, output_file='harmonic_mean_comparison.png'):
+    """
+    Create a bar chart comparing harmonic mean of NDCG and F-beta scores
+    
+    Parameters:
+    rf_file (str): Path to Random Forest JSON file
+    zeroshot_file (str): Path to Zero-shot LLM JSON file  
+    rag_file (str): Path to RAG LLM JSON file
+    output_file (str): Output PNG filename
+    """
+    
+    # Load JSON files
+    with open(rf_file, 'r') as f:
+        rf_data = json.load(f)
+    with open(zeroshot_file, 'r') as f:
+        zeroshot_data = json.load(f)
+    with open(rag_file, 'r') as f:
+        rag_data = json.load(f)
+    
+    # Extract metrics and calculate harmonic means
+    approaches = []
+    harmonic_means = []
+    
+    # Random Forest
+    rf_fbeta = rf_data['Evaluation Metrics']['binary_metrics']['f_beta_score']
+    rf_ndcg = rf_data['Evaluation Metrics']['ranking_metrics']['average_ndcg_with_probs']
+    rf_harmonic = hmean([rf_fbeta, rf_ndcg])
+    approaches.append('Random Forest')
+    harmonic_means.append(rf_harmonic)
+    
+    # Zero-shot LLM
+    zs_fbeta = zeroshot_data['Evaluation Metrics']['binary_metrics']['f_beta_score']
+    zs_ndcg = zeroshot_data['Evaluation Metrics']['ranking_metrics']['average_ndcg_with_probs']
+    zs_harmonic = hmean([zs_fbeta, zs_ndcg])
+    approaches.append('Zero-shot LLM')
+    harmonic_means.append(zs_harmonic)
+    
+    # RAG LLM
+    rag_fbeta = rag_data['Evaluation Metrics']['binary_metrics']['f_beta_score']
+    rag_ndcg = rag_data['Evaluation Metrics']['ranking_metrics']['average_ndcg_with_probs']
+    rag_harmonic = hmean([rag_fbeta, rag_ndcg])
+    approaches.append('RAG LLM')
+    harmonic_means.append(rag_harmonic)
+    
+    # Color scheme matching your palette
+    colors = ['#8B5A8C', '#5B9BD5', '#2E8B8B']  # Purple, Blue, Teal
+    
+    # Create the bar chart
+    plt.figure(figsize=(10, 6))
+    bars = plt.bar(approaches, harmonic_means, color=colors, alpha=0.8, edgecolor='white', linewidth=1.5)
+    
+    # Customize the chart
+    plt.title('Harmonic Mean of NDCG and F-beta Scores by Approach', 
+              fontsize=16, fontweight='bold', pad=20)
+    plt.ylabel('Harmonic Mean Score', fontsize=12, fontweight='bold')
+    plt.xlabel('Approach', fontsize=12, fontweight='bold')
+    
+    # Add value labels on bars
+    for bar, value in zip(bars, harmonic_means):
+        plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
+                f'{value:.4f}', ha='center', va='bottom', fontweight='bold')
+    
+    # Customize appearance
+    plt.ylim(0, max(harmonic_means) * 1.15)
+    plt.grid(axis='y', alpha=0.3, linestyle='--')
+    plt.gca().set_axisbelow(True)
+    
+    # Style the axes
+    plt.gca().spines['top'].set_visible(False)
+    plt.gca().spines['right'].set_visible(False)
+    plt.gca().spines['left'].set_color('#666666')
+    plt.gca().spines['bottom'].set_color('#666666')
+    
+    # Adjust layout and save
+    plt.tight_layout()
+    plt.savefig(output_file, dpi=300, bbox_inches='tight', 
+                facecolor='white', edgecolor='none')
+    plt.show()
+    
+    # Print results
+    print("\nHarmonic Mean Results:")
+    print("-" * 30)
+    for approach, score in zip(approaches, harmonic_means):
+        print(f"{approach:<15}: {score:.4f}")
+    
+    return harmonic_means
+
+def create_t0_t1_comparison_chart(t0_file, t1_file, output_file='t0_t1_harmonic_comparison.png'):
+    """
+    Create a bar chart comparing harmonic mean of NDCG and F-beta scores for T0 vs T1
+    
+    Parameters:
+    t0_file (str): Path to Direct T0 JSON file
+    t1_file (str): Path to Refreshed T1 JSON file
+    output_file (str): Output PNG filename
+    """
+    
+    # Load JSON files
+    with open(t0_file, 'r') as f:
+        t0_data = json.load(f)
+    with open(t1_file, 'r') as f:
+        t1_data = json.load(f)
+    
+    # Extract metrics and calculate harmonic means
+    approaches = []
+    harmonic_means = []
+    
+    # Direct T0
+    t0_fbeta = t0_data['Evaluation Metrics']['binary_metrics']['f_beta_score']
+    t0_ndcg = t0_data['Evaluation Metrics']['ranking_metrics']['average_ndcg_with_probs']
+    t0_harmonic = hmean([t0_fbeta, t0_ndcg])
+    approaches.append('Direct T0')
+    harmonic_means.append(t0_harmonic)
+    
+    # Refreshed T1
+    t1_fbeta = t1_data['Evaluation Metrics']['binary_metrics']['f_beta_score']
+    t1_ndcg = t1_data['Evaluation Metrics']['ranking_metrics']['average_ndcg_with_probs']
+    t1_harmonic = hmean([t1_fbeta, t1_ndcg])
+    approaches.append('Refreshed T1')
+    harmonic_means.append(t1_harmonic)
+    
+    # Color scheme - using two contrasting colors from your palette
+    colors = ['#B19CD9', '#7FB3B3']  # Light purple for T0, Light teal for T1
+    
+    # Create the horizontal bar chart
+    plt.figure(figsize=(8, 5))
+    bars = plt.barh(approaches, harmonic_means, color=colors, alpha=0.8, edgecolor='white', linewidth=1.5)
+    
+    # Customize the chart
+    plt.title('Harmonic Mean of NDCG and F-beta Scores: T0 vs T1', 
+              fontsize=16, fontweight='bold', pad=20)
+    plt.xlabel('Harmonic Mean Score', fontsize=12, fontweight='bold')
+    plt.ylabel('Demographics Data', fontsize=12, fontweight='bold')
+    
+    # Add value labels on bars
+    for bar, value in zip(bars, harmonic_means):
+        plt.text(bar.get_width() + 0.01, bar.get_y() + bar.get_height()/2,
+                f'{value:.4f}', ha='left', va='center', fontweight='bold')
+    
+    # Customize appearance
+    plt.xlim(0, max(harmonic_means) * 1.15)
+    plt.grid(axis='x', alpha=0.3, linestyle='--')
+    plt.gca().set_axisbelow(True)
+    
+    # Style the axes
+    plt.gca().spines['top'].set_visible(False)
+    plt.gca().spines['right'].set_visible(False)
+    plt.gca().spines['left'].set_color('#666666')
+    plt.gca().spines['bottom'].set_color('#666666')
+    
+    # Adjust layout and save
+    plt.tight_layout()
+    plt.savefig(output_file, dpi=300, bbox_inches='tight', 
+                facecolor='white', edgecolor='none')
+    plt.show()
+    
+    # Print results
+    print("\nT0 vs T1 Harmonic Mean Results:")
+    print("-" * 35)
+    for approach, score in zip(approaches, harmonic_means):
+        print(f"{approach:<12}: {score:.4f}")
+    
+    # Calculate and show improvement
+    improvement = ((t1_harmonic - t0_harmonic) / t0_harmonic) * 100
+    print(f"\nImprovement from T0 to T1: {improvement:+.2f}%")
+    
+    return harmonic_means
+
+
+
+
 # Example usage:
 if __name__ == "__main__":
     # Create demographics dashboard
-    csv_file_path = "src/recommendation/data/T0/merged_train_test.csv"  # Replace with your actual file path
+    # csv_file_path = "src/recommendation/data/T0/merged_train_test.csv"  # Replace with your actual file path
     # csv_file_path = "src/recommendation/data/T0/merged_train_test.csv"
 
     # Generate demographics dashboard
-    fig1 = create_demographics_dashboard(csv_file_path, "src/recommendation/data/T0/demographics_dashboard.png")
+    # fig1 = create_demographics_dashboard(csv_file_path, "src/recommendation/data/T0/demographics_dashboard.png")
     
     # If you also have transaction data, uncomment below:
     # transaction_categories = ['loan', 'utility', 'finance', 'shopping', 'financial_services', 
@@ -410,7 +589,17 @@ if __name__ == "__main__":
     # fig2 = create_transaction_categories_chart(csv_file_path, transaction_categories, 
     #                                           "transaction_categories.png")
 
-
+    # harmonic_means = create_harmonic_mean_chart(
+    #     'src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/evaluation_metrics_optimal_thrs.json', 
+    #     'src/recommendation/evaluation/eval_results/llm/evaluation_metrics_optimal_thrs.json', 
+    #     'src/recommendation/evaluation/eval_results/llm/rag/evaluation_metrics_optimal_thrs.json', 
+    #     output_file='src/recommendation/data_prep/eda/harmonic_mean_comparison.png'
+    #     )
+    t0_t1_means = create_t0_t1_comparison_chart(
+        'src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/evaluation_metrics_optimal_thrs.json', 
+        'src/recommendation/evaluation/eval_results/binary_classification/T1_predicted/random_forests_classifier_single/evaluation_metrics_optimal_thrs.json',
+        output_file='src/recommendation/data_prep/eda/t0_t1_harmonic_comparison.png'
+        )
 
 ### Plot features ###
 # train

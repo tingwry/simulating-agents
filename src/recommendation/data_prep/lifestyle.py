@@ -2,11 +2,11 @@ import pandas as pd
 
 
 
-def dropna(lifestyle):
+def dropna(lifestyle, outputpath):
     print(len(lifestyle['cust_id'].unique()))
 
     lifestyle = lifestyle.dropna()
-    lifestyle.to_csv("lifestyle.csv", index=False)
+    lifestyle.to_csv(outputpath, index=False)
     print(lifestyle.head())
 
     print(len(lifestyle['cust_id'].unique()))
@@ -167,7 +167,11 @@ def filter_matching_customers(df_t0_path, df_t1_path, df_t1_predicted_path):
 
 if __name__ == "__main__":
     # lifestyle = pd.read_csv('src/data/raw_data/customerllm_lifestyle.csv')
-    lifestyle = pd.read_csv('src/data_refresher/data/preprocessed_data/lifestyle.csv')
+    # lifestyle = pd.read_csv('src/recommendation/data/raw_data/customerllm_y_t0.csv')
+    # dropna(lifestyle, 'src/data_refresher/data/preprocessed_data/lifestyle_t0.csv')
+
+    # lifestyle = pd.read_csv('src/data_refresher/data/preprocessed_data/lifestyle.csv')
+    lifestyle = pd.read_csv('src/data_refresher/data/preprocessed_data/lifestyle_t0.csv')
 
     # T0
     # train = pd.read_csv('src/data_refresher/data/T0/train_df.csv')
@@ -220,9 +224,9 @@ if __name__ == "__main__":
     # remove_nan('src/recommendation/data/T1/demog_grouped_catbased.csv')
     # remove_nan('src/recommendation/data/T1_predicted/demog_grouped_catbased.csv')
 
-    df_t0_path = 'src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv'
-    df_t1_path = 'src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv'
-    df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm_single.csv'
+    # df_t0_path = 'src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv'
+    # df_t1_path = 'src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv'
+    # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm_single.csv'
     # df_t0_path = 'src/recommendation/data/T0/demog_grouped_catbased.csv'
     # df_t1_path = 'src/recommendation/data/T1/demog_grouped_catbased.csv'
     # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/demog_grouped_catbased.csv'
@@ -238,7 +242,7 @@ if __name__ == "__main__":
     # df_t1_path = 'src/recommendation/data/T1/test_with_lifestyle.csv'
     # df_t1_predicted_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle_single.csv'
 
-    df_t0_filtered, df_t1_filtered, df_t1_predicted_filtered = filter_matching_customers(df_t0_path, df_t1_path, df_t1_predicted_path)
+    # df_t0_filtered, df_t1_filtered, df_t1_predicted_filtered = filter_matching_customers(df_t0_path, df_t1_path, df_t1_predicted_path)
 
 
     # df_T0 = 'src/recommendation/data/T0/demog_ranking_grouped_catbased.csv'

@@ -3,7 +3,7 @@
     "binary_metrics": {
       "total_customers": 353.0,
       "total_predictions": 1466.0,
-      "total_actual": 353.0,
+      "total_actual": 144650097.3600001,
       "true_positives": 504.0,
       "false_positives": 962.0,
       "false_negatives": 297.0,
@@ -11,7 +11,7 @@
       "recall": 0.6292,
       "f1_score": 0.4446,
       "f_beta_score": 0.3781,
-      "accuracy": 0.5283,
+      "accuracy": 0.5006,
       "hit_rate": 0.3438
     },
     "ranking_metrics": {
