@@ -615,19 +615,22 @@ def retrieve_similar_customers_for_recommendations(test_df, collection_name, top
     results = {}
     
     # Validate that Demog Summary column exists
-    if 'Demog Summary' not in test_df.columns:
-        raise ValueError("Test dataset must contain 'Demog Summary' column")
+    if 'Summary' not in test_df.columns:
+        raise ValueError("Test dataset must contain 'Summary' column")
+    # if 'Demog Summary' not in test_df.columns:
+    #     raise ValueError("Test dataset must contain 'Demog Summary' column")
     
     print(f"Retrieving similar customers for {len(test_df)} customers using demographic summaries...")
     
     for idx, row in tqdm(test_df.iterrows(), total=len(test_df), desc="Querying similar customers"):
         try:
             # Use the existing demographic summary
-            query_text = row['Demog Summary']
+            query_text = row['Summary']
+            # query_text = row['Demog Summary']
             
             if pd.isna(query_text) or query_text.strip() == '':
                 print(f"Warning: Empty demographic summary for customer {row.get('CUST_ID', idx)}")
-                query_text = create_demographic_summary(row)  # Fallback
+                # query_text = create_demographic_summary(row)  # Fallback
             
             # Generate embedding for query
             query_embedding = model.encode(query_text).tolist()
@@ -660,7 +663,8 @@ def retrieve_similar_customers_for_recommendations(test_df, collection_name, top
             customer_id = row.get('CUST_ID', row.get('cust_id', idx))
             results[customer_id] = {
                 "error": str(e),
-                "query_text": row.get('Demog Summary', ''),
+                "query_text": row.get('Summary', ''),
+                # "query_text": row.get('Demog Summary', ''),
                 "similar_customers": []
             }
     

@@ -430,9 +430,9 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
     
     if output_dir:
         try:
-            binary_predictions = pd.read_csv(os.path.join(output_dir, "rag_transaction_predictions.csv"))
-            prediction_scores = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_scores.csv"))
-            reasoning_df = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_reasoning.csv"))
+            binary_predictions = pd.read_csv(os.path.join(output_dir, "rag_transaction_predictions_t0.csv"))
+            prediction_scores = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_scores_t0.csv"))
+            reasoning_df = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0.csv"))
             
             print(f"Loaded existing results with {len(binary_predictions)} customers")
         except FileNotFoundError:
@@ -543,13 +543,13 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
         
-        binary_output = os.path.join(output_dir, "rag_transaction_predictions.csv")
+        binary_output = os.path.join(output_dir, "rag_transaction_predictions_t0.csv")
         binary_predictions.to_csv(binary_output, index=False)
         
-        scores_output = os.path.join(output_dir, "rag_transaction_prediction_scores.csv")
+        scores_output = os.path.join(output_dir, "rag_transaction_prediction_scores_t0.csv")
         prediction_scores.to_csv(scores_output, index=False)
         
-        reasoning_output = os.path.join(output_dir, "rag_transaction_prediction_reasoning.csv")
+        reasoning_output = os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0.csv")
         reasoning_df.to_csv(reasoning_output, index=False)
         
         print(f"\nResults saved to:")
@@ -628,7 +628,6 @@ if __name__ == "__main__":
         categories=categories,
         output_dir=OUTPUT_DIR,
         top_k=5,
-        restart_failed_only=True
     )
     
 
