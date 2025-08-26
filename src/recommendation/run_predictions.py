@@ -220,18 +220,17 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 
         return binary_predictions, prediction_scores
 
-def run_predictions_llm(method="indiv", is_regressor=False, categories=None, threshold=None, data='T0'):
+def run_predictions_llm(method="indiv", is_regressor=False, categories=None, threshold=None, data='T0', cust_ids_to_repredict=None):
     """
     Run LLM-based predictions for transaction categories using demographic data.
     
     Args:
         method: Prediction method ("indiv" for individual)
-        method_model: Not used for LLM but kept for consistency
         is_regressor: Not used for LLM but kept for consistency  
         categories: List of transaction categories to predict
         threshold: Not used for LLM but kept for consistency
-        percentile: Not used for LLM but kept for consistency
         data: Data version ('T0', 'T1', 'T1_predicted')
+        cust_ids_to_repredict: List of customer IDs to repredict (will replace existing predictions)
     
     Returns:
         tuple: (binary_predictions_df, prediction_scores_df)
@@ -244,22 +243,43 @@ def run_predictions_llm(method="indiv", is_regressor=False, categories=None, thr
     
     # Load and preprocess full dataset
     df = pd.read_csv(TEST_DATA_PATH)
-    # df = df.head(3)
     df = preprocess_unknown_values(df)
+
+    if 'CUST_ID' in df.columns:
+        df = df.rename(columns={'CUST_ID': 'cust_id'})
     
     # Handle customer ID
     id_col = 'CUST_ID' if 'CUST_ID' in df.columns else 'cust_id'
     if id_col not in df.columns:
         raise ValueError("No customer ID column found")
     
-    # Initialize output DataFrames
+    # Initialize output DataFrames by loading existing results if they exist
     binary_predictions = pd.DataFrame()
     prediction_scores = pd.DataFrame()
     reasoning_df = pd.DataFrame()
     
-    binary_predictions['cust_id'] = df[id_col]
-    prediction_scores['cust_id'] = df[id_col]
-    reasoning_df['cust_id'] = df[id_col]
+    try:
+        binary_predictions = pd.read_csv(PREDICTION_OUTPUT)
+        scores_output = PREDICTION_OUTPUT.replace('.csv', '_scores.csv')
+        prediction_scores = pd.read_csv(scores_output)
+        reasoning_output = PREDICTION_OUTPUT.replace('.csv', '_reasoning.csv')
+        reasoning_df = pd.read_csv(reasoning_output)
+        print(f"Loaded existing results with {len(binary_predictions)} customers")
+    except FileNotFoundError:
+        print("No existing results found, creating new prediction files")
+    
+    # If we have specific customers to repredict, filter the test_df
+    if cust_ids_to_repredict is not None:
+        df = df[df[id_col].isin(cust_ids_to_repredict)]
+        if len(df) == 0:
+            print("No matching customers found in test data")
+            return binary_predictions, prediction_scores
+    
+    # Initialize DataFrames if they're empty
+    if binary_predictions.empty:
+        binary_predictions = pd.DataFrame(columns=[id_col] + categories)
+        prediction_scores = pd.DataFrame(columns=[id_col] + categories)
+        reasoning_df = pd.DataFrame(columns=[id_col] + categories)
     
     # Track processed and failed customers
     processed = []
@@ -275,7 +295,6 @@ def run_predictions_llm(method="indiv", is_regressor=False, categories=None, thr
         try:
             # Create prediction prompt for transaction categories
             prompt = create_transaction_prediction_prompt(customer_row, categories)
-
             print(prompt)
             
             # Get LLM prediction
@@ -285,19 +304,34 @@ def run_predictions_llm(method="indiv", is_regressor=False, categories=None, thr
             json_str = re.sub(r'^```json|```$', '', response.strip(), flags=re.MULTILINE).strip()
             prediction = json.loads(json_str)
             
+            # Check if this customer already exists in results
+            existing_idx = binary_predictions[binary_predictions[id_col] == customer_id].index
+            
+            if not existing_idx.empty:
+                # Update existing row
+                row_idx = existing_idx[0]
+                update_type = "Updated"
+            else:
+                # Add new row
+                row_idx = len(binary_predictions)
+                binary_predictions.loc[row_idx, id_col] = customer_id
+                prediction_scores.loc[row_idx, id_col] = customer_id
+                reasoning_df.loc[row_idx, id_col] = customer_id
+                update_type = "Added"
+            
             # Extract predictions and scores for each category
             for category in categories:
                 # Get binary prediction (0 or 1)
                 binary_pred = prediction.get('predictions', {}).get(category, 0)
-                binary_predictions.loc[i, category] = int(binary_pred)
+                binary_predictions.loc[row_idx, category] = int(binary_pred)
                 
                 # Get confidence score (0.0 to 1.0)
                 confidence = prediction.get('confidence_scores', {}).get(category, 0.0)
-                prediction_scores.loc[i, category] = float(confidence)
+                prediction_scores.loc[row_idx, category] = float(confidence)
 
                 # Get reasoning text
                 reasoning = prediction.get('reasoning', {}).get(category, 'No reasoning provided')
-                reasoning_df.loc[i, category] = str(reasoning)
+                reasoning_df.loc[row_idx, category] = str(reasoning)
             
             processed.append(customer_id)
             
@@ -305,11 +339,19 @@ def run_predictions_llm(method="indiv", is_regressor=False, categories=None, thr
             print(f"❌ Error processing customer {customer_id}: {str(e)}")
             failed.append(customer_id)
             
-            # Fill with default values for failed predictions
+            # Ensure the customer exists in the results (with default values)
+            existing_idx = binary_predictions[binary_predictions[id_col] == customer_id].index
+            row_idx = existing_idx[0] if not existing_idx.empty else len(binary_predictions)
+            
+            if existing_idx.empty:
+                binary_predictions.loc[row_idx, id_col] = customer_id
+                prediction_scores.loc[row_idx, id_col] = customer_id
+                reasoning_df.loc[row_idx, id_col] = customer_id
+            
             for category in categories:
-                binary_predictions.loc[i, category] = 0
-                prediction_scores.loc[i, category] = 0.0
-                reasoning_df.loc[i, category] = f"Failed to process: {str(e)}"
+                binary_predictions.loc[row_idx, category] = 0
+                prediction_scores.loc[row_idx, category] = 0.0
+                reasoning_df.loc[row_idx, category] = f"Failed to process: {str(e)}"
             continue
     
     # Save outputs
@@ -331,6 +373,7 @@ def run_predictions_llm(method="indiv", is_regressor=False, categories=None, thr
     
     print(f"\nBinary predictions saved to: {PREDICTION_OUTPUT}")
     print(f"Prediction scores saved to: {scores_output}")
+    print(f"Reasoning saved to: {reasoning_output}")
     
     return binary_predictions, prediction_scores
 
@@ -541,7 +584,7 @@ if __name__ == "__main__":
     COLLECTION_NAME = "customers"
     OUTPUT_DIR = "src/recommendation/predictions/llm/rag/results"
     test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_v1.csv")
-    # testtest = test_df.head()
+    testtest = test_df.head()
     # testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
@@ -570,22 +613,23 @@ if __name__ == "__main__":
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1_predicted')
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
 
-    cust_ids_to_repredict = [2993, 3211, 3594, 3900]
+#     cust_ids_to_repredict = [2993, 3211, 3594, 3900]
 
-    binary_preds, scores = run_predictions_llm(
-    method="indiv", 
-    categories=categories, 
-    data='T0'
-)
+#     binary_preds, scores = run_predictions_llm(
+#     method="indiv", 
+#     categories=categories, 
+#     data='T0',
+#     cust_ids_to_repredict=cust_ids_to_repredict
+# )
 
-    # binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
-    #     test_df=testtest,
-    #     collection_name=COLLECTION_NAME,
-    #     categories=categories,
-    #     output_dir=OUTPUT_DIR,
-    #     top_k=5,
-    #     restart_failed_only=True
-    # )
+    binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
+        test_df=testtest,
+        collection_name=COLLECTION_NAME,
+        categories=categories,
+        output_dir=OUTPUT_DIR,
+        top_k=5,
+        restart_failed_only=True
+    )
     
 
     # List of customer IDs you want to repredict

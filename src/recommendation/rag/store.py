@@ -24,7 +24,7 @@ def main_pipeline(df, collection_name="customers"):
     print("\n" + "="*30)
     print("STEP 3: Collection Setup")
     print("="*30)
-    # create_collection(client, collection_name, vector_size=len(embedded_docs[0]["embedding"]))
+    create_collection(client, collection_name, vector_size=len(embedded_docs[0]["embedding"]))
     
     print("\n" + "="*30)
     print("STEP 4: Qdrant Upload")
@@ -38,7 +38,7 @@ def main_pipeline(df, collection_name="customers"):
 
 
 if __name__ == "__main__":
-    train_demog = pd.read_csv("src/recommendation/data/rag/train_T0_demog_summ/train_T0_demog_summ_v1.csv")
+    train_demog = pd.read_csv("src/recommendation/data/rag/train_T0_demog_summ/train_T0_demog_summ_t0_v1.csv")
     # testtest = train_demog.head()
     testtest = train_demog[train_demog['CUST_ID'].isin([662, 970, 1914, 2236, 2551, 2898, 3182, 3468, 4076, 4338])] 
 

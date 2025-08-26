@@ -60,7 +60,7 @@ OUTPUT FORMAT:
 Create a single, flowing paragraph (100-120 words) that weaves together demographic elements into a cohesive customer persona.
 
 EXAMPLE TONE:
-"This customer represents a [age group] [gender] [occupation context] based in [region] with [education implications] and [family situation]. Past historical transactions include []."
+"This customer represents a [age group] [gender] [occupation context] based in [region] with [education implications] and [family situation]. Past historical transactions include [historical transactions]."
 
 Customer Demographic and Historical Transactions Data:"""
 
@@ -83,7 +83,8 @@ def merge_summaries(df):
     total_rows = len(train_T0_with_summ)
     
     print(f"\nGenerating summaries for {total_rows} customers...")
-    train_T0_with_summ['Demog Summary'] = train_T0_with_summ.apply(
+    # train_T0_with_summ['Demog Summary'] = train_T0_with_summ.apply(
+    train_T0_with_summ['Summary'] = train_T0_with_summ.apply(
         lambda x: print(f"Processing customer {x.name + 1}/{total_rows}") or context_summarizer(x), 
         axis=1
     )
@@ -131,19 +132,14 @@ def save_checkpoint(df, dir_path, checkpoint_name):
 
 
 
-def demog_summary_prep(train_T0, DIR):
-    # testtest = train_T0.head()
-    testtest = train_T0.copy()
-    # second_q = train_T0.iloc[(len(train_T0)//4)*3:].copy()
-    # second_q = train_T0.iloc[len(train_T0)//4:].copy()
+def demog_summary_prep(df, DIR):
+    # testtest = df.head()
+    testtest = df.copy()
 
-    test_T0_with_summ = merge_summaries(testtest)
-    # save_checkpoint(train_T0_with_summ, checkpoint_dir, "q2_with_summaries")
+    summarized_df = merge_summaries(testtest)
 
-    # save_csv_file(DIR, train_T0_with_summ, 'train_T0_demog_summ', next_version=None)
-    save_csv_file(DIR, test_T0_with_summ, 'test_T0_demog_summ', next_version=None)
-
-# demog_summary_prep(train_T0, DIR)
+    # save_csv_file(DIR, summarized_df, 'train_T0_demog_summ_t0', next_version=None)
+    save_csv_file(DIR, summarized_df, 'test_T0_demog_summ_t0', next_version=None)
 
 # concat
 # part1 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v1.csv')
