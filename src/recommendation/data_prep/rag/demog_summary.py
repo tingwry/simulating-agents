@@ -9,8 +9,10 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 from src.client.llm import *
 
-train_T0 = pd.read_csv("src/recommendation/data/T0/demog_grouped_catbased.csv")
-test_T0 = pd.read_csv("src/recommendation/data/T0/test_with_lifestyle.csv")
+# train_T0 = pd.read_csv("src/recommendation/data/T0/demog_grouped_catbased.csv")
+train_T0 = pd.read_csv("src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm_t0.csv")
+# test_T0 = pd.read_csv("src/recommendation/data/T0/test_with_lifestyle.csv")
+test_T0 = pd.read_csv("src/recommendation/data/T0/test_with_lifestyle_t0.csv")
 
 train_DIR = "src/recommendation/data/rag/train_T0_demog_summ"
 test_DIR = "src/recommendation/data/rag/test_T0_demog_summ"
@@ -19,6 +21,7 @@ checkpoint_dir = 'src/recommendation/data/rag/summary_checkpoints'
 # Context at T0
 def context_summarizer(x):
     text = f"""
+        **Demographics:**
         - Age: {x['Age']},
         - Gender: {x['Gender']},
         - Education: {x['Education level']},
@@ -26,25 +29,40 @@ def context_summarizer(x):
         - Occupation Group: {x['Occupation Group']},
         - Region: {x['Region']},
         - Number of Children: {x['Number of Children']}
+
+        **Historical Transactions:**
+        - Finance: {x['finance_t0']} baht
+        - Financial Services: {x['financial_services_t0']} baht
+        - Home Lifestyle: {x['home_lifestyle_t0']} baht
+        - Loan: {x['loan_t0']} baht
+        - Shopping: {x['shopping_t0']} baht
+        - Utility: {x['utility_t0']} baht
+        - Health and Care: {x['health_and_care_t0']} baht
+        - Transport Travel: {x['transport_travel_t0']} baht
+        - Leisure: {x['leisure_t0']} baht
+        - Public Services: {x['public_services_t0']} baht
+
         """
     
     full_prompt = """You are a customer insights analyst tasked with creating comprehensive customer profiles for similarity matching and retrieval. 
 
-Your task is to synthesize the provided customer data into a rich, descriptive paragraph that captures demographic characteristics. This summary will be used for vector embedding and stored in a database to find customers with similar profiles.
+Your task is to synthesize the provided customer data into a rich, descriptive paragraph that captures demographic characteristics and historical transactional categories, including the analysis of what kind of person the customer is based on given info. 
+This summary will be used for vector embedding and stored in a database to find customers with similar profiles.
 
 REQUIREMENTS:
 1. Include ALL demographic elements: age, gender, education level, marital status, occupation group, region, and number of children
-2. Create a cohesive narrative that describes what type of customer this person is
-3. Use descriptive language that would help identify similar customers
+2. Describe which transactional categories (keep the same categories name as given) the customer performed
+3. Create a cohesive narrative that describes what type of customer this person is
+4. Use descriptive language that would help identify similar customers
 
 
 OUTPUT FORMAT:
 Create a single, flowing paragraph (100-120 words) that weaves together demographic elements into a cohesive customer persona.
 
 EXAMPLE TONE:
-"This customer represents a [age group] [gender] [occupation context] based in [region] with [education implications] and [family situation]."
+"This customer represents a [age group] [gender] [occupation context] based in [region] with [education implications] and [family situation]. Past historical transactions include []."
 
-Customer Demographic Data:"""
+Customer Demographic and Historical Transactions Data:"""
 
     client = get_aoi_client()
 

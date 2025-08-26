@@ -11,7 +11,7 @@ def create_transaction_prediction_prompt(customer_row, categories):
     prompt = f"""# Transaction Category Prediction Task
 
 ## Task Description
-Based on the customer's demographic profile, predict which transaction categories they are likely to engage with in the next {T_DIFF} years.
+Based on the customer's demographic profile and historical transaction amounts in different categories, predict which transaction categories they are likely to engage with in the next {T_DIFF} years.
 
 {customer_section}
 
@@ -117,6 +117,18 @@ def format_customer_prompt_section(customer_row):
 - Occupation: {data['Occupation Group']}
 - Number of Children: {data['Number of Children']}
 - Region: {data['Region']}
+
+**Historical Transactions:**
+- Finance: {data['finance_t0']} baht
+- Financial Services: {data['financial_services_t0']} baht
+- Home Lifestyle: {data['home_lifestyle_t0']} baht
+- Loan: {data['loan_t0']} baht
+- Shopping: {data['shopping_t0']} baht
+- Utility: {data['utility_t0']} baht
+- Health and Care: {data['health_and_care_t0']} baht
+- Transport Travel: {data['transport_travel_t0']} baht
+- Leisure: {data['leisure_t0']} baht
+- Public Services: {data['public_services_t0']} baht
 """
     
     return formatted_section
@@ -143,10 +155,24 @@ def format_customer_data_for_prompt(customer_row):
         'Gender': str(customer_row.get('Gender', 'Unknown')),
         'CUST_ID': str(customer_row.get('CUST_ID', 'Unknown'))
     }
+
+    transactions = {
+        'finance_t0': str(customer_row.get('finance_t0', 'Unknown')),
+        'financial_services_t0': str(customer_row.get('financial_services_t0', 'Unknown')),
+        'home_lifestyle_t0': str(customer_row.get('home_lifestyle_t0', 'Unknown')),
+        'loan_t0': safe_int(customer_row.get('loan_t0', 0)),
+        'shopping_t0': str(customer_row.get('shopping_t0', 'Unknown')),
+        'utility_t0': safe_int(customer_row.get('utility_t0', 'Unknown')),
+        'health_and_care_t0': str(customer_row.get('health_and_care_t0', 'Unknown')),
+        'transport_travel_t0': str(customer_row.get('transport_travel_t0', 'Unknown')),
+        'leisure_t0': str(customer_row.get('leisure_t0', 'Unknown')),
+        'public_services_t0': str(customer_row.get('public_services_t0', 'Unknown')),
+    }
     
     # Combine all data
     customer_data = {
         **demographics,
+        **transactions
     }
     
     return customer_data

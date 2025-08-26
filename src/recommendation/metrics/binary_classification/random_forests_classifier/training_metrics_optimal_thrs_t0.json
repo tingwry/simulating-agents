@@ -1,0 +1,82 @@
+{
+  "loan": {
+    "optimal_threshold": 0.65,
+    "accuracy": 0.6975308641975309,
+    "precision": 0.84375,
+    "recall": 0.38028169014084506,
+    "f1": 0.5242718446601942,
+    "roc_auc": 0.7464014858381055
+  },
+  "utility": {
+    "optimal_threshold": 0.54,
+    "accuracy": 0.6666666666666666,
+    "precision": 0.7023809523809523,
+    "recall": 0.6704545454545454,
+    "f1": 0.686046511627907,
+    "roc_auc": 0.6907248157248156
+  },
+  "finance": {
+    "optimal_threshold": 0.45,
+    "accuracy": 0.7160493827160493,
+    "precision": 0.7804878048780488,
+    "recall": 0.6956521739130435,
+    "f1": 0.735632183908046,
+    "roc_auc": 0.7794254658385092
+  },
+  "shopping": {
+    "optimal_threshold": 0.49,
+    "accuracy": 0.6975308641975309,
+    "precision": 0.6724137931034483,
+    "recall": 0.5652173913043478,
+    "f1": 0.6141732283464567,
+    "roc_auc": 0.7620383356708742
+  },
+  "financial_services": {
+    "optimal_threshold": 0.23,
+    "accuracy": 0.8024691358024691,
+    "precision": 0.5263157894736842,
+    "recall": 0.30303030303030304,
+    "f1": 0.38461538461538464,
+    "roc_auc": 0.6713648108996948
+  },
+  "health_and_care": {
+    "optimal_threshold": 0.08,
+    "accuracy": 0.5308641975308642,
+    "precision": 0.1038961038961039,
+    "recall": 0.5333333333333333,
+    "f1": 0.17391304347826086,
+    "roc_auc": 0.48866213151927435
+  },
+  "home_lifestyle": {
+    "optimal_threshold": 0.35,
+    "accuracy": 0.8148148148148148,
+    "precision": 0.5,
+    "recall": 0.13333333333333333,
+    "f1": 0.21052631578947367,
+    "roc_auc": 0.5781565656565656
+  },
+  "transport_travel": {
+    "optimal_threshold": 0.2,
+    "accuracy": 0.9320987654320988,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.6483870967741935
+  },
+  "leisure": {
+    "optimal_threshold": 0.29,
+    "accuracy": 0.9012345679012346,
+    "precision": 0.5454545454545454,
+    "recall": 0.35294117647058826,
+    "f1": 0.42857142857142855,
+    "roc_auc": 0.7093306288032455
+  },
+  "public_services": {
+    "optimal_threshold": 0.21,
+    "accuracy": 0.9382716049382716,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.7859872611464969
+  }
+}

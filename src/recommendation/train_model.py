@@ -705,17 +705,23 @@ if __name__ == "__main__":
     TEST_SIZE = 0.2
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
-    feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
+
+    transaction_amount_cols = [f'{cat}_t0' for cat in categories]
+
+    demographic_features = ['Number of Children', 'Age', 'Gender', 'Education level', 
+                            'Marital status', 'Region', 'Occupation Group']
+
+    feature_cols = demographic_features + transaction_amount_cols
     
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
-    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
+    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
     # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0)
 
     # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
-    # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
+    train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
 
     # train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
 

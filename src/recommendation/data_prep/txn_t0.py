@@ -49,6 +49,13 @@ def add_transaction_categories_to_demographics(lifestyle_df, demog_df, category_
             'system_dpst': 'system_dpst'
         }
     
+    # Define all the expected final categories we want to keep
+    expected_categories = [
+        'loan', 'utility', 'finance', 'shopping', 'financial_services',
+        'health_and_care', 'home_lifestyle', 'transport_travel',
+        'leisure', 'public_services'
+    ]
+    
     # Create a copy to avoid modifying original data
     lifestyle_processed = lifestyle_df.copy()
     
@@ -71,7 +78,12 @@ def add_transaction_categories_to_demographics(lifestyle_df, demog_df, category_
         fill_value=0
     ).reset_index()
     
-    # Rename columns to add _t0 suffix
+    # Ensure all expected categories are present in the pivot table (add them with NaN values if missing)
+    for category in expected_categories:
+        if category not in pivot_df.columns:
+            pivot_df[category] = pd.NA
+    
+    # Rename columns to add _t0 suffix - use the mapped category names
     pivot_df.columns = [f"{col}_t0" if col != 'cust_id' else col for col in pivot_df.columns]
     
     # Merge with demographic data
@@ -80,8 +92,49 @@ def add_transaction_categories_to_demographics(lifestyle_df, demog_df, category_
     # Drop the cust_id column from merge
     result_df = result_df.drop('cust_id', axis=1)
     
-    # Identify transaction columns (those ending with _t0)
-    transaction_cols = [col for col in result_df.columns if col.endswith('_t0')]
+    # Now handle the original columns that might exist in demog_df
+    # We need to sum them into the grouped categories before dropping them
+    
+    # Create a reverse mapping to know which original columns belong to which grouped category
+    reverse_mapping = {}
+    for original_cat, grouped_cat in category_mapping.items():
+        if grouped_cat in expected_categories:
+            original_col = f"{original_cat}_t0"
+            grouped_col = f"{grouped_cat}_t0"
+            if original_col not in reverse_mapping:
+                reverse_mapping[original_col] = []
+            reverse_mapping[original_col].append(grouped_col)
+    
+    # For each original column that exists in the result_df, add its value to the grouped column
+    for original_col, grouped_cols in reverse_mapping.items():
+        if original_col in result_df.columns:
+            for grouped_col in grouped_cols:
+                if grouped_col in result_df.columns:
+                    # Only add if both values are not null
+                    mask = result_df[original_col].notna() & result_df[grouped_col].notna()
+                    result_df.loc[mask, grouped_col] = result_df.loc[mask, grouped_col] + result_df.loc[mask, original_col]
+                    
+                    # If grouped column is null but original column has value, use original column value
+                    mask_grouped_null = result_df[grouped_col].isna() & result_df[original_col].notna()
+                    result_df.loc[mask_grouped_null, grouped_col] = result_df.loc[mask_grouped_null, original_col]
+    
+    # Now drop all the original columns that were grouped
+    columns_to_drop = []
+    for original_cat, grouped_cat in category_mapping.items():
+        original_col = f"{original_cat}_t0"
+        if original_col in result_df.columns and original_col not in [f"{cat}_t0" for cat in expected_categories]:
+            columns_to_drop.append(original_col)
+    
+    result_df = result_df.drop(columns=columns_to_drop, errors='ignore')
+    
+    # Ensure all expected _t0 columns are present (add them with NaN if missing)
+    expected_t0_cols = [f"{cat}_t0" for cat in expected_categories]
+    for col in expected_t0_cols:
+        if col not in result_df.columns:
+            result_df[col] = pd.NA
+    
+    # Identify transaction columns (those ending with _t0 from our expected list)
+    transaction_cols = [col for col in result_df.columns if col.endswith('_t0') and col in expected_t0_cols]
     
     # Drop rows where ANY transaction column has null values
     result_df = result_df.dropna(subset=transaction_cols, how='any')
@@ -93,17 +146,28 @@ def main():
     # Load your data
     lifestyle_df = pd.read_csv('src/data_refresher/data/preprocessed_data/lifestyle_t0.csv')
     # demog_df = pd.read_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv')
-    demog_df_t1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv')
+    # demog_df_t1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv')
+    test = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
     
     # Process the data
-    result_df = add_transaction_categories_to_demographics(lifestyle_df, demog_df_t1)
+    result_df = add_transaction_categories_to_demographics(lifestyle_df, test)
     
     # Save or use the result
-    result_df.to_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm_t0.csv', index=False)
+    # result_df.to_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm_t0.csv', index=False)
+    # result_df.to_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm_t0.csv', index=False)
+    result_df.to_csv('src/recommendation/data/T0/test_with_lifestyle_t0.csv', index=False)
     print("Processing completed!")
-    print(f"Original demographic rows: {len(demog_df_t1)}")
+    print(f"Original demographic rows: {len(test)}")
     print(f"Result rows after processing: {len(result_df)}")
-    print(f"Rows dropped due to null transaction values: {len(demog_df_t1) - len(result_df)}")
+    print(f"Rows dropped due to null transaction values: {len(test) - len(result_df)}")
+    
+    # Show the new column names
+    transaction_cols = [col for col in result_df.columns if col.endswith('_t0')]
+    print(f"\nTransaction columns after processing: {transaction_cols}")
+    
+    # Show some sample data to verify the summing worked
+    print("\nSample data (first 5 rows):")
+    print(result_df[transaction_cols].head())
     
     return result_df
 

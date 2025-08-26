@@ -139,27 +139,27 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
             model_type = "regressor" if is_regressor else "classifier"
             
             if data in ['T1', 'T1_predicted']:
-                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}_single_t0'
-                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}_single_t0'
+                MODEL_DIR = f'{base_model_path}/binary_classification/{data}/{method_model}_{model_type}_single'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{data}/{method_model}_{model_type}_single'
             else:  # T0 case
-                MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}_t0'
-                METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}_t0'
+                MODEL_DIR = f'{base_model_path}/binary_classification/{method_model}_{model_type}'
+                METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}'
             
         elif method == "multilabel":
             DATA_PATH = f'{base_data_path}/{data}/demog_grouped_catbased_t0.csv'
 
             if data in ['T1', 'T1_predicted']:
-                MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}_t0'
-                METRICS_DIR = f'{base_metrics_path}/multilabel/{data}/{method_model}_t0'
+                MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}'
+                METRICS_DIR = f'{base_metrics_path}/multilabel/{data}/{method_model}'
             else:  # T0 case
-                MODEL_DIR = f'{base_model_path}/multilabel/{method_model}_t0'
-                METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}_t0'
+                MODEL_DIR = f'{base_model_path}/multilabel/{method_model}'
+                METRICS_DIR = f'{base_metrics_path}/multilabel/{method_model}'
             
         else:
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
         
     if threshold == None:
-        OPTIMAL_THRS = "_optimal_thrs"
+        OPTIMAL_THRS = "_optimal_thrs_t0"
 
     return DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS
 
@@ -185,7 +185,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     
     # Set TEST_DATA_PATH based on data version
     # TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_single.csv'
-    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle.csv'
+    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_t0.csv'
     
     if method == "reinforcement_learning":
         DATA_DIR = f'{base_data_path}/rl'
@@ -223,7 +223,7 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', or 'llm'")
         
     if threshold == None:
-        OPTIMAL_THRS = "_optimal_thrs"
+        OPTIMAL_THRS = "_optimal_thrs_t0"
     
     PREDICTION_OUTPUT += f'/transaction_predictions{OPTIMAL_THRS}.csv'
 
@@ -304,7 +304,7 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', 'llm', or 'rag'")
         
     if threshold == None:
-        OPTIMAL_THRS = "_optimal_thrs"
+        OPTIMAL_THRS = "_optimal_thrs_t0"
     
     # For RAG method, we have specific filenames
     if method == "rag":
@@ -336,6 +336,10 @@ def load_and_preprocess_data(DATA_PATH):
     df = preprocess_unknown_values(df)
     
     # Define features and categories
+    categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
+                 'leisure', 'public_services']
+    transaction_amount_cols = [f'{cat}_t0' for cat in categories]
+
     numerical_features = ['Number of Children', 'Age'] + transaction_amount_cols
     label_encode_features = ['Gender', 'Education level']
     binary_encode_features = ['Marital status', 'Region', 'Occupation Group']

@@ -16,7 +16,7 @@ def extract_all_evaluation_metrics(root_dir, output_csv_path, baseline_paths=Non
 
     # ----------- MAIN TREE SCAN -----------
     for dirpath, _, filenames in os.walk(root_dir):
-        for fname in ["evaluation_metrics.json", "evaluation_metrics_optimal_thrs.json"]:
+        for fname in ["evaluation_metrics.json", "evaluation_metrics_optimal_thrs_t0.json"]:
             if fname in filenames:
                 json_path = os.path.join(dirpath, fname)
                 with open(json_path, 'r') as f:
@@ -410,13 +410,13 @@ def combine_evaluation_results(output_path='src/recommendation/evaluation/eval_r
 
 
 if __name__ == "__main__":
-    # extract_all_evaluation_metrics(
-    #     root_dir='src/recommendation/evaluation/eval_results',
-    #     output_csv_path='src/recommendation/evaluation/eval_results/all_evaluation_summary.csv',
-    #     baseline_paths=[
-    #         'src/recommendation/baseline/baseline_all_1/eval_results_grouped_catbased/evaluation_metrics.json'
-    #     ]
-    # )
+    extract_all_evaluation_metrics(
+        root_dir='src/recommendation/evaluation/eval_results',
+        output_csv_path='src/recommendation/evaluation/eval_results/all_evaluation_summary_t0.csv',
+        baseline_paths=[
+            'src/recommendation/baseline/baseline_all_1/eval_results_grouped_catbased/evaluation_metrics.json'
+        ]
+    )
 
     # merge_catboost_classifier_evaluations(
     #     root_dir='src/recommendation/evaluation/eval_results',
@@ -436,7 +436,8 @@ if __name__ == "__main__":
     # combined_results = combine_evaluation_results()
     # print(combined_results.head())
 
-    df = pd.read_csv('src/recommendation/evaluation/eval_results/all_evaluation_summary.csv')
-    df = df[['Method', 'Model', 'Precision', 'Recall', 'F-Beta Score', 'NDCG', 'Harmonic Mean (F-Beta, NDCG)']]
 
-    df.to_csv('src/recommendation/evaluation/eval_results/all_evaluation_summary_filtered.csv', index=False)
+    # df = pd.read_csv('src/recommendation/evaluation/eval_results/all_evaluation_summary.csv')
+    # df = df[['Method', 'Model', 'Precision', 'Recall', 'F-Beta Score', 'NDCG', 'Harmonic Mean (F-Beta, NDCG)']]
+
+    # df.to_csv('src/recommendation/evaluation/eval_results/all_evaluation_summary_filtered.csv', index=False)

@@ -1,12 +1,12 @@
 {
-  "loan": 9654.537972579401,
-  "utility": 843.8581171998735,
-  "finance": 3598.312700080046,
-  "shopping": 3743.977827755786,
-  "financial_services": 28440.88617707048,
-  "health_and_care": 221.26424076322363,
-  "home_lifestyle": 547.3744183764924,
-  "transport_travel": 0.0,
-  "leisure": 57.79031954967525,
-  "public_services": 1533.2683237326344
+  "loan": 12497.418260632818,
+  "utility": 984.1844927902673,
+  "finance": 1459.7617439504559,
+  "shopping": 1238.616816269172,
+  "financial_services": 8306.486735354565,
+  "health_and_care": 0.0,
+  "home_lifestyle": 510.827439810395,
+  "transport_travel": 2132.9226973415693,
+  "leisure": 127.93728875719776,
+  "public_services": 1461.542795588394
 }

@@ -1,12 +1,12 @@
 {
-  "loan": 0.29157804459066194,
-  "utility": 0.01,
-  "finance": 0.5128676183768509,
-  "shopping": 0.17112675940047392,
-  "financial_services": 0.19,
-  "health_and_care": 0.31,
-  "home_lifestyle": 0.0,
-  "transport_travel": 0.6358852426524046,
-  "leisure": 0.33,
-  "public_services": 0.2
+  "loan": 0.65,
+  "utility": 0.54,
+  "finance": 0.45,
+  "shopping": 0.49,
+  "financial_services": 0.23,
+  "health_and_care": 0.08,
+  "home_lifestyle": 0.35,
+  "transport_travel": 0.2,
+  "leisure": 0.29,
+  "public_services": 0.21
 }

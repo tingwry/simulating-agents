@@ -86,6 +86,8 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 
         if method == "binary":
             try:
+                # preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
+                print(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
                 preprocessor = joblib.load(f"{MODEL_DIR}/preprocessor{OPTIMAL_THRS}.pkl")
                 print("✅ Loaded preprocessor from saved models")
             except FileNotFoundError:
@@ -526,7 +528,15 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
 if __name__ == "__main__":
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
-    feature_cols = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
+
+    transaction_amount_cols = [f'{cat}_t0' for cat in categories]
+
+    demographic_features = ['Number of Children', 'Age', 'Gender', 'Education level', 
+                            'Marital status', 'Region', 'Occupation Group']
+
+    feature_cols = demographic_features + transaction_amount_cols
+
+
 
     COLLECTION_NAME = "customers"
     OUTPUT_DIR = "src/recommendation/predictions/llm/rag/results"
@@ -535,7 +545,7 @@ if __name__ == "__main__":
     # testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
-    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
+    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0)
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
@@ -560,12 +570,13 @@ if __name__ == "__main__":
     # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1_predicted')
     # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
 
+    cust_ids_to_repredict = [2993, 3211, 3594, 3900]
 
-#     binary_preds, scores = run_predictions_llm(
-#     method="indiv", 
-#     categories=categories, 
-#     data='T0'
-# )
+    binary_preds, scores = run_predictions_llm(
+    method="indiv", 
+    categories=categories, 
+    data='T0'
+)
 
     # binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
     #     test_df=testtest,
