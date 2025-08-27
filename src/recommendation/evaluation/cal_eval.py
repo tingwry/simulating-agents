@@ -240,11 +240,11 @@ if __name__ == "__main__":
     # evaluate_transaction_predictions(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1_predicted')
     # evaluate_transaction_predictions(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1_predicted')
 
-    evaluate_transaction_predictions(method="llm", is_regressor=False, method_model="llm", threshold=None, data='T0')
-    # evaluate_transaction_predictions(
-    #     method="rag", 
-    #     is_regressor=False, 
-    #     method_model="rag", 
-    #     threshold=None, 
-    #     data='T0'
-    # )
+    # evaluate_transaction_predictions(method="llm", is_regressor=False, method_model="llm", threshold=None, data='T0')
+    evaluate_transaction_predictions(
+        method="rag", 
+        is_regressor=False, 
+        method_model="rag", 
+        threshold=None, 
+        data='T0'
+    )

@@ -404,6 +404,9 @@ def get_llm_prediction(prompt, predicted_actions=None):
 
 
 
+import json
+import os
+
 def run_rag_transaction_predictions(test_df, collection_name, categories, output_dir=None, top_k=5, cust_ids_to_repredict=None):
     """
     Main function to run RAG-based transaction category predictions.
@@ -417,7 +420,7 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
         cust_ids_to_repredict: List of customer IDs to repredict (will replace existing predictions)
     
     Returns:
-        tuple: (binary_predictions_df, prediction_scores_df, reasoning_df)
+        tuple: (binary_predictions_df, prediction_scores_df, reasoning_df, similar_customers_data)
     """
     
     print("Starting RAG-based transaction category prediction...")
@@ -427,23 +430,35 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
     binary_predictions = pd.DataFrame()
     prediction_scores = pd.DataFrame()
     reasoning_df = pd.DataFrame()
+    similar_customers_json = {}
     
     if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Load existing prediction results
         try:
             binary_predictions = pd.read_csv(os.path.join(output_dir, "rag_transaction_predictions_t0.csv"))
             prediction_scores = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_scores_t0.csv"))
             reasoning_df = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0.csv"))
-            
             print(f"Loaded existing results with {len(binary_predictions)} customers")
         except FileNotFoundError:
-            print("No existing results found, creating new prediction files")
+            print("No existing prediction results found, creating new files")
+        
+        # Load existing similar customers data
+        similar_customers_path = os.path.join(output_dir, "similar_customers_transaction_data_t0.json")
+        try:
+            with open(similar_customers_path, 'r') as f:
+                similar_customers_json = json.load(f)
+            print(f"Loaded existing similar customers data for {len(similar_customers_json)} customers")
+        except FileNotFoundError:
+            print("No existing similar customers data found, creating new file")
     
     # If we have specific customers to repredict, filter the test_df
     if cust_ids_to_repredict is not None:
         test_df = test_df[test_df[id_col].isin(cust_ids_to_repredict)]
         if len(test_df) == 0:
             print("No matching customers found in test data")
-            return binary_predictions, prediction_scores, reasoning_df
+            return binary_predictions, prediction_scores, reasoning_df, similar_customers_json
     
     # Initialize DataFrames if they're empty
     if binary_predictions.empty:
@@ -456,6 +471,10 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
     similar_customers_data = retrieve_similar_customers_for_recommendations(
         test_df, collection_name, top_k=top_k
     )
+    
+    # Update the similar customers JSON with new data
+    for customer_id, customer_data in similar_customers_data.items():
+        similar_customers_json[str(customer_id)] = customer_data
     
     # Track processed and failed customers
     processed = []
@@ -543,6 +562,7 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
         
+        # Save prediction results
         binary_output = os.path.join(output_dir, "rag_transaction_predictions_t0.csv")
         binary_predictions.to_csv(binary_output, index=False)
         
@@ -552,10 +572,16 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
         reasoning_output = os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0.csv")
         reasoning_df.to_csv(reasoning_output, index=False)
         
+        # Save similar customers data as JSON
+        similar_customers_path = os.path.join(output_dir, "similar_customers_transaction_data_t0.json")
+        with open(similar_customers_path, 'w') as f:
+            json.dump(similar_customers_json, f, indent=2)
+        
         print(f"\nResults saved to:")
         print(f"- Binary predictions: {binary_output}")
         print(f"- Prediction scores: {scores_output}")
         print(f"- Reasoning: {reasoning_output}")
+        print(f"- Similar customers data: {similar_customers_path}")
     
     # Print summary
     print(f"\nProcessing complete:")
@@ -564,7 +590,10 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
     if failed:
         print(f"Failed customer IDs: {failed[:10]}{'...' if len(failed) > 10 else ''}")
     
-    return binary_predictions, prediction_scores, reasoning_df
+    return binary_predictions, prediction_scores, reasoning_df, similar_customers_json
+
+
+
 
 
 
@@ -583,8 +612,9 @@ if __name__ == "__main__":
 
     COLLECTION_NAME = "customers"
     OUTPUT_DIR = "src/recommendation/predictions/llm/rag/results"
-    test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_v1.csv")
-    testtest = test_df.head()
+    test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_t0_v1.csv")
+    # testtest = test_df.head()
+    testtest = test_df.copy()
     # testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
     # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
@@ -632,10 +662,10 @@ if __name__ == "__main__":
     
 
     # List of customer IDs you want to repredict
-    # cust_ids_to_repredict = [2214]
+    # cust_ids_to_repredict = [13, 3043]
 
     # binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
-    #     test_df=test_df,  # Your full test DataFrame
+    #     test_df=testtest,  # Your full test DataFrame
     #     collection_name=COLLECTION_NAME,
     #     categories=categories,
     #     output_dir=OUTPUT_DIR,

@@ -308,8 +308,8 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     
     # For RAG method, we have specific filenames
     if method == "rag":
-        PREDICTIONS_DIR += '/rag_transaction_predictions.csv'
-        SCORES_DIR += '/rag_transaction_prediction_scores.csv'
+        PREDICTIONS_DIR += '/rag_transaction_predictions_t0.csv'
+        SCORES_DIR += '/rag_transaction_prediction_scores_t0.csv'
     else:
         PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
         SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
