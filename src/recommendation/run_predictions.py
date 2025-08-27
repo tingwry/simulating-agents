@@ -437,15 +437,15 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
         
         # Load existing prediction results
         try:
-            binary_predictions = pd.read_csv(os.path.join(output_dir, "rag_transaction_predictions_t0.csv"))
-            prediction_scores = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_scores_t0.csv"))
-            reasoning_df = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0.csv"))
+            binary_predictions = pd.read_csv(os.path.join(output_dir, "rag_transaction_predictions_t0_v2.csv"))
+            prediction_scores = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_scores_t0_v2.csv"))
+            reasoning_df = pd.read_csv(os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0_v2.csv"))
             print(f"Loaded existing results with {len(binary_predictions)} customers")
         except FileNotFoundError:
             print("No existing prediction results found, creating new files")
         
         # Load existing similar customers data
-        similar_customers_path = os.path.join(output_dir, "similar_customers_transaction_data_t0.json")
+        similar_customers_path = os.path.join(output_dir, "similar_customers_transaction_data_t0_v2.json")
         try:
             with open(similar_customers_path, 'r') as f:
                 similar_customers_json = json.load(f)
@@ -563,17 +563,17 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
         os.makedirs(output_dir, exist_ok=True)
         
         # Save prediction results
-        binary_output = os.path.join(output_dir, "rag_transaction_predictions_t0.csv")
+        binary_output = os.path.join(output_dir, "rag_transaction_predictions_t0_v2.csv")
         binary_predictions.to_csv(binary_output, index=False)
         
-        scores_output = os.path.join(output_dir, "rag_transaction_prediction_scores_t0.csv")
+        scores_output = os.path.join(output_dir, "rag_transaction_prediction_scores_t0_v2.csv")
         prediction_scores.to_csv(scores_output, index=False)
         
-        reasoning_output = os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0.csv")
+        reasoning_output = os.path.join(output_dir, "rag_transaction_prediction_reasoning_t0_v2.csv")
         reasoning_df.to_csv(reasoning_output, index=False)
         
         # Save similar customers data as JSON
-        similar_customers_path = os.path.join(output_dir, "similar_customers_transaction_data_t0.json")
+        similar_customers_path = os.path.join(output_dir, "similar_customers_transaction_data_t0_v2.json")
         with open(similar_customers_path, 'w') as f:
             json.dump(similar_customers_json, f, indent=2)
         
@@ -652,25 +652,25 @@ if __name__ == "__main__":
 #     cust_ids_to_repredict=cust_ids_to_repredict
 # )
 
-    binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
-        test_df=testtest,
-        collection_name=COLLECTION_NAME,
-        categories=categories,
-        output_dir=OUTPUT_DIR,
-        top_k=5,
-    )
-    
-
-    # List of customer IDs you want to repredict
-    # cust_ids_to_repredict = [13, 3043]
-
-    # binary_preds, scores_preds, reasoning_preds = run_rag_transaction_predictions(
-    #     test_df=testtest,  # Your full test DataFrame
+    # binary_preds, scores_preds, reasoning_preds, sim_cust_json = run_rag_transaction_predictions(
+    #     test_df=testtest,
     #     collection_name=COLLECTION_NAME,
     #     categories=categories,
     #     output_dir=OUTPUT_DIR,
     #     top_k=5,
-    #     cust_ids_to_repredict=cust_ids_to_repredict  # This specifies which customers to repredict
     # )
+    
+
+    # List of customer IDs you want to repredict
+    cust_ids_to_repredict = [33, 206, 264, 310, 409, 1004, 1018, 1052, 1449, 1505, 1538, 1612, 1644, 2032, 2370, 2555, 2562, 2631, 3196, 3211, 3215, 3251, 3590, 3842, 3940]
+
+    binary_preds, scores_preds, reasoning_preds, sim_cust_json = run_rag_transaction_predictions(
+        test_df=testtest,  # Your full test DataFrame
+        collection_name=COLLECTION_NAME,
+        categories=categories,
+        output_dir=OUTPUT_DIR,
+        top_k=5,
+        cust_ids_to_repredict=cust_ids_to_repredict  # This specifies which customers to repredict
+    )
 
     # print("RAG-based transaction category prediction completed!")
