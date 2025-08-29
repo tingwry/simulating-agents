@@ -58,6 +58,7 @@ src/
 
 ### High-Level Structure
 
+```
 src/data_refresher/
 ├── clustering/             # Customer segmentation approaches
 ├── data/                   # Data storage and management
@@ -65,6 +66,7 @@ src/data_refresher/
 ├── evaluation/             # Performance evaluation framework
 ├── prediction/             # Prediction generation system
 └── rag/                    # Retrieval-Augmented Generation components
+```
 
 ### Clustering
 
@@ -200,5 +202,3 @@ src/recommendation/data_prep/
 ├── merge_with_txn.py           # Transaction data merging
 └── preprocess.py               # Main preprocessing pipeline
 ```
-
-
