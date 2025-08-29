@@ -1,4 +1,0 @@
-cust_id,hit_rate,true_positives,classes_of_true_positives,false_positives,classes_of_false_positives,false_negatives,classes_of_false_negatives
-4050.0,0.4,2,"shopping, home_and_living",3,"utility, medical, bank",2,"loan, restaurant"
-1392.0,0.0,0,,0,,1,finance
-1663.0,0.4,2,"shopping, government",3,"utility, pet_care, transportation",4,"loan, home_and_living, insurance, automotive"

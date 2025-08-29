@@ -11,6 +11,3 @@ def get_qdrant_client(**kwargs) -> QdrantClient:
         **kwargs,
     )
     return qdrant_client
-
-
-# print(qdrant_client.get_collections())

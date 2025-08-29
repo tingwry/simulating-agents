@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import os
 from matplotlib import rcParams
+import json
+from scipy.stats import hmean
 
 features = ['Number of Children', 'Age', 'Gender', 'Education level', 'Marital status', 'Region', 'Occupation Group']
 
@@ -328,79 +330,10 @@ def create_demographics_dashboard(csv_path, save_path="demographics_dashboard.pn
     
     return fig
 
-def create_transaction_categories_chart(csv_path, transaction_cols, save_path="transaction_categories.png"):
-    """
-    Create transaction categories usage chart
-    
-    Args:
-        csv_path (str): Path to the customer CSV file with transaction columns
-        transaction_cols (list): List of transaction category column names
-        save_path (str): Path to save the PNG file
-    """
-    
-    # Load the data
-    df = pd.read_csv(csv_path)
-    
-    # Calculate usage rates
-    usage_rates = {}
-    for col in transaction_cols:
-        if col in df.columns:
-            usage_rates[col] = df[col].mean()
-    
-    # Sort by usage rate
-    sorted_categories = sorted(usage_rates.items(), key=lambda x: x[1], reverse=True)
-    categories = [item[0] for item in sorted_categories]
-    rates = [item[1] for item in sorted_categories]
-    
-    # Create the plot
-    fig, ax = plt.subplots(figsize=(12, 8))
-    
-    # Color coding based on usage rate
-    colors = []
-    for rate in rates:
-        if rate > 0.5:
-            colors.append('#FF6B6B')  # Red for high usage
-        elif rate > 0.2:
-            colors.append('#FFEAA7')  # Yellow for medium usage
-        else:
-            colors.append('#B8B8B8')  # Gray for low usage
-    
-    bars = ax.barh(categories, rates, color=colors, alpha=0.8, edgecolor='black', linewidth=0.5)
-    
-    # Add percentage labels
-    for i, (bar, rate) in enumerate(zip(bars, rates)):
-        ax.text(rate + 0.01, bar.get_y() + bar.get_height()/2, 
-               f'{rate:.1%}', ha='left', va='center', fontsize=11, fontweight='bold')
-    
-    ax.set_xlabel('Usage Rate', fontsize=14, fontweight='bold')
-    ax.set_title(f'Transaction Category Usage Rates (N={len(df)})', 
-                 fontsize=16, fontweight='bold')
-    ax.grid(True, alpha=0.3, axis='x')
-    ax.set_xlim(0, max(rates) * 1.15)
-    
-    # Add legend
-    from matplotlib.patches import Patch
-    legend_elements = [
-        Patch(facecolor='#FF6B6B', label='High Usage (>50%)'),
-        Patch(facecolor='#FFEAA7', label='Medium Usage (20-50%)'),
-        Patch(facecolor='#B8B8B8', label='Low Usage (<20%)')
-    ]
-    ax.legend(handles=legend_elements, loc='lower right')
-    
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=300, bbox_inches='tight', facecolor='white')
-    print(f"Transaction categories chart saved as: {save_path}")
-    plt.show()
-    
-    return fig
 
 
 
 
-import json
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import hmean
 
 def create_harmonic_mean_chart(rf_file, zeroshot_file, rag_file, output_file='harmonic_mean_comparison.png'):
     """
@@ -571,91 +504,62 @@ def create_t0_t1_comparison_chart(t0_file, t1_file, output_file='t0_t1_harmonic_
     return harmonic_means
 
 
-
-
-# Example usage:
 if __name__ == "__main__":
-    # Create demographics dashboard
-    # csv_file_path = "src/recommendation/data/T0/merged_train_test.csv"  # Replace with your actual file path
-    # csv_file_path = "src/recommendation/data/T0/merged_train_test.csv"
-
-    # Generate demographics dashboard
-    # fig1 = create_demographics_dashboard(csv_file_path, "src/recommendation/data/T0/demographics_dashboard.png")
+    harmonic_means = create_harmonic_mean_chart(
+        'src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/evaluation_metrics_optimal_thrs.json', 
+        'src/recommendation/evaluation/eval_results/llm/evaluation_metrics_optimal_thrs.json', 
+        'src/recommendation/evaluation/eval_results/llm/rag/evaluation_metrics_optimal_thrs.json', 
+        output_file='src/recommendation/data_prep/eda/harmonic_mean_comparison.png'
+        )
     
-    # If you also have transaction data, uncomment below:
-    # transaction_categories = ['loan', 'utility', 'finance', 'shopping', 'financial_services', 
-    #                          'health_and_care', 'home_lifestyle', 'transport_travel', 
-    #                          'leisure', 'public_services']
-    # fig2 = create_transaction_categories_chart(csv_file_path, transaction_categories, 
-    #                                           "transaction_categories.png")
 
-    # harmonic_means = create_harmonic_mean_chart(
-    #     'src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/evaluation_metrics_optimal_thrs.json', 
-    #     'src/recommendation/evaluation/eval_results/llm/evaluation_metrics_optimal_thrs.json', 
-    #     'src/recommendation/evaluation/eval_results/llm/rag/evaluation_metrics_optimal_thrs.json', 
-    #     output_file='src/recommendation/data_prep/eda/harmonic_mean_comparison.png'
-    #     )
     t0_t1_means = create_t0_t1_comparison_chart(
         'src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/evaluation_metrics_optimal_thrs.json', 
         'src/recommendation/evaluation/eval_results/binary_classification/T1_predicted/random_forests_classifier_single/evaluation_metrics_optimal_thrs.json',
         output_file='src/recommendation/data_prep/eda/t0_t1_harmonic_comparison.png'
         )
 
-### Plot features ###
-# train
-# df_T0 = pd.read_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased.csv')
-# df_T1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased.csv')
-# df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv')
+    ### Plot features ###
+    # train
+    df_T0 = pd.read_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased.csv')
+    df_T1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased.csv')
+    df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased.csv')
 
-# df_T0 = pd.read_csv('src/recommendation/data/T0/demog_ranking_grouped_catbased_no_norm.csv')
-# df_T1 = pd.read_csv('src/recommendation/data/T1/demog_ranking_grouped_catbased_no_norm.csv')
-# df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_ranking_grouped_catbased_no_norm.csv')
+    plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_train', show_plots=False)
 
-# df_T0 = pd.read_csv('src/recommendation/data/T0/demog_grouped_catbased.csv')
-# df_T1 = pd.read_csv('src/recommendation/data/T1/demog_grouped_catbased.csv')
-# df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/demog_grouped_catbased.csv')
+    # test
+    df_T0 = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
+    df_T1 = pd.read_csv('src/recommendation/data/T1/test_with_lifestyle.csv')
+    df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
+    
+    plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_test', show_plots=False)
 
-# test
-# df_T0 = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
-# df_T1 = pd.read_csv('src/recommendation/data/T1/test_with_lifestyle.csv')
-# df_T1_predicted = pd.read_csv('src/recommendation/data/T1_predicted/test_with_lifestyle.csv')
+    ### Plot Txn Categories ###
+    df_T0 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
+    df_T1 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
+    df_T1_predicted = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1_predicted/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
 
-# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions', show_plots=False)
-# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_no_norm', show_plots=False)
-# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_no_rank', show_plots=False)
-# plot_features(df_T0, df_T1, df_T1_predicted, save_dir='src/recommendation/data_prep/eda/feature_distributions_test', show_plots=False)
-
-### Plot Txn Categories ###
-# df_T0 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
-# df_T1 = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
-# df_T1_predicted = pd.read_csv('src/recommendation/evaluation/eval_results/binary_classification/T1_predicted/random_forests_classifier/detailed_evaluation_results_optimal_thrs.csv')
-
-# plot_txn_category_comparison(
-#     df_T0, 
-#     df_T1, 
-#     df_T1_predicted,
-#     save_path='src/recommendation/data_prep/eda/transaction_category_comparison.png'
-# )
+    plot_txn_category_comparison(
+        df_T0, 
+        df_T1, 
+        df_T1_predicted,
+        save_path='src/recommendation/data_prep/eda/transaction_category_comparison.png'
+    )
 
 
-# df_T0 = pd.read_csv('src/recommendation/evaluation/eval_results/llm/detailed_evaluation_results_optimal_thrs.csv')
-# df_T1 = pd.read_csv('src/recommendation/evaluation/eval_results/llm/detailed_evaluation_results_optimal_thrs.csv')
-# df_T1_predicted = pd.read_csv('src/recommendation/evaluation/eval_results/llm/detailed_evaluation_results_optimal_thrs.csv')
+    # Merge train test
+    train_df = pd.read_csv('src/recommendation/data/T0/demog_grouped_catbased.csv')
+    train_df = train_df[['CUST_ID','Number of Children','Age','Gender','Education level','Marital status','Region','Occupation Group']]
+    test_df = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
 
-# plot_txn_category_comparison(
-#     df_T0, 
-#     df_T1, 
-#     df_T1_predicted,
-#     save_path='src/recommendation/data_prep/eda/transaction_category_comparison_llm.png'
-# )
+    merged_df = merge_train_test(train_df, test_df)
+    print(merged_df)
+    merged_df.to_csv('src/recommendation/data/T0/merged_train_test.csv', index=False)
+
+    # Create demographics dashboard
+    csv_file_path = "src/recommendation/data/T0/merged_train_test.csv"
+    fig1 = create_demographics_dashboard(csv_file_path, "src/recommendation/data/T0/demographics_dashboard.png")
 
 
-# Example usage
-# train_df = pd.read_csv('src/recommendation/data/T0/demog_grouped_catbased.csv')
-# train_df = train_df[['CUST_ID','Number of Children','Age','Gender','Education level','Marital status','Region','Occupation Group']]
-# test_df = pd.read_csv('src/recommendation/data/T0/test_with_lifestyle.csv')
 
-# merged_df = merge_train_test(train_df, test_df)
-# print(merged_df)
-# merged_df.to_csv('src/recommendation/data/T0/merged_train_test.csv', index=False)
 

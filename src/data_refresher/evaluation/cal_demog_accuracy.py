@@ -6,22 +6,6 @@ from IPython.display import display, Markdown
 from sklearn.metrics import f1_score
 
 
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_indiv_multi.csv')
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_indiv_single.csv')
-
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_no_ca.csv')
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_single_ca.csv')
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca.csv')
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca_const.csv')
-all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca_postpc.csv')
-
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_rag_single.csv')
-# all_predictions = pd.read_csv('src/prediction/pred_results/predictions_rag_multi.csv')
-
-
-test_actual = pd.read_csv('src/data/T1/test_T1_actual_v3.csv')
-output_dir = "src/evaluation/error_analysis/error_analysis_cluster_multi_ca_postpc"
-
 def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_cluster_method=False):    
     os.makedirs(output_dir, exist_ok=True)
     
@@ -107,7 +91,7 @@ def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_clu
     f1_df.to_csv(f1_path, index=False)
     results['analysis_files']['f1_scores'] = f1_path
     
-    # 2. Generate error analysis reports for each field
+    # 2. Collect error data for Markdown report (but don't save individual files)
     for pred_col, actual_col in demographic_fields.items():
         field_name = pred_col.replace('PRED_', '')
         
@@ -118,7 +102,7 @@ def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_clu
         ].copy()
         
         if len(unmatched) > 0:
-            # Prepare error analysis dataframe
+            # Prepare error analysis dataframe for Markdown report only
             if is_cluster_method:
                 error_df = unmatched[[
                     'CUST_ID', 'cluster',
@@ -146,28 +130,8 @@ def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_clu
             
             error_df['Field'] = field_name
             results['unmatched_data'][field_name] = error_df
-            
-            # Save to Excel and CSV
-            field_path = os.path.join(output_dir, f"errors_{field_name}.xlsx")
-            with pd.ExcelWriter(field_path) as writer:
-                error_df.to_excel(writer, index=False, sheet_name='Errors')
-                
-                # Add summary stats
-                error_summary = error_df['Predicted'].value_counts().reset_index()
-                error_summary.columns = ['Predicted Value', 'Count']
-                error_summary['Percentage'] = error_summary['Count'] / len(error_df)
-                error_summary.to_excel(writer, index=False, sheet_name='Summary')
-            
-            results['analysis_files'][field_name] = field_path
     
-    # 3. Create combined error report
-    if results['unmatched_data']:
-        all_errors = pd.concat(results['unmatched_data'].values())
-        combined_path = os.path.join(output_dir, "all_errors.xlsx")
-        all_errors.to_excel(combined_path, index=False)
-        results['analysis_files']['combined_errors'] = combined_path
-    
-    # 4. Generate visual reports (Markdown)
+    # 3. Generate visual reports (Markdown)
     md_report = []
     
     # Accuracy summary
@@ -211,11 +175,11 @@ def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_clu
                     f"\n  - Reasoning: {row['Reasoning']}"
                 )
     
-    # Save and display Markdown report
+    # Save Markdown report
     md_path = os.path.join(output_dir, "error_analysis.md")
     with open(md_path, 'w') as f:
         f.write("\n".join(md_report))
-    results['analysis_files']['markdown_report'] = md_path
+    results['analysis_files']['error_analysis'] = md_path
     
     # Display in notebook if available
     try:
@@ -226,9 +190,25 @@ def calculate_demographic_accuracy(predictions_df, actual_df, output_dir, is_clu
     return results
 
 
+if __name__ == "__main__":
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_indiv_multi.csv')
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_indiv_single.csv')
 
-results = calculate_demographic_accuracy(all_predictions, test_actual, output_dir, is_cluster_method=True)
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_no_ca.csv')
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_single_ca.csv')
+    all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca.csv')
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_cluster_multi_ca_const.csv')
 
-print("\nAnalysis files created:")
-for name, path in results['analysis_files'].items():
-    print(f"- {name}: {path}")
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_rag_single.csv')
+    # all_predictions = pd.read_csv('src/prediction/pred_results/predictions_rag_multi.csv')
+
+
+    test_actual = pd.read_csv('src/data/T1/test_T1_actual.csv')
+    output_dir = "src/evaluation/error_analysis/error_analysis_cluster_multi_ca"
+
+
+    results = calculate_demographic_accuracy(all_predictions, test_actual, output_dir, is_cluster_method=True)
+
+    print("\nAnalysis files created:")
+    for name, path in results['analysis_files'].items():
+        print(f"- {name}: {path}")

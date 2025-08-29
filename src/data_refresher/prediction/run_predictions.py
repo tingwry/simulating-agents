@@ -164,7 +164,7 @@ if __name__ == "__main__":
     """
     
     # Load data indiv/rag
-    test_summ = pd.read_csv("src/data_refresher/data/summary_reasoning/test_summ_v1.csv")
+    test_summ = pd.read_csv("src/data_refresher/data/summary_reasoning/test_demog_summary.csv")
 
     # Load data cluster
     # df = pd.read_csv('src/clustering/approach_2_embed/pred_result/full_data_with_cluster/full_data_with_cluster_v2.csv')
@@ -175,8 +175,8 @@ if __name__ == "__main__":
 
     # setup
     COLLECTION_NAME = "customer_transitions"
-    similar_output_file = "src/data_refresher/prediction/similar_cust_results/v1/sim_cust_results.json"
-    VERSIONED_DIR = None  # Will be set when saving results
+    similar_output_file = "src/data_refresher/prediction/similar_cust_results/sim_cust_results.json"
+    VERSIONED_DIR = None
     output_dir = "src/data_refresher/prediction/pred_results"
 
     file_name = "test_with_lifestyle_pred_T1_single"

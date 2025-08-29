@@ -414,7 +414,7 @@ if __name__ == "__main__":
         root_dir='src/recommendation/evaluation/eval_results',
         output_csv_path='src/recommendation/evaluation/eval_results/all_evaluation_summary_t0.csv',
         baseline_paths=[
-            'src/recommendation/baseline/baseline_all_1/eval_results_grouped_catbased/evaluation_metrics.json'
+            'src/recommendation/evaluation/baseline/eval_results_grouped_catbased/evaluation_metrics.json'
         ]
     )
 

@@ -38,10 +38,7 @@ def main_pipeline(df, collection_name="customers"):
 
 
 if __name__ == "__main__":
-    train_demog = pd.read_csv("src/recommendation/data/rag/train_T0_demog_summ/train_T0_demog_summ_t0_v1.csv")
-    # testtest = train_demog.head()
-    # testtest = train_demog[train_demog['CUST_ID'].isin([662, 970, 1914, 2236, 2551, 2898, 3182, 3468, 4076, 4338])] 
-
+    train_demog = pd.read_csv("src/recommendation/data/rag/train_T0_demog_summ/train_T0_demog_summ_t0.csv")
     COLLECTION_NAME = "customers"
 
     embedded_docs = main_pipeline(train_demog, COLLECTION_NAME)

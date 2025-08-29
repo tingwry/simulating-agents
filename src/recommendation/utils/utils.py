@@ -103,7 +103,7 @@ class BinaryEncoder(BaseEstimator, TransformerMixin):
         
         return result
     
-def train_model_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
+def train_model_path_indicator(method, is_regressor, method_model, threshold=None, data='T0', include_txn_t0=False):
     """Determine the appropriate paths based on modeling approach and method.
     
     Args:
@@ -122,6 +122,8 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
     base_metrics_path = 'src/recommendation/metrics'
 
     OPTIMAL_THRS = ""
+    TXN_T0 = ""
+    if include_txn_t0: TXN_T0 = "_t0"
     
     if method == "reinforcement_learning":
         DATA_PATH = f'{base_data_path}/rl'
@@ -131,9 +133,9 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
         if method == "binary":
             # Use non-normalized data for binary regression cases
             if is_regressor:
-                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_t0.csv'
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm{TXN_T0}.csv'
             else:
-                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_t0.csv'
+                DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm{TXN_T0}.csv'
                 # DATA_PATH = f'{base_data_path}/{data}/demog_ranking_grouped_catbased_no_norm_single.csv'
 
             model_type = "regressor" if is_regressor else "classifier"
@@ -146,7 +148,7 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
                 METRICS_DIR = f'{base_metrics_path}/binary_classification/{method_model}_{model_type}'
             
         elif method == "multilabel":
-            DATA_PATH = f'{base_data_path}/{data}/demog_grouped_catbased_t0.csv'
+            DATA_PATH = f'{base_data_path}/{data}/demog_grouped_catbased{TXN_T0}.csv'
 
             if data in ['T1', 'T1_predicted']:
                 MODEL_DIR = f'{base_model_path}/multilabel/{data}/{method_model}'
@@ -159,12 +161,12 @@ def train_model_path_indicator(method, is_regressor, method_model, threshold=Non
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel' or 'reinforcement_learning'")
         
     if threshold == None:
-        OPTIMAL_THRS = "_optimal_thrs_t0"
+        OPTIMAL_THRS = f"_optimal_thrs{TXN_T0}"
 
     return DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS
 
 
-def prediction_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
+def prediction_path_indicator(method, is_regressor, method_model, threshold=None, data='T0', include_txn_t0=False):
     """Determine the appropriate paths for prediction outputs.
     
     Args:
@@ -182,10 +184,10 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
     base_prediction_path = 'src/recommendation/predictions'
 
     OPTIMAL_THRS = ""
+    TXN_T0 = ""
+    if include_txn_t0: TXN_T0 = "_t0"
     
-    # Set TEST_DATA_PATH based on data version
-    # TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_single.csv'
-    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle_t0.csv'
+    TEST_DATA_PATH = f'{base_data_path}/{data}/test_with_lifestyle{TXN_T0}.csv'
     
     if method == "reinforcement_learning":
         DATA_DIR = f'{base_data_path}/rl'
@@ -223,13 +225,13 @@ def prediction_path_indicator(method, is_regressor, method_model, threshold=None
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', or 'llm'")
         
     if threshold == None:
-        OPTIMAL_THRS = "_optimal_thrs_t0"
+        OPTIMAL_THRS = f"_optimal_thrs{TXN_T0}"
     
     PREDICTION_OUTPUT += f'/transaction_predictions{OPTIMAL_THRS}.csv'
 
     return DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS
 
-def evaluation_path_indicator(method, is_regressor, method_model, threshold=None, data='T0'):
+def evaluation_path_indicator(method, is_regressor, method_model, threshold=None, data='T0', include_txn_t0=False):
     """Determine the appropriate paths for evaluation outputs.
     
     Args:
@@ -248,6 +250,8 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
     base_ans_key_path = 'src/recommendation/data/ans_key'
     
     OPTIMAL_THRS = ""
+    TXN_T0 = ""
+    if include_txn_t0: TXN_T0 = "_t0"
     
     # Set answer key path based on method and model type
     if method == "binary":
@@ -304,12 +308,12 @@ def evaluation_path_indicator(method, is_regressor, method_model, threshold=None
             raise ValueError(f"Unknown method: {method}. Must be 'binary', 'multilabel', 'reinforcement_learning', 'llm', or 'rag'")
         
     if threshold == None:
-        OPTIMAL_THRS = "_optimal_thrs_t0"
+        OPTIMAL_THRS = f"_optimal_thrs{TXN_T0}"
     
     # For RAG method, we have specific filenames
     if method == "rag":
-        PREDICTIONS_DIR += '/rag_transaction_predictions_t0.csv'
-        SCORES_DIR += '/rag_transaction_prediction_scores_t0.csv'
+        PREDICTIONS_DIR += f'/rag_transaction_predictions{TXN_T0}.csv'
+        SCORES_DIR += f'/rag_transaction_prediction_scores{TXN_T0}.csv'
     else:
         PREDICTIONS_DIR += f'/transaction_predictions{OPTIMAL_THRS}.csv'
         SCORES_DIR += f'/transaction_predictions{OPTIMAL_THRS}_scores.csv'
@@ -373,26 +377,6 @@ def load_and_preprocess_data(DATA_PATH):
 
     return df, preprocessor
 
-# def find_optimal_regression_threshold(y_true, y_pred):
-#     """Find optimal threshold for converting regression outputs to binary predictions"""
-#     # Convert true values to binary (1 if > 0, else 0)
-#     y_true_binary = (y_true > 0).astype(int)
-    
-#     # Try different thresholds to find the one that maximizes F1 score
-#     thresholds = np.linspace(0, np.max(y_pred), 100)
-#     best_threshold = 0
-#     best_f1 = -1
-    
-#     for threshold in thresholds:
-#         y_pred_binary = (y_pred >= threshold).astype(int)
-#         f1 = f1_score(y_true_binary, y_pred_binary)
-#         if f1 > best_f1:
-#             best_f1 = f1
-#             best_threshold = threshold
-    
-#     return best_threshold
-
-
 def find_optimal_regression_threshold(y_true, y_pred, beta=0.5):
     """Find optimal threshold for converting regression outputs to binary predictions
     using a weighted harmonic mean of precision and recall. (F-beta Score)
@@ -423,16 +407,6 @@ def find_optimal_regression_threshold(y_true, y_pred, beta=0.5):
             best_threshold = threshold
     
     return best_threshold
-
-# def find_optimal_classification_threshold(y_true, y_proba):
-#     """Find optimal threshold that maximizes F1 score"""
-#     precision, recall, thresholds = precision_recall_curve(y_true, y_proba)
-#     # Convert to F1 score
-#     f1_scores = 2 * (precision * recall) / (precision + recall + 1e-9)
-#     # Find threshold that gives maximum F1 score
-#     optimal_idx = np.argmax(f1_scores)
-#     optimal_threshold = thresholds[optimal_idx]
-#     return optimal_threshold
 
 def find_optimal_classification_threshold(y_true, y_proba, beta=0.5):
     """Find optimal threshold that maximizes F-beta score
@@ -602,23 +576,20 @@ def retrieve_similar_customers_for_recommendations(test_df, collection_name, top
     Retrieve similar customers from Qdrant vector database for transaction recommendations.
     
     Args:
-        test_df: DataFrame with customers to predict for (must have 'Demog Summary' column)
+        test_df: DataFrame with customers to predict for (must have 'Summary' column)
         collection_name: Name of Qdrant collection
         top_k: Number of similar customers to retrieve
     
     Returns:
         dict: Customer ID mapped to similar customers data
     """
-    model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")  # Use same model as embedding
+    model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
     client = get_qdrant_client()
     
     results = {}
     
-    # Validate that Demog Summary column exists
     if 'Summary' not in test_df.columns:
         raise ValueError("Test dataset must contain 'Summary' column")
-    # if 'Demog Summary' not in test_df.columns:
-    #     raise ValueError("Test dataset must contain 'Demog Summary' column")
     
     print(f"Retrieving similar customers for {len(test_df)} customers using demographic summaries...")
     
@@ -626,7 +597,6 @@ def retrieve_similar_customers_for_recommendations(test_df, collection_name, top
         try:
             # Use the existing demographic summary
             query_text = row['Summary']
-            # query_text = row['Demog Summary']
             
             if pd.isna(query_text) or query_text.strip() == '':
                 print(f"Warning: Empty demographic summary for customer {row.get('CUST_ID', idx)}")
@@ -664,7 +634,6 @@ def retrieve_similar_customers_for_recommendations(test_df, collection_name, top
             results[customer_id] = {
                 "error": str(e),
                 "query_text": row.get('Summary', ''),
-                # "query_text": row.get('Demog Summary', ''),
                 "similar_customers": []
             }
     
@@ -687,4 +656,3 @@ def create_demographic_summary(row):
         return summary
     except Exception:
         return "Customer demographic information"
-    

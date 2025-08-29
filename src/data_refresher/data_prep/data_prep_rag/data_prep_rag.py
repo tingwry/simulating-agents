@@ -254,19 +254,17 @@ if __name__ == "__main__":
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
     train_T0 = pd.read_csv("src/data_refresher/data/T0/train_df.csv")
-    train_T1 = pd.read_csv("src/data_refresher/data/T1/train_T1_v3.csv")
+    train_T1 = pd.read_csv("src/data_refresher/data/T1/train_T1.csv")
     test_T0 = pd.read_csv("src/data_refresher/data/T0/test_df.csv")
     result_path = "src/data_refresher/data/summary_reasoning"
     
 
     print('Step 1: Generate Summaries for Train set')
-    # second_q = train_T0.iloc[(len(train_T0)//4)*3:].copy()
-    # second_q = train_T0.iloc[0:len(train_T0)//4].copy()
     train_T0_with_summ = merge_summaries(train_T0)
 
     print('Step 2: Generate Reasonings for Train set')
     train_T0_with_reason = merge_reasoning(train_T0_with_summ, train_T1)
-    save_csv_file(result_path, train_T0_with_reason, 'train_cra', next_version=None)
+    save_csv_file(result_path, train_T0_with_reason, 'train_change_analysis', next_version=None)
 
     print('Step 3: Generate Summaries for Test set')
     test_T0_with_summ = merge_summaries(test_T0)

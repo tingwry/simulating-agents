@@ -18,8 +18,8 @@ from d3rlpy.algos import DiscreteCQLConfig
 from d3rlpy.preprocessing import MinMaxRewardScaler
 
 
-def train_model(method, is_regressor, method_model=None, threshold=None, data='T0'):
-    DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS = train_model_path_indicator(method, is_regressor, method_model, threshold, data)
+def train_model(method, is_regressor, method_model=None, threshold=None, data='T0', include_txn_t0=False):
+    DATA_PATH, MODEL_DIR, METRICS_DIR, OPTIMAL_THRS = train_model_path_indicator(method, is_regressor, method_model, threshold, data, include_txn_t0)
     print(MODEL_DIR)
     print(METRICS_DIR)
     os.makedirs(os.path.dirname(MODEL_DIR), exist_ok=True)
@@ -697,9 +697,6 @@ def train_model(method, is_regressor, method_model=None, threshold=None, data='T
             print("No models were trained successfully.")
 
 
-
-
-
 if __name__ == "__main__":
     RANDOM_STATE = 42
     TEST_SIZE = 0.2
@@ -713,26 +710,17 @@ if __name__ == "__main__":
 
     feature_cols = demographic_features + transaction_amount_cols
     
-    # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
-    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
-    # train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=0)
-    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    # train_model(method="binary", is_regressor=True, method_model="catboost", threshold=0)
+    train_model(method="binary", is_regressor=True, method_model="random_forests", threshold=None)
+    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None)
+    train_model(method="binary", is_regressor=True, method_model="catboost", threshold=None)
+    train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
 
-    # train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
+    train_model(method="multilabel", is_regressor=False, method_model="multioutputclassifier", threshold=None)
     train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None)
 
-    # train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
+    train_model(method="reinforcement_learning", is_regressor=False, method_model=None, threshold=None)
 
 
-    # T0/T1/predT1
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None)
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1')
-    # train_model(method="binary", is_regressor=False, method_model="catboost", threshold=None, data='T1_predicted')
-
-    # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1')
-    # train_model(method="multilabel", is_regressor=False, method_model="neural_network", threshold=None, data='T1_predicted')
-
-    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1')
-    # train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1_predicted')
+    # T1/T1_predicted predictions
+    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1')
+    train_model(method="binary", is_regressor=False, method_model="random_forests", threshold=None, data='T1_predicted')

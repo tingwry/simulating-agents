@@ -37,7 +37,7 @@ def main_pipeline(df, collection_name="customer_transitions"):
 
 
 if __name__ == "__main__":
-    train_cra = pd.read_csv("src/data_refresher/data/summary_reasoning/train_cra_v4.csv")
+    train_change_analysis = pd.read_csv("src/data_refresher/data/summary_reasoning/train_change_analysis.csv")
     COLLECTION_NAME = "customer_transitions"
 
-    embedded_docs = main_pipeline(train_cra, COLLECTION_NAME)
+    embedded_docs = main_pipeline(train_change_analysis, COLLECTION_NAME)

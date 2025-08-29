@@ -69,7 +69,7 @@ def prepare_documents(df):
                         "region": row['Region'],
                         "children": row['Number of Children'],
                         "gender": row['Gender'],
-                        # "demog_summary": row['Demog Summary'],
+                        "summary": row['Summary'],
                         "Finance": row['finance_t0'],
                         "Financial Services": row['financial_services_t0'],
                         "Home Lifestyle": row['home_lifestyle_t0'],
@@ -82,11 +82,10 @@ def prepare_documents(df):
                         "Public Services": row['public_services_t0'],
                     },
                     "transactions": transaction_data,
-                    "performed_categories": performed_categories,  # List of categories where value = 1
-                    "total_active_categories": len(performed_categories)  # Count of active categories
+                    "performed_categories": performed_categories,
+                    "total_active_categories": len(performed_categories)
                 },
-                # "embedding_text": row['Demog Summary']  # This is what we'll embed
-                "embedding_text": row['Summary']  # This is what we'll embed
+                "embedding_text": row['Summary']
             }
             documents.append(document)
             

@@ -83,7 +83,6 @@ def merge_summaries(df):
     total_rows = len(train_T0_with_summ)
     
     print(f"\nGenerating summaries for {total_rows} customers...")
-    # train_T0_with_summ['Demog Summary'] = train_T0_with_summ.apply(
     train_T0_with_summ['Summary'] = train_T0_with_summ.apply(
         lambda x: print(f"Processing customer {x.name + 1}/{total_rows}") or context_summarizer(x), 
         axis=1
@@ -121,11 +120,6 @@ def save_checkpoint(df, dir_path, checkpoint_name):
     filename = f"{checkpoint_name}_{timestamp}.pkl"
     path = os.path.join(dir_path, filename)
     
-    # Save as pickle (preserves dtypes better than CSV)
-    # df.to_pickle(path)
-    # print(f"✅ Checkpoint saved: {path}")
-    
-    # Also keep a CSV version for readability
     csv_path = os.path.join(dir_path, f"{checkpoint_name}_{timestamp}.csv")
     df.to_csv(csv_path, index=False)
     return path
@@ -133,7 +127,6 @@ def save_checkpoint(df, dir_path, checkpoint_name):
 
 
 def demog_summary_prep(df, DIR):
-    # testtest = df.head()
     testtest = df.copy()
 
     summarized_df = merge_summaries(testtest)
@@ -141,11 +134,6 @@ def demog_summary_prep(df, DIR):
     # save_csv_file(DIR, summarized_df, 'train_T0_demog_summ_t0', next_version=None)
     save_csv_file(DIR, summarized_df, 'test_T0_demog_summ_t0', next_version=None)
 
-# concat
-# part1 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v1.csv')
-# part2 = pd.read_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ_v2.csv')
-# train_T0_demog_summ = pd.concat([part1, part2], axis=0, ignore_index=True)
-# test_T0_demog_summ.to_csv('src/data/cf_demog_summary/train_T0_demog_summ.csv/train_T0_demog_summ.csv', index=False)
 
 # demog_summary_prep(train_T0, train_DIR)
 demog_summary_prep(test_T0, test_DIR)

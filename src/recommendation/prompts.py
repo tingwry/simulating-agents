@@ -293,7 +293,7 @@ def format_customer_profile_for_transactions(customer_row):
         children = customer_row.get('Number of Children', 0)
         
         # Use the existing demographic summary
-        demog_summary = customer_row.get('Demog Summary', 'No demographic summary available')
+        demog_summary = customer_row.get('Summary', 'No demographic summary available')
         
         profile = f"""**Customer ID:** {customer_id}
 

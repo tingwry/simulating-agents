@@ -40,7 +40,7 @@ def change_analysis(train_T1, full_data_with_cluster, train_T0_df_group, save_pa
 
 
 if __name__ == "__main__":
-    train_T1 = pd.read_csv('src/data_refresher/data/T1/train_T1_v3.csv')
+    train_T1 = pd.read_csv('src/data_refresher/data/T1/train_T1.csv')
     full_data_with_cluster = pd.read_csv('src/data_refresher/clustering/approach_2_embed/result/full_data_with_cluster/full_data_with_cluster_v4.csv')
     train_T0_df_group = pd.read_csv('src/data_refresher/clustering/approach_2_embed/result/clus_explain/clus_explain_v4.csv')
     save_path = 'src/data_refresher/clustering/change_analysis/result'

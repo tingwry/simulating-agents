@@ -53,9 +53,6 @@ def transform_customer_data(csv_path, test_csv, output_path):
 
 
 if __name__ == "__main__":
-    # demog_at_T1_path = 'src/recommendation/data/T1_predicted/train_with_lifestyle_pred_T1.csv'
-    # demog_at_T1_path = 'src/recommendation/data/T1_predicted/test_with_lifestyle_pred_T1.csv'
-
     # demog_at_T1_path = 'src/data_refresher/prediction/pred_results/train_with_lifestyle_pred_T1_single.csv'
     demog_at_T1_path = 'src/data_refresher/prediction/pred_results/test_with_lifestyle_pred_T1_single.csv'
 

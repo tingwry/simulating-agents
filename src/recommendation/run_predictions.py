@@ -13,16 +13,15 @@ from src.client.llm import get_aoi_client
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false" 
 
-def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0'):
+def run_predictions(method, method_model, is_regressor, categories, threshold=None, percentile=75, data='T0', include_txn_t0=False):
     DATA_DIR, MODEL_DIR, PREDICTION_OUTPUT, TEST_DATA_PATH, OPTIMAL_THRS, = prediction_path_indicator(
-        method, is_regressor, method_model, threshold, data
+        method, is_regressor, method_model, threshold, data, include_txn_t0
     )
     # Load and preprocess full dataset
     df = pd.read_csv(TEST_DATA_PATH)
     df = preprocess_unknown_values(df)
     
     # Prepare features and labels
-    # feature_cols = [col for col in df.columns if col not in categories and col != 'CUST_ID']
     X_df = df[feature_cols]
 
     # Handle customer ID
@@ -220,7 +219,7 @@ def run_predictions(method, method_model, is_regressor, categories, threshold=No
 
         return binary_predictions, prediction_scores
 
-def run_predictions_llm(method="indiv", is_regressor=False, categories=None, threshold=None, data='T0', cust_ids_to_repredict=None):
+def run_predictions_llm(is_regressor=False, categories=None, threshold=None, data='T0', cust_ids_to_repredict=None):
     """
     Run LLM-based predictions for transaction categories using demographic data.
     
@@ -594,83 +593,51 @@ def run_rag_transaction_predictions(test_df, collection_name, categories, output
 
 
 
-
-
-
 if __name__ == "__main__":
     categories = ['loan','utility','finance','shopping','financial_services', 'health_and_care', 'home_lifestyle', 'transport_travel',	
                  'leisure', 'public_services']
-
     transaction_amount_cols = [f'{cat}_t0' for cat in categories]
-
     demographic_features = ['Number of Children', 'Age', 'Gender', 'Education level', 
                             'Marital status', 'Region', 'Occupation Group']
-
     feature_cols = demographic_features + transaction_amount_cols
 
-
-
+    # rag
     COLLECTION_NAME = "customers"
     OUTPUT_DIR = "src/recommendation/predictions/llm/rag/results"
-    test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_t0_v1.csv")
-    # testtest = test_df.head()
+    test_df = pd.read_csv("src/recommendation/data/rag/test_T0_demog_summ/test_T0_demog_summ_t0.csv")
     testtest = test_df.copy()
-    # testtest = test_df[test_df['CUST_ID'].isin([1052, 1171, 2214, 2930, 2964, 3463, 4095, 4225])]
 
-    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
-    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=0)
-    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
-    # run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=0)
+    # T0 predictions
+    run_predictions(method="binary", is_regressor=True, categories=categories, method_model="random_forests", threshold=None)
+    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None)
+    run_predictions(method="binary", is_regressor=True, categories=categories, method_model="catboost", threshold=None)
+    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="catboost", threshold=None)
 
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None)
+    run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="multioutputclassifier", threshold=None)
+    run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None)
 
-    # run_predictions(method="reinforcement_learning", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
-
-
+    run_predictions(method="reinforcement_learning", is_regressor=False,categories=categories, method_model=None, threshold=None, percentile=75)
     
-    # T1 predictions
-    # run_predictions(method="binary", is_regressor=False, categories=categories, 
-    #                method_model="catboost", threshold=None, data='T1')
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1')
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1')
-    
-    # T1_predicted predictions
-    # run_predictions(method="binary", is_regressor=False, categories=categories, 
-    #                method_model="catboost", threshold=None, data='T1_predicted')
-    # run_predictions(method="multilabel", is_regressor=False, categories=categories, method_model="neural_network", threshold=None, data='T1_predicted')
-    # run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
+    # T1/T1_predicted predictions
+    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1')
+    run_predictions(method="binary", is_regressor=False, categories=categories, method_model="random_forests", threshold=None, data='T1_predicted')
 
-#     cust_ids_to_repredict = [2993, 3211, 3594, 3900]
 
-#     binary_preds, scores = run_predictions_llm(
-#     method="indiv", 
-#     categories=categories, 
-#     data='T0',
-#     cust_ids_to_repredict=cust_ids_to_repredict
-# )
+    cust_ids_to_repredict = []
 
-    # binary_preds, scores_preds, reasoning_preds, sim_cust_json = run_rag_transaction_predictions(
-    #     test_df=testtest,
-    #     collection_name=COLLECTION_NAME,
-    #     categories=categories,
-    #     output_dir=OUTPUT_DIR,
-    #     top_k=5,
-    # )
-    
+    binary_preds, scores = run_predictions_llm(
+        categories=categories,
+        data='T0',
+        cust_ids_to_repredict=None
+    )
 
-    # List of customer IDs you want to repredict
-    cust_ids_to_repredict = [33, 206, 264, 310, 409, 1004, 1018, 1052, 1449, 1505, 1538, 1612, 1644, 2032, 2370, 2555, 2562, 2631, 3196, 3211, 3215, 3251, 3590, 3842, 3940]
+    cust_ids_to_repredict = []
 
     binary_preds, scores_preds, reasoning_preds, sim_cust_json = run_rag_transaction_predictions(
-        test_df=testtest,  # Your full test DataFrame
+        test_df=testtest,
         collection_name=COLLECTION_NAME,
         categories=categories,
         output_dir=OUTPUT_DIR,
         top_k=5,
-        cust_ids_to_repredict=cust_ids_to_repredict  # This specifies which customers to repredict
+        cust_ids_to_repredict=None
     )
-
-    # print("RAG-based transaction category prediction completed!")
