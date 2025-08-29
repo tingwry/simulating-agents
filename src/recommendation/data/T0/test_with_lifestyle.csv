@@ -1,0 +1,354 @@
+CUST_ID,Number of Children,Age,Gender,Education level,Marital status,Region,Occupation Group
+13,0.0,24,Male,bachelor's degree,single,Central,Corporate Employee
+15,3.0,53,Male,others,married,Central,Entrepreneur
+30,0.0,40,Female,less than high school,married,Central,Corporate Employee
+33,0.0,28,Female,bachelor's degree,single,Northern,Freelancer
+34,0.0,36,Female,high school,married,Central,Corporate Employee
+57,0.0,43,Male,bachelor's degree,single,Central,Corporate Employee
+74,0.0,39,Female,bachelor's degree,single,Central,Freelancer
+85,0.0,32,Female,bachelor's degree,married,Central,Corporate Employee
+94,0.0,44,Male,less than high school,single,Northeastern,Corporate Employee
+100,0.0,45,Female,vocational certificate,single,Central,Freelancer
+110,0.0,34,Male,bachelor's degree,single,Central,Student
+123,0.0,39,Female,high school,divorce,Northeastern,Homemaker
+135,0.0,30,Female,bachelor's degree,single,Southern,Corporate Employee
+145,0.0,47,Female,doctorate's degree,single,Central,Professional
+150,0.0,23,Male,less than high school,single,Northern,Student
+151,0.0,43,Male,less than high school,single,Western,Corporate Employee
+152,0.0,48,Female,less than high school,married,Central,Corporate Employee
+180,0.0,24,Male,bachelor's degree,single,Southern,Entrepreneur
+181,0.0,49,Female,less than high school,single,Northern,Corporate Employee
+185,0.0,27,Male,bachelor's degree,single,Central,Corporate Employee
+189,0.0,30,Female,high school,single,Eastern,Entrepreneur
+193,0.0,40,Female,bachelor's degree,single,Southern,Corporate Employee
+197,0.0,54,Male,others,married,Central,Entrepreneur
+204,0.0,43,Male,master's degree,single,Central,Corporate Employee
+206,0.0,49,Female,master's degree,single,Central,Corporate Employee
+215,0.0,51,Male,less than high school,single,Central,Corporate Employee
+230,0.0,45,Male,bachelor's degree,married,Central,Corporate Employee
+239,0.0,47,Male,bachelor's degree,married,Eastern,Corporate Employee
+240,0.0,27,Male,vocational certificate,single,Eastern,Corporate Employee
+252,0.0,26,Male,high school,single,Central,Student
+257,0.0,37,Male,others,married,Northeastern,Entrepreneur
+264,1.0,56,Male,bachelor's degree,single,Central,Entrepreneur
+290,1.0,46,Female,vocational certificate,married,Northeastern,Corporate Employee
+291,0.0,32,Female,others,married,Central,Corporate Employee
+292,0.0,43,Female,high school,married,Central,Corporate Employee
+294,0.0,31,Female,bachelor's degree,single,Central,Corporate Employee
+306,0.0,33,Male,high school,single,Central,Freelancer
+310,0.0,52,Male,high school,single,Central,Freelancer
+316,0.0,38,Female,bachelor's degree,married,Northern,Unemployed
+322,0.0,44,Female,others,single,Central,Corporate Employee
+326,0.0,45,Female,master's degree,married,Southern,Professional
+331,0.0,29,Male,high school,single,Western,Corporate Employee
+333,0.0,55,Female,bachelor's degree,married,Central,Professional
+355,0.0,38,Male,bachelor's degree,married,Northern,Entrepreneur
+372,0.0,25,Male,others,others,Central,Student
+377,0.0,31,Female,less than high school,single,Central,Student
+388,2.0,53,Female,bachelor's degree,married,Central,Homemaker
+403,0.0,60,Male,bachelor's degree,married,Northern,Unemployed
+409,0.0,45,Male,others,married,Central,Entrepreneur
+434,0.0,34,Female,vocational certificate,single,Western,Corporate Employee
+439,0.0,40,Male,bachelor's degree,married,Eastern,Corporate Employee
+444,0.0,35,Male,others,single,Northeastern,Corporate Employee
+446,0.0,29,Female,bachelor's degree,single,Central,Unemployed
+462,0.0,28,Female,others,single,Central,Student
+464,0.0,42,Female,bachelor's degree,separate,Southern,Freelancer
+491,0.0,32,Female,high school,single,Central,Corporate Employee
+498,0.0,37,Male,bachelor's degree,single,Northeastern,Corporate Employee
+507,0.0,45,Male,less than high school,married,Central,Corporate Employee
+545,0.0,28,Male,high school,single,Southern,Student
+565,0.0,35,Female,high school,single,Northeastern,Freelancer
+595,0.0,25,Female,others,others,Northeastern,Student
+603,1.0,53,Female,vocational certificate,married,Central,Freelancer
+621,0.0,31,Male,less than high school,single,Central,Freelancer
+669,0.0,24,Male,high school,single,Southern,Corporate Employee
+671,1.0,35,Female,high school,married,Eastern,Entrepreneur
+677,0.0,45,Male,bachelor's degree,married,Central,Entrepreneur
+678,0.0,49,Female,bachelor's degree,single,Northern,Corporate Employee
+684,0.0,28,Female,bachelor's degree,single,Central,Corporate Employee
+692,0.0,29,Female,vocational certificate,single,Eastern,Corporate Employee
+722,0.0,58,Female,bachelor's degree,married,Central,Corporate Employee
+732,0.0,32,Female,bachelor's degree,married,Eastern,Corporate Employee
+756,0.0,37,Male,bachelor's degree,single,Southern,Corporate Employee
+760,0.0,28,Female,bachelor's degree,single,Central,Corporate Employee
+765,0.0,47,Female,bachelor's degree,single,Central,Entrepreneur
+804,0.0,53,Female,bachelor's degree,single,Central,Entrepreneur
+808,0.0,55,Male,high school,single,Central,Freelancer
+810,0.0,35,Male,high school,single,Central,Corporate Employee
+811,0.0,58,Male,bachelor's degree,married,Central,Corporate Employee
+844,0.0,40,Male,bachelor's degree,single,Southern,Professional
+857,0.0,37,Female,bachelor's degree,single,Central,Freelancer
+863,0.0,31,Female,bachelor's degree,single,Central,Entrepreneur
+878,0.0,31,Male,others,single,Northern,Corporate Employee
+882,0.0,25,Female,others,others,Central,Student
+889,0.0,39,Female,high school,single,Northeastern,Homemaker
+890,1.0,61,Female,others,married,Eastern,Entrepreneur
+894,0.0,44,Male,high school,married,Central,Corporate Employee
+908,0.0,28,Female,others,single,Northern,Student
+1004,0.0,44,Female,bachelor's degree,married,Central,Entrepreneur
+1018,0.0,47,Female,others,single,Southern,Entrepreneur
+1026,0.0,24,Male,others,single,Eastern,Student
+1028,0.0,44,Female,high school,married,Central,Entrepreneur
+1030,0.0,34,Male,bachelor's degree,single,Central,Corporate Employee
+1033,0.0,36,Male,bachelor's degree,single,Northeastern,Entrepreneur
+1035,0.0,43,Male,master's degree,married,Northeastern,Professional
+1039,1.0,43,Male,bachelor's degree,married,Eastern,Entrepreneur
+1042,0.0,41,Female,high school,single,Eastern,Entrepreneur
+1052,0.0,30,Female,bachelor's degree,married,Northeastern,Corporate Employee
+1056,0.0,27,Male,others,single,Northeastern,Corporate Employee
+1057,0.0,33,Female,bachelor's degree,single,Southern,Other
+1072,0.0,41,Male,master's degree,married,Central,Corporate Employee
+1074,0.0,35,Female,others,married,Eastern,Entrepreneur
+1075,0.0,37,Male,bachelor's degree,single,Central,Corporate Employee
+1095,1.0,41,Female,others,married,Southern,Corporate Employee
+1105,0.0,34,Male,high school,others,Central,Corporate Employee
+1109,0.0,38,Male,bachelor's degree,married,Northeastern,Entrepreneur
+1117,0.0,49,Male,others,single,Central,Professional
+1118,0.0,25,Male,high school,single,Eastern,Corporate Employee
+1124,0.0,33,Female,less than high school,single,Eastern,Student
+1131,0.0,42,Female,bachelor's degree,married,Central,Entrepreneur
+1163,2.0,65,Male,vocational certificate,others,Eastern,Entrepreneur
+1171,0.0,48,Female,bachelor's degree,single,Central,Freelancer
+1177,0.0,26,Female,high school,single,Central,Student
+1179,0.0,57,Male,others,married,Northeastern,Entrepreneur
+1201,0.0,37,Male,less than high school,single,Central,Freelancer
+1214,1.0,59,Female,high school,married,Central,Unemployed
+1217,0.0,27,Male,high school,single,Southern,Corporate Employee
+1222,0.0,46,Female,bachelor's degree,single,Northeastern,Corporate Employee
+1223,0.0,29,Female,vocational certificate,single,Central,Unemployed
+1229,0.0,24,Male,others,others,Northeastern,Student
+1232,0.0,30,Male,vocational certificate,single,Central,Corporate Employee
+1236,3.0,54,Male,others,others,Central,Entrepreneur
+1243,0.0,45,Male,master's degree,married,Central,Corporate Employee
+1262,0.0,42,Male,high school,others,Central,Corporate Employee
+1273,0.0,50,Female,bachelor's degree,married,Northeastern,Corporate Employee
+1279,0.0,32,Male,bachelor's degree,married,Northern,Agriculture/Trade
+1293,0.0,23,Female,others,single,Central,Corporate Employee
+1314,1.0,58,Female,bachelor's degree,married,Central,Entrepreneur
+1324,0.0,36,Female,high school,married,Eastern,Corporate Employee
+1375,0.0,47,Female,bachelor's degree,single,Central,Corporate Employee
+1392,0.0,32,Female,high school,married,Western,Corporate Employee
+1393,0.0,38,Male,bachelor's degree,single,Central,Corporate Employee
+1399,0.0,26,Female,high school,single,Central,Freelancer
+1412,0.0,45,Male,high school,single,Eastern,Entrepreneur
+1413,0.0,29,Female,high school,single,Central,Student
+1420,1.0,50,Male,less than high school,married,Southern,Corporate Employee
+1425,1.0,73,Female,bachelor's degree,widow,Central,Corporate Employee
+1449,0.0,40,Male,bachelor's degree,married,Eastern,Entrepreneur
+1486,0.0,36,Female,vocational certificate,married,Eastern,Corporate Employee
+1502,0.0,37,Female,high school,single,Central,Corporate Employee
+1505,0.0,50,Female,bachelor's degree,married,Central,Corporate Employee
+1506,0.0,32,Female,bachelor's degree,single,Northern,Corporate Employee
+1514,0.0,44,Female,master's degree,married,Western,Freelancer
+1523,0.0,71,Male,others,married,Central,Corporate Employee
+1538,0.0,42,Male,vocational certificate,single,Central,Corporate Employee
+1552,0.0,34,Female,high school,single,Central,Corporate Employee
+1557,0.0,26,Female,others,single,Southern,Student
+1558,0.0,32,Female,bachelor's degree,single,Central,Corporate Employee
+1559,0.0,36,Female,bachelor's degree,single,Southern,Corporate Employee
+1564,0.0,24,Female,bachelor's degree,single,Central,Student
+1587,0.0,44,Male,others,married,Central,Corporate Employee
+1601,0.0,34,Female,vocational certificate,single,Central,Corporate Employee
+1612,0.0,33,Female,high school,married,Southern,Entrepreneur
+1627,0.0,34,Female,vocational certificate,married,Central,Corporate Employee
+1633,0.0,69,Female,bachelor's degree,single,Central,Corporate Employee
+1644,0.0,26,Male,others,single,Southern,Entrepreneur
+1651,0.0,44,Female,master's degree,married,Central,Corporate Employee
+1653,0.0,37,Male,high school,single,Central,Corporate Employee
+1663,0.0,48,Male,bachelor's degree,single,Central,Freelancer
+1666,0.0,59,Male,less than high school,single,Central,Entrepreneur
+1695,0.0,44,Female,less than high school,single,Central,Corporate Employee
+1698,0.0,30,Female,bachelor's degree,single,Central,Corporate Employee
+1728,2.0,56,Female,bachelor's degree,married,Northern,Entrepreneur
+1741,0.0,29,Male,vocational certificate,single,Northeastern,Unemployed
+1742,0.0,36,Male,high school,single,Northern,Corporate Employee
+1766,0.0,35,Female,bachelor's degree,single,Eastern,Entrepreneur
+1771,0.0,59,Male,master's degree,married,Central,Corporate Employee
+1780,0.0,41,Female,vocational certificate,married,Southern,Homemaker
+1789,0.0,37,Female,bachelor's degree,single,Central,Entrepreneur
+1834,0.0,46,Female,master's degree,married,Central,Unemployed
+1860,0.0,29,Male,vocational certificate,single,Central,Corporate Employee
+1861,0.0,30,Male,high school,single,Eastern,Corporate Employee
+1863,0.0,28,Female,high school,single,Northern,Corporate Employee
+1872,1.0,46,Female,bachelor's degree,married,Central,Corporate Employee
+1877,0.0,47,Male,bachelor's degree,single,Central,Corporate Employee
+1953,0.0,29,Male,others,others,Central,Student
+1967,0.0,54,Female,master's degree,married,Central,Professional
+1979,0.0,34,Female,high school,single,Central,Corporate Employee
+2005,0.0,51,Female,others,married,Central,Corporate Employee
+2006,0.0,55,Male,bachelor's degree,married,Central,Entrepreneur
+2015,0.0,47,Female,bachelor's degree,married,Southern,Corporate Employee
+2016,0.0,28,Female,bachelor's degree,single,Eastern,Corporate Employee
+2032,2.0,51,Male,vocational certificate,married,Eastern,Entrepreneur
+2043,0.0,29,Female,high school,single,Central,Corporate Employee
+2045,0.0,53,Female,bachelor's degree,single,Northeastern,Entrepreneur
+2054,2.0,54,Male,bachelor's degree,married,Central,Corporate Employee
+2068,0.0,32,Female,bachelor's degree,single,Southern,Corporate Employee
+2092,0.0,44,Male,others,married,Northeastern,Corporate Employee
+2154,0.0,32,Female,others,single,Northeastern,Freelancer
+2168,0.0,30,Male,vocational certificate,single,Eastern,Corporate Employee
+2187,0.0,25,Male,high school,single,Central,Student
+2214,0.0,33,Female,high school,married,Central,Corporate Employee
+2248,0.0,24,Female,high school,single,Central,Student
+2251,1.0,43,Male,bachelor's degree,married,Central,Entrepreneur
+2270,0.0,42,Male,bachelor's degree,married,Central,Corporate Employee
+2298,0.0,56,Male,bachelor's degree,married,Central,Corporate Employee
+2321,0.0,55,Female,bachelor's degree,single,Central,Corporate Employee
+2324,0.0,38,Male,high school,single,Central,Corporate Employee
+2342,0.0,34,Male,bachelor's degree,single,Central,Corporate Employee
+2368,1.0,43,Female,others,married,Central,Corporate Employee
+2370,0.0,31,Female,vocational certificate,single,Northeastern,Entrepreneur
+2371,0.0,28,Female,high school,single,Eastern,Corporate Employee
+2379,0.0,49,Male,others,married,Central,Entrepreneur
+2388,2.0,61,Female,vocational certificate,married,Eastern,Corporate Employee
+2402,0.0,38,Female,others,single,Eastern,Corporate Employee
+2452,0.0,57,Male,less than high school,married,Central,Corporate Employee
+2453,0.0,59,Female,bachelor's degree,single,Eastern,Corporate Employee
+2464,0.0,57,Female,less than high school,married,Central,Entrepreneur
+2466,0.0,59,Male,bachelor's degree,married,Northeastern,Entrepreneur
+2474,0.0,49,Male,high school,single,Eastern,Corporate Employee
+2484,0.0,35,Male,bachelor's degree,single,Central,Professional
+2495,0.0,56,Male,others,single,Northeastern,Entrepreneur
+2502,0.0,57,Male,bachelor's degree,married,Central,Entrepreneur
+2510,0.0,36,Male,high school,single,Eastern,Corporate Employee
+2513,0.0,43,Female,less than high school,single,Central,Corporate Employee
+2520,0.0,25,Male,high school,single,Eastern,Student
+2528,0.0,30,Female,bachelor's degree,single,Central,Corporate Employee
+2537,0.0,27,Female,high school,single,Central,Corporate Employee
+2544,0.0,37,Female,high school,married,Northern,Corporate Employee
+2555,0.0,32,Male,high school,single,Central,Entrepreneur
+2562,0.0,24,Male,others,single,Western,Student
+2565,2.0,48,Female,high school,married,Southern,Entrepreneur
+2567,0.0,22,Female,less than high school,single,Central,Student
+2580,0.0,30,Male,others,married,Northeastern,Corporate Employee
+2631,0.0,24,Female,high school,single,Central,Corporate Employee
+2652,0.0,42,Male,high school,married,Eastern,Corporate Employee
+2660,0.0,47,Female,less than high school,married,Central,Corporate Employee
+2697,0.0,36,Male,bachelor's degree,single,Northeastern,Other
+2727,0.0,56,Female,high school,married,Southern,Corporate Employee
+2805,0.0,30,Female,bachelor's degree,single,Central,Student
+2828,0.0,34,Male,less than high school,married,Central,Freelancer
+2841,0.0,47,Female,high school,single,Central,Freelancer
+2853,0.0,42,Female,bachelor's degree,married,Central,Corporate Employee
+2859,0.0,41,Female,bachelor's degree,married,Central,Entrepreneur
+2866,1.0,65,Female,vocational certificate,single,Central,Entrepreneur
+2882,0.0,34,Female,bachelor's degree,married,Northeastern,Entrepreneur
+2890,0.0,35,Female,others,single,Northern,Entrepreneur
+2894,0.0,41,Male,high school,single,Southern,Corporate Employee
+2930,0.0,42,Male,bachelor's degree,single,Central,Corporate Employee
+2949,0.0,46,Female,less than high school,single,Central,Homemaker
+2956,0.0,40,Female,master's degree,married,Central,Corporate Employee
+2964,0.0,50,Female,bachelor's degree,single,Southern,Corporate Employee
+2965,0.0,44,Female,bachelor's degree,single,Central,Corporate Employee
+2972,0.0,72,Female,others,married,Central,Corporate Employee
+2990,0.0,31,Female,high school,single,Central,Corporate Employee
+2993,0.0,46,Male,vocational certificate,single,Central,Corporate Employee
+3002,0.0,38,Female,others,married,Western,Corporate Employee
+3016,0.0,40,Male,bachelor's degree,married,Central,Corporate Employee
+3043,0.0,43,Female,bachelor's degree,single,Central,Entrepreneur
+3065,0.0,44,Male,high school,married,Eastern,Entrepreneur
+3084,0.0,43,Female,high school,single,Southern,Corporate Employee
+3089,0.0,44,Male,bachelor's degree,married,Central,Corporate Employee
+3096,0.0,72,Male,less than high school,widow,Central,Corporate Employee
+3102,0.0,46,Male,master's degree,single,Northeastern,Entrepreneur
+3107,0.0,53,Male,high school,married,Eastern,Entrepreneur
+3124,0.0,35,Female,others,single,Central,Corporate Employee
+3132,0.0,27,Female,others,single,Southern,Student
+3139,0.0,36,Male,bachelor's degree,single,Northeastern,Corporate Employee
+3155,0.0,61,Female,others,married,Central,Entrepreneur
+3196,0.0,42,Female,bachelor's degree,single,Central,Corporate Employee
+3205,0.0,45,Female,master's degree,single,Central,Professional
+3207,0.0,53,Female,bachelor's degree,single,Central,Corporate Employee
+3211,0.0,38,Male,master's degree,single,Eastern,Entrepreneur
+3215,0.0,45,Male,high school,married,Central,Entrepreneur
+3221,0.0,33,Male,high school,single,Eastern,Entrepreneur
+3225,0.0,39,Male,others,single,Central,Corporate Employee
+3230,0.0,59,Female,others,married,Central,Corporate Employee
+3242,0.0,32,Male,master's degree,others,Central,Corporate Employee
+3245,0.0,56,Female,bachelor's degree,married,Northeastern,Other
+3251,0.0,65,Male,bachelor's degree,married,Central,Corporate Employee
+3263,0.0,40,Female,bachelor's degree,single,Central,Corporate Employee
+3264,0.0,38,Male,high school,single,Northeastern,Entrepreneur
+3271,0.0,24,Female,high school,single,Central,Corporate Employee
+3299,0.0,50,Female,less than high school,others,Northeastern,Corporate Employee
+3313,0.0,31,Male,vocational certificate,single,Central,Unemployed
+3316,0.0,64,Male,vocational certificate,married,Central,Freelancer
+3320,2.0,60,Female,bachelor's degree,married,Central,Corporate Employee
+3322,0.0,40,Male,high school,single,Eastern,Corporate Employee
+3334,0.0,35,Female,others,married,Central,Corporate Employee
+3350,0.0,70,Female,bachelor's degree,single,Central,Corporate Employee
+3359,0.0,48,Female,bachelor's degree,married,Eastern,Entrepreneur
+3382,0.0,49,Male,bachelor's degree,married,Western,Entrepreneur
+3431,0.0,55,Female,bachelor's degree,widow,Southern,Corporate Employee
+3434,0.0,39,Female,bachelor's degree,single,Central,Corporate Employee
+3444,0.0,44,Female,bachelor's degree,married,Southern,Entrepreneur
+3460,0.0,36,Male,bachelor's degree,single,Central,Corporate Employee
+3463,0.0,27,Female,high school,single,Southern,Corporate Employee
+3510,0.0,51,Female,high school,single,Central,Corporate Employee
+3515,0.0,51,Female,bachelor's degree,married,Northern,Entrepreneur
+3520,0.0,44,Female,high school,married,Eastern,Corporate Employee
+3554,0.0,53,Female,less than high school,married,Northern,Homemaker
+3560,0.0,43,Female,bachelor's degree,married,Central,Freelancer
+3581,0.0,33,Male,others,single,Northeastern,Professional
+3590,0.0,48,Male,master's degree,single,Central,Entrepreneur
+3593,0.0,50,Female,others,married,Central,Corporate Employee
+3594,0.0,47,Male,doctorate's degree,single,Northeastern,Professional
+3599,0.0,22,Male,high school,single,Central,Student
+3614,0.0,32,Male,bachelor's degree,single,Central,Corporate Employee
+3620,0.0,26,Male,others,single,Eastern,Other
+3639,0.0,59,Male,others,married,Central,Entrepreneur
+3642,0.0,29,Female,bachelor's degree,single,Central,Corporate Employee
+3651,0.0,26,Male,vocational certificate,single,Central,Corporate Employee
+3685,0.0,39,Female,high school,married,Central,Unemployed
+3703,0.0,27,Male,bachelor's degree,others,Central,Corporate Employee
+3708,0.0,34,Male,vocational certificate,single,Central,Corporate Employee
+3768,0.0,64,Male,others,single,Central,Corporate Employee
+3779,0.0,43,Male,vocational certificate,single,Northeastern,Corporate Employee
+3786,0.0,28,Female,high school,single,Northeastern,Student
+3803,0.0,31,Female,bachelor's degree,single,Eastern,Corporate Employee
+3835,0.0,43,Female,others,single,Northern,Corporate Employee
+3838,0.0,42,Male,less than high school,single,Central,Freelancer
+3842,0.0,44,Female,high school,married,Central,Homemaker
+3890,0.0,47,Female,high school,widow,Central,Corporate Employee
+3900,0.0,42,Female,bachelor's degree,single,Central,Corporate Employee
+3902,1.0,48,Male,bachelor's degree,married,Central,Corporate Employee
+3916,0.0,36,Male,vocational certificate,single,Northeastern,Freelancer
+3928,0.0,28,Female,others,single,Central,Student
+3932,0.0,57,Male,vocational certificate,single,Eastern,Corporate Employee
+3940,0.0,38,Female,high school,married,Central,Freelancer
+3953,0.0,22,Male,high school,single,Northern,Student
+3960,1.0,39,Female,vocational certificate,married,Eastern,Corporate Employee
+3986,0.0,38,Female,others,single,Western,Corporate Employee
+3987,0.0,47,Female,high school,married,Northern,Corporate Employee
+4003,1.0,46,Female,less than high school,divorce,Eastern,Corporate Employee
+4035,0.0,42,Female,bachelor's degree,single,Central,Unemployed
+4049,0.0,37,Female,bachelor's degree,single,Western,Professional
+4050,0.0,35,Male,others,married,Northeastern,Corporate Employee
+4052,1.0,59,Male,less than high school,married,Central,Entrepreneur
+4057,0.0,51,Female,master's degree,married,Central,Corporate Employee
+4080,0.0,39,Male,high school,married,Central,Corporate Employee
+4086,0.0,52,Female,bachelor's degree,married,Southern,Professional
+4095,0.0,27,Female,others,single,Central,Corporate Employee
+4099,0.0,26,Female,others,single,Northeastern,Entrepreneur
+4107,0.0,23,Female,less than high school,single,Central,Student
+4109,0.0,35,Male,bachelor's degree,single,Central,Professional
+4115,0.0,21,Female,others,others,Northeastern,Student
+4130,0.0,59,Female,high school,single,Central,Entrepreneur
+4148,0.0,37,Female,bachelor's degree,married,Central,Corporate Employee
+4171,0.0,42,Male,high school,single,Central,Corporate Employee
+4189,1.0,55,Female,vocational certificate,married,Northeastern,Entrepreneur
+4199,0.0,33,Female,high school,single,Northeastern,Corporate Employee
+4203,0.0,51,Male,bachelor's degree,single,Central,Freelancer
+4215,0.0,66,Female,bachelor's degree,married,Central,Entrepreneur
+4225,0.0,30,Female,bachelor's degree,single,Central,Student
+4237,0.0,27,Male,high school,single,Central,Corporate Employee
+4243,0.0,54,Female,bachelor's degree,married,Central,Freelancer
+4259,0.0,49,Female,high school,single,Southern,Corporate Employee
+4265,0.0,33,Female,master's degree,single,Central,Entrepreneur
+4268,0.0,21,Female,high school,single,Central,Entrepreneur
+4271,0.0,32,Male,high school,married,Eastern,Corporate Employee
+4277,0.0,57,Female,bachelor's degree,married,Northern,Unemployed
+4283,0.0,26,Female,bachelor's degree,single,Southern,Student
+4303,0.0,44,Female,others,single,Southern,Entrepreneur
+4333,3.0,43,Female,high school,divorce,Southern,Corporate Employee
